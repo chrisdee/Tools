@@ -1,0 +1,9 @@
+Tool to Import or Export metadata property mappings from SSP of SharePoint 2007
+
+URLs:
+
+http://siderys.codeplex.com
+
+http://siderys.codeplex.com/wikipage?title=Tool%20to%20Import%20or%20Export%20Managed%20Properties%20from%20SSP%20of%20SharePoint%202007
+
+Version: Aug 29 2010

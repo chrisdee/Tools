@@ -1,0 +1,7 @@
+URLs: 
+
+http://movesites.codeplex.com
+
+http://www.sp2010blog.com
+
+Version: May 18 2011

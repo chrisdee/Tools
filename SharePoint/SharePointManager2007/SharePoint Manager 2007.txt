@@ -1,0 +1,7 @@
+URLs: 
+
+http://spm.codeplex.com
+
+http://spm.codeplex.com/releases/view/22762
+
+Build: SharePoint Manager 2007 ver 0.9.9.0205

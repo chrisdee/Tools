@@ -1,0 +1,17 @@
+SharePoint Manager 2007 Copyright (c) 2007 All rights reserved. 
+
+This software is provided 'as-is', without any express or implied warranty. In no event will the author be held liable for any damages arising from the use of this software.
+Please email to the author if you are unclear about where to get a copy of GPL.
+
+Architect & Design 
+Carsten Keutmann
+
+www.keutmann.dk
+carsten@keutmann.dk
+
+Developer
+Anders Dissing
+
+Localization
+Gustavo Velez
+Andreas Kviby

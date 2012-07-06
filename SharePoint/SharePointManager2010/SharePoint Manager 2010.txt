@@ -1,0 +1,3 @@
+URL: http://spm.codeplex.com
+
+Build: SharePoint Manager 2010 ver 0.9.10.0829; Aug 29 2010
