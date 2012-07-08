@@ -1,0 +1,9 @@
+URLs:
+
+http://fishcodelib.com
+
+http://fishcodelib.com/Database.htm
+
+Version: Ver 6.8; 09/07/2012
+
+Supported databases: Microsoft Access, Microsoft Excel, SQLite, Firebird, dBase, FoxPro, OData, Generic OLEDB, Generic ODBC, SQL Server, LocalDB, SQL Server Compact, SQL Azure, MySQL, Oracle, IBM DB2, IBM Informix, PostgreSQL, Sybase ASE
