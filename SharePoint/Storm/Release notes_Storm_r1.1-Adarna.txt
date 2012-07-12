@@ -1,0 +1,101 @@
+------------------------
+Release notes Storm_r1.1 Oct 29, 2008
+------------------------
+
+  Changes :
+  =========
+    1. Launch new storm window from File menu (File -> New Window)
+    2. Configuration items moved from the config file to the config window (UI).  All config items
+       are now done via the UI.
+    3. "Favorite services" can now be added via the configuration window.  These services will
+       appear in the dropdown options whenever you add a web service
+    4. The config file is optional. However, to further customize the tool the items below can be
+       configured
+      
+            
+               <?xml version="1.0" encoding="utf-8" ?>
+               <configuration>
+                  <appSettings>
+                    <add key="ShowSplash" value="3"/> <!-- set to zero or negative number to disable splash-->
+                    
+                    <!-- UI settings--> 
+                    <add key="GradientHighColor" value="Window"/>
+                    <add key="GradientLowColor" value="GradientActiveCaption"/>
+                    <add key="GradientRenderMode" value="Glass"/> <!-- Glass, Gradient or Flat -->
+                  </appSettings>
+               </configuration>
+
+
+  FIXES:
+  =========
+    1. Issue 2398 : Handling of abstract/polymorphic types. A dropdown of allowed types will be shown
+       whenever a polymorphic type is encountered.
+    2. Object editor in "Tree View" now shows up for newly opened tabd.
+    3. Exception is no longer raised when a default soap cannot be created. A warning is instead
+       logged in the log window
+    4. Fixed the error below.
+      
+       Exception occurs when
+          step 1. open method in a new tab
+          step 2. Invoke method
+          step 3. switch to QuickEdit tab and select the same method. This triggers an exception.
+
+   
+     5. Additional fix for Issue 2180.  Authentication now defaults to Windows Auth.  
+
+
+
+
+------------------------ 
+Release notes Storm_r1.1  Spet 29, 2008
+------------------------
+
+  Changes :
+  =========
+    1. Added multiple tab support.
+          * Right-click on a web method -> Open in new tab
+    2. Added Test case Editor
+          * Right-click on a test case -> Run/Edit
+          * Test input and expected response are editable.
+          * The actual response can be "Promoted" into the Expected response.
+    3. Moved UI config out of the config file into Configuration Main menu      
+          * COnfiguration is now divided into 2 tabs, Service and User Interface. 
+            For the moment, the User Interface tab contains 2 fields
+              a. Color raw soap -> Toogle to enable/disable syntax highlighting of
+                 the soap message in "Raw view".  This is checked by default but if you're working
+                 with very large soap messages, uncheck this 
+                 
+              b. Show Detailed exception -> Toggle to enable/disable very detailed log exception
+                 entries
+              
+    4. Added saving of UI settings are when the app is closed.  File is Storm.settings
+    5. Added generation of default soap messages.  Web methods can now be invoked  from
+       "Raw view" without having to invoke the web method 1st via Tree View
+       
+    6. Added saving of "Expected response"
+    7. Added execution of test cases and automatic comparison of the actual and expected response.
+       The 2 responsed are shown side-by-side and the differences highlighted.
+    8. Added real-time syntax highlighting for raw soap messages.
+    9. Added notification windows (fades in and out). (shown at the lower-right corner of the tool). 
+    10. Added clearing of the logging window.
+    
+    11. Code changes brought about by the F# Sept 08 CTP release. (you'll now need VS 2008 to open the F# projects).
+    
+    12. Cleaner splash screen.
+    
+    13. Others..
+    
+    14. Added paypal "Donate" button (Click on the ABOUT menu button).  The donate link has been in the codeplex site 
+        for a long time and Storm has been downloaded 3000+ times and yet there
+        has been ZERO donations so far.  I wrote STORM out of genuine desire to help out my fellow
+        developers but it was naive of me to assume i'd get something back.Anyway I hope someone
+        out there will donate so that I can at least upgrade my 1G RAM Vista laptop.
+    
+  Fixes :
+  ========
+    1. fix for Issue 1464 : WCF Services with basicHttpBinding now supported
+    2. fix for issue 2180 : ADDED NTLM and Proxy authentication to web service calls.  The values needed for these
+         are all configurable from the Configurations menu or from the COnfiguration section (Lower right portion)
+    3. fix for issue 2042 : Nullable fields now works as expected.  In addition, objects set to null (in Tree View) are 
+       no longer sent with default values.
+    

@@ -1,0 +1,101 @@
+STORM 
+Current version : 1.1
+Copyright : erik.araojo@hotmail.com & Contributors (if any)
+
+
+Section I.
+************************************
+LOADING A WEB SERVICE AND TESTING ITS METHODS
+************************************
+1. CLick ADD in the toolbar.
+2. Provide the wsdl endpoint url
+3. Click Go (Green arrow)
+4. Select a web method. (Or right click and open it in a new tab)
+5. Click Send
+
+
+Section II.
+************************************
+SAVING SOAP REQUEST AS TEST CASES
+************************************
+
+1. Open the web service
+2. Select a web method while in "Tree View" (lightning icon)
+3. Click Send
+4. Switch to "Raw View" or "Xml View" (for the Soap Input)
+5. Edit the data.
+6. Click Save. Choose "Test Data" option. Provide the test case label, notes. etc. Click OK.
+7. The raw soap request message will now be part of the project.
+8. To save the soap response as the the expected response, repeat steps 4-7 on 
+   response output generated in Step 3.
+
+
+Section III.
+**********************************************
+SAVING THE CURRENT SESSION AS A STORM PROJECT
+**********************************************
+1.  Assuming you already have an open web service(s) with or without test cases 
+    (see above instructions, section II)
+    
+    click on the SAVE button in the toolbar
+
+2.  Provide the storm project name. CLick OK.
+       - This will create the following folder structure
+
+      {File} StormProject.stormproj
+           - {Folder} ServiceName
+               - {Folder} WebMethod
+                    - {Folder} TestCaseName
+                        - {File} TestInputLabel_testinput.xml
+                    - {File} WebMethod_test.config
+           - {File} ServiceName_ws.config  
+
+
+Section IV.           
+**********************************************
+LOADING A SAVED STORM PROJECT
+**********************************************
+
+1.  Create a stormproject (See above instructions, section III)
+2.  Click OPEN from the toolbar. Navigate to the created storm project file
+3.  Click OK.  This will re-load the web service(s) and all the test cases (if any)
+
+
+
+Section V.
+************************************
+EXECUTING SAVED TEST CASES
+************************************
+
+1. Open the storm project
+2. Right-click a test case node. Select Run/EDIT. This will open up a new tab.
+3. Edit the Test input (Click on the edit icon) as needed.
+4. Click RUN button to invoke the web method
+4. GREEN means the actual response matched the expected response.
+
+
+Section VI.
+**********************************************
+SENDING MULTIPLE ARRAY ITEMS 
+**********************************************
+1. Load the web service
+2. Select the web method containg an array input parameter.
+3. Click "Tree View" (lightning icon). Edit the input tree
+4. Click RUN button to invoke the web method
+4. Switch to "Raw View".  Edit the soap request as needed. You can add as many array items as you like.
+
+ - Make sure that after editing the SOAP request it is still a well-formed XML. (You can check 
+    this by switching to "XML View".  If it is displayed correctly then it is well-formed).
+    
+    
+ 
+Section VII.
+**********************************************
+SENDING MULTIPLE MEMBER ARRAY ITEMS 
+**********************************************
+1. Load the web service
+2. Select the web method containing a class input parameter. (this class has an array member)
+3. Click "Tree View" (lightning icon). 
+4. Select the class. Object editor pops-up
+5. In the object editor, select the array member
+6.  Add array items.

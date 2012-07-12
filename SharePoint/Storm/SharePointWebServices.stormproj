@@ -1,0 +1,145 @@
+<StormProject>
+  <Root>C:\Boxbuild\Tools\SharePoint\Storm</Root>
+  <Services>
+    <Service name="Alerts">
+      <Url>http://YourWebApplication.com/_vti_bin/Alerts.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Alerts</Path>
+      <Config>Alerts_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Dws">
+      <Url>http://YourWebApplication.com/_vti_bin/Dws.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Dws</Path>
+      <Config>Dws_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Copy">
+      <Url>http://YourWebApplication.com/_vti_bin/Copy.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Copy</Path>
+      <Config>Copy_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Forms">
+      <Url>http://YourWebApplication.com/_vti_bin/Forms.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Forms</Path>
+      <Config>Forms_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Imaging">
+      <Url>http://YourWebApplication.com/_vti_bin/Imaging.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Imaging</Path>
+      <Config>Imaging_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Lists">
+      <Url>http://YourWebApplication.com/_vti_bin/Lists.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Lists</Path>
+      <Config>Lists_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="StsAdapter">
+      <Url>http://YourWebApplication.com/_vti_bin/DspSts.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\StsAdapter</Path>
+      <Config>StsAdapter_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Meetings">
+      <Url>http://YourWebApplication.com/_vti_bin/Meetings.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Meetings</Path>
+      <Config>Meetings_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="People">
+      <Url>http://YourWebApplication.com/_vti_bin/People.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\People</Path>
+      <Config>People_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Permissions">
+      <Url>http://YourWebApplication.com/_vti_bin/Permissions.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Permissions</Path>
+      <Config>Permissions_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="SiteData">
+      <Url>http://YourWebApplication.com/_vti_bin/SiteData.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\SiteData</Path>
+      <Config>SiteData_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Sites">
+      <Url>http://YourWebApplication.com/_vti_bin/Sites.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Sites</Path>
+      <Config>Sites_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="QueryService">
+      <Url>http://YourWebApplication.com/_vti_bin/search.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\QueryService</Path>
+      <Config>QueryService_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="UserGroup">
+      <Url>http://YourWebApplication.com/_vti_bin/UserGroup.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\UserGroup</Path>
+      <Config>UserGroup_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Versions">
+      <Url>http://YourWebApplication.com/_vti_bin/Versions.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Versions</Path>
+      <Config>Versions_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Views">
+      <Url>http://YourWebApplication.com/_vti_bin/Views.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Views</Path>
+      <Config>Views_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="WebPartPagesWebService">
+      <Url>http://YourWebApplication.com/_vti_bin/WebPartPages.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\WebPartPagesWebService</Path>
+      <Config>WebPartPagesWebService_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Webs">
+      <Url>http://YourWebApplication.com/_vti_bin/Webs.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Webs</Path>
+      <Config>Webs_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="SharepointEmailWS">
+      <Url>http://YourWebApplication.com/_vti_bin/sharepointemailws.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\SharepointEmailWS</Path>
+      <Config>SharepointEmailWS_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+    <Service name="Authentication">
+      <Url>http://YourWebApplication.com/_vti_bin/Authentication.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\Authentication</Path>
+      <Config>Authentication_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
+  </Services>
+</StormProject>
