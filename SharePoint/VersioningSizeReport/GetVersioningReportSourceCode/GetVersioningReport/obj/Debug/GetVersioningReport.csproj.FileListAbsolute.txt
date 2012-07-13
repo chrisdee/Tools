@@ -1,0 +1,5 @@
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\obj\Debug\ResolveAssemblyReference.cache
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\bin\Debug\GetVersioningReport.exe
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\bin\Debug\GetVersioningReport.pdb
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\obj\Debug\GetVersioningReport.exe
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\obj\Debug\GetVersioningReport.pdb

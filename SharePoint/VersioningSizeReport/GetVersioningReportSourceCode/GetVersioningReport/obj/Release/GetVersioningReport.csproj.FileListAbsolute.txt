@@ -1,0 +1,10 @@
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\bin\Release\GetVersioningReport.exe
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\bin\Release\GetVersioningReport.pdb
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\obj\Release\ResolveAssemblyReference.cache
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\obj\Release\GetVersioningReport.exe
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetVersioningReport\GetVersioningReport\obj\Release\GetVersioningReport.pdb
+D:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetListsVersioningReport\GetVersioningReport\obj\Release\GetVersioningReport.exe
+D:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetListsVersioningReport\GetVersioningReport\obj\Release\GetVersioningReport.pdb
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetListsVersioningReport\GetVersioningReport\bin\Release\GetVersioningReport.exe
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetListsVersioningReport\GetVersioningReport\bin\Release\GetVersioningReport.pdb
+d:\Documents and Settings\salaudeenAdm\My Documents\Visual Studio 2008\Projects\GetListsVersioningReport\GetVersioningReport\obj\Release\ResolveAssemblyReference.cache
