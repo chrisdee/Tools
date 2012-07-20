@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90D49944-597A-45A2-982B-CE1C9C809854}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>COB.SharePoint.Utilities.DeploymentWizard.Core</RootNamespace>
+    <AssemblyName>COB.SharePoint.Utilities.DeploymentWizard.Core</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>COB.SharePoint.Utilities.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChangeTokenStore.cs" />
+    <Compile Include="Helpers\ExceptionHelper.cs" />
+    <Compile Include="IncrementalManager.cs" />
+    <Compile Include="InvalidChangeTokenEventArgs.cs" />
+    <Compile Include="OperationResults\DeploymentOperationResult.cs" />
+    <Compile Include="OperationResults\ExportOperationResult.cs" />
+    <Compile Include="OperationResults\ImportOperationResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPObjectData.cs" />
+    <Compile Include="TraceHelper.cs" />
+    <Compile Include="WizardDeployment.cs" />
+    <Compile Include="WizardExportSettings.cs" />
+    <Compile Include="WizardImportSettings.cs" />
+    <Compile Include="WizardOperationSettings.cs" />
+    <Compile Include="WizardStsadmCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="stsadmcommands.COB.SPDeploymentWizard.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="COB.SharePoint.Utilities.snk" />
+    <None Include="StsadmUsageSample.bat" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)stsadmcommands.*.xml" "C:\Program Files\Common Files\microsoft shared\Web Server Extensions\12\CONFIG\"  /y
+cd C:\Program Files\Microsoft SDKs\Windows\v6.0A\bin\
+gacutil /i $(TargetPath) /f</PostBuildEvent>
+  </PropertyGroup>
+</Project>

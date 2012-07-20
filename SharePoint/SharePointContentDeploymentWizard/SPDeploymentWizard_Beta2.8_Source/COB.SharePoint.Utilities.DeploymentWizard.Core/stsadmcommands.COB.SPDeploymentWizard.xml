@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<commands>
+	<command name="RunWizardImport" 
+           class="COB.SharePoint.Utilities.DeploymentWizard.Core.WizardStsadmCommand,COB.SharePoint.Utilities.DeploymentWizard.Core,Version=4.0.0.0,Culture=neutral,PublicKeyToken=23afbf06fd91fa64"/>
+  <command name="RunWizardExport"
+           class="COB.SharePoint.Utilities.DeploymentWizard.Core.WizardStsadmCommand,COB.SharePoint.Utilities.DeploymentWizard.Core,Version=4.0.0.0,Culture=neutral,PublicKeyToken=23afbf06fd91fa64"/>
+</commands>

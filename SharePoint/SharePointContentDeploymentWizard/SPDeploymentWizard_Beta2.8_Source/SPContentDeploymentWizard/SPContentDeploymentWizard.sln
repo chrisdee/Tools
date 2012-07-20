@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPContentDeploymentWizard", "SPContentDeploymentWizard.csproj", "{B9130826-E26F-4BA9-88EE-348166066649}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COB.SharePoint.Utilities.DeploymentWizard.Core", "..\COB.SharePoint.Utilities.DeploymentWizard.Core\COB.SharePoint.Utilities.DeploymentWizard.Core.csproj", "{90D49944-597A-45A2-982B-CE1C9C809854}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "COB.SharePoint.Utilities.DeploymentWizard.Installer_x86", "..\COB.SharePoint.Utilities.DeploymentWizard.Installer_x86\COB.SharePoint.Utilities.DeploymentWizard.Installer_x86.vdproj", "{CF988F17-7D63-4AAB-B1A5-43310211F9F9}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "COB.SharePoint.Utilities.DeploymentWizard.Installer_x64", "..\COB.SharePoint.Utilities.DeploymentWizard.Installer_x64\COB.SharePoint.Utilities.DeploymentWizard.Installer_x64.vdproj", "{35633233-4F8F-4E40-A1EC-B261AF5E2F05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9130826-E26F-4BA9-88EE-348166066649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9130826-E26F-4BA9-88EE-348166066649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9130826-E26F-4BA9-88EE-348166066649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9130826-E26F-4BA9-88EE-348166066649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D49944-597A-45A2-982B-CE1C9C809854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D49944-597A-45A2-982B-CE1C9C809854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D49944-597A-45A2-982B-CE1C9C809854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D49944-597A-45A2-982B-CE1C9C809854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF988F17-7D63-4AAB-B1A5-43310211F9F9}.Debug|Any CPU.ActiveCfg = Debug
+		{CF988F17-7D63-4AAB-B1A5-43310211F9F9}.Debug|Any CPU.Build.0 = Debug
+		{CF988F17-7D63-4AAB-B1A5-43310211F9F9}.Release|Any CPU.ActiveCfg = Release
+		{CF988F17-7D63-4AAB-B1A5-43310211F9F9}.Release|Any CPU.Build.0 = Release
+		{35633233-4F8F-4E40-A1EC-B261AF5E2F05}.Debug|Any CPU.ActiveCfg = Debug
+		{35633233-4F8F-4E40-A1EC-B261AF5E2F05}.Debug|Any CPU.Build.0 = Debug
+		{35633233-4F8F-4E40-A1EC-B261AF5E2F05}.Release|Any CPU.ActiveCfg = Release
+		{35633233-4F8F-4E40-A1EC-B261AF5E2F05}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

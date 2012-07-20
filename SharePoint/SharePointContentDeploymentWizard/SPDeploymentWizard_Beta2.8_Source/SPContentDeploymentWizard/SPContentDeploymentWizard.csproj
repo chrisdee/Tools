@@ -1,0 +1,213 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9130826-E26F-4BA9-88EE-348166066649}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>COB.SharePoint.Utilities.DeploymentWizard.UI</RootNamespace>
+    <AssemblyName>SPContentDeploymentWizard</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>ContentDeployer.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>COB.SharePoint.Utilities.snk</AssemblyOriginatorKeyFile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Program Files\Common Files\Microsoft Shared\web server extensions\12\ISAPI\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBinding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBinding.Designer.cs">
+      <DependentUpon>frmBinding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmContentDeployer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContentDeployer.Designer.cs">
+      <DependentUpon>frmContentDeployer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBinding.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBinding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContentDeployer.resx">
+      <DependentUpon>frmContentDeployer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Wizard\Converters\WizardCollectionEnumConverter.cs" />
+    <Compile Include="Wizard\Converters\WizardStepCollectionConverter.cs" />
+    <Compile Include="Wizard\Designers\IntermediateStepDesigner.cs" />
+    <Compile Include="Wizard\Designers\WizardDesigner.cs" />
+    <Compile Include="Wizard\Designers\WizardDesignerActionList.cs" />
+    <Compile Include="Wizard\Designers\WizardStepDesigner.cs" />
+    <Compile Include="Wizard\Editors\WizardStepCollectionEditor.cs" />
+    <Compile Include="Wizard\Editors\WizardStepCollectionEnumEditor.cs" />
+    <Compile Include="Wizard\Pages\FinishStep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard\Pages\IntermediateStep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard\Pages\LicenceStep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard\Pages\StartStep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard\Pages\WizardControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard\Pages\WizardStep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard\Structures\Delegates.cs" />
+    <Compile Include="Wizard\Structures\WizardClickEventArgs.cs" />
+    <Compile Include="Wizard\Structures\WizardNextButtonClickEventArgs.cs" />
+    <Compile Include="Wizard\Structures\WizardStepCollection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Images\meetingWorkspaceIcon.gif" />
+    <Content Include="bin\Debug\Images\siteIcon.gif" />
+    <Content Include="bin\Release\SPContentDeploymentWizard.exe" />
+    <Content Include="bin\Release\WizardBase.dll" />
+    <Content Include="ContentDeployer.ico" />
+    <Content Include="bin\Release\Images\meetingWorkspaceIcon.gif" />
+    <Content Include="bin\Release\Images\siteIcon.gif" />
+    <None Include="App.config" />
+    <None Include="COB.SharePoint.Utilities.snk" />
+    <None Include="Images\back.png" />
+    <None Include="Images\FolderIcon.gif" />
+    <None Include="Images\FileIcon.gif" />
+    <Content Include="Images\icon.png" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Images\left.png" />
+    <Content Include="Images\ListIcon.gif" />
+    <Content Include="Images\logo.bmp" />
+    <Content Include="Images\MSFooterLogo.gif" />
+    <Content Include="Images\ms_masthead_ltr.gif" />
+    <Content Include="Images\SiteIcon.gif" />
+    <Content Include="Images\Top.png" />
+    <Content Include="Images\WindowsSystemStateAnalyzer.ico" />
+    <Content Include="obj\SPContentDeploymentWizard.csproj.FileList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COB.SharePoint.Utilities.DeploymentWizard.Core\COB.SharePoint.Utilities.DeploymentWizard.Core.csproj">
+      <Project>{90D49944-597A-45A2-982B-CE1C9C809854}</Project>
+      <Name>COB.SharePoint.Utilities.DeploymentWizard.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,9 @@
+URLs:
+
+http://spdeploymentwizard.codeplex.com
+
+http://www.sharepointnutsandbolts.com/2007/12/introducing-sharepoint-content.html
+
+Version: 2.8 beta; Mar 23 2010
+
+Environments: MOSS 2007 and SharePoint Server 2010
