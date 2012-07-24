@@ -1,0 +1,7 @@
+URLs: 
+
+http://sharepointserviceman.codeplex.com
+
+http://merill.net/2010/04/sharepoint-2010-service-manager
+
+Version: 1.1; May 3 2010
