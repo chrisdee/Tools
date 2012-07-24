@@ -1,0 +1,31 @@
+URLs: http://www.codeproject.com/Articles/419660/IP-Watchdog-Simple-Windows-Service-Written-in-Csha
+
+GitHub: https://github.com/ikriv/IpWatchDog
+
+Usage:
+
+Go to either 'Debug' or 'Release' in the bin directory
+
+\IpWatchdog\IpWatchDog\bin
+
+With PowerShell start the 'IpWatchDog.exe' with the -h switch
+
+.\IpWatchDog.exe -h
+
+Command line arguments:
+    -i or -install : install the service (must be an administrator)
+    -u or -uninstall: uninstall the service (must be an administrator)
+    -s or -start: start the service (must be an administrator)
+    -p or -stop: stop running service (must be an administrator)
+    -c or -console: run in console mode
+
+Example to run this in console mode:
+
+.\IpWatchDog.exe -c
+
+You can change your SMTP configuration settings in the 'IpWatchDog.exe' configuration file:
+
+IpWatchDog.exe
+
+
+
