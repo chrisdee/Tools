@@ -1,0 +1,139 @@
+<?xml version="1.0" standalone="no"?>
+
+<OPTIONS Product="Arposh New User Creation" Version="1.1">
+
+ <Settings>
+  <sAMAccountName Generate="True">
+   <Style Format="FirstName.LastName" Enabled="True" />
+   <Style Format="FirstInitialLastName" Enabled="False" />
+   <Style Format="LastNameFirstInitial" Enabled="False" />
+  </sAMAccountName>
+  <UPN Generate="True">
+   <Style Format="FirstName.LastName" Enabled="True" />
+   <Style Format="FirstInitialLastName" Enabled="False" />
+   <Style Format="LastNameFirstInitial" Enabled="False" />
+  </UPN>
+  <DisplayName Generate="True">
+   <Style Format="FirstName LastName" Enabled="False" />
+   <Style Format="LastName, FirstName" Enabled="True" />
+  </DisplayName>
+  <AccountStatus Enabled="True" />
+  <Password ChangeAtLogon="True" />
+ </Settings>
+ <Default>
+
+  <Domain>RU.lab</Domain>
+
+  <Path>OU=MyOU,DC=ru,DC=lab</Path>
+
+  <FirstName></FirstName>
+  <LastName></LastName>
+  <Office></Office>
+  <Title></Title>
+  <Description>Full-Time Employee</Description>
+
+  <Department>IT</Department>
+  <Company>Arposh</Company>
+
+  <Phone>212-555-1000</Phone>
+
+  <Site>NY</Site>
+
+  <StreetAddress>100 Main Street</StreetAddress>
+
+  <City>New York</City>
+
+  <State>NY</State>
+
+  <PostalCode>10001</PostalCode>
+
+  <Password>P@ssw0rd</Password>
+
+ </Default>
+
+ <Locations>
+  <Location Site="NY">
+
+   <StreetAddress>1 Main Street</StreetAddress>
+
+   <City>New York</City>
+
+   <State>NY</State>
+
+   <PostalCode>10001</PostalCode>
+
+  </Location>
+
+  <Location Site="NJ">
+
+   <StreetAddress>2 Main Street</StreetAddress>
+
+   <City>Edison</City>
+
+   <State>NJ</State>
+
+   <PostalCode>22222</PostalCode>
+
+  </Location>
+  <Location Site="Custom">
+
+   <StreetAddress></StreetAddress>
+
+   <City></City>
+
+   <State></State>
+
+   <PostalCode></PostalCode>
+
+  </Location>
+
+ </Locations>
+ <Domains>
+
+  <Domain Name="RU.lab">
+
+   <Path>OU=MyOU,DC=ru,DC=lab</Path>
+
+   <Path>CN=Users,DC=ru,DC=lab</Path>
+
+  </Domain>
+
+  <Domain Name="RP.lab">
+
+   <Path>OU=RPUsers1,DC=rp,DC=lab</Path>
+
+   <Path>OU=RPUsers2,DC=rp,DC=lab</Path>
+
+   <Path>OU=RPUsers3,DC=rp,DC=lab</Path>
+
+  </Domain>
+
+ </Domains>
+
+ <Descriptions>
+ 
+ <Description>Full-Time Employee</Description>
+
+  <Description>Part-Time Employee</Description>
+
+  <Description>Consultant</Description>
+
+  <Description>Intern</Description>
+
+  <Description>Service Account</Description>
+
+  <Description>Temp</Description>
+
+  <Description>Freelancer</Description>
+
+ </Descriptions>
+ <Departments>
+  <Department>Finance</Department>
+  <Department>IT</Department>
+  <Department>Marketing</Department>
+  <Department>Sales</Department>
+  <Department>Executive</Department>
+  <Department>Human Resources</Department>
+  <Department>Security</Department>
+ </Departments>
+</OPTIONS>

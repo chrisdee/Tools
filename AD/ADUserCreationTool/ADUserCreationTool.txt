@@ -1,0 +1,7 @@
+URLs:
+
+http://gallery.technet.microsoft.com/scriptcenter/New-User-Creation-tool-14fa73cd
+
+http://blog.richprescott.com/2011/10/arposh-new-user-creation-anuc.html
+
+Version: AD User Creation tool 1.1
