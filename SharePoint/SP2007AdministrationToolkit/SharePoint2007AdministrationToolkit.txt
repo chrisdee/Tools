@@ -1,0 +1,9 @@
+URLs:
+
+http://technet.microsoft.com/en-us/library/cc508851(v=office.12).aspx
+
+http://www.microsoft.com/en-us/download/details.aspx?id=4388
+
+Version: v4.0 (x64)
+
+Date published:	9/1/2009
