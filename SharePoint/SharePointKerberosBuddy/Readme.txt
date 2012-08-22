@@ -1,0 +1,11 @@
+The SharePoint Kerberos Buddy provides an intelligent client application that examines a mixed tier SharePoint environment locating commonly misconfigured Kerberos configuration elements. The application can detect errors on SharePoint, SSAS, SSRS, and on the client.
+
+The SharePoint Kerberos Buddy functions by leveraging both inherent Windows tooling (meaning, called from and baked into the native OS), bundled Microsoft tooling in order to support Active Directory lookups, as well as custom routines using collected implementation information to perform analysis. Because SharePoint may have split tiers within the farm, Kerberos authentication can be complex to deploy. This situation can even be further complicated when focusing on a BI focused-environment whereby warehousing services can be on or off-loaded. An orthodox example of this is a SharePoint WFE running SSRS in integrated mode, while SSAS is offloaded onto a separate server. This is common with some folks that want to have a large singular machine to service OLAP and data mining capabilities. This level of implementation complexity is the exact situation that the SharePoint Kerberos buddy is meant to target.
+
+The tool must be run individually on all tiers within the farm with the target profile selected; the analysis interface is not enabled unless all obligatory files are present. Each of the results post-profiling is placed in a customized *.sharepointkerberos format in the local Analysis directory. Exact file generation will differ depending on the target tier and related profile. All of these results in the end must be placed within a singular Analysis directory, which will enable the Analysis button and provide advice on how to solve the problems within the interface.
+
+More granular detail regarding the tool, as well as screenshots of how to use the interface, are available at: 
+
+http://www.sharepointsecurity.com/sharepoint/sharepoint-security/free-software-sharepoint-kerberos-buddy-detect-and-repair-kerberos-issues
+
+To install it, just use the setup.exe file in the Source Code directory. This will add a pointer to it in the local all programs menu. If maintaining a Kerberos/SharePoint environment, it is helpful to keep the tool installed as the environment scales up / scales down.

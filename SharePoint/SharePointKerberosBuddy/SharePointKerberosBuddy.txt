@@ -1,0 +1,11 @@
+URLs:
+
+http://spkerberosbuddy.codeplex.com
+
+http://www.sharepointsecurity.com/sharepoint/sharepoint-security/free-software-sharepoint-kerberos-buddy-detect-and-repair-kerberos-issues
+
+Version: Mar 4 2011
+
+RELEASE NOTES
+
+Release that was checked into TFS. Download BOTH of the files!
