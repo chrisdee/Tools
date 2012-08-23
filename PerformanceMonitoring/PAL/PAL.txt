@@ -1,0 +1,38 @@
+URLs:
+
+http://pal.codeplex.com
+
+http://pal.codeplex.com/releases/view/51623
+
+Version: PAL v2.3.2 | Updated: Jul 17 2012
+
+Introduction
+PAL v2.0 is an easy to use tool which simplifies the analysis of Microsoft Performance Monitor Logs (.blg | .csv). It generates an HTML report containing graphical charts and alerts of the performance counters using known thresholds.
+Usage
+Execute the the PAL icon in your Start Programs menu or run the PAL.ps1 script from a PowerShell.
+Installation
+Tested only on Windows 7, but should work on Windows Server 2008 R2.
+
+Run the PAL setup MSI file that ships in the zip file at http://pal.codeplex.com.
+
+Required Products (free and public):
+
+    Microsoft .NET Framework 3.5 Service Pack 1 (already on Windows 7) (full package - no internet access required) http://download.microsoft.com/download/2/0/e/20e90413-712f-438c-988e-fdaa79a8ac3d/dotnetfx35.exe
+
+    Microsoft Chart Controls for Microsoft .NET Framework 3.5 http://www.microsoft.com/downloads/details.aspx?FamilyID=130f7986-bf49-4fe5-9ca8-910ae6ea442c&DisplayLang=en
+
+    PowerShell v2.0 (Windows Management Framework (Windows PowerShell 2.0, WinRM 2.0, and BITS 4.0)) (already on Windows 7) http://support.microsoft.com/kb/968929
+
+
+Warning: The PAL installer (MSI) will set the PowerShell execution policy to unrestricted. This will allow the execution of PowerShell scripts.
+
+Globalization Known Issue: PAL has only been tested using an English-US locale. If you have problems using PAL v2.x, then try again using an English-US locale. This is an open source and voluntary project, so any assistance with globalization and localization is appreciated.
+
+Big thank you to the Microsoft Premier Field Engineering (PFE) organization for the great support and feedback!
+
+v2.3.2
+
+    Bug Fix: Some of the counter instances were missing in the charts. Fixed.
+    Report change: All of the counter instances are now sorted alphabetically.
+    Report change: The "Global" counter instances in the .NET CLR counter objects are moved to their own chart similar to the "_Total" counter instances.
+    Bug Fix: The Y axis labels for the Avg. Disk sec/Read and Avg. Disk Sec/Write performance counters were blank when doing a multi-threaded analysis. This has been fixed.

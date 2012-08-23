@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<PAL PALVERSION="2.0" NAME="System Overview" DESCRIPTION="General operating system performance analysis. Use this for a general analysis for any Windows computer." CONTENTOWNERS="Clint Huffman" FEEDBACKEMAILADDRESS="clinth@microsoft.com" VERSION="1.0" LANGUAGE="English" LANGUAGECODE="en">
+  <ANALYSIS NAME="Process Private Bytes" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\Private Bytes" ID="{bf135d67-22c5-4839-b039-3b8c0e587cd8}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\Private Bytes" COLLECTIONVARNAME="ProcessPrivateBytes" EXPRESSIONPATH="\Process(*)\Private Bytes" DATATYPE="integer" />
+    <THRESHOLD NAME="Possible Memory Leak: More than 250MBs between overall Min and overall Max and an increasing trend of more than 10MBs per hour" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+        $TenMegaBytes = 10485760
+        $TwoHundredAndFiftyMegaBytes = 262144000
+          For ($i=0;$i -lt $ProcessPrivateBytes.Count;$i++)
+          {
+            $oCounterInstance = $ProcessPrivateBytes[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)                  
+                  If (($MinMaxDifference -gt $TwoHundredAndFiftyMegaBytes) -and ($oCounterInstance.QuantizedTrend[$t] -gt $TenMegaBytes))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Possible Memory Leak: More than 500MBs between overall Min and overall Max and an increasing trend of more than 100MBs per hour" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        $OneHundredMegaBytes = 104857600
+        $FiveHundresMegaBytes = 524288000
+          For ($i=0;$i -lt $ProcessPrivateBytes.Count;$i++)
+          {
+            $oCounterInstance = $ProcessPrivateBytes[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)
+                  $TwoHundredAndFiftyMegaBytes = 262144000
+                  If (($MinMaxDifference -gt $FiveHundresMegaBytes) -and ($oCounterInstance.QuantizedTrend[$t] -gt $OneHundredMegaBytes))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Process(*)\Private Bytes" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\Private Bytes" CHARTLABELS="instance">
+    </CHART>
+    <DESCRIPTION><![CDATA[This analysis determines if the system leaking memory over time. A process consuming large portions of memory is okay as long as the process returns the memory back to the system. Look for increasing trends in the chart. An increasing trend over a long period of time could indicate a memory leak. Private Bytes is the current size, in bytes, of memory that this process has allocated that cannot be shared with other processes. This analysis checks for a 10 MB per hour and 5 MB per hour increasing trends. Use this analysis in correlation with the Available Memory analysis.<BR>
+<BR>
+Use this analysis in correlation with the Available Memory analysis. If you suspect a memory leak condition, then install and use the Debug Diag tool. For more information on the Debug Diag Tool, see the references section.<BR>
+<BR>
+<B>References:</B><BR>
+<BR>
+Debug Diagnostic Tool v1.1 http://www.microsoft.com/downloads/details.aspx?FamilyID=28bd5941-c458-46f1-b24d-f60151d875a3&displaylang=en]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process Handle Count" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\Handle Count" ID="{ff63f07d-dec2-4abc-b99a-d1841d340695}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\Handle Count" COLLECTIONVARNAME="ProcessHandleCount" EXPRESSIONPATH="\Process(*)\Handle Count" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Process(*)\Handle Count" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\Handle Count" CHARTLABELS="instance" />
+    <THRESHOLD NAME="Possible Handle Leak: More than 250 handles between overall Min and overall Max and an increasing trend of more than 100 handles per hour" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+          For ($i=0;$i -lt $ProcessHandleCount.Count;$i++)
+          {
+            $oCounterInstance = $ProcessHandleCount[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)                  
+                  If (($MinMaxDifference -gt 250) -and ($oCounterInstance.QuantizedTrend[$t] -gt 100))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Possible Handle Leak: More than 500 handles between overall Min and overall Max and an increasing trend of more than 500 handles per hour" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+          For ($i=0;$i -lt $ProcessHandleCount.Count;$i++)
+          {
+            $oCounterInstance = $ProcessHandleCount[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)
+                  $TwoHundredAndFiftyMegaBytes = 262144000
+                  If (($MinMaxDifference -gt 500) -and ($oCounterInstance.QuantizedTrend[$t] -gt 500))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+        ]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[This analysis checks overall system to determine how many handles the system has open to determine if there is a handle leak. Handle leaks can be attributed to memory leak. If this analysis throws alerts, then you need to manually open the performance monitor log and look at the instances <b>\Process(*)\Handle Count</b> to determine which process is leaking handles. Note: The normal System Overview analysis checks all of the processes.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process Thread Count" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\Thread Count" ID="{cc52e99a-9c8a-4b5d-91c7-11dcb2ac9f77}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\Thread Count" COLLECTIONVARNAME="ProcessThreadCount" EXPRESSIONPATH="\Process(*)\Thread Count" DATATYPE="integer" />
+    <THRESHOLD NAME="Possible Thread Leak: More than 250 threads between overall Min and overall Max and an increasing trend of more than 100 threads per hour" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+          For ($i=0;$i -lt $ProcessThreadCount.Count;$i++)
+          {
+            $oCounterInstance = $ProcessThreadCount[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)                  
+                  If (($MinMaxDifference -gt 250) -and ($oCounterInstance.QuantizedTrend[$t] -gt 100))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Possible Thread Leak: More than 500 threads between overall Min and overall Max and an increasing trend of more than 500 threads per hour" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+          For ($i=0;$i -lt $ProcessThreadCount.Count;$i++)
+          {
+            $oCounterInstance = $ProcessThreadCount[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)
+                  $TwoHundredAndFiftyMegaBytes = 262144000
+                  If (($MinMaxDifference -gt 500) -and ($oCounterInstance.QuantizedTrend[$t] -gt 500))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Process(*)\Thread Count" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\Thread Count" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[The number of threads currently active in this process. An instruction is the basic unit of execution in a processor, and a thread is the object that executes instructions. Every running process has at least one thread.<BR>
+<BR>
+This analysis checks all of the processes to determine if a process has more than 500 threads and if it is on an increasing trend of 50 threads per hour. A process with a large number of threads and/or an aggressive upward trend could indicate a thread leak which typically results in either a memory leak or high context switching. High context switching will result in high privileged mode CPU. ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process Working Set" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\Working Set" ID="{e32af772-a24e-4a01-abe8-cd4f9d98253a}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\Working Set" COLLECTIONVARNAME="ProcessWorkingSet" EXPRESSIONPATH="\Process(*)\Working Set" DATATYPE="integer" />
+    <THRESHOLD NAME="The working set of all processes combined is increasing at a rate greater than 100MBs per hour" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+        $OneHundredMegaBytes = 104857600
+        StaticThreshold -CollectionOfCounterInstances $ProcessWorkingSet -Operator 'gt' -Threshold $OneHundredMegaBytes -IsTrendOnly $True
+         ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Process(*)\Working Set" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\Working Set" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[Working Set is the current size, in bytes, of the Working Set of a process. The Working Set is the set of memory pages touched recently by the threads in the process. It is the amount of RAM consumed by each process. If available physical memory (RAM) in the computer is above a threshold, pages are left in the Working Set of a process longer.  When available memory falls below a threshold, pages are trimmed from Working Sets more frequently than when not in a low available memory condition. If the trimmed page are still in RAM, but not in the processes working set (due to being trimmed), then some of them may be soft-faulted (RAM to RAM) back into the Working Set.<BR>
+This analysis checks for an increasing trend of 100 MB or more per hour in all of the processes combined. This could be an aggressive working set (RAM usage) leak, but keep in mind that this is only tracking the amount of RAM used by all of the processes and does not include committed memory that has trimmed from the working set. This is generally why Private Bytes is a better counter to use for general memory leaks. With that said, Working Set is a helpful counter to have when analyzing low physical memory conditions that might be induced by page locking which can preven the virtual memory manager from trimming. Use this analysis in correlation with Available Memory Analysis.<BR>
+<BR>
+<B>Reference:</B><BR>
+<UL>
+<LI><A HREF="http://technet.microsoft.com/en-us/library/7a44b064-8872-4edf-aac7-36b2a17f662a.aspx">Ruling Out Memory-Bound Problems<BR></A></LI>
+<LI><A HREF="http://blogs.technet.com/clinth/archive/2009/07/07/the-case-of-the-out-of-memory-biztalk-server.aspx">The Case of the Out of Memory BizTalk Server</A></LI>
+</UL>
+]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process % Processor Time" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\% Processor Time" ID="{5d1ee989-6e41-410b-8e41-a9d26b52d171}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\% Processor Time" COLLECTIONVARNAME="ProcessPercentProcessorTimeALL" EXPRESSIONPATH="\Process(*)\% Processor Time" MINVARNAME="MinPercentProcessorTime" AVGVARNAME="AvgPercentProcessorTime" MAXVARNAME="MaxPercentProcessorTime" TRENDVARNAME="TrendPercentProcessorTime" DATATYPE="integer">
+      <EXCLUDE INSTANCE="Idle" />
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\Process(*)\% Processor Time" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\% Processor Time" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[This analysis checks all of the processes to determine if any of the processes are consuming a large amount of CPU.<BR>
+<BR>
+If a user-mode processor bottleneck is suspected, then consider using a process profiler to analyze the functions causing the high CPU consumption. See How To: Identify Functions causing a High User-mode CPU Bottleneck for Server Applications in a Production Environment article in the references section for more information.<BR>
+<BR>
+<b>Role Specific</b><br>
+<br>
+- Process(MSExchangeMailboxAssistants*)\%Processor Time should be less than 5% of overll CPU<br>
+<br>
+- Process(msftefd*)\%Processor Time should be less than 10% of what the store process is consuming. <b>Note:</b> If indexing is running and overall CPU is greater than 80%, then msfte should backoff it's CPU usage if that threshold is hit.<br>
+<br>
+<B>References:</B><BR>
+Measuring .NET Application Performance<BR>
+http://msdn2.microsoft.com/en-us/library/ms998579.aspx<BR>
+<BR>
+How To: Identify Functions causing a High User-mode CPU Bottleneck for Server Applications in a Production Environment http://www.codeplex.com/PerfTesting/Wiki/View.aspx?title=How%20To%3a%20Identify%20a%20Disk%20Performance%20Bottleneck%20Using%20SPA&referringTitle=How%20Tos ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process Virtual Bytes" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\Virtual Bytes" ID="{b722a20b-d937-428b-b1b7-011f0176a9ed}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\Virtual Bytes" COLLECTIONVARNAME="ProcessVirtualBytesALL" EXPRESSIONPATH="\Process(*)\Virtual Bytes" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\Process(*)\Virtual Bytes" ISTHRESHOLDSADDED="True" DATASOURCE="\Process(*)\Virtual Bytes" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[If ($($SixtyFourBit) -eq $False)
+{
+	$PercentageOfMaxProcessAddressSpace = 0.75 * 2GB
+	$MaxProcessAddressSpace = 2GB
+}
+Else
+{
+	$PercentageOfMaxProcessAddressSpace = 0.75 * 8TB
+	$MaxProcessAddressSpace = 8TB
+}
+StaticChartThreshold -CollectionOfCounterInstances $ProcessVirtualBytesALL -MinThreshold $PercentageOfMaxProcessAddressSpace -MaxThreshold $MaxProcessAddressSpace -IsOperatorGreaterThan $True -UseMaxValue $False]]></CODE>
+      </SERIES>
+    </CHART>
+    <THRESHOLD NAME="Greater than 75 percent of estimated process virtual address space" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <CODE><![CDATA[If ($($SixtyFourBit) -eq $False)
+{
+	$PercentageOfMaxProcessAddressSpace = 0.75 * 2GB
+	StaticThreshold -CollectionOfCounterInstances $ProcessVirtualBytesALL -Operator 'gt' -Threshold $PercentageOfMaxProcessAddressSpace
+}
+Else
+{
+	$PercentageOfMaxProcessAddressSpace = 0.75 * 8TB
+	StaticThreshold -CollectionOfCounterInstances $ProcessVirtualBytesALL -Operator 'gt' -Threshold $PercentageOfMaxProcessAddressSpace
+}]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[This analysis determines if any of the processes are consuming a large of virtual memory. 32-bit processes by default are only allowed to access up to 2 GB of user mode memory. If the process becomes close to this maximum, then it could starve for memory. If a process is becoming close to it's maximum, then consider moving the process to a 64-bit system. On 32-bit Windows and Windows Server, the /3GB switch could be used to give user mode processes up to 3 GB of addressable memory, but this takes away 1 GB of memory from the kernel which could have worse affects on the entire system such as with Pool Paged Memory and Pool Non-Paged Memory. On x64 (64-bit implementation) Windows and Windows Server, 32-bit processes that are large address aware can address up to 4 GB of virtual address space each and 64-bit processes can address up to 8 TB of virtual address space each. It is important that processes have plenty of virtual address space.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process IO Data Operations/sec" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\IO Data Operations/sec" ID="{c6cd5155-ab45-40ae-90d8-0d562e60e566}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\IO Data Operations/sec" COLLECTIONVARNAME="CollectionOfProcessIODataOperationssecALL" EXPRESSIONPATH="\Process(*)\IO Data Operations/sec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="This process is using more than 1000 data I/O's (network or disk) per second" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfProcessIODataOperationssecALL -Operator 'gt' -Threshold 1000       
+         ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Process(*)\IO Data Operations/sec" ISTHRESHOLDSADDED="True" DATASOURCE="\Process(*)\IO Data Operations/sec" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfProcessIODataOperationssecALL -MinThreshold 1000 -MaxThreshold 1299.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[The rate at which the process is issuing read and write I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/Os.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process IO Other Operations/sec" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\IO Other Operations/sec" ID="{d85a7da5-aef3-47bc-b814-87581706fea8}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\IO Other Operations/sec" COLLECTIONVARNAME="CollectionOfProcessIOOtherOperationssecALL" EXPRESSIONPATH="\Process(*)\IO Other Operations/sec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="This process is using more than 1000 data I/O's (network or disk) per second" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfProcessIOOtherOperationssecALL -Operator 'gt' -Threshold 1000       
+         ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Process(*)\IO Other Operations/sec" ISTHRESHOLDSADDED="True" DATASOURCE="\Process(*)\IO Other Operations/sec" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfProcessIOOtherOperationssecALL -MinThreshold 1000 -MaxThreshold 1299.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[The rate at which the process is issuing I/O operations that are neither read nor write operations (for example, a control function). This counter counts all I/O activity generated by the process to include file, network and device I/Os.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process ID Process" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\ID Process" ID="3a1afd8a-9143-41ad-bbe9-dbd03a6e2346" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\ID Process" COLLECTIONVARNAME="CollectionOfProcessIDProcess" EXPRESSIONPATH="\Process(*)\ID Process" TRENDVARNAME="TrendProcessIDProcess" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Process(*)\ID Process" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\ID Process" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[ID Process is the unique identifier of this process. ID Process numbers are reused, so they only identify a process for the lifetime of that process.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process IO Read Operations/sec" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\IO Read Operations/sec" ID="cfb952d7-5aff-4014-8aec-83bbf23b0017" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\IO Read Operations/sec" COLLECTIONVARNAME="CollectionOfProcessIOReadOperationssec" EXPRESSIONPATH="\Process(*)\IO Read Operations/sec" TRENDVARNAME="TrendProcessIOReadOperationssec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\Process(*)\IO Read Operations/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\IO Read Operations/sec" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[The rate at which the process is issuing read I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/Os.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process IO Write Operations/sec" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\IO Write Operations/sec" ID="2b7f4fe7-7693-4270-8e96-21850b7560e3" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\IO Write Operations/sec" COLLECTIONVARNAME="CollectionOfProcessIOWriteOperationssec" EXPRESSIONPATH="\Process(*)\IO Write Operations/sec" TRENDVARNAME="TrendProcessIOWriteOperationssec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\Process(*)\IO Write Operations/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\IO Write Operations/sec" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[The rate at which the process is issuing write I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/Os.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process % Privileged Time" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(*)\% Privileged Time" ID="fd357126-a449-4f5f-8e4a-3ff476f3421c" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(*)\% Privileged Time" COLLECTIONVARNAME="CollectionOfProcessPercentPrivilegedTime" EXPRESSIONPATH="\Process(*)\% Privileged Time" TRENDVARNAME="TrendProcessPercentPrivilegedTime" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+      <EXCLUDE INSTANCE="Idle" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\Process(*)\% Privileged Time" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(*)\% Privileged Time" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[% Privileged Time is the percentage of elapsed time that the process threads spent executing code in privileged mode. When a Windows system service is called, the service will often run in privileged mode to gain access to system-private data. Such data is protected from access by threads executing in user mode. Calls to the system can be explicit or implicit, such as page faults or interrupts. Unlike some early operating systems, Windows uses process boundaries for subsystem protection in addition to the traditional protection of user and privileged modes. Some work done by Windows on behalf of the application might appear in other subsystem processes in addition to the privileged time in the process.]]></DESCRIPTION>
+  </ANALYSIS>
+  <INHERITANCE FILEPATH="QuickSystemOverview.xml" />
+  <INHERITANCE FILEPATH="VMWare.xml" />
+</PAL>

@@ -1,0 +1,2284 @@
+<?xml version="1.0"?>
+<PAL PALVERSION="2.0" NAME="Quick System Overview (Spanish report)" DESCRIPTION="Translated by RenÃ© Alejandro Villeda Ruz. The report is in Spanish. Still requires an English counter log. Quick base operating system performance analysis. Use this for a high level analysis. This threshold file does not contain the Process object to help reduce overhead." CONTENTOWNERS="Clint Huffman" FEEDBACKEMAILADDRESS="clinth@microsoft.com" VERSION="1.4" LANGUAGE="English" LANGUAGECODE="en">
+  <!--<INHERITANCE FILEPATH="" />-->
+  <!--This is to allow inheritance from other threshold files. The order of the inheritance tags matters a great deal. The first one will be overwritten by the next. Once there are no more inheritance tags, the current threshold file overwrites.-->
+  <QUESTION DATATYPE="integer" DEFAULTVALUE="4" QUESTIONVARNAME="NumberOfProcessors">Cuantos procesadores (fisicos o virtuales) posee el servidor?</QUESTION>
+  <QUESTION DATATYPE="boolean" DEFAULTVALUE="False" QUESTIONVARNAME="ThreeGBSwitch">Se encuentra habilitada la opcion /3GB en el servidor?</QUESTION>
+  <QUESTION DATATYPE="boolean" DEFAULTVALUE="False" QUESTIONVARNAME="SixtyFourBit">El servidor es de 64-bit?</QUESTION>
+  <QUESTION DATATYPE="integer" DEFAULTVALUE="4" QUESTIONVARNAME="TotalMemory">Cuanta memoria posee el servidor, en gigabytes?</QUESTION>
+  <ANALYSIS NAME="Memory Available MBytes" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Available MBytes" ID="{798f674d-5173-4115-a051-4589dde82bea}">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Available MBytes" EXPRESSIONPATH="\Memory\Available MBytes" COLLECTIONVARNAME="CollectionOfAvailableMBytes" DATATYPE="Integer" />
+    <CHART CHARTTITLE="\Memory\Available MBytes" ISTHRESHOLDSADDED="True" DATASOURCE="\Memory\Available MBytes" CHARTLABELS="computer" BACKGRADIENTSTYLE="BottomTop">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          $TenPercentOfPhysicalMemory = $($TotalMemory * 1024) * 0.10
+          $FivePercentOfPhysicalMemory = $($TotalMemory * 1024) * 0.05
+          If ($FivePercentOfPhysicalMemory -lt 64)
+          {
+            $FivePercentOfPhysicalMemory = 64
+          }          
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfAvailableMBytes -MinThreshold $FivePercentOfPhysicalMemory -MaxThreshold $TenPercentOfPhysicalMemory -IsOperatorGreaterThan $False -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          $FivePercentOfPhysicalMemory = $($TotalMemory * 1024) * 0.05
+          If ($FivePercentOfPhysicalMemory -lt 64)
+          {
+            $FivePercentOfPhysicalMemory = 64
+          }
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfAvailableMBytes -MinThreshold 0.001 -MaxThreshold $FivePercentOfPhysicalMemory -IsOperatorGreaterThan $False -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <THRESHOLD NAME="Menos del 10 porciento de memoria RAM se encuentra disponible" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        $TenPercentOfPhysicalMemory = $($TotalMemory * 1024) * 0.10
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfAvailableMBytes -Operator 'lt' -Threshold $TenPercentOfPhysicalMemory
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Menos del 5 porciento o menos de 64MBs de memoria RAM se encuentra disponible" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        $FivePercentOfPhysicalMemory = $($TotalMemory * 1024) * 0.05
+        If ($FivePercentOfPhysicalMemory -lt 64)
+        {
+          $FivePercentOfPhysicalMemory = 64
+        }
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfAvailableMBytes -Operator 'lt' -Threshold $FivePercentOfPhysicalMemory
+        ]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[
+MBytes disponibles es la cantidad de RAM fisica, en megabytes, disponible de modo inmediato para su asignacion a un proceso o para el uso del sistema. Es igual a la suma de la memoria asignada a la espera (en cache), las listas de paginas libres y cero. Si este contador es bajo, entonces el equipo se esta quedando sin memoria RAM fisica. <BR>
+Este analisis emitira una advertencia si el valor de este contador es menor que el 10% de la RAM instalada y una alerta critica si el valor de este contador es menor a 100 MB. Cuando Windows Server 2003 u otra version mas reciente tiene menos de 100 Mbs de memoria RAM disponible, pasa a un estado de poca memoria y alerta a los procesos de esta condicion.  Si se presenta una condicion de memoria baja el sistema operativo sera mas agresivo en el conjunto de trabajo, pasando las paginas de la memoria RAM fisica que utilizan los procesos hacia el archivo de paginacion en el disco.
+<B>Referencias:</B>
+<UL>
+<LI><A HREF="http://msdn2.microsoft.com/en-us/library/ms998579.aspx">Measuring .NET Application Performance</A></LI>
+<LI><A HREF="http://www.codeplex.com/PerfTesting/Wiki/View.aspx?title=How%20To%3a%20Identify%20a%20Disk%20Performance%20Bottleneck%20Using%20SPA&referringTitle=How%20Tos">How To: Identify Functions causing a High User-mode CPU Bottleneck for Server Applications in a Production Environment</A></LI>
+</UL>
+<BR>
+
+]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Processor % Processor Time" ENABLED="True" CATEGORY="Processor" PRIMARYDATASOURCE="\Processor(*)\% Processor Time" ID="{cb0ff328-03e6-46e2-b1c9-aae2e23deff3}">
+    <DATASOURCE TYPE="CounterLog" NAME="\Processor(*)\% Processor Time" EXPRESSIONPATH="\Processor(*)\% Processor Time" COLLECTIONVARNAME="CollectionOfPercentProcessorTime" DATATYPE="Integer" />
+    <THRESHOLD NAME="More than 50% Processor Utilization" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfPercentProcessorTime -Operator 'gt' -Threshold 50
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 80% Processor Utilization" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfPercentProcessorTime -Operator 'gt' -Threshold 80
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Processor(*)\% Processor Time" ISTHRESHOLDSADDED="True" DATASOURCE="\Processor(*)\% Processor Time" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfPercentProcessorTime -MinThreshold 50 -MaxThreshold 80 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfPercentProcessorTime -MinThreshold 80 -MaxThreshold 99.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[% Tiempo de procesador es el porcentaje de tiempo transcurrido que el procesador utiliza al ejecutar un subproceso no inactivo. Se calcula midiendo el tiempo activo que presenta el subproceso inactivo en el intervalo de muestreo, y restando ese tiempo de duracion del intervalo. Este contador es el principal indicador de la actividad del procesador, y muestra el porcentaje promedio de tiempo ocupado observado durante el intervalo de la muestra. % Tiempo de procesador es la suma de % de tiempo del usuario y % Tiempo privilegiado.
+       Este analisis genera una alerta de advertencia cuando se presenta una utilizacion de mas del 50% en cualquier procesador y crea una alerta critica si existe una utilizacion de mas del 80%. <BR>
+       Si la utilizacion promedio del procesador es alta en base a los umbrales dentro de este analisis, entonces es recomendable verificar si se trata del modo usuario de alto CPU o modo de altos privilegios. Si se sospecha que se ha concedido el modo de CPU en altos privilegios, verificar el Analisis de la CPU en modo de altos privilegios. 
+	   Si se sospecha de un cuello de botella del procesador en modo de usuario, entonces considerar el uso de un analizador de proceso para verificar las funciones que causa el consumo de la CPU. Ver el articulo <A HREF="http://www.codeplex.com/PerfTesting/Wiki/View.aspx?title=How%20To%3a%20Identify%20a%20Disk%20Performance%20Bottleneck%20Using%20SPA&referringTitle=How%20Tos"> How To: Identify Functions causing a High User-mode CPU Bottleneck for Server Applications in a Production Environment</A>  en la seccion de referencias para mas informacion.
+       <BR>
+<B>Referencias:</B>
+<UL>
+<LI><A HREF="http://msdn2.microsoft.com/en-us/library/ms998579.aspx">Measuring .NET Application Performance</A></LI>
+<LI><A HREF="http://www.codeplex.com/PerfTesting/Wiki/View.aspx?title=How%20To%3a%20Identify%20a%20Disk%20Performance%20Bottleneck%20Using%20SPA&referringTitle=How%20Tos">How To: Identify Functions causing a High User-mode CPU Bottleneck for Server Applications in a Production Environment</A></LI>
+</UL>
+<BR>
+
+]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Processor % Privileged Time" ENABLED="True" CATEGORY="Processor" PRIMARYDATASOURCE="\Processor(*)\% Privileged Time" ID="{458b8c41-1cd4-4380-97e5-07aa279f841f}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Processor(*)\% Privileged Time" COLLECTIONVARNAME="CollectionOfProcessorPercentPrivilegedTimeAll" EXPRESSIONPATH="\Processor(*)\% Privileged Time" DATATYPE="integer" />
+    <THRESHOLD NAME="More than 20% privileged (kernel) mode CPU usage" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfProcessorPercentPrivilegedTimeAll -Operator 'gt' -Threshold 20        
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 30% privileged (kernel) mode CPU usage" CONDITION="Critical" COLOR="Red" PRIORITY="100">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfProcessorPercentPrivilegedTimeAll -Operator 'gt' -Threshold 30
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Processor(*)\% Privileged Time" ISTHRESHOLDSADDED="True" DATASOURCE="\Processor(*)\% Privileged Time" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfProcessorPercentPrivilegedTimeAll -MinThreshold 20 -MaxThreshold 30 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfProcessorPercentPrivilegedTimeAll -MinThreshold 30 -MaxThreshold 99.999 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Este contador indica el porcentaje de tiempo que un subproceso se ejecuta en modo privilegiado tambien conocido como modo de nucleo. Cuando la aplicacion invoca a funciones del sistema operativo (por ejemplo, para realizar operaciones con archivos o de E/S con la red o para asignar memoria), estas funciones del sistema operativo se ejecutan en modo privilegiado. <BR>
+<BR>
+CPU en modo de altos privilegios indica que la computadora esta gastando demasiado tiempo en operaciones de E/S de sistema en comparacion con el trabajo real (modo usuario). % Tiempo privilegiado es el porcentaje de tiempo durante el cual los hilos del proceso ejecutaron codigo en modo privilegiado. Cuando un servicio de sistema de Windows es invocado, el servicio a menudo se ejecuta en modo privilegiado para acceder al datos privados del sistema. Estos datos estan protegidos contra el acceso de subprocesos que se ejecutan en modo de usuario. Las llamadas al sistema pueden ser explicitas o implicitos, tales como errores de pagina o interrupciones. A diferencia de otros sistemas operativos anteriores, Windows utiliza los limites del proceso para la proteccion del subsistema, ademas de la proteccion tradicional del manejo del modo de usuario y modo privilegiado. Algunos trabajos realizados por Windows en nombre de la aplicacion pueden aparecer en los procesos de otro subsistema, ademas del tiempo privilegiado en el proceso. <BR>
+<BR>
+Este analisis arroja una alerta de advertencia si la CPU en modo privilegiado se consume mas del 20% del total de la CPU y una alerta critica, si consume mas del 30% del total de la CPU.
+<B> Proximos pasos: </B> El consumo de la CPU puede ser causada por otro recurso ocupado, tal como la red, la memoria o peticiones de E/S a disco. El CPU en modo de altos privilegios tambien puede presentarse por causa de cantidades altas de Cambios de contexto/segundo. Si es el caso, se recomienda ver el analisis Cambios de contexto/segundo. La herramienta <A HREF="http://www.microsoft.com/whdc/system/sysperf/krview.mspx"> KernRate (KrView) </A> se puede utilizar para analizar el nucleo o kernel y determinar que componente es el que consume de la mayoria de los recursos del kernel. Para ver mas informacion sobre como utilizar KernRate para analizar los problemas de CPU en modo de altos privilegios, consulte la entrada del blog de Mark Russinovich en la seccion de referencias. <BR>
+<BR>
+<B>Referencias:</B><BR>
+<UL>
+<LI><A HREF="http://msdn2.microsoft.com/en-us/library/ms998579.aspx">Measuring .NET Application Performance</A></LI>
+<LI><A HREF="http://blogs.technet.com/markrussinovich/archive/2008/04/07/3031251.aspx">Mark's Blog : The Case of the System Process CPU Spikes</A></LI>
+</UL>
+]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Network Interface % Network Utilization" ENABLED="True" CATEGORY="Network Interface" PRIMARYDATASOURCE="\Network Interface(*)\Bytes Total/sec" ID="{2a3b7706-a244-4d0d-a0a8-33f5eddcdee7}">
+    <DATASOURCE TYPE="CounterLog" NAME="\Network Interface(*)\Bytes Total/sec" EXPRESSIONPATH="\Network Interface(*)\Bytes Total/sec" COLLECTIONVARNAME="CollectionOfNetworkInterfaceBytesTotalPerSec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <DATASOURCE TYPE="CounterLog" NAME="\Network Interface(*)\Current Bandwidth" EXPRESSIONPATH="\Network Interface(*)\Current Bandwidth" COLLECTIONVARNAME="CollectionOfNetworkInterfaceCurrentBandwidth" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <DATASOURCE TYPE="Generated" NAME="\Network Interface(*)\% Network Utilization" EXPRESSIONPATH="\Network Interface(*)\% Network Utilization" COLLECTIONVARNAME="CollectionOfNetworkUtilization" DATATYPE="integer">
+      <CODE><![CDATA[
+          $CollectionOfNetworkUtilization = @{}
+          For ($i=0;$i -lt $CollectionOfNetworkInterfaceBytesTotalPerSec.Count;$i++)
+          {
+            For ($a=0;$a -lt $CollectionOfNetworkInterfaceCurrentBandwidth.Count;$a++)
+            {
+              If ($CollectionOfNetworkInterfaceBytesTotalPerSec[$i].CounterInstance -eq $CollectionOfNetworkInterfaceCurrentBandwidth[$a].CounterInstance)
+              { 
+                $b = $a
+              }
+            }
+            $alValues = New-Object System.Collections.ArrayList
+            For ($v=0;$v -lt $CollectionOfNetworkInterfaceBytesTotalPerSec[$i].Value.Count;$v++)
+            {
+              If (($CollectionOfNetworkInterfaceBytesTotalPerSec[$i].QuantizedAvg[$v] -gt 0) -and ($CollectionOfNetworkInterfaceCurrentBandwidth[$b].QuantizedAvg[$v] -gt 0))
+              {
+                [int]$iPercentageOfNetworkUtilization = (([double]$CollectionOfNetworkInterfaceBytesTotalPerSec[$i].QuantizedAvg[$v] * 8) / [double]$CollectionOfNetworkInterfaceCurrentBandwidth[$b].QuantizedAvg[$v]) * 100
+                [void] $alValues.Add($iPercentageOfNetworkUtilization)
+              }
+              Else
+              {
+                [void] $alValues.Add(0)
+              }
+            }
+            $sGeneratedInstanceName = "\\$($CollectionOfNetworkInterfaceBytesTotalPerSec[$i].CounterComputer)\$($CollectionOfNetworkInterfaceBytesTotalPerSec[$i].CounterObject)($($CollectionOfNetworkInterfaceBytesTotalPerSec[$i].CounterInstance))\% Network Utilization"
+            $CollectionOfNetworkUtilization.Add($sGeneratedInstanceName,$alValues)
+          }
+        ]]></CODE>
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="More than 50% Network Utilization" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $CollectionOfNetworkUtilization -Operator 'gt' -Threshold 50
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 80% Network Utilization" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfNetworkUtilization -Operator 'gt' -Threshold 80
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="% Network Utilization" ISTHRESHOLDSADDED="True" DATASOURCE="\Network Interface(*)\% Network Utilization" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfNetworkUtilization -MinThreshold 50 -MaxThreshold 80 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfNetworkUtilization -MinThreshold 80 -MaxThreshold 99.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Network Interface Output Queue Length" ENABLED="True" CATEGORY="Network Interface" PRIMARYDATASOURCE="\Network Interface(*)\Output Queue Length" ID="{c656eb10-a1f1-48d1-bc49-91abbb8bf4a1}">
+    <DATASOURCE TYPE="CounterLog" NAME="\Network Interface(*)\Output Queue Length" EXPRESSIONPATH="\Network Interface(*)\Output Queue Length" COLLECTIONVARNAME="CollectionOfNetworkInterfaceOutputQueueLength" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="More than 1 packet is waiting in the output queue" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $CollectionOfNetworkInterfaceOutputQueueLength -Operator 'gt' -Threshold 1
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 2 packets are waiting in the output queue" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfNetworkInterfaceOutputQueueLength -Operator 'gt' -Threshold 2
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Network Interface(*)\Output Queue Length" ISTHRESHOLDSADDED="True" DATASOURCE="\Network Interface(*)\Output Queue Length" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfNetworkInterfaceOutputQueueLength -MinThreshold 1 -MaxThreshold 1.999 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfNetworkInterfaceOutputQueueLength -MinThreshold 2 -MaxThreshold 2.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="System Processor Queue Length" ENABLED="True" CATEGORY="System" PRIMARYDATASOURCE="\System\Processor Queue Length" ID="{36a4a252-92de-4d0c-9a28-ca817290ec75}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\System\Processor Queue Length" COLLECTIONVARNAME="SystemProcessorQueueLength" EXPRESSIONPATH="\System\Processor Queue Length" DATATYPE="Integer" />
+    <THRESHOLD NAME="More than 2 ready threads are queued for each processor" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+          If ($($NumberOfProcessors) -ge 1)
+          {
+            $TwoTimesNumberOfProcessors = $NumberOfProcessors * 2
+          }
+          Else
+          {
+            $TwoTimesNumberOfProcessors = 2
+          }        
+         StaticThreshold -CollectionOfCounterInstances $SystemProcessorQueueLength -Operator 'gt' -Threshold $TwoTimesNumberOfProcessors
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 10 ready threads are queued for each processor" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+          If ($($NumberOfProcessors) -ge 1)
+          {
+            $TenTimesNumberOfProcessors = $NumberOfProcessors * 10
+          }
+          Else
+          {
+            $TenTimesNumberOfProcessors = 10
+          }        
+         StaticThreshold -CollectionOfCounterInstances $SystemProcessorQueueLength -Operator 'gt' -Threshold $TenTimesNumberOfProcessors
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\System\Processor Queue Length" ISTHRESHOLDSADDED="True" DATASOURCE="\System\Processor Queue Length" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          #// The minus 0.001 allow the values allow the critical values to be at the very top of the chart otherwise the chart control pads it with white space.
+          If ($($NumberOfProcessors) -ge 1)
+          {
+            $TwoTimesNumberOfProcessors = ($NumberOfProcessors * 2) - 0.001
+            $TenTimesNumberOfProcessors = ($NumberOfProcessors * 10) - 0.001
+          }
+          Else
+          {
+            $TwoTimesNumberOfProcessors = 2 - 0.001
+            $TenTimesNumberOfProcessors = 10 - 0.001
+          }
+          StaticChartThreshold -CollectionOfCounterInstances $SystemProcessorQueueLength -MinThreshold $TwoTimesNumberOfProcessors -MaxThreshold $TenTimesNumberOfProcessors
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          #// The minus 0.001 allow the values allow the critical values to be at the very top of the chart otherwise the chart control pads it with white space.
+          If ($($NumberOfProcessors) -ge 1)
+          {
+            $TenTimesNumberOfProcessors = ($NumberOfProcessors * 10) - 0.001
+            $TwentyTimesNumberOfProcessors = ($NumberOfProcessors * 20) - 0.001
+          }
+          Else
+          {
+            $TenTimesNumberOfProcessors = 2 - 0.001
+            $TwentyTimesNumberOfProcessors = 10 - 0.001
+          }
+          StaticChartThreshold -CollectionOfCounterInstances $SystemProcessorQueueLength -MinThreshold $TenTimesNumberOfProcessors -MaxThreshold $TwentyTimesNumberOfProcessors
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Longitud de la cola del procesador (PQL) es el numero de subprocesos en la cola del procesador. A diferencia de los contadores de disco, este contador muestra solamente subprocesos listos, no subprocesos que se encuentran ejecutandose. Existe una sola cola para el  tiempo de procesador, incluso en equipos con varios procesadores. Por lo tanto, si un equipo tiene varios procesadores, es necesario dividir este valor entre el numero de procesadores que atienden la carga de trabajo. Una cola de procesador sostenida de menos de 10 subprocesos por procesador es normalmente aceptable, dependiendo de la carga de trabajo. <BR>
+<BR>
+Este analisis determina si la longitud de la cola de procesador media supera el numero de procesadores. Si es asi, esto podria indicar un cuello de botella en el procesador. Utilice este analisis en correlacion con el analisis de la CPU en modo privilegiado y el analisis de Uso excesivo del procesador. <BR>
+<BR>
+Si hay mas tareas listas para ejecutarse que procesadores, entonces los subprocesos se encolan. La cola del procesador es un conjunto de subprocesos que estan listos para ejecutarse pero no pueden ser ejecutados por el procesador debido a que otro subproceso activo se encuentra ejecutandose actualmente. Una cola con un numero sostenido o recurrente de mas subprocesos que el total de procesadores es un buen indicio que un cuello de botella en el procesador se esta presentando <BR>
+<BR>
+Se puede utilizar este contador junto con el contador Procesador \% Tiempo de procesador para determinar si su aplicacion puede beneficiarse de mas procesadores. Solamente existe una cola de tiempo de procesador, incluso en equipos con varios procesadores.
+<BR>
+Si el procesador esta muy ocupado (90 por ciento o mas de utilizacion) y la media la PQL es consistentemente mayor que el numero de procesadores, entonces usted puede tener un cuello de botella del procesador el cual podria beneficiarse de procesadores adicionales, o procesadores con velocidades de reloj mas alta. Alternativamente, se podria reducir el numero de subprocesos y de la cola, mas en el nivel de aplicacion. Esto hara que haya menos cambios de contexto, y menos cambios de contexto es bueno para reducir la carga en el procesador.
+<BR>
+<B>Referencia:</B>
+<UL>
+<LI><A HREF="http://msdn2.microsoft.com/en-us/library/ms998579.aspx">Measuring .NET Application Performance</A></LI>
+</UL>
+ ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="System High Context Switching" ENABLED="True" CATEGORY="System" PRIMARYDATASOURCE="\System\Context Switches/sec" ID="{c0eb3777-a89d-4889-bc37-2f5865a928ee}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Processor(_Total)\% Processor Time" COLLECTIONVARNAME="ProcessorPercentProcessorTimeTotal" EXPRESSIONPATH="\Processor(_Total)\% Processor Time" DATATYPE="Integer" />
+    <DATASOURCE TYPE="CounterLog" NAME="\Processor(_Total)\% Privileged Time" COLLECTIONVARNAME="ProcessorPercentPrivilegedTimeTotal" EXPRESSIONPATH="\Processor(_Total)\% Privileged Time" DATATYPE="Integer" />
+    <DATASOURCE TYPE="CounterLog" NAME="\System\Context Switches/sec" COLLECTIONVARNAME="SystemContextSwitchessec" EXPRESSIONPATH="\System\Context Switches/sec" DATATYPE="Integer" />
+    <THRESHOLD NAME="More than 2,500 Context Switches/sec per processor, more than 20% ratio of privileged to total CPU, and more than 50% total processor time or more than 10,000 Context Switches/sec" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        $NumberOfProcessors = [Int] $NumberOfProcessors
+          If ($($NumberOfProcessors) -ge 1)
+          {
+            $TwentyFiveHundredTimesNumberOfProcessors = ($NumberOfProcessors * 2500)
+          }
+          Else
+          {
+            $TwentyFiveHundredTimesNumberOfProcessors = 2500
+          }
+          For ($i=0;$i -lt $SystemContextSwitchessec.Count;$i++)
+          {
+            $oCounterInstance = $SystemContextSwitchessec[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+              If (($oCounterInstance.QuantizedMin[$t] -ne '-') -and ($oCounterInstance.QuantizedMin[$t] -ne $null))
+              {
+                If (($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t] -ne '-') -and ($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t] -ne $null))
+                {
+                  If (($ProcessorPercentPrivilegedTimeTotal[0].QuantizedMin[$t] -ne '-') -and ($ProcessorPercentPrivilegedTimeTotal[0].QuantizedMin[$t] -ne $null))
+                  {
+                    $PercentageOfPrivilegedModeCPUToTotalCPU = ($($ProcessorPercentPrivilegedTimeTotal[0].QuantizedMin[$t]) * 100) / $($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t])
+                    If (($PercentageOfPrivilegedModeCPUToTotalCPU -gt 20) -and ($($oCounterInstance.QuantizedMin[$t]) -gt $TwentyFiveHundredTimesNumberOfProcessors) -and ($($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t]) -gt 50))
+                    {
+                      $IsMinThresholdBroken = $True
+                      $IsMinEvaulated = $True
+                    }
+                    If ($($oCounterInstance.QuantizedMin[$t]) -gt 10000)
+                    {
+                      $IsMinThresholdBroken = $True
+                      $IsMinEvaulated = $True
+                    }
+                  }
+                }
+              }
+            
+              If (($oCounterInstance.QuantizedAvg[$t] -ne '-') -and ($oCounterInstance.QuantizedAvg[$t] -ne $null))
+              {
+                If (($ProcessorPercentProcessorTimeTotal[0].QuantizedAvg[$t] -ne '-') -and ($ProcessorPercentProcessorTimeTotal[0].QuantizedAvg[$t] -ne $null))
+                {
+                  If (($ProcessorPercentPrivilegedTimeTotal[0].QuantizedAvg[$t] -ne '-') -and ($ProcessorPercentPrivilegedTimeTotal[0].QuantizedAvg[$t] -ne $null))
+                  {
+                    $PercentageOfPrivilegedModeCPUToTotalCPU = ($($ProcessorPercentPrivilegedTimeTotal[0].QuantizedAvg[$t]) * 100) / $($ProcessorPercentProcessorTimeTotal[0].QuantizedAvg[$t])
+                    If (($PercentageOfPrivilegedModeCPUToTotalCPU -gt 20) -and ($($oCounterInstance.QuantizedAvg[$t]) -gt $TwentyFiveHundredTimesNumberOfProcessors) -and ($($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t]) -gt 50))
+                    {
+                      $IsAvgThresholdBroken = $True
+                      $IsAvgEvaulated = $True
+                    }
+                    If ($($oCounterInstance.QuantizedAvg[$t]) -gt 10000)
+                    {
+                      $IsAvgThresholdBroken = $True
+                      $IsAvgEvaulated = $True
+                    }
+                  }
+                }
+              }
+              If (($oCounterInstance.QuantizedMax[$t] -ne '-') -and ($oCounterInstance.QuantizedMax[$t] -ne $null))
+              {
+                If (($ProcessorPercentProcessorTimeTotal[$i].QuantizedMax[$t] -ne '-') -and ($ProcessorPercentProcessorTimeTotal[$i].QuantizedMax[$t] -ne $null))
+                {
+                  If (($ProcessorPercentPrivilegedTimeTotal[$i].QuantizedMax[$t] -ne '-') -and ($ProcessorPercentPrivilegedTimeTotal[$i].QuantizedMax[$t] -ne $null))
+                  {
+                    $PercentageOfPrivilegedModeCPUToTotalCPU = ($($ProcessorPercentPrivilegedTimeTotal[0].QuantizedMax[$t]) * 100) / $($ProcessorPercentProcessorTimeTotal[$i].QuantizedMax[$t])
+                    If (($PercentageOfPrivilegedModeCPUToTotalCPU -gt 20) -and ($($oCounterInstance.QuantizedMax[$t]) -gt $TwentyFiveHundredTimesNumberOfProcessors) -and ($($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t]) -gt 50))
+                    {
+                      $IsMaxThresholdBroken = $True
+                      $IsMaxEvaulated = $True
+                    }
+                    If ($($oCounterInstance.QuantizedMax[$t]) -gt 10000)
+                    {
+                      $IsMaxThresholdBroken = $True
+                      $IsMaxEvaulated = $True
+                    }                    
+                  }
+                }
+              }        
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 5,000 Context Switches/sec per processor, more than 30% ratio of privileged to total CPU, and more than 70% total processor time or more than 20,000 Context Switches/sec" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+          $NumberOfProcessors = [Int] $NumberOfProcessors
+          If ($($NumberOfProcessors) -ge 1)
+          {
+            $FiveThousandTimesNumberOfProcessors = ($NumberOfProcessors * 5000)
+          }
+          Else
+          {
+            $FiveThousandTimesNumberOfProcessors = 5000
+          }
+          For ($i=0;$i -lt $SystemContextSwitchessec.Count;$i++)
+          {
+            $oCounterInstance = $SystemContextSwitchessec[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.QuantizedMin[$t] -ne '-') -and ($oCounterInstance.QuantizedMin[$t] -ne $null))
+              {
+                If (($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t] -ne '-') -and ($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t] -ne $null))
+                {
+                  If (($ProcessorPercentPrivilegedTimeTotal[0].QuantizedMin[$t] -ne '-') -and ($ProcessorPercentPrivilegedTimeTotal[0].QuantizedMin[$t] -ne $null))
+                  {
+                    $PercentageOfPrivilegedModeCPUToTotalCPU = ($($ProcessorPercentPrivilegedTimeTotal[0].QuantizedMin[$t]) * 100) / $($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t])
+                    If (($PercentageOfPrivilegedModeCPUToTotalCPU -gt 30) -and ($($oCounterInstance.QuantizedMin[$t]) -gt $FiveThousandTimesNumberOfProcessors) -and ($($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t]) -gt 70))
+                    {
+                      $IsMinThresholdBroken = $True
+                      $IsMinEvaulated = $True
+                    }
+                    If ($($oCounterInstance.QuantizedMin[$t]) -gt 20000)
+                    {
+                      $IsMinThresholdBroken = $True
+                      $IsMinEvaulated = $True
+                    }
+                  }
+                }
+              }
+            
+              If (($oCounterInstance.QuantizedAvg[$t] -ne '-') -and ($oCounterInstance.QuantizedAvg[$t] -ne $null))
+              {
+                If (($ProcessorPercentProcessorTimeTotal[0].QuantizedAvg[$t] -ne '-') -and ($ProcessorPercentProcessorTimeTotal[0].QuantizedAvg[$t] -ne $null))
+                {
+                  If (($ProcessorPercentPrivilegedTimeTotal[0].QuantizedAvg[$t] -ne '-') -and ($ProcessorPercentPrivilegedTimeTotal[0].QuantizedAvg[$t] -ne $null))
+                  {
+                    $PercentageOfPrivilegedModeCPUToTotalCPU = ($($ProcessorPercentPrivilegedTimeTotal[0].QuantizedAvg[$t]) * 100) / $($ProcessorPercentProcessorTimeTotal[0].QuantizedAvg[$t])
+                    If (($PercentageOfPrivilegedModeCPUToTotalCPU -gt 30) -and ($($oCounterInstance.QuantizedAvg[$t]) -gt $FiveThousandTimesNumberOfProcessors) -and ($($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t]) -gt 70))
+                    {
+                      $IsAvgThresholdBroken = $True
+                      $IsAvgEvaulated = $True
+                    }
+                    If ($($oCounterInstance.QuantizedAvg[$t]) -gt 20000)
+                    {
+                      $IsAvgThresholdBroken = $True
+                      $IsAvgEvaulated = $True
+                    }                    
+                  }
+                }
+              }
+              If (($oCounterInstance.QuantizedMax[$t] -ne '-') -and ($oCounterInstance.QuantizedMax[$t] -ne $null))
+              {
+                If (($ProcessorPercentProcessorTimeTotal[$i].QuantizedMax[$t] -ne '-') -and ($ProcessorPercentProcessorTimeTotal[$i].QuantizedMax[$t] -ne $null))
+                {
+                  If (($ProcessorPercentPrivilegedTimeTotal[$i].QuantizedMax[$t] -ne '-') -and ($ProcessorPercentPrivilegedTimeTotal[$i].QuantizedMax[$t] -ne $null))
+                  {
+                    $PercentageOfPrivilegedModeCPUToTotalCPU = ($($ProcessorPercentPrivilegedTimeTotal[0].QuantizedMax[$t]) * 100) / $($ProcessorPercentProcessorTimeTotal[$i].QuantizedMax[$t])
+                    If (($PercentageOfPrivilegedModeCPUToTotalCPU -gt 30) -and ($($oCounterInstance.QuantizedMax[$t]) -gt $FiveThousandTimesNumberOfProcessors) -and ($($ProcessorPercentProcessorTimeTotal[0].QuantizedMin[$t]) -gt 70))
+                    {
+                      $IsMaxThresholdBroken = $True
+                      $IsMaxEvaulated = $True
+                    }
+                    If ($($oCounterInstance.QuantizedMax[$t]) -gt 20000)
+                    {
+                      $IsMaxThresholdBroken = $True
+                      $IsMaxEvaulated = $True
+                    }                    
+                  }
+                }
+              }        
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }        
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\System\Context Switches/sec" ISTHRESHOLDSADDED="True" DATASOURCE="\System\Context Switches/sec" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          #// The minus 0.001 allow the values allow the critical values to be at the very top of the chart otherwise the chart control pads it with white space.
+          $NumberOfProcessors = [Int] $NumberOfProcessors          
+          If ($($NumberOfProcessors) -ge 1)
+          {
+            $TwentyFiveHundredTimesNumberOfProcessors = ($NumberOfProcessors * 2500) - 0.001
+          }
+          Else
+          {
+            $TwentyFiveHundredTimesNumberOfProcessors = 2500 - 0.001
+          }
+          $DoubleTwentyFiveHundredTimesNumberOfProcessors = $TwentyFiveHundredTimesNumberOfProcessors * 2
+          StaticChartThreshold -CollectionOfCounterInstances $SystemContextSwitchessec -MinThreshold $TwentyFiveHundredTimesNumberOfProcessors -MaxThreshold $DoubleTwentyFiveHundredTimesNumberOfProcessors
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          #// The minus 0.001 allow the values allow the critical values to be at the very top of the chart otherwise the chart control pads it with white space.
+          $NumberOfProcessors = [Int] $NumberOfProcessors
+          If ($($NumberOfProcessors) -ge 1)
+          {
+            $TwentyFiveHundredTimesNumberOfProcessors = ($NumberOfProcessors * 2500)
+            $FiveThousandTimesNumberOfProcessors = ($NumberOfProcessors * 5000)
+          }
+          Else
+          {
+            $FiveThousandTimesNumberOfProcessors = 5000
+            $TenThousandTimesNumberOfProcessors = 10000
+          }
+          $DoubleTwentyFiveHundredTimesNumberOfProcessors = ($TwentyFiveHundredTimesNumberOfProcessors * 2) - 0.001
+          $DoubleFiveThousandTimesNumberOfProcessors = ($FiveThousandTimesNumberOfProcessors * 2) - 0.001
+          StaticChartThreshold -CollectionOfCounterInstances $SystemContextSwitchessec -MinThreshold $DoubleTwentyFiveHundredTimesNumberOfProcessors -MaxThreshold $DoubleFiveThousandTimesNumberOfProcessors
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[
+Cambios de contexto/seg es la tasa combinada en la que todos los procesadores en el equipo se cambian de un subproceso a otro. Los cambios de contexto se producen cuando un subproceso abandona voluntariamente el procesador, es apropiado por un subproceso de mayor prioridad que se encuentra listo, o se presenta un cambio entre el modo usuario y el modo privilegiado (kernel) para utilizar un servicio del subsistema o un servicio ejecutivo. Es la suma de las metricas Subproceso\\Cambios de contexto/seg para todos los subprocesos que se ejecutan en todos los procesadores en el equipo y se mide en el numero de cambios. Hay contadores de cambio de contexto sobre el sistema y sobre los objetos de los subprocesos. Este contador muestra la diferencia entre los valores observados en las dos ultimas muestras, dividido por la duracion del intervalo de muestra.<BR>
+<BR>
+Un alto numero de cambios de contexto es un problema solamente si el procesador tambien en general es elevado. Este analisis comprueba el alto uso del procesador, el uso del procesador en modo privilegiado, y el alto numero de cambios de contexto del sistema por segundo. <BR>
+<BR>
+Umbral: Como regla general, las tasas de cambio de contexto de mas de 5.000 por procesador por segundo se considera una advertencia. Si las tasas de cambio de contexto superan los 10.000 por segundo por procesador, entonces hay una restriccion.<BR>
+<BR>
+Importancia: El cambio de contexto ocurre cuando un subproceso con prioridad mayor expulsa a un proceso de menor prioridad que se esta ejecutando cuando un subproceso de alta prioridad bloquea. Los altos niveles de cambio de contexto puede ocurrir cuando varios subprocesos comparten el mismo nivel de prioridad. A menudo, esto indica que hay demasiados subprocesos que compiten por los procesadores en el sistema. Si no se observa gran utilizacion del procesador y se registran muy bajos niveles de cambio de contexto, esto podria indicar que los subprocesos se encuentran bloqueados.<BR>
+<B>Referencia:</B>
+<BR>
+Measuring .NET Application Performance<BR>
+<A HREF="http://msdn2.microsoft.com/en-us/library/ms998579.aspx">http://msdn2.microsoft.com/en-us/library/ms998579.aspx</A><BR>
+<BR>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process Private Bytes" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(_Total)\Private Bytes" ID="{bf135d67-22c5-4839-b039-3b8c0e587cd8}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(_Total)\Private Bytes" COLLECTIONVARNAME="ProcessPrivateBytesTotal" EXPRESSIONPATH="\Process(_Total)\Private Bytes" DATATYPE="integer" />
+    <THRESHOLD NAME="Possible Memory Leak: More than 250MBs between overall Min and overall Max and an increasing trend of more than 10MBs per hour" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+        $TenMegaBytes = 10485760
+        $TwoHundredAndFiftyMegaBytes = 262144000
+          For ($i=0;$i -lt $ProcessPrivateBytesTotal.Count;$i++)
+          {
+            $oCounterInstance = $ProcessPrivateBytesTotal[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)                  
+                  If (($MinMaxDifference -gt $TwoHundredAndFiftyMegaBytes) -and ($oCounterInstance.QuantizedTrend[$t] -gt $TenMegaBytes))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Possible Memory Leak: More than 500MBs between overall Min and overall Max and an increasing trend of more than 100MBs per hour" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        $OneHundredMegaBytes = 104857600
+        $FiveHundresMegaBytes = 524288000
+          For ($i=0;$i -lt $ProcessPrivateBytesTotal.Count;$i++)
+          {
+            $oCounterInstance = $ProcessPrivateBytesTotal[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)
+                  $TwoHundredAndFiftyMegaBytes = 262144000
+                  If (($MinMaxDifference -gt $FiveHundresMegaBytes) -and ($oCounterInstance.QuantizedTrend[$t] -gt $OneHundredMegaBytes))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Process(_Total)\Private Bytes" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(_Total)\Private Bytes" CHARTLABELS="instance">
+    </CHART>
+    <DESCRIPTION><![CDATA[Este analisis determina si el sistema sufre de perdidas de memoria a lo largo del tiempo. Un proceso que consume gran parte de la memoria es valido, siempre y cuando el proceso devuelve la memoria utilizada al sistema. Buscar tendencias crecientes en el grafico. Una tendencia creciente durante un largo periodo de tiempo podria indicar una perdida de memoria. Bytes privados es el tamanio actual en bytes de memoria que ha asignado este proceso que no puede ser compartido con otros procesos. Este analisis comprueba los eventos si 10Mb por hora y 5Mb por hora para determinar tendencias crecientes. Utilice este analisis en correlacion con el analisis de Memoria disponible. <BR>
+<BR>
+Utilice este analisis en correlacion con el analisis de Memoria disponible. Si se sospecha de una condicion de perdida de memoria, se recomienda instalar y utilizar la herramienta de depuracion Debug Diag. Para mas informacion sobre Debug Diag, consulte la seccion de referencias. <BR><BR>
+<B>Referencias:</B><BR>
+<BR>
+Debug Diagnostic Tool v1.1 http://www.microsoft.com/downloads/details.aspx?FamilyID=28bd5941-c458-46f1-b24d-f60151d875a3&displaylang=en]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process Handle Count" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(_Total)\Handle Count" ID="{ff63f07d-dec2-4abc-b99a-d1841d340695}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(_Total)\Handle Count" COLLECTIONVARNAME="ProcessHandleCountTotal" EXPRESSIONPATH="\Process(_Total)\Handle Count" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Process(_Total)\Handle Count" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(_Total)\Handle Count" CHARTLABELS="instance" />
+    <THRESHOLD NAME="Possible Handle Leak: More than 250 handles between overall Min and overall Max and an increasing trend of more than 100 handles per hour" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+          For ($i=0;$i -lt $ProcessHandleCountTotal.Count;$i++)
+          {
+            $oCounterInstance = $ProcessHandleCountTotal[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)                  
+                  If (($MinMaxDifference -gt 250) -and ($oCounterInstance.QuantizedTrend[$t] -gt 100))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Possible Handle Leak: More than 500 handles between overall Min and overall Max and an increasing trend of more than 500 handles per hour" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+          For ($i=0;$i -lt $ProcessHandleCountTotal.Count;$i++)
+          {
+            $oCounterInstance = $ProcessHandleCountTotal[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)
+                  $TwoHundredAndFiftyMegaBytes = 262144000
+                  If (($MinMaxDifference -gt 500) -and ($oCounterInstance.QuantizedTrend[$t] -gt 500))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+        ]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[This analysis checks overall system to determine how many handles the system has open to determine if there is a handle leak. Handle leaks can be attributed to memory leak. If this analysis throws alerts, then you need to manually open the performance monitor log and look at the instances "\Process(_Total)\Handle Count" to determine which process is leaking handles. Note: The normal System Overview analysis checks all of the processes.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process Thread Count" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(_Total)\Thread Count" ID="{cc52e99a-9c8a-4b5d-91c7-11dcb2ac9f77}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(_Total)\Thread Count" COLLECTIONVARNAME="ProcessThreadCountTotal" EXPRESSIONPATH="\Process(_Total)\Thread Count" DATATYPE="integer" />
+    <THRESHOLD NAME="Possible Thread Leak: More than 250 threads between overall Min and overall Max and an increasing trend of more than 100 threads per hour" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+          For ($i=0;$i -lt $ProcessThreadCountTotal.Count;$i++)
+          {
+            $oCounterInstance = $ProcessThreadCountTotal[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)                  
+                  If (($MinMaxDifference -gt 250) -and ($oCounterInstance.QuantizedTrend[$t] -gt 100))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Possible Thread Leak: More than 500 threads between overall Min and overall Max and an increasing trend of more than 500 threads per hour" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+          For ($i=0;$i -lt $ProcessThreadCountTotal.Count;$i++)
+          {
+            $oCounterInstance = $ProcessThreadCountTotal[$i]
+            For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+            {
+              $IsMinThresholdBroken = $False
+              $IsAvgThresholdBroken = $False
+              $IsMaxThresholdBroken = $False
+              $IsTrendThresholdBroken = $False
+              $IsMinEvaluated = $False
+              $IsAvgEvaluated = $False
+              $IsMaxEvaluated = $False
+              $IsTrendEvaluated = $False
+            
+              If (($oCounterInstance.Min -ne '-') -and ($oCounterInstance.Min -ne $null))
+              {
+                If (($oCounterInstance.Max -ne '-') -and ($oCounterInstance.Max -ne $null))
+                {
+                  $MinMaxDifference = $($oCounterInstance.Max) - $($oCounterInstance.Min)
+                  $TwoHundredAndFiftyMegaBytes = 262144000
+                  If (($MinMaxDifference -gt 500) -and ($oCounterInstance.QuantizedTrend[$t] -gt 500))
+                  {
+                    $IsTrendThresholdBroken = $True
+                    $IsTrendEvaluated = $True
+                  }
+                }
+              }
+              
+              If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+              {
+                  CreateAlert -TimeSliceIndex $t -CounterInstanceObject $oCounterInstance -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+              }
+            }
+          }
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Process(_Total)\Thread Count" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(_Total)\Thread Count" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[El numero de subprocesos activos actualmente en este proceso. Una instruccion es la unidad basica de ejecucion en un procesador y un subproceso es el objeto que ejecuta las instrucciones. Cada proceso en ejecucion tiene al menos un hilo. <BR>
+<BR>
+Este analisis comprueba todos los procesos para determinar si un proceso tiene mas de 500 subprocesos y si se trata de una tendencia al alza de 50 subprocesos por hora. Un proceso con un gran numero de subprocesos y/o una tendencia al alza podria indicar una fuga de suprocesos que por lo general resulta en una perdida de memoria o en multiples cambios de contexto. Multiples cambio de contexto dara lugar a la alta utilizacion del CPU en modo privilegiado. ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk % Free Space" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\% Free Space" ID="{6e4c9856-14cf-48b2-b519-e120b8a21d45}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\% Free Space" COLLECTIONVARNAME="LogicalDiskPercentFreeSpace" EXPRESSIONPATH="\LogicalDisk(*)\% Free Space" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="Less than 10% Free Disk Space" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $LogicalDiskPercentFreeSpace -Operator 'lt' -Threshold 10
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Less than 5% Free Disk Space" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $LogicalDiskPercentFreeSpace -Operator 'lt' -Threshold 5
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\LogicalDisk(*)\% Free Space" ISTHRESHOLDSADDED="True" DATASOURCE="\LogicalDisk(*)\% Free Space" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $LogicalDiskPercentFreeSpace -MinThreshold 5 -MaxThreshold 10 -IsOperatorGreaterThan $False -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $LogicalDiskPercentFreeSpace -MinThreshold 0 -MaxThreshold 5 -IsOperatorGreaterThan $False -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[% de espacio libre es el porcentaje total de espacio util en la unidad logica de disco seleccionada que era disponible. El bajo o nulo espacio libre en disco puede causar graves problemas de rendimiento de disco. Este analisis verifica que al menos exista 10% de espacio libre en el disco (alerta de advertencia) y al menos exista el 5% de espacio libre en disco (alerta critica).]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Processor % Interrupt Time" ENABLED="True" CATEGORY="Processor" PRIMARYDATASOURCE="\Processor(*)\% Interrupt Time" ID="{a2cb1d88-1b9d-4a55-bfb5-92337f23d426}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Processor(*)\% Interrupt Time" COLLECTIONVARNAME="ProcessorPercentInterruptTimeALL" EXPRESSIONPATH="\Processor(*)\% Interrupt Time" DATATYPE="integer" />
+    <THRESHOLD NAME="More than 30% Interrupt Time" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $ProcessorPercentInterruptTimeALL -Operator 'gt' -Threshold 30
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 50% Interrupt Time" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $ProcessorPercentInterruptTimeALL -Operator 'gt' -Threshold 50
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Processor(*)\% Interrupt Time" ISTHRESHOLDSADDED="True" DATASOURCE="\Processor(*)\% Interrupt Time" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $ProcessorPercentInterruptTimeALL -MinThreshold 30 -MaxThreshold 50 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $ProcessorPercentInterruptTimeALL -MinThreshold 50 -MaxThreshold 99.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[% de tiempo de interrupcion es el tiempo que el procesador invierte recibiendo y atendiendo interrupciones de hardware durante los intervalos de muestra. Este valor es un indicador indirecto de la actividad de los dispositivos que generan interrupciones, como el reloj del sistema, el mouse, los controladores de disco, las lineas de comunicacion de datos, las tarjetas de interfaz de red y otros dispositivos perifericos. Normalmente, estos dispositivos interrumpen al procesador cuando completan una tarea o necesitan atencion. La ejecucion normal de los subprocesos se suspende durante las interrupciones. La mayoria de los relojes del sistema interrumpen el procesador cada 10 milisegundos, lo que crea un fondo de actividad de interrupcion. Este contador muestra el tiempo ocupado promedio como un porcentaje del tiempo de muestra. Un incremento dramatico en este constador indica potenciales problemas de hardware.<BR>
+<BR>
+Este analisis verifica % de tiempo de interrupcion mayores a 30%. Si esto sucede, entonces considere actualizar los controladores de los dispositivos de hardware que se correlacionan con esta alerta.<BR>
+<BR>
+<B>Referencias:</B><BR>
+Measuring .NET Application Performance<BR>
+<A HREF="http://msdn2.microsoft.com/en-us/library/ms998579.aspx">http://msdn2.microsoft.com/en-us/library/ms998579.aspx</A>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="PhysicalDisk Read Latency Analysis" ENABLED="True" CATEGORY="PhysicalDisk" PRIMARYDATASOURCE="\PhysicalDisk(*)\Avg. Disk sec/Read" ID="{8839eef1-a97f-443d-b8a7-89079d0d6ff1}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\PhysicalDisk(*)\Avg. Disk sec/Read" COLLECTIONVARNAME="PhysicalDiskAvgDisksecReadALL" EXPRESSIONPATH="\PhysicalDisk(*)\Avg. Disk sec/Read" DATATYPE="round3">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="Greater than 15ms physical disk READ response times" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $PhysicalDiskAvgDisksecReadALL -Operator 'gt' -Threshold 0.015
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Greater than 25ms physical disk READ response times" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $PhysicalDiskAvgDisksecReadALL -Operator 'gt' -Threshold 0.025
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\PhysicalDisk(*)\Avg. Disk sec/Read" ISTHRESHOLDSADDED="True" DATASOURCE="\PhysicalDisk(*)\Avg. Disk sec/Read" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $PhysicalDiskAvgDisksecReadALL -MinThreshold 0.015 -MaxThreshold 0.025 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $PhysicalDiskAvgDisksecReadALL -MinThreshold 0.025 -MaxThreshold 0.029999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Promedio de segundos de disco/lectura es la duracion media, en segundos, de una lectura de datos del disco. Este analisis determina si alguno de los discos fisicos se encuentra respondiendo lentamente.<BR>
+<BR>
+Si los tiempos de respuesta son mayores que <B>.015 (15 milisegundos)</B>, el subsistema de disco esta a la altura de la demanda, pero tiene un rango reducido antes de comenzar a alentarse.<BR>
+<BR>
+Si los tiempos de respuesta son mayores que <B>.025 (25 milliseconds)</B>, entonces se presenta una notable reduccion de la velocidad y problemas de rendimiento que afectan a los usuarios pueden estar ocurriendo..<BR>
+<BR>
+<B>Referencias:</B><BR>
+Ruling Out Disk-Bound Problems<BR>
+<A HREF="http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx">http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx</A><BR>
+<BR>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="PhysicalDisk Write Latency Analysis" ENABLED="True" CATEGORY="PhysicalDisk" PRIMARYDATASOURCE="\PhysicalDisk(*)\Avg. Disk sec/Write" ID="{d8115038-5c2b-4495-b418-e36510296b43}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\PhysicalDisk(*)\Avg. Disk sec/Write" COLLECTIONVARNAME="PhysicalDiskAvgDisksecWriteALL" EXPRESSIONPATH="\PhysicalDisk(*)\Avg. Disk sec/Write" DATATYPE="round3">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="Greater than 15ms physical disk WRITE response times" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $PhysicalDiskAvgDisksecWriteALL -Operator 'gt' -Threshold 0.015
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Greater than 25ms physical disk WRITE response times" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $PhysicalDiskAvgDisksecWriteALL -Operator 'gt' -Threshold 0.025
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\PhysicalDisk(*)\Avg. Disk sec/Write" ISTHRESHOLDSADDED="True" DATASOURCE="\PhysicalDisk(*)\Avg. Disk sec/Write" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $PhysicalDiskAvgDisksecWriteALL -MinThreshold 0.015 -MaxThreshold 0.025 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $PhysicalDiskAvgDisksecWriteALL -MinThreshold 0.025 -MaxThreshold 0.029999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Promedio de segundos de disco/escritura es la duracion media, en segundos, de una escritura de datos en el disco. Este analisis determina si alguno de los discos fisicos se encuentra respondiendo lentamente.<BR>
+<BR>
+Si los tiempos de respuesta son mayores que <B>.015 (15 milisegundos)</B>, el subsistema de disco esta a la altura de la demanda, pero tiene un rango reducido antes de comenzar a alentarse.<BR>
+<BR>
+Si los tiempos de respuesta son mayores que <B>.025 (25 milliseconds)</B>, entonces se presenta una notable reduccion de la velocidad y problemas de rendimiento que afectan a los usuarios pueden estar ocurriendo..<BR>
+<BR>
+<B>Referencias:</B><BR>
+Ruling Out Disk-Bound Problems<BR>
+<A HREF="http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx">http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx</A><BR>
+<BR>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk Read Latency Analysis" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\Avg. Disk sec/Read" ID="{dfb21d00-cf83-49e7-bf63-3d82db3d63c3}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Avg. Disk sec/Read" COLLECTIONVARNAME="LogicalDiskAvgDisksecReadALL" EXPRESSIONPATH="\LogicalDisk(*)\Avg. Disk sec/Read" DATATYPE="round3">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="Greater than 15ms logical disk READ response times" CONDITION="Warning" COLOR="#FFFF00" PRIORITY="52" ID="">
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecReadALL -Operator 'gt' -Threshold 0.015
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Greater than 25ms logical disk READ response times" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecReadALL -Operator 'gt' -Threshold 0.025
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\LogicalDisk(*)\Avg. Disk sec/Read" ISTHRESHOLDSADDED="True" DATASOURCE="\LogicalDisk(*)\Avg. Disk sec/Read" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecReadALL -MinThreshold 0.015 -MaxThreshold 0.025 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecReadALL -MinThreshold 0.025 -MaxThreshold 0.029999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Promedio de segundos de disco/lectura es la duracion media, en segundos, de una lectura de datos del disco. Este analisis determina si alguno de los discos fisicos se encuentra respondiendo lentamente.<BR>
+<BR>
+Si los tiempos de respuesta son mayores que <B>.015 (15 milisegundos)</B>, el subsistema de disco esta a la altura de la demanda, pero tiene un rango reducido antes de comenzar a alentarse.<BR>
+<BR>
+Si los tiempos de respuesta son mayores que <B>.025 (25 milliseconds)</B>, entonces se presenta una notable reduccion de la velocidad y problemas de rendimiento que afectan a los usuarios pueden estar ocurriendo..<BR>
+<BR>
+<B>Referencias:</B><BR>
+Ruling Out Disk-Bound Problems<BR>
+<A HREF="http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx">http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx</A><BR>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk Write Latency Analysis" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\Avg. Disk sec/Write" ID="{28eaa0b2-0bc2-41f8-8c27-9045b597d001}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Avg. Disk sec/Write" COLLECTIONVARNAME="LogicalDiskAvgDisksecWriteALL" EXPRESSIONPATH="\LogicalDisk(*)\Avg. Disk sec/Write" DATATYPE="round3">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="Greater than 15ms logical disk WRITE response times" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecWriteALL -Operator 'gt' -Threshold 0.015
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Greater than 25ms logical disk WRITE response times" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecWriteALL -Operator 'gt' -Threshold 0.025
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\LogicalDisk(*)\Avg. Disk sec/Write" ISTHRESHOLDSADDED="True" DATASOURCE="\LogicalDisk(*)\Avg. Disk sec/Write" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[StaticChartThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecWriteALL -MinThreshold 0.015 -MaxThreshold 0.025 -UseMaxValue $False        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[StaticChartThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecWriteALL -MinThreshold 0.025 -MaxThreshold 0.029999 -UseMaxValue $True]]></CODE>
+      </SERIES>
+    </CHART>
+    <THRESHOLD NAME="Greater than 900ms - Slower than a 3.5 inch floppy drive" CONDITION="Critical" COLOR="Red" PRIORITY="100">
+      <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+      <CODE><![CDATA[#// Use PowerShell code to create alerts when the conditions for this threshold are met.
+#// Optionally use the variables listed above in the Variables list box.
+#// If the condition for this threshold is a static value, then use the StaticThreshold() function.
+#// Otherwise, you will need to manually loop through the counter instance collection object.
+#// The counter instance collection object has a unique name for each counter data source in this analysis.
+#// See the variables in the Variables list box above for more information on the counter instance collection object.
+
+#// Here is a ready to use example on how to use the StaticThreshold() function to define a threshold:
+StaticThreshold -CollectionOfCounterInstances $LogicalDiskAvgDisksecWriteALL -Operator 'gt' -Threshold 0.9
+#// The -Operator parameter accepts gt for greater than, ge for greater than or equal to, lt for less than,
+#//  and le for less than or equal to. -Threshold is the static value for the threshold.]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[Promedio de segundos de disco/escritura es la duracion media, en segundos, de una escritura de datos en el disco. Este analisis determina si alguno de los discos fisicos se encuentra respondiendo lentamente.<BR>
+<BR>
+Si los tiempos de respuesta son mayores que <B>.015 (15 milisegundos)</B>, el subsistema de disco esta a la altura de la demanda, pero tiene un rango reducido antes de comenzar a alentarse.<BR>
+<BR>
+Si los tiempos de respuesta son mayores que <B>.025 (25 milliseconds)</B>, entonces se presenta una notable reduccion de la velocidad y problemas de rendimiento que afectan a los usuarios pueden estar ocurriendo..<BR>
+<BR>
+<B>Referencias:</B><BR>
+Ruling Out Disk-Bound Problems<BR>
+<A HREF="http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx">http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx</A><BR>
+<BR>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk % Idle Time" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\% Idle Time" ID="{91e5c328-0ca6-4b1f-a4f5-7f32d9cd357a}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\% Idle Time" COLLECTIONVARNAME="CollectionOfLogicalDiskPercentIdleTimeALL" EXPRESSIONPATH="\LogicalDisk(*)\% Idle Time" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="Less than 10% Idle Time - the disk queue has at least 1 outstanding I/O 90% of the time" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfLogicalDiskPercentIdleTimeALL -Operator 'lt' -Threshold 10]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\LogicalDisk(*)\% Idle Time" ISTHRESHOLDSADDED="True" DATASOURCE="\LogicalDisk(*)\% Idle Time" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[StaticChartThreshold -CollectionOfCounterInstances $CollectionOfLogicalDiskPercentIdleTimeALL -MinThreshold 0 -MaxThreshold 10 -UseMaxValue $False -IsOperatorGreaterThan $False]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[% de tiempo inactivo informa del porcentaje de tiempo durante el intervalo de muestra en el que el disco estaba inactivo..<BR>
+<BR>
+Este analisis verifica que el % de tiempo inactivo sea menor que 10. Cero (0) indica que el disco siempre tiena al menos una peticion de E/S en la cola.
+<BR>
+<B>Referencias:</B><BR>
+Ruling Out Disk-Bound Problems<BR>
+<A HREF="http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx">http://technet.microsoft.com/en-us/library/5bcdd349-dcc6-43eb-9dc3-54175f7061ad.aspx</A><BR>
+<BR>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Free System Page Table Entries" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Free System Page Table Entries" ID="{0b445fb5-2530-43cb-a7be-79cc43f212bc}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Free System Page Table Entries" COLLECTIONVARNAME="MemoryFreeSystemPageTableEntries" EXPRESSIONPATH="\Memory\Free System Page Table Entries" DATATYPE="Integer" />
+    <THRESHOLD NAME="Less than 20,000 Free Page Table Entries (PTE) - The system is low on free PTEs" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $MemoryFreeSystemPageTableEntries -Operator 'lt' -Threshold 20000
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="Less than 8,000 Free Page Table Entries - The system is critically low on free PTEs" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $MemoryFreeSystemPageTableEntries -Operator 'lt' -Threshold 8000
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Memory\Free System Page Table Entries" ISTHRESHOLDSADDED="True" DATASOURCE="\Memory\Free System Page Table Entries" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $MemoryFreeSystemPageTableEntries -MinThreshold 8000 -MaxThreshold 20000 -IsOperatorGreaterThan $False -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $MemoryFreeSystemPageTableEntries -MinThreshold 0 -MaxThreshold 8000 -IsOperatorGreaterThan $False -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Entradas libres de la tabla de paginas del sistema es el numero de entradas de la tabla de paginas que el sistema no esta usando actualmente. Este analisis determina si el sistema se esta quedando sin entradas libres en la tabla de paginas del sistema (PTEs) al verificar si existen menos de 5,000 PTEs libres y mostrando una advertencia si existen menos de 10,000 PTEs libres. La falta de suficientes PTEs puede resultar en lentitud importante del sistema. Tambien tenga en cuenta que el modificador /3GB reducira la cantidad de PTE libres de manera significativa. <BR>
+<BR>
+El contador "Memoria\Entradas libres de la tabla de paginas del sistema" del monitor de rendimiento es impreciso en instalaciones de Windows Server 2003 sin Service Pack 1. Para mas informacion sobre este contador, ver el articulo 894067 de la Base de Conocimientos de Microsoft. "The Performance tool does not accurately show the available Free System Page Table entries in Windows Server 2003" <a href="http://go.microsoft.com/fwlink/?linkid=3052&kbid=894067">http://go.microsoft.com/fwlink/?linkid=3052&amp;kbid=894067</a><BR>
+<BR>
+<B>Solucion para sistemas Win2003 SP1 y el modificador /3GB con bajo numero en PTEs</B>: Si el sistema presenta bajo numero en PTEs, ejecutando Windows 2003, y se utiliza el modificador /3GB, considere utilizar el modificador /USERVA para devolver parte de la memoria en el kernel. Tenga en cuenta que esto solo funciona para problemas de Entradas libres de la tabla de paginas del sistema.<BR>
+<BR>
+Para mas informacion en la utilizacion del modificador USERVA, consulte:
+<A HREF="http://support.microsoft.com/kb/316739">How to use the /userva switch with the /3GB switch to tune the User-mode space to a value between 2 GB and 3 GB</A><BR>
+<BR>
+<B>Referencias:</B><BR>
+<BR>
+<A HREF="http://technet.microsoft.com/en-us/library/7a44b064-8872-4edf-aac7-36b2a17f662a.aspx">Ruling Out Memory-Bound Problems</A><BR>
+<BR>
+<A HREF="http://support.microsoft.com/kb/894067">Microsoft Knowledge Base article 894067 The Performance tool does not accurately show the available Free System Page Table entries in Windows Server 2003</A><BR>
+<BR>
+<A HREF="http://support.microsoft.com/kb/316739">How to use the /userva switch with the /3GB switch to tune the User-mode space to a value between 2 GB and 3 GB</A><BR>
+<BR>
+Como determinar el tamanio adecuado del archivo de paginacion para versiones de 64 bits de Windows Server 2003 o Windows XP<BR>
+<A HREF="http://support.microsoft.com/kb/889654">http://support.microsoft.com/kb/889654</A>
+]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Pool Non-Paged Bytes" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Pool Nonpaged Bytes" ID="{8eb3c4cb-b877-4878-9882-5654fea10320}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Pool Nonpaged Bytes" COLLECTIONVARNAME="MemoryPoolNonpagedBytes" EXPRESSIONPATH="\Memory\Pool Nonpaged Bytes" DATATYPE="Integer" />
+    <THRESHOLD NAME="More than 60% of Pool Non-Paged Kernel Memory Used" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+        $iTotalMemory = $([Math]::Round($TotalMemory,0))
+        If ($($SixtyFourBit) -eq $False)
+        {
+            If ($($ThreeGBSwitch) -eq $True)
+	        {
+		        $iMemPoolMax = 128
+	        }	
+            Else
+	        {
+		        If ($($iTotalMemory) -eq 1)
+		        {
+			        $iMemPoolMax = 208
+		        }
+		        Else
+		        {
+			        $iMemPoolMax = 256
+		        }
+	        }
+        }	
+        Else
+        {
+	        switch ($($iTotalMemory))
+	        {
+		        1 {$iMemPoolMax = 872}		
+		        2 {$iMemPoolMax = 872}
+		        3 {$iMemPoolMax = 872}
+		        4 {$iMemPoolMax = 1420}
+		        5 {$iMemPoolMax = 1420}
+		        6 {$iMemPoolMax = 1420}
+		        7 {$iMemPoolMax = 1420}
+		        8 {$iMemPoolMax = 3090}
+		        9 {$iMemPoolMax = 3090}
+		        10 {$iMemPoolMax = 3090}
+		        11 {$iMemPoolMax = 3090}
+		        12 {$iMemPoolMax = 4720}
+		        13 {$iMemPoolMax = 4720}
+		        14 {$iMemPoolMax = 4720}
+		        15 {$iMemPoolMax = 4720}
+		        16 {$iMemPoolMax = 6360}
+		        17 {$iMemPoolMax = 6360}
+		        18 {$iMemPoolMax = 6360}
+		        19 {$iMemPoolMax = 6360}
+		        20 {$iMemPoolMax = 6360}
+		        21 {$iMemPoolMax = 6360}
+		        22 {$iMemPoolMax = 6360}
+		        23 {$iMemPoolMax = 6360}
+		        24 {$iMemPoolMax = 9640}
+		        25 {$iMemPoolMax = 9640}
+		        26 {$iMemPoolMax = 9640}
+		        27 {$iMemPoolMax = 9640}
+		        28 {$iMemPoolMax = 9640}
+		        29 {$iMemPoolMax = 9640}
+		        30 {$iMemPoolMax = 9640}
+		        31 {$iMemPoolMax = 9640}
+		        32 {$iMemPoolMax = 13220}
+		        default {$iMemPoolMax = 13220}
+	        }	
+        }
+        $MemoryPoolMaxInBytes = $iMemPoolMax * 1024 * 1024
+        $SixtyPercentOfMemoryPoolMaximum = $MemoryPoolMaxInBytes * 0.60
+        StaticThreshold -CollectionOfCounterInstances $MemoryPoolNonpagedBytes -Operator 'gt' -Threshold $SixtyPercentOfMemoryPoolMaximum
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 80% of Pool Non-Paged Kernel Memory Used" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <CODE><![CDATA[
+        $iTotalMemory = $([Math]::Round($TotalMemory,0))
+        If ($($SixtyFourBit) -eq $False)
+        {
+            If ($($ThreeGBSwitch) -eq $True)
+	        {
+		        $iMemPoolMax = 128
+	        }	
+            Else
+	        {
+		        If ($($iTotalMemory) -eq 1)
+		        {
+			        $iMemPoolMax = 208
+		        }
+		        Else
+		        {
+			        $iMemPoolMax = 256
+		        }
+	        }
+        }	
+        Else
+        {
+	        switch ($($iTotalMemory))
+	        {
+		        1 {$iMemPoolMax = 872}		
+		        2 {$iMemPoolMax = 872}
+		        3 {$iMemPoolMax = 872}
+		        4 {$iMemPoolMax = 1420}
+		        5 {$iMemPoolMax = 1420}
+		        6 {$iMemPoolMax = 1420}
+		        7 {$iMemPoolMax = 1420}
+		        8 {$iMemPoolMax = 3090}
+		        9 {$iMemPoolMax = 3090}
+		        10 {$iMemPoolMax = 3090}
+		        11 {$iMemPoolMax = 3090}
+		        12 {$iMemPoolMax = 4720}
+		        13 {$iMemPoolMax = 4720}
+		        14 {$iMemPoolMax = 4720}
+		        15 {$iMemPoolMax = 4720}
+		        16 {$iMemPoolMax = 6360}
+		        17 {$iMemPoolMax = 6360}
+		        18 {$iMemPoolMax = 6360}
+		        19 {$iMemPoolMax = 6360}
+		        20 {$iMemPoolMax = 6360}
+		        21 {$iMemPoolMax = 6360}
+		        22 {$iMemPoolMax = 6360}
+		        23 {$iMemPoolMax = 6360}
+		        24 {$iMemPoolMax = 9640}
+		        25 {$iMemPoolMax = 9640}
+		        26 {$iMemPoolMax = 9640}
+		        27 {$iMemPoolMax = 9640}
+		        28 {$iMemPoolMax = 9640}
+		        29 {$iMemPoolMax = 9640}
+		        30 {$iMemPoolMax = 9640}
+		        31 {$iMemPoolMax = 9640}
+		        32 {$iMemPoolMax = 13220}
+		        default {$iMemPoolMax = 13220}
+	        }	
+        }
+        $MemoryPoolMaxInBytes = $iMemPoolMax * 1024 * 1024
+        $EightyPercentOfMemoryPoolMaximum = $MemoryPoolMaxInBytes * 0.80
+        StaticThreshold -CollectionOfCounterInstances $MemoryPoolNonpagedBytes -Operator 'gt' -Threshold $EightyPercentOfMemoryPoolMaximum
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Memory\Pool Nonpaged Bytes" ISTHRESHOLDSADDED="True" DATASOURCE="\Memory\Pool Nonpaged Bytes" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+        $iTotalMemory = $([Math]::Round($TotalMemory,0))
+        If ($($SixtyFourBit) -eq $False)
+        {
+            If ($($ThreeGBSwitch) -eq $True)
+	        {
+		        $iMemPoolMax = 128
+	        }	
+            Else
+	        {
+		        If ($($iTotalMemory) -eq 1)
+		        {
+			        $iMemPoolMax = 208
+		        }
+		        Else
+		        {
+			        $iMemPoolMax = 256
+		        }
+	        }
+        }	
+        Else
+        {
+	        switch ($($iTotalMemory))
+	        {
+		        1 {$iMemPoolMax = 872}		
+		        2 {$iMemPoolMax = 872}
+		        3 {$iMemPoolMax = 262}
+		        4 {$iMemPoolMax = 1420}
+		        5 {$iMemPoolMax = 1420}
+		        6 {$iMemPoolMax = 1420}
+		        7 {$iMemPoolMax = 1420}
+		        8 {$iMemPoolMax = 3090}
+		        9 {$iMemPoolMax = 3090}
+		        10 {$iMemPoolMax = 3090}
+		        11 {$iMemPoolMax = 3090}
+		        12 {$iMemPoolMax = 4720}
+		        13 {$iMemPoolMax = 4720}
+		        14 {$iMemPoolMax = 4720}
+		        15 {$iMemPoolMax = 4720}
+		        16 {$iMemPoolMax = 6360}
+		        17 {$iMemPoolMax = 6360}
+		        18 {$iMemPoolMax = 6360}
+		        19 {$iMemPoolMax = 6360}
+		        20 {$iMemPoolMax = 6360}
+		        21 {$iMemPoolMax = 6360}
+		        22 {$iMemPoolMax = 6360}
+		        23 {$iMemPoolMax = 6360}
+		        24 {$iMemPoolMax = 9640}
+		        25 {$iMemPoolMax = 9640}
+		        26 {$iMemPoolMax = 9640}
+		        27 {$iMemPoolMax = 9640}
+		        28 {$iMemPoolMax = 9640}
+		        29 {$iMemPoolMax = 9640}
+		        30 {$iMemPoolMax = 9640}
+		        31 {$iMemPoolMax = 9640}
+		        32 {$iMemPoolMax = 13220}
+		        default {$iMemPoolMax = 13220}
+	        }	
+        }
+        $MemoryPoolMaxInBytes = $iMemPoolMax * 1024 * 1024
+        $SixtyPercentOfMemoryPoolMaximum = $MemoryPoolMaxInBytes * 0.60
+        $EightyPercentOfMemoryPoolMaximum = ($MemoryPoolMaxInBytes * 0.80) - 0.001
+        StaticChartThreshold -CollectionOfCounterInstances $MemoryPoolNonpagedBytes -MinThreshold $SixtyPercentOfMemoryPoolMaximum -MaxThreshold $EightyPercentOfMemoryPoolMaximum -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+        $iTotalMemory = $([Math]::Round($TotalMemory,0))
+        If ($($SixtyFourBit) -eq $False)
+        {
+            If ($($ThreeGBSwitch) -eq $True)
+	        {
+		        $iMemPoolMax = 128
+	        }	
+            Else
+	        {
+		        If ($($iTotalMemory) -eq 1)
+		        {
+			        $iMemPoolMax = 208
+		        }
+		        Else
+		        {
+			        $iMemPoolMax = 256
+		        }
+	        }
+        }	
+        Else
+        {
+	        switch ($($iTotalMemory))
+	        {
+		        1 {$iMemPoolMax = 872}		
+		        2 {$iMemPoolMax = 872}
+		        3 {$iMemPoolMax = 262}
+		        4 {$iMemPoolMax = 1420}
+		        5 {$iMemPoolMax = 1420}
+		        6 {$iMemPoolMax = 1420}
+		        7 {$iMemPoolMax = 1420}
+		        8 {$iMemPoolMax = 3090}
+		        9 {$iMemPoolMax = 3090}
+		        10 {$iMemPoolMax = 3090}
+		        11 {$iMemPoolMax = 3090}
+		        12 {$iMemPoolMax = 4720}
+		        13 {$iMemPoolMax = 4720}
+		        14 {$iMemPoolMax = 4720}
+		        15 {$iMemPoolMax = 4720}
+		        16 {$iMemPoolMax = 6360}
+		        17 {$iMemPoolMax = 6360}
+		        18 {$iMemPoolMax = 6360}
+		        19 {$iMemPoolMax = 6360}
+		        20 {$iMemPoolMax = 6360}
+		        21 {$iMemPoolMax = 6360}
+		        22 {$iMemPoolMax = 6360}
+		        23 {$iMemPoolMax = 6360}
+		        24 {$iMemPoolMax = 9640}
+		        25 {$iMemPoolMax = 9640}
+		        26 {$iMemPoolMax = 9640}
+		        27 {$iMemPoolMax = 9640}
+		        28 {$iMemPoolMax = 9640}
+		        29 {$iMemPoolMax = 9640}
+		        30 {$iMemPoolMax = 9640}
+		        31 {$iMemPoolMax = 9640}
+		        32 {$iMemPoolMax = 13220}
+		        default {$iMemPoolMax = 13220}
+	        }	
+        }
+        $MemoryPoolMaxInBytes = $iMemPoolMax * 1024 * 1024
+        $EightyPercentOfMemoryPoolMaximum = ($MemoryPoolMaxInBytes * 0.80)
+        StaticChartThreshold -CollectionOfCounterInstances $MemoryPoolNonpagedBytes -MinThreshold $EightyPercentOfMemoryPoolMaximum -MaxThreshold $MemoryPoolMaxInBytes -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Bytes de bloque no paginado es el tamanio, en bytes, del bloque no paginado, un area la memoria del sistema (memoria fisica usada por el sistema operativo) para los objetos que no se pueden escribir en el disco, pero que deben permanecer en la memoria fisica mientras esten asignados. El contador Memoria\Bytes de bloque no paginado se calcula de forma diferente al contador Proceso\Bytes de bloque no paginado, por lo que su valor puede ser distinto al de Proceso\Bytes de bloque no paginado\_Total. Este contador muestra solamente el ultimo valor.<BR>
+<BR> 
+Este analisis comprueba si el sistema se esta acercando al tamanio de la memoria de bloque no paginado maximo. Esto lo realiza al estimar el tamanio del bloque tomando en consideracion el parametro de inicio /3GB, el tamanio de la memoria fisica y el hecho de encontrarse en una ambiente de 32 o 64 bits; a continuacion, determinar si el valor es superior al 60% del tamanio del bloque estimado. Si el sistema se aproxima al tamanio maximo, el sistema podria experimentar lentitud extrema. Se verifican los grupos de memoria de 32-bit y 64-bit. Cuidadod: el parametro de inicio /3GB en el archivo boot.ini reduce significativamente el tamanio de este bloque de memoria.<BR>
+<BR>
+Si el sistema se encuentra con valores bajos de Bloques paginados o bloques de memoria no paginados, entonces se recomienda abrir un caso con Microsoft para atender esto. Alternativamente, se puede utilizar la herramienta libre y gratuita llamada Poolmon.exe para identificar que DLL estan utilizando memoria del kernel (ver articulo del enlace inferior). La mayor parte de fugas de memoria del kernel pueden ser rastreadas a un proceso de modo de usuario. Para identificar que proceso del modo de usuario es el responsable, reinicie el sistema (para iniciar con un sistema limpio), inicie un registro del monitor de rendimiento con la intencion de funcionar durante una semana o mas capturando el estado de los objetos de memoria y procesos, a continuacion, analice el registro del Monitor de rendimiento en busca de perdidas de memoria y/o fuga en el manejo de uno o mas procesos. En cualquier caso, la migracion a una version de 64 bits de Windows deberia aliviar este problema.
+<BR>
+<B>Referencias:</B><BR>
+How to Use Memory Pool Monitor (Poolmon.exe) to Troubleshoot Kernel Mode Memory Leaks<BR>
+<A HREF="http://support.microsoft.com/kb/177415">http://support.microsoft.com/kb/177415</A><BR>
+<BR>
+Ruling Out Memory-Bound Problems<BR>
+<A HREF="http://technet.microsoft.com/en-us/library/7a44b064-8872-4edf-aac7-36b2a17f662a.aspx">http://technet.microsoft.com/en-us/library/7a44b064-8872-4edf-aac7-36b2a17f662a.aspx</A><BR>
+<BR>
+How to determine the appropriate page file size for 64-bit versions of Windows Server 2003 or Windows XP<BR>
+<A HREF="http://support.microsoft.com/kb/889654">http://support.microsoft.com/kb/889654</A>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Pool Paged Bytes" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Pool Paged Bytes" ID="{904560fe-0629-40ed-8514-cb9fbb8dd426}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Pool Paged Bytes" COLLECTIONVARNAME="MemoryPoolPagedBytes" EXPRESSIONPATH="\Memory\Pool Paged Bytes" DATATYPE="Integer" />
+    <THRESHOLD NAME="More than 60% of Pool Paged Kernel Memory Used" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <CODE><![CDATA[
+        $iTotalMemory = $([Math]::Round($TotalMemory,0))
+        If ($($SixtyFourBit) -eq $False)
+        {
+	If ($($ThreeGBSwitch) -eq $True)
+	{
+	          switch ($($iTotalMemory))
+	          {
+		          1 {$iMemPoolMax = 160}		
+		          2 {$iMemPoolMax = 256}
+		          3 {$iMemPoolMax = 256}
+		          4 {$iMemPoolMax = 252}
+		          5 {$iMemPoolMax = 252}
+		          6 {$iMemPoolMax = 234}
+		          7 {$iMemPoolMax = 234}
+		          8 {$iMemPoolMax = 220}
+		          9 {$iMemPoolMax = 220}
+		          10 {$iMemPoolMax = 220}
+		          11 {$iMemPoolMax = 220}
+		          12 {$iMemPoolMax = 192}
+		          13 {$iMemPoolMax = 192}
+		          14 {$iMemPoolMax = 192}
+		          15 {$iMemPoolMax = 192}
+		          16 {$iMemPoolMax = 166}
+		          default {$iMemPoolMax = 166}
+	          }
+	}
+	Else
+	{
+	          switch ($($iTotalMemory))
+	          {
+		          1 {$iMemPoolMax = 276}		
+		          2 {$iMemPoolMax = 352}
+		          3 {$iMemPoolMax = 352}
+		          4 {$iMemPoolMax = 352}
+		          5 {$iMemPoolMax = 352}
+		          6 {$iMemPoolMax = 358}
+		          7 {$iMemPoolMax = 358}
+		          8 {$iMemPoolMax = 358}
+		          9 {$iMemPoolMax = 358}
+		          10 {$iMemPoolMax = 358}
+		          11 {$iMemPoolMax = 358}
+		          12 {$iMemPoolMax = 358}
+		          13 {$iMemPoolMax = 358}
+		          14 {$iMemPoolMax = 358}
+		          15 {$iMemPoolMax = 358}
+		          16 {$iMemPoolMax = 358}
+		          default {$iMemPoolMax = 358}
+	          }
+	}
+	#// Assuming HotAdd memory is enabled.
+	$iMemPoolMax = $iMemPoolMax - 100
+        }	
+        Else
+        {
+	        switch ($($iTotalMemory))
+	        {
+		        1 {$iMemPoolMax = 3564}		
+		        2 {$iMemPoolMax = 3564}
+		        3 {$iMemPoolMax = 3564}
+		        4 {$iMemPoolMax = 5837}
+		        5 {$iMemPoolMax = 5837}
+		        6 {$iMemPoolMax = 5837}
+		        7 {$iMemPoolMax = 5837}
+		        8 {$iMemPoolMax = 12657}
+		        9 {$iMemPoolMax = 12657}
+		        10 {$iMemPoolMax = 12657}
+		        11 {$iMemPoolMax = 12657}
+		        12 {$iMemPoolMax = 19364}
+		        13 {$iMemPoolMax = 19364}
+		        14 {$iMemPoolMax = 19364}
+		        15 {$iMemPoolMax = 19364}
+		        16 {$iMemPoolMax = 39496}
+		        17 {$iMemPoolMax = 39496}
+		        18 {$iMemPoolMax = 39496}
+		        19 {$iMemPoolMax = 39496}
+		        20 {$iMemPoolMax = 39496}
+		        21 {$iMemPoolMax = 39496}
+		        22 {$iMemPoolMax = 39496}
+		        23 {$iMemPoolMax = 39496}
+		        24 {$iMemPoolMax = 39496}
+		        25 {$iMemPoolMax = 39496}
+		        26 {$iMemPoolMax = 39496}
+		        27 {$iMemPoolMax = 39496}
+		        28 {$iMemPoolMax = 39496}
+		        29 {$iMemPoolMax = 39496}
+		        30 {$iMemPoolMax = 39496}
+		        31 {$iMemPoolMax = 39496}
+		        32 {$iMemPoolMax = 54180}
+		        default {$iMemPoolMax = 54180}
+	        }	
+        }
+        $MemoryPoolMaxInBytes = $iMemPoolMax * 1024 * 1024
+        $SixtyPercentOfMemoryPoolMaximum = $MemoryPoolMaxInBytes * 0.60
+        StaticThreshold -CollectionOfCounterInstances $MemoryPoolPagedBytes -Operator 'gt' -Threshold $SixtyPercentOfMemoryPoolMaximum
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 80% of Pool Paged Kernel Memory Used" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <CODE><![CDATA[
+        $iTotalMemory = $([Math]::Round($TotalMemory,0))
+        If ($($SixtyFourBit) -eq $False)
+        {
+          If ($($ThreeGBSwitch) -eq $True)
+	        {
+	          switch ($($iTotalMemory))
+	          {
+		          1 {$iMemPoolMax = 160}		
+		          2 {$iMemPoolMax = 256}
+		          3 {$iMemPoolMax = 256}
+		          4 {$iMemPoolMax = 252}
+		          5 {$iMemPoolMax = 252}
+		          6 {$iMemPoolMax = 234}
+		          7 {$iMemPoolMax = 234}
+		          8 {$iMemPoolMax = 220}
+		          9 {$iMemPoolMax = 220}
+		          10 {$iMemPoolMax = 220}
+		          11 {$iMemPoolMax = 220}
+		          12 {$iMemPoolMax = 192}
+		          13 {$iMemPoolMax = 192}
+		          14 {$iMemPoolMax = 192}
+		          15 {$iMemPoolMax = 192}
+		          16 {$iMemPoolMax = 166}
+		          default {$iMemPoolMax = 166}
+	          }
+          }
+          Else
+          {
+	          switch ($($iTotalMemory))
+	          {
+		          1 {$iMemPoolMax = 276}		
+		          2 {$iMemPoolMax = 352}
+		          3 {$iMemPoolMax = 352}
+		          4 {$iMemPoolMax = 352}
+		          5 {$iMemPoolMax = 352}
+		          6 {$iMemPoolMax = 358}
+		          7 {$iMemPoolMax = 358}
+		          8 {$iMemPoolMax = 358}
+		          9 {$iMemPoolMax = 358}
+		          10 {$iMemPoolMax = 358}
+		          11 {$iMemPoolMax = 358}
+		          12 {$iMemPoolMax = 358}
+		          13 {$iMemPoolMax = 358}
+		          14 {$iMemPoolMax = 358}
+		          15 {$iMemPoolMax = 358}
+		          16 {$iMemPoolMax = 358}
+		          default {$iMemPoolMax = 358}
+	          }
+          }
+	#// Assuming HotAdd memory is enabled.
+	$iMemPoolMax = $iMemPoolMax - 100
+        }	
+        Else
+        {
+	        switch ($($iTotalMemory))
+	        {
+		        1 {$iMemPoolMax = 3564}		
+		        2 {$iMemPoolMax = 3564}
+		        3 {$iMemPoolMax = 3564}
+		        4 {$iMemPoolMax = 5837}
+		        5 {$iMemPoolMax = 5837}
+		        6 {$iMemPoolMax = 5837}
+		        7 {$iMemPoolMax = 5837}
+		        8 {$iMemPoolMax = 12657}
+		        9 {$iMemPoolMax = 12657}
+		        10 {$iMemPoolMax = 12657}
+		        11 {$iMemPoolMax = 12657}
+		        12 {$iMemPoolMax = 19364}
+		        13 {$iMemPoolMax = 19364}
+		        14 {$iMemPoolMax = 19364}
+		        15 {$iMemPoolMax = 19364}
+		        16 {$iMemPoolMax = 39496}
+		        17 {$iMemPoolMax = 39496}
+		        18 {$iMemPoolMax = 39496}
+		        19 {$iMemPoolMax = 39496}
+		        20 {$iMemPoolMax = 39496}
+		        21 {$iMemPoolMax = 39496}
+		        22 {$iMemPoolMax = 39496}
+		        23 {$iMemPoolMax = 39496}
+		        24 {$iMemPoolMax = 39496}
+		        25 {$iMemPoolMax = 39496}
+		        26 {$iMemPoolMax = 39496}
+		        27 {$iMemPoolMax = 39496}
+		        28 {$iMemPoolMax = 39496}
+		        29 {$iMemPoolMax = 39496}
+		        30 {$iMemPoolMax = 39496}
+		        31 {$iMemPoolMax = 39496}
+		        32 {$iMemPoolMax = 54180}
+		        default {$iMemPoolMax = 54180}
+	        }	
+        }
+        $MemoryPoolMaxInBytes = $iMemPoolMax * 1024 * 1024
+        $EightyPercentOfMemoryPoolMaximum = $MemoryPoolMaxInBytes * 0.80
+        StaticThreshold -CollectionOfCounterInstances $MemoryPoolPagedBytes -Operator 'gt' -Threshold $EightyPercentOfMemoryPoolMaximum
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Memory\Pool Paged Bytes" ISTHRESHOLDSADDED="True" DATASOURCE="\Memory\Pool Paged Bytes" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+        $iTotalMemory = $([Math]::Round($TotalMemory,0))
+        If ($($SixtyFourBit) -eq $False)
+        {
+          If ($($ThreeGBSwitch) -eq $True)
+	        {
+	          switch ($($iTotalMemory))
+	          {
+		          1 {$iMemPoolMax = 160}		
+		          2 {$iMemPoolMax = 256}
+		          3 {$iMemPoolMax = 256}
+		          4 {$iMemPoolMax = 252}
+		          5 {$iMemPoolMax = 252}
+		          6 {$iMemPoolMax = 234}
+		          7 {$iMemPoolMax = 234}
+		          8 {$iMemPoolMax = 220}
+		          9 {$iMemPoolMax = 220}
+		          10 {$iMemPoolMax = 220}
+		          11 {$iMemPoolMax = 220}
+		          12 {$iMemPoolMax = 192}
+		          13 {$iMemPoolMax = 192}
+		          14 {$iMemPoolMax = 192}
+		          15 {$iMemPoolMax = 192}
+		          16 {$iMemPoolMax = 166}
+		          default {$iMemPoolMax = 166}
+	          }
+          }
+          Else
+          {
+	          switch ($($iTotalMemory))
+	          {
+		          1 {$iMemPoolMax = 276}		
+		          2 {$iMemPoolMax = 352}
+		          3 {$iMemPoolMax = 352}
+		          4 {$iMemPoolMax = 352}
+		          5 {$iMemPoolMax = 352}
+		          6 {$iMemPoolMax = 358}
+		          7 {$iMemPoolMax = 358}
+		          8 {$iMemPoolMax = 358}
+		          9 {$iMemPoolMax = 358}
+		          10 {$iMemPoolMax = 358}
+		          11 {$iMemPoolMax = 358}
+		          12 {$iMemPoolMax = 358}
+		          13 {$iMemPoolMax = 358}
+		          14 {$iMemPoolMax = 358}
+		          15 {$iMemPoolMax = 358}
+		          16 {$iMemPoolMax = 358}
+		          default {$iMemPoolMax = 358}
+	          }
+          }
+	#// Assuming HotAdd memory is enabled.
+	$iMemPoolMax = $iMemPoolMax - 100
+        }	
+        Else
+        {
+	        switch ($($iTotalMemory))
+	        {
+		        1 {$iMemPoolMax = 3564}		
+		        2 {$iMemPoolMax = 3564}
+		        3 {$iMemPoolMax = 3564}
+		        4 {$iMemPoolMax = 5837}
+		        5 {$iMemPoolMax = 5837}
+		        6 {$iMemPoolMax = 5837}
+		        7 {$iMemPoolMax = 5837}
+		        8 {$iMemPoolMax = 12657}
+		        9 {$iMemPoolMax = 12657}
+		        10 {$iMemPoolMax = 12657}
+		        11 {$iMemPoolMax = 12657}
+		        12 {$iMemPoolMax = 19364}
+		        13 {$iMemPoolMax = 19364}
+		        14 {$iMemPoolMax = 19364}
+		        15 {$iMemPoolMax = 19364}
+		        16 {$iMemPoolMax = 39496}
+		        17 {$iMemPoolMax = 39496}
+		        18 {$iMemPoolMax = 39496}
+		        19 {$iMemPoolMax = 39496}
+		        20 {$iMemPoolMax = 39496}
+		        21 {$iMemPoolMax = 39496}
+		        22 {$iMemPoolMax = 39496}
+		        23 {$iMemPoolMax = 39496}
+		        24 {$iMemPoolMax = 39496}
+		        25 {$iMemPoolMax = 39496}
+		        26 {$iMemPoolMax = 39496}
+		        27 {$iMemPoolMax = 39496}
+		        28 {$iMemPoolMax = 39496}
+		        29 {$iMemPoolMax = 39496}
+		        30 {$iMemPoolMax = 39496}
+		        31 {$iMemPoolMax = 39496}
+		        32 {$iMemPoolMax = 54180}
+		        default {$iMemPoolMax = 54180}
+	        }	
+        }
+        $MemoryPoolMaxInBytes = $iMemPoolMax * 1024 * 1024
+        $SixtyPercentOfMemoryPoolMaximum = $MemoryPoolMaxInBytes * 0.60
+        $EightyPercentOfMemoryPoolMaximum = ($MemoryPoolMaxInBytes * 0.80) - 0.001
+        StaticChartThreshold -CollectionOfCounterInstances $MemoryPoolPagedBytes -MinThreshold $SixtyPercentOfMemoryPoolMaximum -MaxThreshold $EightyPercentOfMemoryPoolMaximum -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+        $iTotalMemory = $([Math]::Round($TotalMemory,0))
+        If ($($SixtyFourBit) -eq $False)
+        {
+          If ($($ThreeGBSwitch) -eq $True)
+	        {
+	          switch ($($iTotalMemory))
+	          {
+		          1 {$iMemPoolMax = 160}		
+		          2 {$iMemPoolMax = 256}
+		          3 {$iMemPoolMax = 256}
+		          4 {$iMemPoolMax = 252}
+		          5 {$iMemPoolMax = 252}
+		          6 {$iMemPoolMax = 234}
+		          7 {$iMemPoolMax = 234}
+		          8 {$iMemPoolMax = 220}
+		          9 {$iMemPoolMax = 220}
+		          10 {$iMemPoolMax = 220}
+		          11 {$iMemPoolMax = 220}
+		          12 {$iMemPoolMax = 192}
+		          13 {$iMemPoolMax = 192}
+		          14 {$iMemPoolMax = 192}
+		          15 {$iMemPoolMax = 192}
+		          16 {$iMemPoolMax = 166}
+		          default {$iMemPoolMax = 166}
+	          }
+          }
+          Else
+          {
+	          switch ($($iTotalMemory))
+	          {
+		          1 {$iMemPoolMax = 276}		
+		          2 {$iMemPoolMax = 352}
+		          3 {$iMemPoolMax = 352}
+		          4 {$iMemPoolMax = 352}
+		          5 {$iMemPoolMax = 352}
+		          6 {$iMemPoolMax = 358}
+		          7 {$iMemPoolMax = 358}
+		          8 {$iMemPoolMax = 358}
+		          9 {$iMemPoolMax = 358}
+		          10 {$iMemPoolMax = 358}
+		          11 {$iMemPoolMax = 358}
+		          12 {$iMemPoolMax = 358}
+		          13 {$iMemPoolMax = 358}
+		          14 {$iMemPoolMax = 358}
+		          15 {$iMemPoolMax = 358}
+		          16 {$iMemPoolMax = 358}
+		          default {$iMemPoolMax = 358}
+	          }
+          }
+	#// Assuming HotAdd memory is enabled.
+	$iMemPoolMax = $iMemPoolMax - 100
+        }	
+        Else
+        {
+	        switch ($($iTotalMemory))
+	        {
+		        1 {$iMemPoolMax = 3564}		
+		        2 {$iMemPoolMax = 3564}
+		        3 {$iMemPoolMax = 3564}
+		        4 {$iMemPoolMax = 5837}
+		        5 {$iMemPoolMax = 5837}
+		        6 {$iMemPoolMax = 5837}
+		        7 {$iMemPoolMax = 5837}
+		        8 {$iMemPoolMax = 12657}
+		        9 {$iMemPoolMax = 12657}
+		        10 {$iMemPoolMax = 12657}
+		        11 {$iMemPoolMax = 12657}
+		        12 {$iMemPoolMax = 19364}
+		        13 {$iMemPoolMax = 19364}
+		        14 {$iMemPoolMax = 19364}
+		        15 {$iMemPoolMax = 19364}
+		        16 {$iMemPoolMax = 39496}
+		        17 {$iMemPoolMax = 39496}
+		        18 {$iMemPoolMax = 39496}
+		        19 {$iMemPoolMax = 39496}
+		        20 {$iMemPoolMax = 39496}
+		        21 {$iMemPoolMax = 39496}
+		        22 {$iMemPoolMax = 39496}
+		        23 {$iMemPoolMax = 39496}
+		        24 {$iMemPoolMax = 39496}
+		        25 {$iMemPoolMax = 39496}
+		        26 {$iMemPoolMax = 39496}
+		        27 {$iMemPoolMax = 39496}
+		        28 {$iMemPoolMax = 39496}
+		        29 {$iMemPoolMax = 39496}
+		        30 {$iMemPoolMax = 39496}
+		        31 {$iMemPoolMax = 39496}
+		        32 {$iMemPoolMax = 54180}
+		        default {$iMemPoolMax = 54180}
+	        }	
+        }
+        $MemoryPoolMaxInBytes = $iMemPoolMax * 1024 * 1024
+        $EightyPercentOfMemoryPoolMaximum = ($MemoryPoolMaxInBytes * 0.80)
+        StaticChartThreshold -CollectionOfCounterInstances $MemoryPoolPagedBytes -MinThreshold $EightyPercentOfMemoryPoolMaximum -MaxThreshold $MemoryPoolMaxInBytes -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Este analisis verifica si el sistema se acerca al tamanio maximo de memoria de bloques paginados. Bytes de bloque paginado es el tamanio, en bytes, del bloque paginado, un area de la memoria del sistema (memoria fisica usada por el sistema operativo) para los objetos que se pueden escribir en el disco cuando no se usan.<BR>
+<BR>
+Este analisis verifica si el sistema se acerca al tamanio maximo de memoria de bloques paginados. Eso lo realiza mediante la estimacion del tamanio del bloque tomando en consideracion el modificador de inicio /3GB, el tamanio de la memoria fisica, y distinguiendo si el sistema es de 32 o 64 bits, a continuacion, determina si el valor es superior al 60% del tamanio del bloque estimado. Si el sistema se aproxima al tamanio maximo, el sistema podria experimentar lentitud importante. El analisis verifica los bloques de memoria para 32-bit y 64-bit. Advertencia: La opcion de modificador /3GB en el archivo boot.ini reduce significativamente el tamanio de este bloque de memoria.<BR>
+<BR>
+Si el sistema tiene poca memoria paginada o memoria no paginada, entonces se recomienda abrir un caso de soporte con Microsoft para resolver este problema. Alternativamente, puede utilizar la herramienta gratuita y publica llamada Poolmon.exe para ver que DLL estan utilizando la memoria del kernel (ver articulo siguiente). La mayoria de las fugas de memoria del kernel pueden ser rastreados a un proceso de modo de usuario. Para identificar que proceso en modo de usuario es el responsable, reinicie el sistema (para iniciar con un sistema limpio), inicie un registro de monitor de rendimiento con la intencion de funcionar durante una semana o mas registrando la memoria y los objetos de procesos, a continuacion, analice el registro del monitor de rendimiento en busca de perdidas de memoria y/o identificar las fugas en uno o mas de los procesos. En cualquier caso, la migracion a una version de 64 bits de Windows deberia aliviar este problema.<BR>
+<BR>
+<B>Referencias:</B><BR>
+How to Use Memory Pool Monitor (Poolmon.exe) to Troubleshoot Kernel Mode Memory Leaks<BR>
+<A HREF="http://support.microsoft.com/kb/177415">http://support.microsoft.com/kb/177415</A><BR>
+<BR>
+Ruling Out Memory-Bound Problems<BR>
+<A HREF="http://technet.microsoft.com/en-us/library/7a44b064-8872-4edf-aac7-36b2a17f662a.aspx">http://technet.microsoft.com/en-us/library/7a44b064-8872-4edf-aac7-36b2a17f662a.aspx</A><BR>
+<BR>
+How to determine the appropriate page file size for 64-bit versions of Windows Server 2003 or Windows XP<BR>
+<A HREF="http://support.microsoft.com/kb/889654">http://support.microsoft.com/kb/889654</A>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Pages/sec" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Pages/sec" ID="{0956e8c1-c91e-4765-9e4e-541f8079f502}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Pages/sec" COLLECTIONVARNAME="CollectionOfMemoryPagessec" EXPRESSIONPATH="\Memory\Pages/sec" DATATYPE="Integer" />
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Available MBytes" EXPRESSIONPATH="\Memory\Available MBytes" COLLECTIONVARNAME="CollectionOfAvailableMBytes" DATATYPE="Integer" />
+    <THRESHOLD NAME="More than 1000 pages/sec with less than 100MBs of Available MBytes" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        For ($a=0;$a -lt $CollectionOfAvailableMBytes.Count;$a++)
+        {
+          For ($b=0;$b -lt $CollectionOfMemoryPagessec.Count;$b++)
+          {
+            If ($CollectionOfAvailableMBytes[$a].CounterComputer -eq $CollectionOfMemoryPagessec[$b].CounterComputer)
+            {
+              $i = $a
+            }
+          }
+          For ($t=0;$t -lt $alQuantizedTime.Count;$t++)
+          {
+            $IsMinThresholdBroken = $False
+            $IsAvgThresholdBroken = $False
+            $IsMaxThresholdBroken = $False
+            $IsTrendThresholdBroken = $False
+            $IsMinEvaluated = $False
+            $IsAvgEvaluated = $False
+            $IsMaxEvaluated = $False
+            $IsTrendEvaluated = $False
+            If (($CollectionOfAvailableMBytes[$a].QuantizedMin[$t] -ne '-') -and ($CollectionOfAvailableMBytes[$a].QuantizedMin[$t] -ne $null) -and ($CollectionOfMemoryPagessec[$i].QuantizedAvg[$t] -ne $null) -and ($CollectionOfMemoryPagessec[$i].QuantizedAvg[$t] -ne $null))
+            {
+              If (($CollectionOfAvailableMBytes[$a].QuantizedMin[$t] -lt 100) -and ($CollectionOfMemoryPagessec[$i].QuantizedAvg[$t] -gt 1000))
+              {
+                $IsAvgThresholdBroken = $True
+                $IsAvgEvaluated = $True
+              }
+            }
+            If (($IsMinThresholdBroken -eq $True) -or ($IsAvgThresholdBroken -eq $True) -or ($IsMaxThresholdBroken -eq $True) -or ($IsTrendThresholdBroken -eq $True))
+            {
+                CreateAlert -TimeSliceIndex $t -CounterInstanceObject $CollectionOfMemoryPagessec[$i] -IsMinThresholdBroken $IsMinThresholdBroken -IsAvgThresholdBroken $IsAvgThresholdBroken -IsMaxThresholdBroken $IsMaxThresholdBroken -IsTrendThresholdBroken $IsTrendThresholdBroken -IsMinEvaluated $IsMinEvaulated -IsAvgEvaluated $IsAvgEvaulated -IsMaxEvaluated $IsMaxEvaulated -IsTrendEvaluated $IsTrendEvaulated
+            }
+          }
+        }
+         ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Memory\Pages/sec" ISTHRESHOLDSADDED="True" DATASOURCE="\Memory\Pages/sec" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfMemoryPagessec -MinThreshold 1000 -MaxThreshold 1999.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Este analisis comprueba si el contador Paginas\seg es alto mientras que el sistema esta en una condicion de memoria baja. Si se mantiene en una gran cantidad, entonces el sistema se <B>podria</B> estar quedandose sin memoria al tratar paginar la memoria al disco. Tenga en cuenta que todos los fallos de pagina se cuentan en el contador Paginas/seg, tales como fallos de pagina causados por archivos de memoria asignada en lugar de accesos al archivo de paginacion.
+      De acuerdo con Wikipedia, los archivos asignados en memoria son un segmento de memoria virtual que se han asignado con una correlaccion directa byte a byte con alguna porcion de un archivo o un recurso parecido a un archivo. Este recurso suele ser un archivo que esta presente fisicamente en el disco, pero tambien puede ser un dispositivo, un objeto de memoria compartida, o cualquier otro recurso al cual el sistema operativo puede hacer referencia a traves de un descriptor de archivo.
+En otras palabras, aplicaciones como Microsoft Word y Microsoft PowerPoint no cargan todos los documentos en la memoria RAM. En su lugar, mapean a memoria el archivo, de modo que cuando se desplaza por el documento, se cargan porciones del documento segun sea necesario. El acto de carga de las partes del documento del disco a la memoria RAM como un archivo mapeado en memoria provoca un error de pagina que se registra en el contador Paginas/seg. Ver el articulo <A HREF="http://blogs.technet.com/clinth/archive/2009/07/16/the-case-of-the-phantom-hard-page-faults.aspx">The Case of the Phantom Hard Page Faults</A>. Para determinar si los errores de pagina estan realmente llegando al archivo de paginacion, utilice el monitor de procesos con la salida avanzada activada para ver con que frecuencia el(los) archivo(s) de paginacion se ven afectados. <BR>
+Paginas\s es la velocidad a la que las paginas se leen o se escriben en disco para resolver errores severos de pagina. Este contador es un indicador primario de los tipos de errores que causan retrasos en todo el sistema. Es la suma de Memoria\Entrada de paginas/s y Memoria\Salida de paginas/s. Se calcula en numero de paginas, por lo que puede compararse con otros recuentos de paginas, como Memoria\Errores de pagina/s, sin conversion.  Incluye las paginas recuperadas para satisfacer errores en la cache del sistema de archivos (normalmente solicitadas por aplicaciones) y en archivos de memoria asignada no almacenados en cache. <BR>
+<BR>
+Este contador debe estar siempre por debajo de 1000, por lo tanto, este analisis comprueba si hay valores por encima de 1000. Utilice este analisis en correlacion con el analisis de Memoria Disponible y el analisis de Perdida de memoria (Fugas de memoria). Si todos estan presentando alertas al mismo tiempo, esto puede indicar que el sistema se esta quedando sin memoria. Siga los pasos indicados en el analisis de Perdida de Memoria (Fugas de memoria).<BR>
+</BR>
+<B>Referencias:</B><BR>
+<UL>
+<LI><A HREF="http://technet.microsoft.com/en-us/library/7a44b064-8872-4edf-aac7-36b2a17f662a.aspx">Ruling Out Memory-Bound Problems<BR></A></LI>
+<LI><A HREF="http://blogs.technet.com/clinth/archive/2009/07/16/the-case-of-the-phantom-hard-page-faults.aspx">The Case of the Phantom Hard Page Faults<BR></A></LI>
+</UL>
+<BR>
+      ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Process Working Set" ENABLED="True" CATEGORY="Process" PRIMARYDATASOURCE="\Process(_Total)\Working Set" ID="{e32af772-a24e-4a01-abe8-cd4f9d98253a}" FROMALLCOUNTERSTATS="False">
+    <DESCRIPTION><![CDATA[Espacio de trabajo es el tamanio actual, en bytes, del espacio de trabajo de este proceso. El espacio de trabajo es el conjunto de paginas de memoria usadas recientemente por los subprocesos del proceso. Si la memoria disponible del equipo esta por encima de un umbral, las paginas se mantienen en el espacio de trabajo de un proceso incluso si no estan siendo usadas. Cuando la memoria disponible pasa a estar por debajo del umbral, se recuperan las paginas desde los espacios de trabajo. Si son necesarias se producira un error flexible y se devolveran al espacio de trabajo antes de abandonar la memoria principal.<BR>
+Este analisis verifica por alguna tendencia de crecimiento de 100MB o mas por hora en todos los procesos combinados. Esto podria ser una fuga en un espacio de trabajo agresivo (en el uso de RAM), pero tenga en cuenta que esto solamente rastrea el total de RAM utilizada por todos los procesos y no incluye la memoria comprometida que ha sido paginada. Por ello, el contador Bytes privados, es mejor para identificar fugas generales de memoria. Dicho eso, Espacio de trabajo es un contador util para tomar en cuenta. Use este analisis en correlacion con el analisis Memoria Disponible<BR>
+<BR>
+<B>Referencias:</B><BR>
+<UL>
+<LI><A HREF="http://technet.microsoft.com/en-us/library/7a44b064-8872-4edf-aac7-36b2a17f662a.aspx">Ruling Out Memory-Bound Problems<BR></A></LI>
+<LI><A HREF="http://blogs.technet.com/clinth/archive/2009/07/07/the-case-of-the-out-of-memory-biztalk-server.aspx">The Case of the Out of Memory BizTalk Server</A></LI>
+</UL>
+]]></DESCRIPTION>
+    <DATASOURCE TYPE="CounterLog" NAME="\Process(_Total)\Working Set" COLLECTIONVARNAME="ProcessWorkingSetTotal" EXPRESSIONPATH="\Process(_Total)\Working Set" DATATYPE="integer" />
+    <THRESHOLD NAME="The working set of all processes combined is increasing at a rate greater than 100MBs per hour" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        $OneHundredMegaBytes = 104857600
+        StaticThreshold -CollectionOfCounterInstances $ProcessWorkingSetTotal -Operator 'gt' -Threshold $OneHundredMegaBytes -IsTrendOnly $True
+         ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Process(_Total)\Working Set" ISTHRESHOLDSADDED="False" DATASOURCE="\Process(_Total)\Working Set" CHARTLABELS="instance" />
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory System Cache Resident Bytes" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\System Cache Resident Bytes" ID="{11674a2f-1d1f-42ac-910b-2e6aa50cee79}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\System Cache Resident Bytes" COLLECTIONVARNAME="CollectionOfMemorySystemCacheResidentBytes" EXPRESSIONPATH="\Memory\System Cache Resident Bytes" DATATYPE="integer" />
+    <THRESHOLD NAME="System Cache Resident Bytes is consumsing more than 50 percent of RAM" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        $FiftyPercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024) * 0.50
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfMemorySystemCacheResidentBytes -Operator 'gt' -Threshold $FiftyPercentOfPhysicalMemory
+         ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Memory\System Cache Resident Bytes" ISTHRESHOLDSADDED="True" DATASOURCE="\Memory\System Cache Resident Bytes" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          $FiftyPercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024) * 0.50
+          $NinetyPercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024) * 0.90
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfMemorySystemCacheResidentBytes -MinThreshold $FiftyPercentOfPhysicalMemory -MaxThreshold $NinetyPercentOfPhysicalMemory -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          $NinetyPercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024) * 0.90
+          $OneHundredPercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024)
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfMemorySystemCacheResidentBytes -MinThreshold $NinetyPercentOfPhysicalMemory -MaxThreshold $OneHundredPercentOfPhysicalMemory -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Bytes residentes de cache del sistema es el tamanio, en bytes, del codigo del sistema operativo paginable en la cache del sistema de archivos. Este valor incluye solo paginas fisicas actuales y no incluye ninguna pagina de memoria virtual no residente actualmente. Es igual al valor de Cache del sistema mostrado en el Administrador de tareas. Como resultado, este valor puede ser mas pequenio que la cantidad real de memoria virtual usada por la cache del sistema de archivos. Este valor es un componente del contador Memoria\Bytes residentes de codigo del sistema, que representa todo el codigo del sistema operativo paginable que esta actualmente en la memoria fisica. Este contador muestra solamente el ultimo valor observado. No es un promedio.<BR>
+<BR>
+El analisis, verifica si los bytes residentes de cache del sistema se encuentran consumiendo mas del 50% de la memoria RAM. Bajo cierta carga, un servidor podria utilizar el cache del sistema para enviar a cache actividad de E/S tal como el disco. Utilice el analisis en correlacion con los analisis Proceso\Operaciones de ES de datos/s y Proceso\Otras operaciones de ES/s.<BR>
+<BR>
+<B>Referencias:</B><BR>
+File Cache Performance and Tuning http://technet.microsoft.com/en-us/library/bb742613.aspx
+]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Cache Bytes" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Cache Bytes" ID="{bf4e3072-8303-464a-be7a-4fd4d808f934}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Cache Bytes" COLLECTIONVARNAME="CollectionOfMemoryCacheBytes" EXPRESSIONPATH="\Memory\Cache Bytes" DATATYPE="integer" />
+    <THRESHOLD NAME="System Cache is consumsing more than 75 percent of RAM" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        $SeventyFivePercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024) * 0.75
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfMemoryCacheBytes -Operator 'gt' -Threshold $SeventyFivePercentOfPhysicalMemory
+         ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Memory\Cache Bytes" ISTHRESHOLDSADDED="True" DATASOURCE="\Memory\Cache Bytes" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          $SeventyFivePercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024) * 0.75
+          $NinetyPercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024) * 0.90
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfMemoryCacheBytes -MinThreshold $SeventyFivePercentOfPhysicalMemory -MaxThreshold $NinetyPercentOfPhysicalMemory -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          $NinetyPercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024) * 0.90
+          $OneHundredPercentOfPhysicalMemory = $([Int]$TotalMemory * 1024 * 1024 * 1024)
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfMemoryCacheBytes -MinThreshold $NinetyPercentOfPhysicalMemory -MaxThreshold $OneHundredPercentOfPhysicalMemory -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Bytes de cache es la suma de los contadores Memoria\Bytes residentes de cache del sistema, Memoria\Bytes residentes de controladores del sistema, Memoria\Bytes residentes de codigo del sistema y Memoria\Bytes residentes de bloque paginado. Este contador muestra solamente el ultimo valor observado. No es un promedio. ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Paging File % Usage" ENABLED="True" CATEGORY="Paging File" PRIMARYDATASOURCE="\Paging File(*)\% Usage" ID="{9d4009d1-8698-44a4-83d9-2bc77b01094f}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Paging File(*)\% Usage" COLLECTIONVARNAME="PagingFilePercentUsageALL" EXPRESSIONPATH="\Paging File(*)\% Usage" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="More than 70% Page file usage" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $PagingFilePercentUsageALL -Operator 'gt' -Threshold 70
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 90% Page file usage" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $PagingFilePercentUsageALL -Operator 'gt' -Threshold 90
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Paging File(*)\% Usage" ISTHRESHOLDSADDED="True" DATASOURCE="\Paging File(*)\% Usage" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $PagingFilePercentUsageALL -MinThreshold 70 -MaxThreshold 90 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $PagingFilePercentUsageALL -MinThreshold 90 -MaxThreshold 99.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Cantidad de uso, en porcentaje, de la instancia del archivo de paginacion.  Ver tambien el contador Proceso\Bytes del archivo de paginacion.<BR>
+<BR>
+Este analisis verifica que el porcentaje de uso no sea mayor a 70%.<BR>
+<BR>
+<B>Referencia:</B><BR>
+How to determine the appropriate page file size for 64-bit versions of Windows Server 2003 or Windows XP<BR>
+<A HREF="http://support.microsoft.com/kb/889654">http://support.microsoft.com/kb/889654</A><BR>
+<BR>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Percent Committed Bytes In Use" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\% Committed Bytes In Use" ID="{f1b3e1f5-274b-488b-9982-b54b3e5d7ee5}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\% Committed Bytes In Use" COLLECTIONVARNAME="MemoryPercentCommittedBytesInUse" EXPRESSIONPATH="\Memory\% Committed Bytes In Use" DATATYPE="integer" />
+    <THRESHOLD NAME="More than 70% the Commit Limit is in use" CONDITION="Warning" COLOR="Yellow" PRIORITY="50" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+         StaticThreshold -CollectionOfCounterInstances $MemoryPercentCommittedBytesInUse -Operator 'gt' -Threshold 70
+         ]]></CODE>
+    </THRESHOLD>
+    <THRESHOLD NAME="More than 90% the Commit Limit is in use" CONDITION="Critical" COLOR="Red" PRIORITY="100" ID="">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $MemoryPercentCommittedBytesInUse -Operator 'gt' -Threshold 90
+        ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Memory\% Committed Bytes In Use" ISTHRESHOLDSADDED="True" DATASOURCE="\Memory\% Committed Bytes In Use" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $MemoryPercentCommittedBytesInUse -MinThreshold 70 -MaxThreshold 90 -UseMaxValue $False
+        ]]></CODE>
+      </SERIES>
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $MemoryPercentCommittedBytesInUse -MinThreshold 90 -MaxThreshold 99.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[% de bytes confirmados en uso es la razon de Memoria\Bytes confirmados y Memoria\Limite de confirmacion. La memoria confirmada es la memoria fisica en uso que tiene espacio reservado en el archivo de paginacion en caso que se deba escribir en disco. El limite de confirmacion esta determinado por el tamanio del archivo de paginacion. Si se aumenta el tamanio del archivo de paginacion, el limite de confirmacion aumenta y la razon se reduce. Este contador solo muestra el valor del porcentaje actual. No es un promedio.<BR>
+<BR>
+Este analisis verifica si la cantidad de memoria confirmada se acerca al limite (memoria RAM mas tamanio de los archivos de paginacion), se es asi, habra que identificar alguna fuga de memoria. Si no se identifica alguna fuga de memoria, entonces considere agregar mas memoria fisica (RAM) o aumentar el tamanio de los archivos de paginacion..]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk Disk Transfers/sec" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\Disk Transfers/sec" ID="{c72eb5e3-1d3f-4de7-9a04-cce57b59fa3c}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Disk Transfers/sec" COLLECTIONVARNAME="LogicalDiskDiskTransferssecALL" EXPRESSIONPATH="\LogicalDisk(*)\Disk Transfers/sec" MINVARNAME="MinLogicalDisk_DiskTransferssec" AVGVARNAME="AvgLogicalDisk_DiskTransferssec" MAXVARNAME="MaxLogicalDisk_DiskTransferssec" TRENDVARNAME="TrendLogicalDisk_DiskTransferssec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\LogicalDisk(*)\Disk Transfers/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\LogicalDisk(*)\Disk Transfers/sec" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[Disk Transfers/sec is the rate of read and write operations on the disk.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Server Pool Nonpaged Failures" ENABLED="True" CATEGORY="Server" PRIMARYDATASOURCE="\Server\Pool Nonpaged Failures" ID="{df1afb2e-810f-402d-9615-48656add7e40}" FROMALLCOUNTERSTATS="False">
+    <DESCRIPTION><![CDATA[The number of times allocations from nonpaged pool have failed.  Indicates that the computer's physical memory is too small.]]></DESCRIPTION>
+    <DATASOURCE TYPE="CounterLog" NAME="\Server\Pool Nonpaged Failures" COLLECTIONVARNAME="ServerPoolNonpagedFailures" EXPRESSIONPATH="\Server\Pool Nonpaged Failures" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Server\Pool Nonpaged Failures" ISTHRESHOLDSADDED="False" DATASOURCE="\Server\Pool Nonpaged Failures" CHARTLABELS="instance" />
+  </ANALYSIS>
+  <ANALYSIS NAME="Server Pool Paged Failures" ENABLED="True" CATEGORY="Server" PRIMARYDATASOURCE="\Server\Pool Paged Failures" ID="{5f8fefaf-0d9c-42aa-836b-d2bef0a5f08d}" FROMALLCOUNTERSTATS="False">
+    <DESCRIPTION><![CDATA[The number of times allocations from paged pool have failed.  Indicates that the computer's physical memory or paging file are too small.]]></DESCRIPTION>
+    <DATASOURCE TYPE="CounterLog" NAME="\Server\Pool Paged Failures" COLLECTIONVARNAME="ServerPoolPagedFailures" EXPRESSIONPATH="\Server\Pool Paged Failures" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Server\Pool Paged Failures" ISTHRESHOLDSADDED="False" DATASOURCE="\Server\Pool Paged Failures" CHARTLABELS="instance" />
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Pages Output/sec" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Pages Output/sec" ID="{f77c4131-a0e5-4573-9fe1-212f3466f537}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Pages Output/sec" COLLECTIONVARNAME="MemoryPagesOutputsec" EXPRESSIONPATH="\Memory\Pages Output/sec" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Memory\Pages Output/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\Memory\Pages Output/sec" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[Salida de paginas/s es la velocidad a la cual se escriben las paginas en el disco para liberar espacio en la memoria fisica. Las paginas se devuelven al disco solo si se cambian en la memoria fisica, por lo que es probable que contengan datos, no codigo. Una velocidad alta de salida de paginas puede indicar escasez de memoria. Windows devuelve mas paginas al disco para liberar espacio cuando escasea la memoria fisica. Este contador muestra el numero de paginas y se puede comparar con otros recuentos de paginas, sin conversion.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Transition Pages RePurposed/sec" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Transition Pages RePurposed/sec" ID="{36d93462-3e5a-42b9-aab6-ea33082caae9}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Transition Pages RePurposed/sec" COLLECTIONVARNAME="MemoryTransitionPagesRePurposedsec" EXPRESSIONPATH="\Memory\Transition Pages RePurposed/sec" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Memory\Transition Pages RePurposed/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\Memory\Transition Pages RePurposed/sec" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[Paginas de transicion reasignadas/s es la velocidad a la que las paginas de cache de transicion se reutilizaron para un proposito diferente. De lo contrario, estas paginas se habrian mantenido en la cache de paginas para proporcionar un error flexible (rapido), en vez de recuperarlas del dispositivo de copia de seguridad, en el caso de que se tuviera acceso a las paginas en el futuro. Tenga en cuenta que estas paginas pueden contener memoria privada o compartida.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Network Interface Packets Outbound Errors" ENABLED="True" CATEGORY="Network Interface" PRIMARYDATASOURCE="\Network Interface(*)\Packets Outbound Errors" ID="{d2572721-c446-4331-a0c6-06319be62169}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Network Interface(*)\Packets Outbound Errors" COLLECTIONVARNAME="CollectionOfNetworkInterfacePacketsOutboundErrorsALL" EXPRESSIONPATH="\Network Interface(*)\Packets Outbound Errors" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <THRESHOLD NAME="Network Interface Packet Errors occurring" CONDITION="Critical" COLOR="Red" PRIORITY="100">
+      <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+      <CODE><![CDATA[
+        StaticThreshold -CollectionOfCounterInstances $CollectionOfNetworkInterfacePacketsOutboundErrorsALL -Operator 'gt' -Threshold 1
+         ]]></CODE>
+    </THRESHOLD>
+    <CHART CHARTTITLE="\Network Interface(*)\Packets Outbound Errors" ISTHRESHOLDSADDED="True" DATASOURCE="\Network Interface(*)\Packets Outbound Errors" CHARTLABELS="instance">
+      <SERIES NAME="Critical">
+        <CODE><![CDATA[
+          StaticChartThreshold -CollectionOfCounterInstances $CollectionOfNetworkInterfacePacketsOutboundErrorsALL -MinThreshold 1 -MaxThreshold 1.999 -UseMaxValue $True
+        ]]></CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[Paquetes de salida con errores es el numero de paquetes salientes que no pudieron transmitirse debido a errores.<BR>
+<BR>
+Si se presentan errores durante este analisis, la conectividad de red puede estar siendo afectada con un potencial numero aleatorios de cuadros de dialogo de RPC. Ver <A HREF="http://technet.microsoft.com/en-us/library/aa997363.aspx">http://technet.microsoft.com/en-us/library/aa997363.aspx</A> y <A HREF="http://technet.microsoft.com/en-us/library/aa995850.asp">http://technet.microsoft.com/en-us/library/aa995850.asp</A> para mas informacion <BR>]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Committed Bytes" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Committed Bytes" ID="{edc8cfd9-e14b-4d5b-b5c1-cbb4a73e90ae}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Committed Bytes" COLLECTIONVARNAME="CollectionOfMemoryCommittedBytes" EXPRESSIONPATH="\Memory\Committed Bytes" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Memory\Committed Bytes" ISTHRESHOLDSADDED="False" DATASOURCE="\Memory\Committed Bytes" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[Bytes confirmados es la cantidad de memoria virtual confirmada, en bytes. La memoria confirmada es la memoria fisica que tiene espacio reservado en los archivos de paginacion de disco. Puede haber uno o mas archivos de paginacion en cada unidad fisica. Este contador muestra solamente el ultimo valor observado. No es un promedio.<BR>
+    Este analisis comprueba si la cantidad total de memoria confirmada (carga de transacciones) es superior a la cantidad de RAM fisica instalada. Si es asi, el archivo de paginacion debe ser utilizado para ayudar a almacenar la memoria comprometida y el rendimiento puede degradarse. Para solucionar esto, trate de identificar que proceso esta consumiendo la mayoria de la memoria confirmada, observando el analisis  Proceso\Bytes privados y busque por alguna potencial perdida de memoria (consumo de memoria durante un largo periodo de tiempo sin liberar el recurso). Agregar mas RAM al equipo le ayudara a aliviar este problema, pero si se trata de una perdida de memoria, entonces el problema podria regresar.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk Read/Write Ratio" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\Disk Reads/sec" ID="{c5bc515f-da40-4aa6-8341-2596347a5c5b}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Disk Reads/sec" COLLECTIONVARNAME="CollectionOfLogicalDiskDiskReadsPerSec" EXPRESSIONPATH="\LogicalDisk(*)\Disk Reads/sec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Disk Writes/sec" COLLECTIONVARNAME="CollectionOfLogicalDiskDiskWritesPerSec" EXPRESSIONPATH="\LogicalDisk(*)\Disk Writes/sec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <DATASOURCE TYPE="Generated" NAME="\LogicalDisk(*)\Read Write Ratio" EXPRESSIONPATH="\LogicalDisk(*)\Read Write Ratio" COLLECTIONVARNAME="CollectionOfPalGeneratedReadWriteRatio" DATATYPE="integer">
+      <CODE><![CDATA[
+          $CollectionOfPalGeneratedReadWriteRatio = @{}
+          For ($i=0;$i -lt $CollectionOfLogicalDiskDiskReadsPerSec.Count;$i++)
+          {
+            For ($a=0;$a -lt $CollectionOfLogicalDiskDiskWritesPerSec.Count;$a++)
+            {
+              If ($CollectionOfLogicalDiskDiskReadsPerSec[$i].CounterInstance -eq $CollectionOfLogicalDiskDiskWritesPerSec[$a].CounterInstance)
+              { 
+                $b = $a
+              }
+            }
+            $alValues = New-Object System.Collections.ArrayList
+            For ($v=0;$v -lt $CollectionOfLogicalDiskDiskReadsPerSec[$i].Value.Count;$v++)
+            {
+              If (($CollectionOfLogicalDiskDiskReadsPerSec[$i].QuantizedAvg[$v] -gt 0) -and ($CollectionOfLogicalDiskDiskWritesPerSec[$b].QuantizedAvg[$v] -gt 0))
+              {
+                [int]$iPercentageOfReadsToWrites = ([double]$CollectionOfLogicalDiskDiskReadsPerSec[$i].QuantizedAvg[$v] / ([double]$CollectionOfLogicalDiskDiskReadsPerSec[$i].QuantizedAvg[$v] + [double]$CollectionOfLogicalDiskDiskWritesPerSec[$b].QuantizedAvg[$v])) * 100
+                [void] $alValues.Add($iPercentageOfReadsToWrites)
+              }
+              Else
+              {
+                [void] $alValues.Add(0)
+              }
+            }
+            $sGeneratedInstanceName = "\\$($CollectionOfLogicalDiskDiskReadsPerSec[$i].CounterComputer)\$($CollectionOfLogicalDiskDiskReadsPerSec[$i].CounterObject)($($CollectionOfLogicalDiskDiskReadsPerSec[$i].CounterInstance))\Read Write Ratio"
+            $CollectionOfPalGeneratedReadWriteRatio.Add($sGeneratedInstanceName,$alValues)
+          }
+        ]]></CODE>
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\LogicalDisk(*)\Read Write Ratio" ISTHRESHOLDSADDED="False" DATASOURCE="\LogicalDisk(*)\Read Write Ratio" CHARTLABELS="instance" />
+    <CHART CHARTTITLE="\LogicalDisk(*)\Disk Reads/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\LogicalDisk(*)\Disk Reads/sec" CHARTLABELS="instance" />
+    <CHART CHARTTITLE="\LogicalDisk(*)\Disk Writes/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\LogicalDisk(*)\Disk Writes/sec" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[
+    Este analisis muestra la relacion entre las lecturas y escrituras para cada disco logico. Por ejemplo, un valor de 25 significa que 25% de todas las operaciones de E/S por segundo son lecturas y el 75% de todas las operaciones de E/S por segundo son  escrituras.
+    ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk Bytes/Read" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\Avg. Disk Bytes/Read" ID="{395c9f00-777d-4860-bd73-0c1464beb513}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Avg. Disk Bytes/Read" COLLECTIONVARNAME="CollectionOfLogicalDiskAvgDiskBytesPerRead" EXPRESSIONPATH="\LogicalDisk(*)\Avg. Disk Bytes/Read" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\LogicalDisk(*)\Avg. Disk Bytes/Read" ISTHRESHOLDSADDED="False" DATASOURCE="\LogicalDisk(*)\Avg. Disk Bytes/Read" CHARTLABELS="instance" />
+    <THRESHOLD NAME="Greater than or equal to 64K I/O Sizes - the larger the I/O size, the longer the response times" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfLogicalDiskAvgDiskBytesPerRead -Operator 'ge' -Threshold 65536]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[
+      Este analisis muestra el tamanio de las lecturas logicas a disco por segundo. 
+      ]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk Bytes/Write" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\Avg. Disk Bytes/Write" ID="{4d4bd0b0-2b5e-498f-8c8c-a03eb885a102}" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Avg. Disk Bytes/Write" COLLECTIONVARNAME="CollectionOfLogicalDiskAvgDiskBytesPerWrite" EXPRESSIONPATH="\LogicalDisk(*)\Avg. Disk Bytes/Write" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\LogicalDisk(*)\Avg. Disk Bytes/Write" ISTHRESHOLDSADDED="False" DATASOURCE="\LogicalDisk(*)\Avg. Disk Bytes/Write" CHARTLABELS="instance" />
+    <THRESHOLD NAME="Greater than or equal to 64K I/O Sizes - the larger the I/O size, the longer the response times" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfLogicalDiskAvgDiskBytesPerWrite -Operator 'ge' -Threshold 65536]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[
+      Este analisis muestra el tamanio de las escrituras logicas a disco por segundo.
+      ]]></DESCRIPTION>
+  </ANALYSIS>
+  <!--
+  <ANALYSIS NAME="PlaceHolder" ENABLED="True" CATEGORY="PlaceHolder" PRIMARYDATASOURCE="PlaceHolder"  ID="PlaceHolder">
+    <DATASOURCE TYPE="CounterLog" NAME="PlaceHolder" EXPRESSIONPATH="PlaceHolder" COLLECTIONVARNAME="CollectionOf" DATATYPE="Integer" />
+    <CHART CHARTTITLE="PlaceHolder" ISTHRESHOLDSADDED="True" DATASOURCE="PlaceHolder" CHARTLABELS="instance">
+      <SERIES NAME="Warning" TYPE="Line" COLLECTIONMINVARNAME="MinWarningSeriesCollection" COLLECTIONMAXVARNAME="MaxWarningSeriesCollection" >
+        <CODE>
+          <![CDATA[          
+          ForEach ($InstanceOfPlaceHolder in $CollectionOfPlaceHolder)
+          {
+            ForEach ($iValue in $InstanceOfPlaceHolder.Value)
+            {
+              [void] $MinWarningSeriesCollection.Add(75)
+              [void] $MaxWarningSeriesCollection.Add(90)
+            }
+          }
+        ]]>
+        </CODE>
+      </SERIES>
+      <SERIES NAME="Critical" TYPE="Line" COLLECTIONMINVARNAME="MinCriticalSeriesCollection" COLLECTIONMAXVARNAME="MaxCriticalSeriesCollection" >
+        <CODE>
+          <![CDATA[
+          ForEach ($InstanceOfPlaceHolder in $CollectionOfPlaceHolder)
+          {
+            ForEach ($iValue in $InstanceOfPlaceHolder.Value)
+            {
+              [void] $MinCriticalSeriesCollection.Add(90)
+              [void] $MaxCriticalSeriesCollection.Add(99.99)
+            }
+          }
+        ]]>
+        </CODE>
+      </SERIES>
+    </CHART>
+    <DESCRIPTION><![CDATA[ ]]></DESCRIPTION>
+  </ANALYSIS>
+-->
+  <ANALYSIS NAME="PhysicalDisk Current Disk Queue Length" ENABLED="True" CATEGORY="PhysicalDisk" PRIMARYDATASOURCE="\PhysicalDisk(*)\Current Disk Queue Length" ID="0cd5788d-1855-42c2-b2ce-9eee52411c72" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\PhysicalDisk(*)\Current Disk Queue Length" COLLECTIONVARNAME="CollectionOfPhysicalDiskCurrentDiskQueueLength" EXPRESSIONPATH="\PhysicalDisk(*)\Current Disk Queue Length" TRENDVARNAME="TrendPhysicalDiskCurrentDiskQueueLength" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\PhysicalDisk(*)\Current Disk Queue Length" ISTHRESHOLDSADDED="False" DATASOURCE="\PhysicalDisk(*)\Current Disk Queue Length" CHARTLABELS="instance" />
+    <THRESHOLD NAME="Experimental: HBA Queue Depth might be restricted to 32 - Consider increasing the HBA queue depth if applicable" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfPhysicalDiskCurrentDiskQueueLength -Operator 'ge' -Threshold 32]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[Longitud actual de la cola de disco es el numero de solicitudes pendientes en el disco en el instante en que se recopilan los datos de rendimiento. Incluye tambien las solicitudes en servicio en el momento de la recopilacion. Es una instantanea, no un promedio obtenido en un intervalo de tiempo. Los dispositivos de cilindro de discos pueden tener varias solicitudes activas al mismo tiempo, mientras otras solicitudes simultaneas esperan servicio. Este contador puede reflejar una longitud de cola alta o baja transitoria pero, si la unidad de disco esta sometida a una carga de trabajo continua, lo mas probable es que sea casi siempre alta. Las solicitudes experimentan retrasos proporcionales a la longitud de la cola menos el numero de discos que compongan el cilindro. Para un buen rendimiento, esta diferencia deberia ser inferior a dos, como promedio.<BR>
+<BR>
+Si el servidor se encuentra utilizando un HBA (Host Bus Adapter: utilizando para conectarse a una SAN - Storage Area Network), y el valor de la Longitud actual de la cola de disco llega frecuentemente a 32, entonces considere incrementar la profundidad de la cola en el HBA para permitir una concurrencia de E/S mayor en la SAN. Por favor consulte con su administrador de la SAN antes de realizar alguna modificacion.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk Avg. Disk Queue Length" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\Avg. Disk Queue Length" ID="f4902104-0539-4fb5-8dbc-b2b15c0ec060" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Avg. Disk Queue Length" COLLECTIONVARNAME="CollectionOfLogicalDiskAvgDiskQueueLength" EXPRESSIONPATH="\LogicalDisk(*)\Avg. Disk Queue Length" TRENDVARNAME="TrendLogicalDiskAvgDiskQueueLength" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\LogicalDisk(*)\Avg. Disk Queue Length" ISTHRESHOLDSADDED="True" DATASOURCE="\LogicalDisk(*)\Avg. Disk Queue Length" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[StaticChartThreshold -CollectionOfCounterInstances $CollectionOfLogicalDiskAvgDiskQueueLength -MinThreshold 2 -MaxThreshold 9.999 -UseMaxValue $True]]></CODE>
+      </SERIES>
+    </CHART>
+    <THRESHOLD NAME="More than 2 I/O's are waiting on the logical disk" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfLogicalDiskAvgDiskQueueLength -Operator 'gt' -Threshold 2]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[Longitud promedio de la cola de disco es el promedio de solicitudes de lectura y escritura que se pusieron en cola para el disco seleccionado durante el intervalo de muestra.<BR>
+<BR>
+Este contador tipicamente posee un umbral igual al numero de ejes + 2. Dado a la gran proliferacion de ambientes virtuales, es dificil determinar el numero real de ejes fisicos detras de las unidades logicas de disco o LUN. Por ello, este umbrl generalmente presentara una Alerta para un promedio de longitud mayor que 2.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Processor % DPC Time" ENABLED="True" CATEGORY="Processor" PRIMARYDATASOURCE="\Processor(*)\% DPC Time" ID="93c6731f-1538-4f0d-8c52-b294e1592ac4" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Processor(*)\% DPC Time" COLLECTIONVARNAME="CollectionOfProcessorPercentDPCTime" EXPRESSIONPATH="\Processor(*)\% DPC Time" TRENDVARNAME="TrendProcessorPercentDPCTime" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Processor(*)\% DPC Time" ISTHRESHOLDSADDED="True" DATASOURCE="\Processor(*)\% DPC Time" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[StaticChartThreshold -CollectionOfCounterInstances $CollectionOfProcessorPercentDPCTime -MinThreshold 20 -MaxThreshold 99.999 -UseMaxValue $False]]></CODE>
+      </SERIES>
+    </CHART>
+    <THRESHOLD NAME="More than 20% time in Deferred Procedure Calls (DPC) - likely busy or poorly written drivers" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfProcessorPercentDPCTime -Operator 'gt' -Threshold 20]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[% de tiempo de DPC es el porcentaje de tiempo que el procesador empleo en la recepcion y la atencion de llamadas a procedimiento diferidas (DPC) durante el intervalo de muestra. Las DPC son interrupciones que se ejecutan con una prioridad inferior a la de las interrupciones estandar. % de tiempo de DPC es un componente de % de tiempo privilegiado, puesto que las DPC se ejecutan en modo privilegiado. Se cuentan por separado y no forman parte del recuento de interrupciones. Este contador muestra el tiempo ocupado promedio como porcentaje del tiempo de muestra.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Commit Limit" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Commit Limit" ID="0e688e18-1edb-4ca5-9445-b17dbb37fd61" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Commit Limit" COLLECTIONVARNAME="CollectionOfMemoryCommitLimit" EXPRESSIONPATH="\Memory\Commit Limit" TRENDVARNAME="TrendMemoryCommitLimit" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Memory\Commit Limit" ISTHRESHOLDSADDED="False" DATASOURCE="\Memory\Commit Limit" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[Limite de confirmacion es la cantidad de memoria virtual que se puede confirmar sin tener que extender los archivos de paginacion. Se mide en bytes. La memoria confirmada es la memoria fisica que tiene espacio reservado en los archivos de paginacion de disco. Puede haber un archivo de paginacion en cada unidad fisica. Si los archivos de paginacion se expanden, el limite se incrementara. Este contador muestra solamente el ultimo valor observado. No es un promedio.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="PhysicalDisk Avg. Disk Queue Length" ENABLED="True" CATEGORY="PhysicalDisk" PRIMARYDATASOURCE="\PhysicalDisk(*)\Avg. Disk Queue Length" ID="51260b28-3103-4629-ac4d-08437f0170c1" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\PhysicalDisk(*)\Avg. Disk Queue Length" COLLECTIONVARNAME="CollectionOfPhysicalDiskAvgDiskQueueLength" EXPRESSIONPATH="\PhysicalDisk(*)\Avg. Disk Queue Length" TRENDVARNAME="TrendPhysicalDiskAvgDiskQueueLength" DATATYPE="integer" />
+    <CHART CHARTTITLE="\PhysicalDisk(*)\Avg. Disk Queue Length" ISTHRESHOLDSADDED="True" DATASOURCE="\PhysicalDisk(*)\Avg. Disk Queue Length" CHARTLABELS="instance">
+      <SERIES NAME="Warning">
+        <CODE><![CDATA[StaticChartThreshold -CollectionOfCounterInstances $CollectionOfPhysicalDiskAvgDiskQueueLength -MinThreshold 2 -MaxThreshold 4 -IsOperatorGreaterThan $True -UseMaxValue $True]]></CODE>
+      </SERIES>
+    </CHART>
+    <THRESHOLD NAME="More than 2 I/O's are waiting on the physical disk" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfPhysicalDiskAvgDiskQueueLength -Operator 'gt' -Threshold 2]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[Longitud promedio de la cola de disco es el promedio de solicitudes de lectura y escritura que se pusieron en cola para el disco seleccionado durante el intervalo de muestra.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="LogicalDisk Current Disk Queue Length" ENABLED="True" CATEGORY="LogicalDisk" PRIMARYDATASOURCE="\LogicalDisk(*)\Current Disk Queue Length" ID="421dfe15-2ff0-4f32-b319-505aed5e6dd5" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\LogicalDisk(*)\Current Disk Queue Length" COLLECTIONVARNAME="CollectionOfLogicalDiskCurrentDiskQueueLength" EXPRESSIONPATH="\LogicalDisk(*)\Current Disk Queue Length" TRENDVARNAME="TrendLogicalDiskCurrentDiskQueueLength" DATATYPE="integer" />
+    <CHART CHARTTITLE="\LogicalDisk(*)\Current Disk Queue Length" ISTHRESHOLDSADDED="False" DATASOURCE="\LogicalDisk(*)\Current Disk Queue Length" CHARTLABELS="instance" />
+    <THRESHOLD NAME="Experimental: 32 or greater current disk I/O's queued. If using an HBA, then consider adjusting the queue depth." CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfLogicalDiskCurrentDiskQueueLength -Operator 'ge' -Threshold 32]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[Longitud actual de la cola de disco es el numero de solicitudes pendientes en el disco en el instante en que se recopilan los datos de rendimiento. Incluye tambien las solicitudes en servicio en el momento de la recopilacion. Es una instantanea, no un promedio obtenido en un intervalo de tiempo. Los dispositivos de cilindro de discos pueden tener varias solicitudes activas al mismo tiempo, mientras otras solicitudes simultaneas esperan servicio. Este contador puede reflejar una longitud de cola alta o baja transitoria pero, si la unidad de disco esta sometida a una carga de trabajo continua, lo mas probable es que sea casi siempre alta. Las solicitudes experimentan retrasos proporcionales a la longitud de la cola menos el numero de discos que compongan el cilindro. Para un buen rendimiento, esta diferencia deberia ser inferior a dos, como promedio.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Pages Input/sec" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Pages Input/sec" ID="8448cabb-a4c6-4b2d-8beb-0427f284ad90" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Pages Input/sec" COLLECTIONVARNAME="CollectionOfMemoryPagesInputsec" EXPRESSIONPATH="\Memory\Pages Input/sec" TRENDVARNAME="TrendMemoryPagesInputsec" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Memory\Pages Input/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\Memory\Pages Input/sec" CHARTLABELS="instance" />
+    <THRESHOLD NAME="Greater than 1000 page inputs per second" CONDITION="Warning" COLOR="Yellow" PRIORITY="50">
+      <DESCRIPTION><![CDATA[]]></DESCRIPTION>
+      <CODE><![CDATA[StaticThreshold -CollectionOfCounterInstances $CollectionOfMemoryPagesInputsec -Operator 'gt' -Threshold 1000]]></CODE>
+    </THRESHOLD>
+    <DESCRIPTION><![CDATA[Entrada de paginas/s es la velocidad a la que se leen las paginas desde el disco para resolver errores de pagina severos. Los errores de pagina severos se producen cuando un proceso hace referencia a una pagina en la memoria virtual que no esta en su espacio de trabajo o en cualquier otro sitio de la memoria fisica y debe recuperarse desde el disco. Cuando una pagina tiene errores, el sistema intenta leer varias paginas contiguas en la memoria para maximizar el beneficio de la operacion de lectura. Compare el valor de Memoria\\Entrada de paginas/s con el valor de Memoria\\Lecturas de pagina/s para determinar el numero promedio de paginas leidas en la memoria durante cada operacion de lectura..
+
+Este analisis comprueba si se presentan mas de 1000 entradas de paginas por segundo. Si hay una gran cantidad de entradas de paginas por segundo, entonces podria ser la E/S de un archivo normal leyendo del disco como un archivo de memoria asignada, o podria ser lectura del archivo de paginacion. Este contador no es un indicador de la condicion de falta de memoria a menos que haya una gran cantidad de presion en la memoria correspondiente a esta alerta.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Memory Free &amp; Zero Page List Bytes" ENABLED="True" CATEGORY="Memory" PRIMARYDATASOURCE="\Memory\Free &amp; Zero Page List Bytes" ID="c7af5191-3b22-4479-9a1c-1c30684b95f1" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Memory\Free &amp; Zero Page List Bytes" COLLECTIONVARNAME="CollectionOfMemoryFree&amp;ZeroPageListBytes" EXPRESSIONPATH="\Memory\Free &amp; Zero Page List Bytes" TRENDVARNAME="TrendMemoryFree&amp;ZeroPageListBytes" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Memory\Free &amp; Zero Page List Bytes" ISTHRESHOLDSADDED="False" DATASOURCE="\Memory\Free &amp; Zero Page List Bytes" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[Bytes de lista de paginas libres y cero es la cantidad de memoria fisica en bytes asignada a la lista de paginas libres y cero. Esta memoria no contiene datos en cache. Esta disponible inmediatamente para asignarse a un proceso o para que el sistema la use. Para obtener una explicacion completa acerca del administrador de memoria, consulte la informacion pertinente en MSDN o en el capitulo de la guia de rendimiento del sistema y solucion de errores del Kit de recursos de Windows Server 2003..<BR>
+<BR>
+Si el tamanio de la Lista de paginas libres y cero es grande, entonces es un buen indicador de demasiada memoria RAM instalada en el equipo. Una gran tamanio de la Lista de paginas libres y cero es normal para los equipos que han sido recientemente encendidos o reiniciados. A medida que el sistema accede al disco duro colocando paginas de la memoria en los conjuntos de trabajo de los procesos, eventualmente muchas de esas paginas de memoria seran descartadas o paginadas. Cuando eso sucede, la memoria es a menudo colocado en la lista de espera. Una lista de espera grande, es preferible, ya que utiliza la memoria RAM adicional como cache de disco. La Memoria disponible es la suma de las listas de paginas libres,cero y en espera, por lo que una gran cantidad de memoria disponible con una cantidad baja paginas libres y cero es preferible porque el sistema esta utilizando la memoria RAM adicional como cache de disco.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Network Interface Bytes Total/sec" ENABLED="True" CATEGORY="Network Interface" PRIMARYDATASOURCE="\Network Interface(*)\Bytes Total/sec" ID="1f05beca-dd49-476f-92b2-f782944740d9" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Network Interface(*)\Bytes Total/sec" COLLECTIONVARNAME="CollectionOfNetworkInterfaceBytesTotalsec" EXPRESSIONPATH="\Network Interface(*)\Bytes Total/sec" TRENDVARNAME="TrendNetworkInterfaceBytesTotalsec" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <CHART CHARTTITLE="\Network Interface(*)\Bytes Total/sec" ISTHRESHOLDSADDED="False" DATASOURCE="\Network Interface(*)\Bytes Total/sec" CHARTLABELS="instance" />
+    <DATASOURCE TYPE="CounterLog" NAME="\Network Interface(*)\Current Bandwidth" EXPRESSIONPATH="\Network Interface(*)\Current Bandwidth" COLLECTIONVARNAME="CollectionOfNetworkInterfaceCurrentBandwidthAll" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <DATASOURCE TYPE="CounterLog" NAME="\Network Interface(*)\Bytes Received/sec" EXPRESSIONPATH="\Network Interface(*)\Bytes Received/sec" COLLECTIONVARNAME="CollectionOfNetworkInterfaceBytesReceivedsecAll" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <DATASOURCE TYPE="CounterLog" NAME="\Network Interface(*)\Bytes Sent/sec" EXPRESSIONPATH="\Network Interface(*)\Bytes Sent/sec" COLLECTIONVARNAME="CollectionOfNetworkInterfaceBytesSentsecAll" DATATYPE="integer">
+      <EXCLUDE INSTANCE="_Total" />
+    </DATASOURCE>
+    <DESCRIPTION><![CDATA[Total de bytes/s es la velocidad a la que se envian y reciben bytes a traves de cada adaptador de red, incluidos los caracteres de tramas. Interfaz de red\Total de bytes/s es la suma de Interfaz de red\Bytes recibidos/s e Interfaz de red\Bytes enviados/s.]]></DESCRIPTION>
+  </ANALYSIS>
+  <ANALYSIS NAME="Processor % User Time" ENABLED="True" CATEGORY="Processor" PRIMARYDATASOURCE="\Processor(*)\% User Time" ID="5d6b712d-8483-4abe-aa47-2e7daa83695e" FROMALLCOUNTERSTATS="False">
+    <DATASOURCE TYPE="CounterLog" NAME="\Processor(*)\% User Time" COLLECTIONVARNAME="CollectionOfProcessorPercentUserTime" EXPRESSIONPATH="\Processor(*)\% User Time" TRENDVARNAME="TrendProcessorPercentUserTime" DATATYPE="integer" />
+    <CHART CHARTTITLE="\Processor(*)\% User Time" ISTHRESHOLDSADDED="False" DATASOURCE="\Processor(*)\% User Time" CHARTLABELS="instance" />
+    <DESCRIPTION><![CDATA[% de tiempo de usuario es el porcentaje de tiempo de procesador empleado en modo usuario. El modo usuario es un modo de proceso restringido diseniado para aplicaciones, subsistemas de entorno y subsistemas integrales. La alternativa, el modo privilegiado, esta diseniado para componentes de sistema operativo y permite acceso directo al hardware y a toda la memoria. El sistema operativo cambia los subprocesos de las aplicaciones al modo privilegiado para tener acceso a los servicios del sistema operativo. Este contador muestra el tiempo ocupado promedio como un porcentaje del tiempo de muestra.<BR>
+<BR>
+Este analisis muestra solamente estadisticas. Subprocesos ejecutandose en un procesador, ya sean en modo usuario o en modo privilegiado/kernel, seran medidos utilizando los contadores % de tiempo de usuario o % de tiempo privilegiado respectivamente. Un valor alto en % de tiempo de usuario indica que una gran cantidad de codigo de aplicacion se encuentra ejecutando. Esto es deseable en lugar de mucho tiempo en modo privilegiado. Ver el analisis de Procesador\% de tiempo privilegiado para mas informacion.]]></DESCRIPTION>
+  </ANALYSIS>
+</PAL>
