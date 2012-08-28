@@ -1,0 +1,8 @@
+URLs: 
+
+http://sourceforge.net/projects/soapui
+
+http://smartbear.com
+
+Version: 4.5.1
+
