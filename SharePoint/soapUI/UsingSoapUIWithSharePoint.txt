@@ -1,0 +1,29 @@
+## How to use the  WSDL (Web Services Description Language) in SharePoint with soapUI ##
+
+1. Locate the 'SharePointWebServices-soapui-project' XML project file in this directory. This file already contains references to most of the MOSS 2007 and SharePoint Server 2010 Web Services.
+
+2. Make a copy of the 'SharePointWebServices-soapui-project' file and rename it to a .XML file of your choice.
+
+3. Open the copy of your soapUI XML project file with a test editor of your choice and do a find and replace:
+
+-- Find: http://YourWebApplication.com
+-- Replace: The URL of your SharePoint web application
+
+4. Save the changes you made to the soapUI XML project file.
+
+5. Open up soapUI after installing it.
+
+**Important: also read the 'Using_soapUI_and_Burp_With_SharePoint_Web_Services' in this directory. This is to get soapUI authenticating with SharePoint.
+
+6. Select 'File' -- 'Import Project' (Ctrl-I) to import your soapUI XML project file.
+
+7. You should now be able to launch all the WSDL references for your SharePoint web application.
+
+## Adding additional WSDL Services ##
+
+The following 2 locations are good references to see what available Web Services are installed on your Farm:
+
+-- MOSS 2007: C:\Program Files\Common Files\Microsoft Shared\web server extensions\12\ISAPI
+-- SP2010: C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI
+
+Good resource on SharePoint Web Services: http://www.infoq.com/articles/swanson-moss-web-services
