@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<report>
+	<title>Test Report</title>
+	<generalInfo>
+		<reportType>XML</reportType>
+		<currentSiteInfo>true</currentSiteInfo>
+		<subSiteInfo>true</subSiteInfo>
+		<quotaDBInfo>true</quotaDBInfo>
+		<recycleBinInfo>true</recycleBinInfo>
+	</generalInfo>
+	<listInfo>
+		<summary>true</summary>
+		<header>false</header>
+		<count>-1</count>
+	</listInfo>
+	<libraryInfo>
+		<summary>true</summary>
+		<header>true</header>
+		<count>-1</count>
+	</libraryInfo>
+	<documentInfo>
+		<summary>false</summary>
+		<header>true</header>
+		<count>-1</count>
+	</documentInfo>
+</report>

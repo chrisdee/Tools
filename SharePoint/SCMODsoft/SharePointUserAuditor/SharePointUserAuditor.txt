@@ -1,0 +1,7 @@
+URLs: http://scmodsoft.com
+
+http://scmodsoft.com/product/sharepoint-user-auditor
+
+Version: 2.0
+
+Note: Requires a registration code

@@ -1,0 +1,7 @@
+URLs: http://scmodsoft.com
+
+http://scmodsoft.com/product/sharepoint-space-monitor
+
+Version: 3.0
+
+Note: Requires a registration code
