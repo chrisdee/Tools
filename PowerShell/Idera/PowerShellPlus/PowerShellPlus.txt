@@ -1,0 +1,3 @@
+URL: http://www.idera.com/Free-Tools/PowerShell-Plus
+
+Version: PowerShell Plus v4.6
