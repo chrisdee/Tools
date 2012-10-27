@@ -1,0 +1,3 @@
+URL: http://www.idera.com/Free-Tools/Hyper-V-VHD-Explorer
+
+Version: Hyper-V VHD Explorer v4.2

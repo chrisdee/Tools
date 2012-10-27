@@ -1,0 +1,9 @@
+URLs:
+
+http://powerwf.com/default.aspx
+
+http://powerwf.com/products/powerse.aspx
+
+http://ww2.powerwf.com/Latest/PowerSE-2.7-Setup.zip
+
+Version: PowerSE-2.7
