@@ -1,0 +1,8 @@
+URLs:
+
+http://spelements.com
+
+http://spelements.com/spelements.com/remotespexplorer
+
+Version: 0.6
+
