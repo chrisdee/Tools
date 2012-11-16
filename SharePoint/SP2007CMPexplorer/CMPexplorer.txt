@@ -1,0 +1,5 @@
+URLs:
+
+http://blogs.msdn.com/b/ronalus/archive/2007/10/02/content-migration-package-explorer.aspx
+
+http://weblogs.asp.net/soever/archive/2008/01/07/sharepoint-content-management-package-cmp-explorer.aspx
