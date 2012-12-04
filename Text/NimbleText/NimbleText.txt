@@ -1,0 +1,7 @@
+URLs:
+
+http://nimbletext.com/home
+
+http://nimbletext.com/Live
+
+Version: 1.6.0.39846
