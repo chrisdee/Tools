@@ -1,0 +1,12 @@
+URLs: 
+
+http://how24.codeplex.com
+
+http://how24.codeplex.com/releases
+
+http://how24.codeplex.com/releases/view/76380
+
+Version: Released: Nov 6, 2011 | Updated: Dec 1, 2011
+
+Environments: Environments: MOSS 2007 and SharePoint Server 2010 / 2013
+

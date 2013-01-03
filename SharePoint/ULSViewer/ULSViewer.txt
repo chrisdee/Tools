@@ -2,4 +2,4 @@ URL: http://archive.msdn.microsoft.com/ULSViewer
 
 Build: 2.0.3530.27850
 
-Environments: MOSS 2007 and SharePoint Server 2010
+Environments: MOSS 2007 and SharePoint Server 2010 / 2013
