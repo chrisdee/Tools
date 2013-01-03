@@ -1,0 +1,11 @@
+URLs:
+
+http://how24.codeplex.com
+
+http://how24.codeplex.com/releases
+
+http://how24.codeplex.com/releases/view/77659
+
+Version: Released: Nov 27, 2011 | Updated: Sep 3, 2012
+
+Environments: Environments: MOSS 2007 and SharePoint Server 2010 *Exception message when tested on SP2013
