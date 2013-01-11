@@ -141,5 +141,12 @@
       <WebMethods>
       </WebMethods>
     </Service>
+  <Service name="UserProfileService">
+      <Url>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx?wsdl</Url>
+      <Path>C:\Boxbuild\Tools\SharePoint\Storm\UserProfileService</Path>
+      <Config>UserProfileService_ws.config</Config>
+      <WebMethods>
+      </WebMethods>
+    </Service>
   </Services>
 </StormProject>
