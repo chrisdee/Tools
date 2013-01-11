@@ -15,7 +15,7 @@
    <soapenv:Body>
       <aler:GetAlerts/>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/GetAlerts"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AlertsSoap12" type="wsdl" bindingName="{http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/}AlertsSoap12" soapVersion="1_2" anonymous="optional" definition="http://YourWebApplication.com/_vti_bin/Alerts.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://YourWebApplication.com/_vti_bin/Alerts.asmx?wsdl"><con:part><con:url>http://YourWebApplication.com/_vti_bin/Alerts.asmx?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/GetAlerts"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AlertsSoap12" type="wsdl" bindingName="{http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/}AlertsSoap12" soapVersion="1_2" anonymous="optional" definition="http://YourWebApplication.com/_vti_bin/Alerts.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://YourWebApplication.com/_vti_bin/Alerts.asmx?wsdl"><con:part><con:url>http://YourWebApplication.com/_vti_bin/Alerts.asmx?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/sharepoint/soap/2002/1/alerts/">
       <s:element name="GetAlerts">
@@ -16511,4 +16511,2267 @@
    <soapenv:Body>
       <soap:Mode/>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/sharepoint/soap/Mode"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.microsoft.com/sharepoint/soap/Mode"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="UserProfileServiceSoap" type="wsdl" bindingName="{http://microsoft.com/webservices/SharePointPortalServer/UserProfileService}UserProfileServiceSoap" soapVersion="1_1" anonymous="optional" definition="http://YourWebApplication.com/_vti_bin/userprofileservice.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddColleague" name="AddColleague" bindingOperationName="AddColleague" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:AddColleague>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:colleagueAccountName>?</user:colleagueAccountName>
+         <!--Optional:-->
+         <user:group>?</user:group>
+         <user:privacy>?</user:privacy>
+         <user:isInWorkGroup>?</user:isInWorkGroup>
+      </user:AddColleague>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddColleague"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddLink" name="AddLink" bindingOperationName="AddLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:AddLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:name>?</user:name>
+         <!--Optional:-->
+         <user:url>?</user:url>
+         <!--Optional:-->
+         <user:group>?</user:group>
+         <user:privacy>?</user:privacy>
+      </user:AddLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddMembership" name="AddMembership" bindingOperationName="AddMembership" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:AddMembership>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:membershipInfo>
+            <user:GroupType>?</user:GroupType>
+            <user:Source>?</user:Source>
+            <user:Privacy>?</user:Privacy>
+            <user:MemberGroup>
+               <user:SourceInternal>?</user:SourceInternal>
+               <user:SourceReference>?</user:SourceReference>
+            </user:MemberGroup>
+            <!--Optional:-->
+            <user:DisplayName>?</user:DisplayName>
+            <!--Optional:-->
+            <user:MailNickname>?</user:MailNickname>
+            <!--Optional:-->
+            <user:Url>?</user:Url>
+            <user:ID>?</user:ID>
+            <user:MemberGroupID>?</user:MemberGroupID>
+            <!--Optional:-->
+            <user:Group>?</user:Group>
+         </user:membershipInfo>
+         <!--Optional:-->
+         <user:group>?</user:group>
+         <user:privacy>?</user:privacy>
+      </user:AddMembership>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddMembership"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddPinnedLink" name="AddPinnedLink" bindingOperationName="AddPinnedLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:AddPinnedLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:name>?</user:name>
+         <!--Optional:-->
+         <user:url>?</user:url>
+      </user:AddPinnedLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddPinnedLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateMemberGroup" name="CreateMemberGroup" bindingOperationName="CreateMemberGroup" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:CreateMemberGroup>
+         <!--Optional:-->
+         <user:membershipInfo>
+            <user:GroupType>?</user:GroupType>
+            <user:Source>?</user:Source>
+            <user:Privacy>?</user:Privacy>
+            <user:MemberGroup>
+               <user:SourceInternal>?</user:SourceInternal>
+               <user:SourceReference>?</user:SourceReference>
+            </user:MemberGroup>
+            <!--Optional:-->
+            <user:DisplayName>?</user:DisplayName>
+            <!--Optional:-->
+            <user:MailNickname>?</user:MailNickname>
+            <!--Optional:-->
+            <user:Url>?</user:Url>
+            <user:ID>?</user:ID>
+            <user:MemberGroupID>?</user:MemberGroupID>
+            <!--Optional:-->
+            <user:Group>?</user:Group>
+         </user:membershipInfo>
+      </user:CreateMemberGroup>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateMemberGroup"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateUserProfileByAccountName" name="CreateUserProfileByAccountName" bindingOperationName="CreateUserProfileByAccountName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:CreateUserProfileByAccountName>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:CreateUserProfileByAccountName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateUserProfileByAccountName"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonColleagues" name="GetCommonColleagues" bindingOperationName="GetCommonColleagues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetCommonColleagues>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetCommonColleagues>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonColleagues"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonManager" name="GetCommonManager" bindingOperationName="GetCommonManager" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetCommonManager>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetCommonManager>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonManager"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonMemberships" name="GetCommonMemberships" bindingOperationName="GetCommonMemberships" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetCommonMemberships>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetCommonMemberships>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonMemberships"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetInCommon" name="GetInCommon" bindingOperationName="GetInCommon" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetInCommon>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetInCommon>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetInCommon"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetPropertyChoiceList" name="GetPropertyChoiceList" bindingOperationName="GetPropertyChoiceList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetPropertyChoiceList>
+         <!--Optional:-->
+         <user:propertyName>?</user:propertyName>
+      </user:GetPropertyChoiceList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetPropertyChoiceList"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserColleagues" name="GetUserColleagues" bindingOperationName="GetUserColleagues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserColleagues>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetUserColleagues>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserColleagues"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserLinks" name="GetUserLinks" bindingOperationName="GetUserLinks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserLinks>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetUserLinks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserLinks"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserMemberships" name="GetUserMemberships" bindingOperationName="GetUserMemberships" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserMemberships>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetUserMemberships>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserMemberships"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserPinnedLinks" name="GetUserPinnedLinks" bindingOperationName="GetUserPinnedLinks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserPinnedLinks>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetUserPinnedLinks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserPinnedLinks"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByGuid" name="GetUserProfileByGuid" bindingOperationName="GetUserProfileByGuid" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileByGuid>
+         <user:guid>?</user:guid>
+      </user:GetUserProfileByGuid>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByGuid"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByIndex" name="GetUserProfileByIndex" bindingOperationName="GetUserProfileByIndex" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileByIndex>
+         <user:index>?</user:index>
+      </user:GetUserProfileByIndex>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByIndex"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByName" name="GetUserProfileByName" bindingOperationName="GetUserProfileByName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileByName>
+         <!--Optional:-->
+         <user:AccountName>?</user:AccountName>
+      </user:GetUserProfileByName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByName"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileCount" name="GetUserProfileCount" bindingOperationName="GetUserProfileCount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileCount/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileCount"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileSchema" name="GetUserProfileSchema" bindingOperationName="GetUserProfileSchema" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileSchema/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileSchema"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/ModifyUserPropertyByAccountName" name="ModifyUserPropertyByAccountName" bindingOperationName="ModifyUserPropertyByAccountName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:ModifyUserPropertyByAccountName>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:newData>
+            <!--Zero or more repetitions:-->
+            <user:PropertyData>
+               <!--Optional:-->
+               <user:Name>?</user:Name>
+               <user:Privacy>?</user:Privacy>
+               <!--Optional:-->
+               <user:Values>
+                  <!--Zero or more repetitions:-->
+                  <user:ValueData>
+                     <!--Optional:-->
+                     <user:Value>?</user:Value>
+                  </user:ValueData>
+               </user:Values>
+               <user:IsPrivacyChanged>?</user:IsPrivacyChanged>
+               <user:IsValueChanged>?</user:IsValueChanged>
+            </user:PropertyData>
+         </user:newData>
+      </user:ModifyUserPropertyByAccountName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/ModifyUserPropertyByAccountName"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllColleagues" name="RemoveAllColleagues" bindingOperationName="RemoveAllColleagues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveAllColleagues>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:RemoveAllColleagues>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllColleagues"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllLinks" name="RemoveAllLinks" bindingOperationName="RemoveAllLinks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveAllLinks>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:RemoveAllLinks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllLinks"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllMemberships" name="RemoveAllMemberships" bindingOperationName="RemoveAllMemberships" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveAllMemberships>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:RemoveAllMemberships>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllMemberships"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllPinnedLinks" name="RemoveAllPinnedLinks" bindingOperationName="RemoveAllPinnedLinks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveAllPinnedLinks>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:RemoveAllPinnedLinks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllPinnedLinks"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveColleague" name="RemoveColleague" bindingOperationName="RemoveColleague" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveColleague>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:colleagueAccountName>?</user:colleagueAccountName>
+      </user:RemoveColleague>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveColleague"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveLink" name="RemoveLink" bindingOperationName="RemoveLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:id>?</user:id>
+      </user:RemoveLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveMembership" name="RemoveMembership" bindingOperationName="RemoveMembership" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveMembership>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:sourceInternal>?</user:sourceInternal>
+         <user:sourceReference>?</user:sourceReference>
+      </user:RemoveMembership>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveMembership"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemovePinnedLink" name="RemovePinnedLink" bindingOperationName="RemovePinnedLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemovePinnedLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:id>?</user:id>
+      </user:RemovePinnedLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemovePinnedLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateColleaguePrivacy" name="UpdateColleaguePrivacy" bindingOperationName="UpdateColleaguePrivacy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:UpdateColleaguePrivacy>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:colleagueAccountName>?</user:colleagueAccountName>
+         <user:newPrivacy>?</user:newPrivacy>
+      </user:UpdateColleaguePrivacy>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateColleaguePrivacy"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateLink" name="UpdateLink" bindingOperationName="UpdateLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:UpdateLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:data>
+            <!--Optional:-->
+            <user:Name>?</user:Name>
+            <!--Optional:-->
+            <user:Group>?</user:Group>
+            <user:Privacy>?</user:Privacy>
+            <!--Optional:-->
+            <user:Url>?</user:Url>
+            <user:ID>?</user:ID>
+         </user:data>
+      </user:UpdateLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateMembershipPrivacy" name="UpdateMembershipPrivacy" bindingOperationName="UpdateMembershipPrivacy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:UpdateMembershipPrivacy>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:sourceInternal>?</user:sourceInternal>
+         <user:sourceReference>?</user:sourceReference>
+         <user:newPrivacy>?</user:newPrivacy>
+      </user:UpdateMembershipPrivacy>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateMembershipPrivacy"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdatePinnedLink" name="UpdatePinnedLink" bindingOperationName="UpdatePinnedLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:UpdatePinnedLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:data>
+            <!--Optional:-->
+            <user:Name>?</user:Name>
+            <!--Optional:-->
+            <user:Url>?</user:Url>
+            <user:ID>?</user:ID>
+         </user:data>
+      </user:UpdatePinnedLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdatePinnedLink"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="UserProfileService" type="wsdl" bindingName="{http://microsoft.com/webservices/SharePointPortalServer/UserProfileService}UserProfileService" soapVersion="1_1" anonymous="optional" definition="http://YourWebApplication.com/_vti_bin/userprofileservice.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://YourWebApplication.com/_vti_bin/userprofileservice.asmx?wsdl"><con:part><con:url>http://YourWebApplication.com/_vti_bin/userprofileservice.asmx?wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+      <s:import namespace="http://microsoft.com/wsdl/types/"/>
+      <s:element name="GetUserProfileByIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfileByIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfileByIndexResult" type="s0:GetUserProfileByIndexResult"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetUserProfileByIndexResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NextValue" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="UserProfile" type="s0:ArrayOfPropertyData"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Colleagues" type="s0:ArrayOfContactData"/>
+          <s:element minOccurs="0" maxOccurs="1" name="QuickLinks" type="s0:ArrayOfQuickLinkData"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PinnedLinks" type="s0:ArrayOfPinnedLinkData"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Memberships" type="s0:ArrayOfMembershipData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyData" nillable="true" type="s0:PropertyData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Privacy" type="s0:Privacy"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Values" type="s0:ArrayOfValueData"/>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPrivacyChanged" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="IsValueChanged" type="s:boolean"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Privacy">
+        <s:restriction base="s:string">
+          <s:enumeration value="Public"/>
+          <s:enumeration value="Contacts"/>
+          <s:enumeration value="Organization"/>
+          <s:enumeration value="Manager"/>
+          <s:enumeration value="Private"/>
+          <s:enumeration value="NotSet"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfValueData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValueData" nillable="true" type="s0:ValueData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValueData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Value"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserProfileByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserProfileByAccountName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfileByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfileByNameResult" type="s0:ArrayOfPropertyData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserProfileByAccountNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateUserProfileByAccountNameResult" type="s0:ArrayOfPropertyData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfileByGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="guid" type="s1:guid"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfileByGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfileByGuidResult" type="s0:ArrayOfPropertyData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfileSchema">
+        <s:complexType/>
+      </s:element>
+      <s:complexType name="PropertyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="IsMultiValue" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ChoiceType" type="s0:ChoiceTypes"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ChoiceTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="Off"/>
+          <s:enumeration value="None"/>
+          <s:enumeration value="Open"/>
+          <s:enumeration value="Closed"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfPropertyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyInfo" nillable="true" type="s0:PropertyInfo"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserProfileSchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfileSchemaResult" type="s0:ArrayOfPropertyInfo"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyChoiceList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="propertyName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPropertyChoiceListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyChoiceListResult" type="s0:ArrayOfString"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyUserPropertyByAccountName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="newData" type="s0:ArrayOfPropertyData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyUserPropertyByAccountNameResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="GetUserMemberships">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MemberGroupData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SourceInternal" type="s1:guid"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SourceReference" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MembershipData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GroupType" type="s0:MembershipGroupType"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Source" type="s0:MembershipSource"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Privacy" type="s0:Privacy"/>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberGroup" type="s0:MemberGroupData"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MailNickname" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long"/>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberGroupID" type="s:long"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="MembershipGroupType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None"/>
+          <s:enumeration value="Owner"/>
+          <s:enumeration value="Member"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MembershipSource">
+        <s:restriction base="s:string">
+          <s:enumeration value="DistributionList"/>
+          <s:enumeration value="SharePointSite"/>
+          <s:enumeration value="Other"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfMembershipData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MembershipData" nillable="true" type="s0:MembershipData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserMembershipsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserMembershipsResult" type="s0:ArrayOfMembershipData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ContactData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="IsInWorkGroup" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="UserProfileID" type="s1:guid"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Privacy" type="s0:Privacy"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContactData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContactData" nillable="true" type="s0:ContactData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserColleagues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserColleaguesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserColleaguesResult" type="s0:ArrayOfContactData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserLinks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPinnedLinks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QuickLinkData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Privacy" type="s0:Privacy"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuickLinkData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuickLinkData" nillable="true" type="s0:QuickLinkData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PinnedLinkData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPinnedLinkData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PinnedLinkData" nillable="true" type="s0:PinnedLinkData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserLinksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserLinksResult" type="s0:ArrayOfQuickLinkData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPinnedLinksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserPinnedLinksResult" type="s0:ArrayOfPinnedLinkData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInCommon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InCommonData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Manager" type="s0:ContactData"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Colleagues" type="s0:ArrayOfContactData"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Memberships" type="s0:ArrayOfMembershipData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInCommonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInCommonResult" type="s0:InCommonData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommonManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommonManagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommonManagerResult" type="s0:ContactData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommonColleagues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommonColleaguesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommonColleaguesResult" type="s0:ArrayOfContactData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommonMemberships">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommonMembershipsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommonMembershipsResult" type="s0:ArrayOfMembershipData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddColleague">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="colleagueAccountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="privacy" type="s0:Privacy"/>
+            <s:element minOccurs="1" maxOccurs="1" name="isInWorkGroup" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddColleagueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddColleagueResult" type="s0:ContactData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMembership">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="membershipInfo" type="s0:MembershipData"/>
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="privacy" type="s0:Privacy"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMembershipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMembershipResult" type="s0:MembershipData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMemberGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="membershipInfo" type="s0:MembershipData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMemberGroupResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="RemoveColleague">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="colleagueAccountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveColleagueResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="RemoveMembership">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="sourceInternal" type="s1:guid"/>
+            <s:element minOccurs="1" maxOccurs="1" name="sourceReference" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMembershipResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="AddLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="group" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="privacy" type="s0:Privacy"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddLinkResult" type="s0:QuickLinkData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPinnedLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPinnedLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPinnedLinkResult" type="s0:PinnedLinkData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s0:QuickLinkData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateColleaguePrivacy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="colleagueAccountName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="newPrivacy" type="s0:Privacy"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMembershipPrivacy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="sourceInternal" type="s1:guid"/>
+            <s:element minOccurs="1" maxOccurs="1" name="sourceReference" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="newPrivacy" type="s0:Privacy"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLinkResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="UpdateMembershipPrivacyResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="UpdateColleaguePrivacyResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="RemoveLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveLinkResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="UpdatePinnedLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s0:PinnedLinkData"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAllLinks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAllLinksResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="RemoveAllPinnedLinks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAllPinnedLinksResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="RemoveAllColleagues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAllColleaguesResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="RemoveAllMemberships">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAllMembershipsResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="GetUserProfileCount">
+        <s:complexType/>
+      </s:element>
+      <s:element name="GetUserProfileCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserProfileCountResult" type="s:long"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePinnedLinkResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="RemovePinnedLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePinnedLinkResponse">
+        <s:complexType/>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </types>
+  <message name="GetUserProfileByIndexSoapIn">
+    <part name="parameters" element="s0:GetUserProfileByIndex"/>
+  </message>
+  <message name="GetUserProfileByIndexSoapOut">
+    <part name="parameters" element="s0:GetUserProfileByIndexResponse"/>
+  </message>
+  <message name="GetUserProfileByNameSoapIn">
+    <part name="parameters" element="s0:GetUserProfileByName"/>
+  </message>
+  <message name="GetUserProfileByNameSoapOut">
+    <part name="parameters" element="s0:GetUserProfileByNameResponse"/>
+  </message>
+  <message name="CreateUserProfileByAccountNameSoapIn">
+    <part name="parameters" element="s0:CreateUserProfileByAccountName"/>
+  </message>
+  <message name="CreateUserProfileByAccountNameSoapOut">
+    <part name="parameters" element="s0:CreateUserProfileByAccountNameResponse"/>
+  </message>
+  <message name="GetUserProfileByGuidSoapIn">
+    <part name="parameters" element="s0:GetUserProfileByGuid"/>
+  </message>
+  <message name="GetUserProfileByGuidSoapOut">
+    <part name="parameters" element="s0:GetUserProfileByGuidResponse"/>
+  </message>
+  <message name="GetUserProfileSchemaSoapIn">
+    <part name="parameters" element="s0:GetUserProfileSchema"/>
+  </message>
+  <message name="GetUserProfileSchemaSoapOut">
+    <part name="parameters" element="s0:GetUserProfileSchemaResponse"/>
+  </message>
+  <message name="GetPropertyChoiceListSoapIn">
+    <part name="parameters" element="s0:GetPropertyChoiceList"/>
+  </message>
+  <message name="GetPropertyChoiceListSoapOut">
+    <part name="parameters" element="s0:GetPropertyChoiceListResponse"/>
+  </message>
+  <message name="ModifyUserPropertyByAccountNameSoapIn">
+    <part name="parameters" element="s0:ModifyUserPropertyByAccountName"/>
+  </message>
+  <message name="ModifyUserPropertyByAccountNameSoapOut">
+    <part name="parameters" element="s0:ModifyUserPropertyByAccountNameResponse"/>
+  </message>
+  <message name="GetUserMembershipsSoapIn">
+    <part name="parameters" element="s0:GetUserMemberships"/>
+  </message>
+  <message name="GetUserMembershipsSoapOut">
+    <part name="parameters" element="s0:GetUserMembershipsResponse"/>
+  </message>
+  <message name="GetUserColleaguesSoapIn">
+    <part name="parameters" element="s0:GetUserColleagues"/>
+  </message>
+  <message name="GetUserColleaguesSoapOut">
+    <part name="parameters" element="s0:GetUserColleaguesResponse"/>
+  </message>
+  <message name="GetUserLinksSoapIn">
+    <part name="parameters" element="s0:GetUserLinks"/>
+  </message>
+  <message name="GetUserLinksSoapOut">
+    <part name="parameters" element="s0:GetUserLinksResponse"/>
+  </message>
+  <message name="GetUserPinnedLinksSoapIn">
+    <part name="parameters" element="s0:GetUserPinnedLinks"/>
+  </message>
+  <message name="GetUserPinnedLinksSoapOut">
+    <part name="parameters" element="s0:GetUserPinnedLinksResponse"/>
+  </message>
+  <message name="GetInCommonSoapIn">
+    <part name="parameters" element="s0:GetInCommon"/>
+  </message>
+  <message name="GetInCommonSoapOut">
+    <part name="parameters" element="s0:GetInCommonResponse"/>
+  </message>
+  <message name="GetCommonManagerSoapIn">
+    <part name="parameters" element="s0:GetCommonManager"/>
+  </message>
+  <message name="GetCommonManagerSoapOut">
+    <part name="parameters" element="s0:GetCommonManagerResponse"/>
+  </message>
+  <message name="GetCommonColleaguesSoapIn">
+    <part name="parameters" element="s0:GetCommonColleagues"/>
+  </message>
+  <message name="GetCommonColleaguesSoapOut">
+    <part name="parameters" element="s0:GetCommonColleaguesResponse"/>
+  </message>
+  <message name="GetCommonMembershipsSoapIn">
+    <part name="parameters" element="s0:GetCommonMemberships"/>
+  </message>
+  <message name="GetCommonMembershipsSoapOut">
+    <part name="parameters" element="s0:GetCommonMembershipsResponse"/>
+  </message>
+  <message name="AddColleagueSoapIn">
+    <part name="parameters" element="s0:AddColleague"/>
+  </message>
+  <message name="AddColleagueSoapOut">
+    <part name="parameters" element="s0:AddColleagueResponse"/>
+  </message>
+  <message name="AddMembershipSoapIn">
+    <part name="parameters" element="s0:AddMembership"/>
+  </message>
+  <message name="AddMembershipSoapOut">
+    <part name="parameters" element="s0:AddMembershipResponse"/>
+  </message>
+  <message name="CreateMemberGroupSoapIn">
+    <part name="parameters" element="s0:CreateMemberGroup"/>
+  </message>
+  <message name="CreateMemberGroupSoapOut">
+    <part name="parameters" element="s0:CreateMemberGroupResponse"/>
+  </message>
+  <message name="RemoveColleagueSoapIn">
+    <part name="parameters" element="s0:RemoveColleague"/>
+  </message>
+  <message name="RemoveColleagueSoapOut">
+    <part name="parameters" element="s0:RemoveColleagueResponse"/>
+  </message>
+  <message name="RemoveMembershipSoapIn">
+    <part name="parameters" element="s0:RemoveMembership"/>
+  </message>
+  <message name="RemoveMembershipSoapOut">
+    <part name="parameters" element="s0:RemoveMembershipResponse"/>
+  </message>
+  <message name="AddLinkSoapIn">
+    <part name="parameters" element="s0:AddLink"/>
+  </message>
+  <message name="AddLinkSoapOut">
+    <part name="parameters" element="s0:AddLinkResponse"/>
+  </message>
+  <message name="AddPinnedLinkSoapIn">
+    <part name="parameters" element="s0:AddPinnedLink"/>
+  </message>
+  <message name="AddPinnedLinkSoapOut">
+    <part name="parameters" element="s0:AddPinnedLinkResponse"/>
+  </message>
+  <message name="UpdateLinkSoapIn">
+    <part name="parameters" element="s0:UpdateLink"/>
+  </message>
+  <message name="UpdateLinkSoapOut">
+    <part name="parameters" element="s0:UpdateLinkResponse"/>
+  </message>
+  <message name="UpdateColleaguePrivacySoapIn">
+    <part name="parameters" element="s0:UpdateColleaguePrivacy"/>
+  </message>
+  <message name="UpdateColleaguePrivacySoapOut">
+    <part name="parameters" element="s0:UpdateColleaguePrivacyResponse"/>
+  </message>
+  <message name="UpdateMembershipPrivacySoapIn">
+    <part name="parameters" element="s0:UpdateMembershipPrivacy"/>
+  </message>
+  <message name="UpdateMembershipPrivacySoapOut">
+    <part name="parameters" element="s0:UpdateMembershipPrivacyResponse"/>
+  </message>
+  <message name="RemoveLinkSoapIn">
+    <part name="parameters" element="s0:RemoveLink"/>
+  </message>
+  <message name="RemoveLinkSoapOut">
+    <part name="parameters" element="s0:RemoveLinkResponse"/>
+  </message>
+  <message name="RemoveAllLinksSoapIn">
+    <part name="parameters" element="s0:RemoveAllLinks"/>
+  </message>
+  <message name="RemoveAllLinksSoapOut">
+    <part name="parameters" element="s0:RemoveAllLinksResponse"/>
+  </message>
+  <message name="RemoveAllPinnedLinksSoapIn">
+    <part name="parameters" element="s0:RemoveAllPinnedLinks"/>
+  </message>
+  <message name="RemoveAllPinnedLinksSoapOut">
+    <part name="parameters" element="s0:RemoveAllPinnedLinksResponse"/>
+  </message>
+  <message name="RemoveAllColleaguesSoapIn">
+    <part name="parameters" element="s0:RemoveAllColleagues"/>
+  </message>
+  <message name="RemoveAllColleaguesSoapOut">
+    <part name="parameters" element="s0:RemoveAllColleaguesResponse"/>
+  </message>
+  <message name="RemoveAllMembershipsSoapIn">
+    <part name="parameters" element="s0:RemoveAllMemberships"/>
+  </message>
+  <message name="RemoveAllMembershipsSoapOut">
+    <part name="parameters" element="s0:RemoveAllMembershipsResponse"/>
+  </message>
+  <message name="GetUserProfileCountSoapIn">
+    <part name="parameters" element="s0:GetUserProfileCount"/>
+  </message>
+  <message name="GetUserProfileCountSoapOut">
+    <part name="parameters" element="s0:GetUserProfileCountResponse"/>
+  </message>
+  <message name="UpdatePinnedLinkSoapIn">
+    <part name="parameters" element="s0:UpdatePinnedLink"/>
+  </message>
+  <message name="UpdatePinnedLinkSoapOut">
+    <part name="parameters" element="s0:UpdatePinnedLinkResponse"/>
+  </message>
+  <message name="RemovePinnedLinkSoapIn">
+    <part name="parameters" element="s0:RemovePinnedLink"/>
+  </message>
+  <message name="RemovePinnedLinkSoapOut">
+    <part name="parameters" element="s0:RemovePinnedLinkResponse"/>
+  </message>
+  <portType name="UserProfileServiceSoap">
+    <operation name="GetUserProfileByIndex">
+      <input message="s0:GetUserProfileByIndexSoapIn"/>
+      <output message="s0:GetUserProfileByIndexSoapOut"/>
+    </operation>
+    <operation name="GetUserProfileByName">
+      <input message="s0:GetUserProfileByNameSoapIn"/>
+      <output message="s0:GetUserProfileByNameSoapOut"/>
+    </operation>
+    <operation name="CreateUserProfileByAccountName">
+      <input message="s0:CreateUserProfileByAccountNameSoapIn"/>
+      <output message="s0:CreateUserProfileByAccountNameSoapOut"/>
+    </operation>
+    <operation name="GetUserProfileByGuid">
+      <input message="s0:GetUserProfileByGuidSoapIn"/>
+      <output message="s0:GetUserProfileByGuidSoapOut"/>
+    </operation>
+    <operation name="GetUserProfileSchema">
+      <input message="s0:GetUserProfileSchemaSoapIn"/>
+      <output message="s0:GetUserProfileSchemaSoapOut"/>
+    </operation>
+    <operation name="GetPropertyChoiceList">
+      <input message="s0:GetPropertyChoiceListSoapIn"/>
+      <output message="s0:GetPropertyChoiceListSoapOut"/>
+    </operation>
+    <operation name="ModifyUserPropertyByAccountName">
+      <input message="s0:ModifyUserPropertyByAccountNameSoapIn"/>
+      <output message="s0:ModifyUserPropertyByAccountNameSoapOut"/>
+    </operation>
+    <operation name="GetUserMemberships">
+      <input message="s0:GetUserMembershipsSoapIn"/>
+      <output message="s0:GetUserMembershipsSoapOut"/>
+    </operation>
+    <operation name="GetUserColleagues">
+      <input message="s0:GetUserColleaguesSoapIn"/>
+      <output message="s0:GetUserColleaguesSoapOut"/>
+    </operation>
+    <operation name="GetUserLinks">
+      <input message="s0:GetUserLinksSoapIn"/>
+      <output message="s0:GetUserLinksSoapOut"/>
+    </operation>
+    <operation name="GetUserPinnedLinks">
+      <input message="s0:GetUserPinnedLinksSoapIn"/>
+      <output message="s0:GetUserPinnedLinksSoapOut"/>
+    </operation>
+    <operation name="GetInCommon">
+      <input message="s0:GetInCommonSoapIn"/>
+      <output message="s0:GetInCommonSoapOut"/>
+    </operation>
+    <operation name="GetCommonManager">
+      <input message="s0:GetCommonManagerSoapIn"/>
+      <output message="s0:GetCommonManagerSoapOut"/>
+    </operation>
+    <operation name="GetCommonColleagues">
+      <input message="s0:GetCommonColleaguesSoapIn"/>
+      <output message="s0:GetCommonColleaguesSoapOut"/>
+    </operation>
+    <operation name="GetCommonMemberships">
+      <input message="s0:GetCommonMembershipsSoapIn"/>
+      <output message="s0:GetCommonMembershipsSoapOut"/>
+    </operation>
+    <operation name="AddColleague">
+      <input message="s0:AddColleagueSoapIn"/>
+      <output message="s0:AddColleagueSoapOut"/>
+    </operation>
+    <operation name="AddMembership">
+      <input message="s0:AddMembershipSoapIn"/>
+      <output message="s0:AddMembershipSoapOut"/>
+    </operation>
+    <operation name="CreateMemberGroup">
+      <input message="s0:CreateMemberGroupSoapIn"/>
+      <output message="s0:CreateMemberGroupSoapOut"/>
+    </operation>
+    <operation name="RemoveColleague">
+      <input message="s0:RemoveColleagueSoapIn"/>
+      <output message="s0:RemoveColleagueSoapOut"/>
+    </operation>
+    <operation name="RemoveMembership">
+      <input message="s0:RemoveMembershipSoapIn"/>
+      <output message="s0:RemoveMembershipSoapOut"/>
+    </operation>
+    <operation name="AddLink">
+      <input message="s0:AddLinkSoapIn"/>
+      <output message="s0:AddLinkSoapOut"/>
+    </operation>
+    <operation name="AddPinnedLink">
+      <input message="s0:AddPinnedLinkSoapIn"/>
+      <output message="s0:AddPinnedLinkSoapOut"/>
+    </operation>
+    <operation name="UpdateLink">
+      <input message="s0:UpdateLinkSoapIn"/>
+      <output message="s0:UpdateLinkSoapOut"/>
+    </operation>
+    <operation name="UpdateColleaguePrivacy">
+      <input message="s0:UpdateColleaguePrivacySoapIn"/>
+      <output message="s0:UpdateColleaguePrivacySoapOut"/>
+    </operation>
+    <operation name="UpdateMembershipPrivacy">
+      <input message="s0:UpdateMembershipPrivacySoapIn"/>
+      <output message="s0:UpdateMembershipPrivacySoapOut"/>
+    </operation>
+    <operation name="RemoveLink">
+      <input message="s0:RemoveLinkSoapIn"/>
+      <output message="s0:RemoveLinkSoapOut"/>
+    </operation>
+    <operation name="RemoveAllLinks">
+      <input message="s0:RemoveAllLinksSoapIn"/>
+      <output message="s0:RemoveAllLinksSoapOut"/>
+    </operation>
+    <operation name="RemoveAllPinnedLinks">
+      <input message="s0:RemoveAllPinnedLinksSoapIn"/>
+      <output message="s0:RemoveAllPinnedLinksSoapOut"/>
+    </operation>
+    <operation name="RemoveAllColleagues">
+      <input message="s0:RemoveAllColleaguesSoapIn"/>
+      <output message="s0:RemoveAllColleaguesSoapOut"/>
+    </operation>
+    <operation name="RemoveAllMemberships">
+      <input message="s0:RemoveAllMembershipsSoapIn"/>
+      <output message="s0:RemoveAllMembershipsSoapOut"/>
+    </operation>
+    <operation name="GetUserProfileCount">
+      <input message="s0:GetUserProfileCountSoapIn"/>
+      <output message="s0:GetUserProfileCountSoapOut"/>
+    </operation>
+    <operation name="UpdatePinnedLink">
+      <input message="s0:UpdatePinnedLinkSoapIn"/>
+      <output message="s0:UpdatePinnedLinkSoapOut"/>
+    </operation>
+    <operation name="RemovePinnedLink">
+      <input message="s0:RemovePinnedLinkSoapIn"/>
+      <output message="s0:RemovePinnedLinkSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="UserProfileServiceSoap" type="s0:UserProfileServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="GetUserProfileByIndex">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByIndex" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserProfileByName">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CreateUserProfileByAccountName">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateUserProfileByAccountName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserProfileByGuid">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByGuid" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserProfileSchema">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileSchema" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetPropertyChoiceList">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetPropertyChoiceList" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ModifyUserPropertyByAccountName">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/ModifyUserPropertyByAccountName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserMemberships">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserMemberships" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserColleagues">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserColleagues" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserLinks">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserLinks" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserPinnedLinks">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserPinnedLinks" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetInCommon">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetInCommon" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetCommonManager">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonManager" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetCommonColleagues">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonColleagues" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetCommonMemberships">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonMemberships" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddColleague">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddColleague" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddMembership">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddMembership" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CreateMemberGroup">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateMemberGroup" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveColleague">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveColleague" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveMembership">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveMembership" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddPinnedLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddPinnedLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateColleaguePrivacy">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateColleaguePrivacy" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateMembershipPrivacy">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateMembershipPrivacy" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveAllLinks">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllLinks" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveAllPinnedLinks">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllPinnedLinks" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveAllColleagues">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllColleagues" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveAllMemberships">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllMemberships" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserProfileCount">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileCount" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdatePinnedLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdatePinnedLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemovePinnedLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemovePinnedLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="UserProfileService" type="s0:UserProfileServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetUserProfileByIndex">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByIndex" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserProfileByName">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CreateUserProfileByAccountName">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateUserProfileByAccountName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserProfileByGuid">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByGuid" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserProfileSchema">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileSchema" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetPropertyChoiceList">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetPropertyChoiceList" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ModifyUserPropertyByAccountName">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/ModifyUserPropertyByAccountName" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserMemberships">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserMemberships" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserColleagues">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserColleagues" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserLinks">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserLinks" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserPinnedLinks">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserPinnedLinks" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetInCommon">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetInCommon" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetCommonManager">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonManager" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetCommonColleagues">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonColleagues" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetCommonMemberships">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonMemberships" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddColleague">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddColleague" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddMembership">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddMembership" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CreateMemberGroup">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateMemberGroup" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveColleague">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveColleague" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveMembership">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveMembership" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddPinnedLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddPinnedLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateColleaguePrivacy">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateColleaguePrivacy" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateMembershipPrivacy">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateMembershipPrivacy" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveAllLinks">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllLinks" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveAllPinnedLinks">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllPinnedLinks" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveAllColleagues">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllColleagues" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemoveAllMemberships">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllMemberships" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetUserProfileCount">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileCount" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdatePinnedLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdatePinnedLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RemovePinnedLink">
+      <soap:operation soapAction="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemovePinnedLink" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="UserProfileService">
+    <documentation>User Profile Service</documentation>
+    <port name="UserProfileServiceSoap" binding="s0:UserProfileServiceSoap">
+      <soap:address location="http://YourWebApplication.com/_vti_bin/userprofileservice.asmx"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints/><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddColleague" name="AddColleague" bindingOperationName="AddColleague" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:AddColleague>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:colleagueAccountName>?</user:colleagueAccountName>
+         <!--Optional:-->
+         <user:group>?</user:group>
+         <user:privacy>?</user:privacy>
+         <user:isInWorkGroup>?</user:isInWorkGroup>
+      </user:AddColleague>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddColleague"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddLink" name="AddLink" bindingOperationName="AddLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:AddLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:name>?</user:name>
+         <!--Optional:-->
+         <user:url>?</user:url>
+         <!--Optional:-->
+         <user:group>?</user:group>
+         <user:privacy>?</user:privacy>
+      </user:AddLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddMembership" name="AddMembership" bindingOperationName="AddMembership" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:AddMembership>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:membershipInfo>
+            <user:GroupType>?</user:GroupType>
+            <user:Source>?</user:Source>
+            <user:Privacy>?</user:Privacy>
+            <user:MemberGroup>
+               <user:SourceInternal>?</user:SourceInternal>
+               <user:SourceReference>?</user:SourceReference>
+            </user:MemberGroup>
+            <!--Optional:-->
+            <user:DisplayName>?</user:DisplayName>
+            <!--Optional:-->
+            <user:MailNickname>?</user:MailNickname>
+            <!--Optional:-->
+            <user:Url>?</user:Url>
+            <user:ID>?</user:ID>
+            <user:MemberGroupID>?</user:MemberGroupID>
+            <!--Optional:-->
+            <user:Group>?</user:Group>
+         </user:membershipInfo>
+         <!--Optional:-->
+         <user:group>?</user:group>
+         <user:privacy>?</user:privacy>
+      </user:AddMembership>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddMembership"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddPinnedLink" name="AddPinnedLink" bindingOperationName="AddPinnedLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:AddPinnedLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:name>?</user:name>
+         <!--Optional:-->
+         <user:url>?</user:url>
+      </user:AddPinnedLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/AddPinnedLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateMemberGroup" name="CreateMemberGroup" bindingOperationName="CreateMemberGroup" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:CreateMemberGroup>
+         <!--Optional:-->
+         <user:membershipInfo>
+            <user:GroupType>?</user:GroupType>
+            <user:Source>?</user:Source>
+            <user:Privacy>?</user:Privacy>
+            <user:MemberGroup>
+               <user:SourceInternal>?</user:SourceInternal>
+               <user:SourceReference>?</user:SourceReference>
+            </user:MemberGroup>
+            <!--Optional:-->
+            <user:DisplayName>?</user:DisplayName>
+            <!--Optional:-->
+            <user:MailNickname>?</user:MailNickname>
+            <!--Optional:-->
+            <user:Url>?</user:Url>
+            <user:ID>?</user:ID>
+            <user:MemberGroupID>?</user:MemberGroupID>
+            <!--Optional:-->
+            <user:Group>?</user:Group>
+         </user:membershipInfo>
+      </user:CreateMemberGroup>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateMemberGroup"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateUserProfileByAccountName" name="CreateUserProfileByAccountName" bindingOperationName="CreateUserProfileByAccountName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:CreateUserProfileByAccountName>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:CreateUserProfileByAccountName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/CreateUserProfileByAccountName"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonColleagues" name="GetCommonColleagues" bindingOperationName="GetCommonColleagues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetCommonColleagues>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetCommonColleagues>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonColleagues"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonManager" name="GetCommonManager" bindingOperationName="GetCommonManager" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetCommonManager>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetCommonManager>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonManager"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonMemberships" name="GetCommonMemberships" bindingOperationName="GetCommonMemberships" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetCommonMemberships>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetCommonMemberships>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetCommonMemberships"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetInCommon" name="GetInCommon" bindingOperationName="GetInCommon" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetInCommon>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetInCommon>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetInCommon"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetPropertyChoiceList" name="GetPropertyChoiceList" bindingOperationName="GetPropertyChoiceList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetPropertyChoiceList>
+         <!--Optional:-->
+         <user:propertyName>?</user:propertyName>
+      </user:GetPropertyChoiceList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetPropertyChoiceList"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserColleagues" name="GetUserColleagues" bindingOperationName="GetUserColleagues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserColleagues>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetUserColleagues>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserColleagues"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserLinks" name="GetUserLinks" bindingOperationName="GetUserLinks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserLinks>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetUserLinks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserLinks"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserMemberships" name="GetUserMemberships" bindingOperationName="GetUserMemberships" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserMemberships>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetUserMemberships>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserMemberships"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserPinnedLinks" name="GetUserPinnedLinks" bindingOperationName="GetUserPinnedLinks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserPinnedLinks>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:GetUserPinnedLinks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserPinnedLinks"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByGuid" name="GetUserProfileByGuid" bindingOperationName="GetUserProfileByGuid" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileByGuid>
+         <user:guid>?</user:guid>
+      </user:GetUserProfileByGuid>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByGuid"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByIndex" name="GetUserProfileByIndex" bindingOperationName="GetUserProfileByIndex" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileByIndex>
+         <user:index>?</user:index>
+      </user:GetUserProfileByIndex>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByIndex"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByName" name="GetUserProfileByName" bindingOperationName="GetUserProfileByName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileByName>
+         <!--Optional:-->
+         <user:AccountName>?</user:AccountName>
+      </user:GetUserProfileByName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileByName"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileCount" name="GetUserProfileCount" bindingOperationName="GetUserProfileCount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileCount/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileCount"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileSchema" name="GetUserProfileSchema" bindingOperationName="GetUserProfileSchema" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:GetUserProfileSchema/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/GetUserProfileSchema"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/ModifyUserPropertyByAccountName" name="ModifyUserPropertyByAccountName" bindingOperationName="ModifyUserPropertyByAccountName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:ModifyUserPropertyByAccountName>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:newData>
+            <!--Zero or more repetitions:-->
+            <user:PropertyData>
+               <!--Optional:-->
+               <user:Name>?</user:Name>
+               <user:Privacy>?</user:Privacy>
+               <!--Optional:-->
+               <user:Values>
+                  <!--Zero or more repetitions:-->
+                  <user:ValueData>
+                     <!--Optional:-->
+                     <user:Value>?</user:Value>
+                  </user:ValueData>
+               </user:Values>
+               <user:IsPrivacyChanged>?</user:IsPrivacyChanged>
+               <user:IsValueChanged>?</user:IsValueChanged>
+            </user:PropertyData>
+         </user:newData>
+      </user:ModifyUserPropertyByAccountName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/ModifyUserPropertyByAccountName"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllColleagues" name="RemoveAllColleagues" bindingOperationName="RemoveAllColleagues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveAllColleagues>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:RemoveAllColleagues>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllColleagues"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllLinks" name="RemoveAllLinks" bindingOperationName="RemoveAllLinks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveAllLinks>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:RemoveAllLinks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllLinks"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllMemberships" name="RemoveAllMemberships" bindingOperationName="RemoveAllMemberships" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveAllMemberships>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:RemoveAllMemberships>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllMemberships"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllPinnedLinks" name="RemoveAllPinnedLinks" bindingOperationName="RemoveAllPinnedLinks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveAllPinnedLinks>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+      </user:RemoveAllPinnedLinks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveAllPinnedLinks"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveColleague" name="RemoveColleague" bindingOperationName="RemoveColleague" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveColleague>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:colleagueAccountName>?</user:colleagueAccountName>
+      </user:RemoveColleague>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveColleague"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveLink" name="RemoveLink" bindingOperationName="RemoveLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:id>?</user:id>
+      </user:RemoveLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveMembership" name="RemoveMembership" bindingOperationName="RemoveMembership" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemoveMembership>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:sourceInternal>?</user:sourceInternal>
+         <user:sourceReference>?</user:sourceReference>
+      </user:RemoveMembership>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemoveMembership"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemovePinnedLink" name="RemovePinnedLink" bindingOperationName="RemovePinnedLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:RemovePinnedLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:id>?</user:id>
+      </user:RemovePinnedLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/RemovePinnedLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateColleaguePrivacy" name="UpdateColleaguePrivacy" bindingOperationName="UpdateColleaguePrivacy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:UpdateColleaguePrivacy>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:colleagueAccountName>?</user:colleagueAccountName>
+         <user:newPrivacy>?</user:newPrivacy>
+      </user:UpdateColleaguePrivacy>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateColleaguePrivacy"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateLink" name="UpdateLink" bindingOperationName="UpdateLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:UpdateLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:data>
+            <!--Optional:-->
+            <user:Name>?</user:Name>
+            <!--Optional:-->
+            <user:Group>?</user:Group>
+            <user:Privacy>?</user:Privacy>
+            <!--Optional:-->
+            <user:Url>?</user:Url>
+            <user:ID>?</user:ID>
+         </user:data>
+      </user:UpdateLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateLink"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateMembershipPrivacy" name="UpdateMembershipPrivacy" bindingOperationName="UpdateMembershipPrivacy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:UpdateMembershipPrivacy>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <user:sourceInternal>?</user:sourceInternal>
+         <user:sourceReference>?</user:sourceReference>
+         <user:newPrivacy>?</user:newPrivacy>
+      </user:UpdateMembershipPrivacy>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdateMembershipPrivacy"/></con:call></con:operation><con:operation isOneWay="false" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdatePinnedLink" name="UpdatePinnedLink" bindingOperationName="UpdatePinnedLink" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:UpdatePinnedLink>
+         <!--Optional:-->
+         <user:accountName>?</user:accountName>
+         <!--Optional:-->
+         <user:data>
+            <!--Optional:-->
+            <user:Name>?</user:Name>
+            <!--Optional:-->
+            <user:Url>?</user:Url>
+            <user:ID>?</user:ID>
+         </user:data>
+      </user:UpdatePinnedLink>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://microsoft.com/webservices/SharePointPortalServer/UserProfileService/UpdatePinnedLink"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
