@@ -1,0 +1,27 @@
+DO NOT PANIC! There's lots of buttons on the screen, but only use them if you want to! See the help file.
+If you like the software - please consider making a donation. If you don't like it - please tell me why!
+Updates are available from the application's website (www.bulkrenameutility.co.uk). Make sure you're using a recent version to get the most benefit.
+Only those files which you have selected will be renamed. The number selected is shown in the status bar. If you don't select anything, you can't rename!
+The sequence in which the criteria are processed is indicated by a number - for example, File Numbering is the 9th operation.
+Subscribe to the discussion forum on my website (www.bulkrenameutility.co.uk) to get help and advice from others.
+You can always see a preview of what the new filename will look like in the "New Name" column.
+If a rename operation goes horribly wrong - just undo it with CTRL-Z!
+Select or de-select all files quickly with CTRL-A and CTRL-D.
+Save your favourite, commonly-used rename operations as Favourites (via the File menu).
+Need to stamp a filename with it's creation date? It's easy, and in lots of different formats too!
+When you re-launch the utility, the application remembers the screen position from the previous launch.
+Display the file-list with gridlines if you find these help. Or turn them off if they annoy you.
+Can I use BulkRenameUtility for business use? Yes, please feel free. Donations are always welcome!
+Need to process sub-directories too? Just tick the Subfolders box! (Take care though, as this can be a lengthy operation)
+Need to add an auto-number field, but the files aren't in the right order? Just use drag 'n' drop to reorder them manually.
+Want to add suffixes like 0001, 0002, 0003 to files? Set the Pad value to 4 and it's all done!
+The Rename button is disabled? You probably haven't selected any files or folders to rename.
+Full Row Select will highlight the entire row in the file-list window. Some like this, others don't - you choose.
+Have a list of filenames in a text file? Import them and use them as a basis for the rename.
+Are filenames containing numbers sorted differently to Explorer in Windows XP? Just tick the "Logical Sorting" menu option.
+I used to see "Date Taken" information for photos, but now it's blank. My default this is now disabled as it's slow, but tick the "Extract Exif data" menu option to enable it again.
+Can I rename using MP3 track information? Yes, but only using ID3/ID1.1 tags. Check out JJ MP3 Renamer instead.
+Is BulkRenameUtility free? Yes it's free, and will always be free. But donations (via the website) are VERY welcome!
+If you need a command-line version of Bulk Rename Utiltiy (e.g. for scripting) then please check out Bulk Rename Command on my website
+If you're running 64-bit WIndows (XP/2003/Vista) then you will benefit by running the 64-bit version of Bulk Rename Utility
+If you scan a huge folder by mistake and want to cancel, just press escape.
