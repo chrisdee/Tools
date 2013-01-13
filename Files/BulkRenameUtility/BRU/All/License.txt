@@ -1,0 +1,38 @@
+Bulk Rename Utility 
+Software License Agreement
+
+Bulk Rename Utility ('the software', 'this software') is provided free of charge by TGRMN Software. You are hereby licensed to use this software without charge. This software is completely free for private, for not-for-profit, and for commercial use. Donations are  welcome and can be made through the website.
+
+
+*** Distribution
+You are hereby licensed to make as many copies of this software and documentation as you wish, give exact copies of the original to anyone, and distribute the software and documentation in its unmodified form via electronic means. There is no charge for any of the above. 
+You are specifically prohibited from charging or requesting donations for any such copies however made, and from distributing the software and/or documentation with other products (commercial or otherwise) without prior written TGRMN Software permission.
+
+
+*** Disclaimer of Warranty
+THIS SOFTWARE AND THE ACCOMPANYING FILES ARE SOLD "AS IS" AND WITHOUT WARRANTIES AS TO PERFORMANCE OF MERCHANTABILITY OR ANY OTHER WARRANTIES WHETHER EXPRESSED OR IMPLIED. IN NO EVENT WILL TGRMN SOFTWARE OR ANY OTHER PARTY BE LIABLE TO YOU FOR ANY CONSEQUENTIAL, INCIDENTAL OR SPECIAL DAMAGES, INCLUDING ANY LOST PROFITS OR LOST SAVINGS. Because of the various hardware and software environments into which Bulk Rename Utility may be put, NO WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE IS OFFERED.
+Good data processing procedure dictates that any software be thoroughly tested with non-critical data before relying on it. The user must assume the entire risk of using the software.
+
+
+*** Copyright and Trademark Rights
+The Software is owned by TGRMN Software. This Agreement does not grant you any intellectual property rights in the Software. 
+
+
+*** Restrictions
+You agree not to modify, adapt, translate, reverse engineer, decompile, disassemble or otherwise attempt to discover the source code of the Software. 
+
+
+*** Governing Law
+The laws of Australia shall govern this agreement.
+
+
+
+Updates for the software may be obtained from the website at:
+http://www.bulkrenameutility.co.uk
+
+Please note that this software is also available through various mirror websites. However, they are invariable out-of-date, so you should always check http://www.bulkrenameutility.co.uk/ for updates. There's is also a "Check for Updates" option within the application's menu.
+
+Finally, this software has evolved through user suggestions. If you have any suggestions – please tell us!  If you like or dislike the product – please tell us! If you have problems installing or using it – please tell us! Contact details are available within the help file or via the website.
+
+
+Copyright 2000-2010 TGRMN Software
