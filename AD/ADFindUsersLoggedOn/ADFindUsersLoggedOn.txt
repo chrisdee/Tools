@@ -1,0 +1,10 @@
+URLs: 
+
+http://www.corelan.be/index.php/2009/07/12/free-tool-find-where-ad-users-are-logged-on-into
+
+http://www.corelan.be/index.php/my-free-tools/ad-cs/pve-find-ad-user
+
+version : 1.0.0.12 
+
+
+

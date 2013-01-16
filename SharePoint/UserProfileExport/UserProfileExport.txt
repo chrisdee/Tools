@@ -1,0 +1,13 @@
+URLs:
+
+http://csefi.blogspot.in/2012/02/sharepoint-2010-user-profile-export-to.html
+
+-- Application --
+
+https://docs.google.com/file/d/0ByS1bwNcyklmV0w1VExFc2RqMEU/edit?pli=1
+
+-- Source Code --
+
+https://docs.google.com/file/d/0ByS1bwNcyklmVlhvZk03M0E3b3M/edit?pli=1
+
+Environments: SharePoint Server 2010 / 2013 Farms

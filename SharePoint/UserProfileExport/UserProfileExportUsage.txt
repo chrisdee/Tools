@@ -1,0 +1,13 @@
+Usage Instructions:
+
+- Launch the User Profile Export Tool
+- Ensure that the credentials you are using is the Farm account, or has Farm Administrative rights
+- Enter the path to the URL of the web application you want to query the user profile service against
+- Once connected you should be able to select the User Profile Properties you want to report on
+- You can then generate the user profiles and their properties to a CSV file, or generate a PowerShell script for this
+
+Important:
+
+The generated PowerShell script doesn't include the reference to the SharePoint PowerShell commandlets - so add the line below to your scripts.
+
+Add-PSSnapin "Microsoft.Sharepoint.PowerShell" -ErrorAction SilentlyContinue
