@@ -5,3 +5,5 @@ http://salaudeen.blogspot.com/2012/02/versioning-size-report-for-entire.html
 http://versioningsizereport.codeplex.com
 
 Environments: MOSS 2007 and SharePoint Server 2010
+
+Version: Versioning Size Report 1.0 | Mar 19, 2012
