@@ -7,3 +7,13 @@ http://www.microsoft.com/en-us/download/details.aspx?id=9345
 http://www.sharepointdiary.com/2012/05/synchronize-between-sharepoint-lists.html
 
 http://www.sharepoint-howto.com/2011/12/20/sharepoint-2010-how-to-import-excel-spreadsheet-into-list
+
+To Add the Extension to Excel:
+
+- Open Excel Client
+
+- Go to File --> Options --> Add-Ins
+
+- Select 'Go' button and browse to the 'XL2007SynchronizeWSSandExcel' file to add this to Add-Ins
+
+Tip: Remember to save your Excel files in the earlier version .xls file format!
