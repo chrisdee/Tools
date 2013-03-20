@@ -1,0 +1,9 @@
+URLs:
+
+http://www.simplewatcher.ru/en
+
+http://www.addictivetips.com/windows-tips/monitor-folders-auto-run-apps-or-send-emails-when-changes-occur
+
+Version: 1.3
+
+Usage: Tool needs to be run as an administrator
