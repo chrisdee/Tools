@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataTable>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="importdatatable" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="importdatatable">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="FileNameAndPath" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationServerUrl" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationFolderUrl" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationWebUrl" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationSubDirectories" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationFileName" type="xs:string" minOccurs="0" />
+                <xs:element name="Exception" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+    <DocumentElement>
+      <importdatatable diffgr:id="importdatatable1" msdata:rowOrder="0" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Users\spfarm\Desktop\Branding\Chapter 13\Chapter 13 Project\source\jQueryWebParts\jQueryWebParts\pkg\Debug\jQuery Web Parts\jQueryWebParts_jQueryWebParts\ScriptLoaderVisualWebPart\ScriptLoaderVisualWebPart.cs</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 13/chapter 13 project/source/jquerywebparts/jquerywebparts/pkg/debug/jquery web parts/jquerywebparts_jquerywebparts/scriptloadervisualwebpart</DestinationSubDirectories>
+        <DestinationFileName>ScriptLoaderVisualWebPart.cs</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+      </importdatatable>
+    </DocumentElement>
+  </diffgr:diffgram>
+</DataTable>

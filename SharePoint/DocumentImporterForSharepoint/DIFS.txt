@@ -1,0 +1,6 @@
+URL: http://difs.codeplex.com
+
+Version: Version 1.0.1.0 | Released:Feb 23, 2013
+
+Environments: Office 365 / SharePoint Online / 2010 / 2013 / Server / Foundation
+

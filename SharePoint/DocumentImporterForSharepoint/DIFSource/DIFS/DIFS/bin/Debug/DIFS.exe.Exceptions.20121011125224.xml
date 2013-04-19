@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataTable>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="importdatatable" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="importdatatable">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="FileNameAndPath" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationServerUrl" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationFolderUrl" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationWebUrl" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationSubDirectories" type="xs:string" minOccurs="0" />
+                <xs:element name="DestinationFileName" type="xs:string" minOccurs="0" />
+                <xs:element name="Exception" type="xs:string" minOccurs="0" />
+                <xs:element name="FileSystemCreated" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="FileSystemModified" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="FileSystemCreatedBy" type="xs:int" minOccurs="0" />
+                <xs:element name="FileSystemModifiedBy" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+    <DocumentElement>
+      <importdatatable diffgr:id="importdatatable1" msdata:rowOrder="0" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\placeholder.txt</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 12/chapter 12 - ribbon project/chapter12example/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>Chapter13Example.txt</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-11-08T13:12:54+00:00</FileSystemCreated>
+        <FileSystemModified>2011-05-04T17:09:18.0910391+01:00</FileSystemModified>
+      </importdatatable>
+      <importdatatable diffgr:id="importdatatable2" msdata:rowOrder="1" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Projects\Books\Branding\Chapter 12\Chapter 12 - Ribbon Project\Chapter12Example\bin\Debug\Chapter13Example.pdb</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 12/chapter 12 - ribbon project/chapter12example/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>Chapter13Example.allow</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-11-08T13:12:56+00:00</FileSystemCreated>
+        <FileSystemModified>2011-05-04T17:09:18.1232656+01:00</FileSystemModified>
+      </importdatatable>
+      <importdatatable diffgr:id="importdatatable3" msdata:rowOrder="2" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Projects\Books\Branding\Chapter 12\Chapter 12 - Ribbon Project\Chapter12Example\bin\Debug\Chapter13Example.wsp</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 12/chapter 12 - ribbon project/chapter12example/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>Chapter13Example.allow</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-11-08T13:12:56+00:00</FileSystemCreated>
+        <FileSystemModified>2011-05-04T17:09:18.1857656+01:00</FileSystemModified>
+      </importdatatable>
+      <importdatatable diffgr:id="importdatatable4" msdata:rowOrder="3" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Projects\Books\Branding\Chapter 13\Chapter 13 Project\source\ClientOM\ClientOMProject\bin\Debug\ClientOMProject.dll</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 13/chapter 13 project/source/clientom/clientomproject/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>ClientOMProject.allow</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-07-12T08:39:18+01:00</FileSystemCreated>
+        <FileSystemModified>2011-05-06T15:30:33.5281719+01:00</FileSystemModified>
+      </importdatatable>
+      <importdatatable diffgr:id="importdatatable5" msdata:rowOrder="4" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Projects\Books\Branding\Chapter 13\Chapter 13 Project\source\ClientOM\ClientOMProject\bin\Debug\ClientOMProject.pdb</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 13/chapter 13 project/source/clientom/clientomproject/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>ClientOMProject.allow</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-07-12T08:39:18+01:00</FileSystemCreated>
+        <FileSystemModified>2011-05-06T15:30:33.5467266+01:00</FileSystemModified>
+      </importdatatable>
+      <importdatatable diffgr:id="importdatatable6" msdata:rowOrder="5" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Projects\Books\Branding\Chapter 13\Chapter 13 Project\source\ClientOM\ClientOMProject\bin\Debug\ClientOMProject.wsp</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 13/chapter 13 project/source/clientom/clientomproject/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>ClientOMProject.allow</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-07-14T10:36:40+01:00</FileSystemCreated>
+        <FileSystemModified>2011-05-06T15:30:33.5965313+01:00</FileSystemModified>
+      </importdatatable>
+      <importdatatable diffgr:id="importdatatable7" msdata:rowOrder="6" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Projects\Books\Branding\Chapter 13\Chapter 13 Project\source\jQueryWebParts\jQueryWebParts\bin\Debug\jQuery Web Parts.wsp</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 13/chapter 13 project/source/jquerywebparts/jquerywebparts/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>jQuery Web Parts.allow</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-07-19T16:05:06+01:00</FileSystemCreated>
+        <FileSystemModified>2011-05-06T15:30:35.9422344+01:00</FileSystemModified>
+      </importdatatable>
+      <importdatatable diffgr:id="importdatatable8" msdata:rowOrder="7" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Projects\Books\Branding\Chapter 13\Chapter 13 Project\source\jQueryWebParts\jQueryWebParts\bin\Debug\jQueryWebParts.dll</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 13/chapter 13 project/source/jquerywebparts/jquerywebparts/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>jQueryWebParts.allow</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-07-19T12:51:44+01:00</FileSystemCreated>
+        <FileSystemModified>2011-05-06T15:30:35.9783672+01:00</FileSystemModified>
+      </importdatatable>
+      <importdatatable diffgr:id="importdatatable9" msdata:rowOrder="8" diffgr:hasChanges="inserted">
+        <FileNameAndPath>C:\Projects\Books\Branding\Chapter 13\Chapter 13 Project\source\jQueryWebParts\jQueryWebParts\bin\Debug\jQueryWebParts.pdb</FileNameAndPath>
+        <DestinationServerUrl>http://intranet</DestinationServerUrl>
+        <DestinationFolderUrl>/Documents</DestinationFolderUrl>
+        <DestinationWebUrl>/</DestinationWebUrl>
+        <DestinationSubDirectories>/chapter 13/chapter 13 project/source/jquerywebparts/jquerywebparts/renamedbin/debug</DestinationSubDirectories>
+        <DestinationFileName>jQueryWebParts.allow</DestinationFileName>
+        <Exception>The remote server returned an error: (404) Not Found.</Exception>
+        <FileSystemCreated>2010-07-19T12:51:44+01:00</FileSystemCreated>
+        <FileSystemModified>2011-05-06T15:30:36.0145+01:00</FileSystemModified>
+      </importdatatable>
+    </DocumentElement>
+  </diffgr:diffgram>
+</DataTable>

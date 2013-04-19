@@ -1,0 +1,4 @@
+LoadItemsFileSystemFolder
+LoadFileSystemDirectoryRecursive:C:\Projects\DIFS\TestImports\2-400Files
+ImportItems
+ImportRow:C:\Projects\DIFS\TestImports\2-400Files\test.txt:ExceptionObject reference not set to an instance of an object.

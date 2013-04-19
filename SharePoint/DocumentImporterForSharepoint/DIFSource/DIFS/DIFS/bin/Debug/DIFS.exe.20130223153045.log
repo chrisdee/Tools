@@ -1,0 +1,16 @@
+LoadItemsFileSystemFolder
+LoadFileSystemDirectoryRecursive:C:\Projects\DIFS\TestImports\2-400Files
+ImportItems
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\test.txt:To:/Documents/test.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text1.txt:To:/Documents/text1.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text10.txt:To:/Documents/text10.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text100.txt:To:/Documents/text100.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text101.txt:To:/Documents/text101.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text102.txt:To:/Documents/text102.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text103.txt:To:/Documents/text103.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text104.txt:To:/Documents/text104.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text105.txt:To:/Documents/text105.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text106.txt:To:/Documents/text106.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text107.txt:To:/Documents/text107.txt
+ImportRow:Imported:C:\Projects\DIFS\TestImports\2-400Files\text108.txt:To:/Documents/text108.txt
+ImportItemsImport Paused

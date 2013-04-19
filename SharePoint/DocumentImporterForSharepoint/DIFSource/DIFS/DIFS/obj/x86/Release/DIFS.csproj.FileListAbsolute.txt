@@ -1,0 +1,10 @@
+C:\Projects\DIFS\DIFS\DIFS\bin\Release\DIFS.exe.config
+C:\Projects\DIFS\DIFS\DIFS\bin\Release\DIFS.exe
+C:\Projects\DIFS\DIFS\DIFS\bin\Release\DIFS.pdb
+C:\Projects\DIFS\DIFS\DIFS\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Projects\DIFS\DIFS\DIFS\obj\x86\Release\DIFS.UserForm.resources
+C:\Projects\DIFS\DIFS\DIFS\obj\x86\Release\DIFS.Properties.Resources.resources
+C:\Projects\DIFS\DIFS\DIFS\obj\x86\Release\DIFS.exe
+C:\Projects\DIFS\DIFS\DIFS\obj\x86\Release\DIFS.pdb
+C:\Projects\DIFS\DIFS\DIFS\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Projects\DIFS\DIFS\DIFS\obj\x86\Release\GenerateResource.write.1.tlog
