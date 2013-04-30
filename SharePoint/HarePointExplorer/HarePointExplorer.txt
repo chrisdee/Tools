@@ -1,0 +1,11 @@
+URLs:
+
+http://www.harepoint.com/Products/HarePointExplorer/Default.aspx
+
+http://mlsharepointexplorer.codeplex.com
+
+Versions:
+
+Version 2.2.1 (SharePoint 2013)
+
+Version 2.2.1 (SharePoint 2007 and 2010)
