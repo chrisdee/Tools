@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Columns>
+  <Column name="Test MMSingle" type="TaxonomyFieldType">
+    <Values>
+      <Value>SharePoint</Value>
+    </Values>
+  </Column>
+  <Column name="Test MMMulti" type="TaxonomyFieldTypeMulti">
+    <Values>
+      <Value>SharePoint</Value>
+      <Value>SharePoint Consultant</Value>
+      <Value>SharePoint Designer</Value>
+    </Values>
+  </Column>
+  <Column name="Test SingleText" type="Text">
+    <Values>
+      <Value>Line of text</Value>
+    </Values>
+  </Column>
+  <Column name="Test MultiText" type="Note">
+    <Values>
+      <Value>First line of text</Value>
+      <Value></Value>
+      <Value>Second line of text</Value>
+    </Values>
+  </Column>
+  <Column name="Test YesNo" type="Boolean">
+    <Values>
+      <Value>True</Value>
+    </Values>
+  </Column>
+  <Column name="Test Choice" type="Choice">
+    <Values>
+      <Value>Choice C</Value>
+    </Values>
+  </Column>
+  <Column name="Test MultiChoice" type="MultiChoice">
+    <Values>
+      <Value>Choice A</Value>
+      <Value>Choice C</Value>
+    </Values>
+  </Column>
+  <Column name="Test Number" type="Number">
+    <Values>
+      <Value>1.00</Value>
+    </Values>
+  </Column>
+  <Column name="Test Currency" type="Currency">
+    <Values>
+      <Value>1.00</Value>
+    </Values>
+  </Column>
+  <Column name="Test Hyperlink" type="URL">
+    <Values>
+      <Description>Get-SPScripts</Description>
+      <Value>http://get-spscripts.com</Value>
+    </Values>
+  </Column>
+  <Column name="Test PictureLink" type="URL">
+    <Values>
+      <Description>Phil Childs</Description>
+      <Value>http://4.bp.blogspot.com/_3ZvpJCdZvQk/TCTDY7m2tzI/AAAAAAAAAKo/PRrCxyIVszc/S220/PhilChilds.jpg</Value>
+    </Values>
+  </Column>
+  <Column name="Test PersonSingle" type="User">
+    <Values>
+      <Value>PACDOMAIN2\shaun.young</Value>
+    </Values>
+  </Column>
+  <Column name="Test PersonMulti" type="UserMulti">
+    <Values>
+      <Value>PACDOMAIN2\spadmin</Value>
+      <Value>PACDOMAIN2\phil.childs</Value>
+      <Value>Approvers</Value>
+    </Values>
+  </Column>
+</Columns>
