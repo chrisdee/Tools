@@ -1,0 +1,20 @@
+URLs:
+
+http://www.easyphp.org
+
+Versions:
+
+EASYPHP DEVSERVER 13.1 VC9
+EASYPHP DEVSERVER 13.1 VC11
+
+Useful Paths:
+
+Web Server 'wwwroot' directory - \binaries\home
+
+Apache httpd.conf Config File - \binaries\conf_files
+
+Useful Tips:
+
+IP / Port configuration - httpd.conf Config File
+
+Listen
