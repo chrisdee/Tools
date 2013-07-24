@@ -1,3 +1,5 @@
+SharePoint Versions Tested With: MOSS 2007, SharePoint Server 2010/2013, o365 SharePoint Online
+
 URLs:
 
 http://msdn.microsoft.com/en-us/library/bb462636(v=office.11).aspx
@@ -15,5 +17,13 @@ To Add the Extension to Excel:
 - Go to File --> Options --> Add-Ins
 
 - Select 'Go' button and browse to the 'XL2007SynchronizeWSSandExcel' file to add this to Add-Ins
+
+To use the Extension in Excel:
+
+- Create your list columns and convert this to a table - Insert --> Table
+
+- Publish your table to SharePoint - Design --> Publish and allow Sync Sharepoint
+
+- The dialogue box titled 'Export Table to R/W Sharepoint List' should open and here you can specify your SharePoint URL and List Name to be created
 
 Tip: Remember to save your Excel files in the earlier version .xls file format!

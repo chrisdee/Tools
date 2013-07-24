@@ -1,0 +1,11 @@
+URLs:
+
+http://sp2013searchtool.codeplex.com
+
+http://blogs.msdn.com/b/nadeemis
+
+http://blogs.msdn.com/b/nadeemis/archive/2012/08/24/sharepoint-2013-search-rest-api.aspx
+
+Version: 1.0.0.0 | Released: Nov 10, 2012 | Change Set: 17212
+
+Environments: SharePoint 2013 On-Premise, and SharePoint Online
