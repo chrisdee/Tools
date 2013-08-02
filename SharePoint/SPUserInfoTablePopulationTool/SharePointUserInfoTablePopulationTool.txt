@@ -5,3 +5,19 @@ http://todd-carter.com/post/2011/09/20/Introduce-Users-Into-the-UserInfo-Table.a
 http://todd-carter.com/post/2011/09/23/SharePoint-UserInfo-Table-Population-Tool.aspx
 
 http://todd-carter.com/page/Downloads.aspx
+
+SharePoint Versions: SharePoint server 2010 / 2013
+
+--Parameters--
+ 
+-o, -operation [import|export] Import/export users to/from a file from User Profile Store (Default is import)
+-a, -authtype [windows|claims] Authentication Type (Default is windows)
+-u, -url <site url> Url of site in Content DB to populate or to use as context for export from User Profile Store
+-f, -file <file path> Path to a file which contains users in DOMAIN\UserName [Windows] or Encoded Claim [Claims] format
+-w, -workers <number> the number of Import worker threads (Default 1) (Max 8)
+ 
+--Examples--
+ 
+SPUserPop -a claims -u http://team -f c:\users.txt
+SPUserPop -u http://team -f c:\users.txt -w 4
+SPUserPop -o export -u http://team -f usersFromProfileStore.txt
