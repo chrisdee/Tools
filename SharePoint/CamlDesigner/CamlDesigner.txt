@@ -1,0 +1,13 @@
+Caml Designer 2013
+Requirement: Install .NET 4.5 framework first -  link 
+If you want to use CamlDesigner together with O365. It can be that you first have to install the SP 2013 Server SDK first, because of a dll that is needed by MS.SP.Client.dll to connect  via de CSOM. - link
+Install click-Once application
+Download offline package here
+   
+For legacy purpose you can still download the Caml Designer 2010 but we are continueing support on Caml Designer 2013
+
+Caml Designer 2010
+Install click-Once application
+Download offline package
+ 
+If you have some feedback, please let us know on Camlfeedback@biwug.be 

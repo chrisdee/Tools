@@ -1,0 +1,11 @@
+URLs:
+
+https://spcb.codeplex.com
+
+https://spcb.codeplex.com/releases
+
+Versions:
+
+SharePoint 2013: Client Browser v1.1
+
+SharePoint 2010: Client Browser (Preview) v0.6
