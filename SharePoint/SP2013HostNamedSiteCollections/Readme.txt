@@ -1,0 +1,2 @@
+Project Description
+The SharePoint Host named Site Collection (HNSC) Creator is a Codeplex Project that allows SharePoint Admins to create HNSC Via a GUI instead of PowerShell. It works with both Windows Server 2008 R2 and Windows Server 2012!

@@ -1,0 +1,9 @@
+URLs:
+
+http://hnsc.codeplex.com
+
+https://hnsc.codeplex.com/documentation
+
+Version:
+
+Released: Sep 10, 2013 | Change Set: 28338
