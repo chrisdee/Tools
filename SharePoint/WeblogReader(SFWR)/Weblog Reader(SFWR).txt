@@ -1,0 +1,24 @@
+URLs:
+
+http://gallery.technet.microsoft.com/office/The-SharePoint-Flavored-5b03f323
+
+http://gallery.technet.microsoft.com/office/Set-IIS-Log-Fields-via-ee9c19b3
+
+http://sharepointdragons.com/
+
+Version: v1.4
+
+Usage Notes:
+
+Requires the 4.0 .NET Framework on the source machine it is run from '.NETFramework,Version=v4.0'
+The 'sfwr.exe' tool is able to locate any '.log' files in folders and sub-folders where you point it to
+
+Usage Examples:
+
+./sfwr.exe 10 "C:\Data\IISLogs"
+
+./sfwr.exe 10 "C:\Data\IISLogs" "DOMAIN\User"
+
+./sfwr.exe 10 "C:\Data\IISLogs" "User"
+
+Note: The number after the '.exe' is required and denotes how many 'top' entries you want to report on
