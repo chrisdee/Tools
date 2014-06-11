@@ -5,11 +5,13 @@
 
 $spsFarmReport = "D:\Scripts\SPSFarmReport\o12" #Change this to suit your environment for '12' hive farms
 #$spsFarmReport = "D:\Scripts\SPSFarmReport\o14" #Change this to suit your environment for '14' hive farms
+#$spsFarmReport = "D:\Scripts\SPSFarmReport\o15" #Change this to suit your environment for '15' hive farms
 
 cd $spsFarmReport
 
 ./SPSFarmReport.exe #For '12' hive farms
 #./2010SPSFR.exe #For '14' hive farms
+#./2013SPSFarmReport.ps1 #For '15' hive farms
 
 $hostName = hostname
 $file = "D:\Scripts\SPSFarmReport\o12\SPSFarmReport.html" #Change your SPSFarm report file location details here

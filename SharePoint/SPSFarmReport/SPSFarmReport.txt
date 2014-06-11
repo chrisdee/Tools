@@ -1,6 +1,13 @@
 URL: http://spsfarmreport.codeplex.com
 
-Version: Mar 5 2012
+Version: Nov 29, 2013
 
-Environments: MOSS 2007 and SharePoint Server 2010 Farms
+Environments: MOSS 2007 and SharePoint Server 2010 / 2013 Farms
+
+Usage Tips:
+
+For the SP2013 'o15' report the report files are written to the '[Environment]::CurrentDirectory' path. Change the line below in the '2013SPSFarmReport.ps1' file if you want to change this.
+
+$global:_logpath = [Environment]::CurrentDirectory
+
 
