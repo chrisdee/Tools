@@ -6,15 +6,24 @@ Versions:
 
 EASYPHP DEVSERVER 13.1 VC9
 EASYPHP DEVSERVER 13.1 VC11
+EASYPHP DEVSERVER 14.1 VC11
 
 Useful Paths:
 
 Web Server 'wwwroot' directory - \binaries\home
 
 Apache httpd.conf Config File - \binaries\conf_files
+MySQL (my.ini) Config File - \binaries\conf_files
+PHP (php.ini) Config File - \binaries\conf_files
 
 Useful Tips:
 
 IP / Port configuration - httpd.conf Config File
 
 Listen
+
+ServerName
+
+Allow MySQL remote connections - my.ini Config File (Comment out bind-address)
+
+#bind-address	= 127.0.0.1
