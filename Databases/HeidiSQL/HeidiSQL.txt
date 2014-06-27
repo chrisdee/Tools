@@ -1,0 +1,11 @@
+URLs:
+
+http://www.heidisql.com
+
+http://www.heidisql.com/download.php
+
+http://code.google.com/p/heidisql
+
+Versions:
+
+HeidiSQL_8.3_Portable
