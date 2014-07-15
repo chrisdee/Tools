@@ -1,0 +1,15 @@
+URLs:
+
+http://sharepointlogviewer.codeplex.com
+
+http://www.overroot.com
+
+Version: SharePoint Log Viewer 2.6 | Change Set: 74832ad4d0bb | Released: May 11, 2010
+
+Environments: MOSS 2007 and SharePoint Server 2010 / 2013 Farms
+
+Usage Notes:
+
+When testing; the application needed to be run with elevated administrative priveledges
+
+On the 'Settings --> Notifications' options when configuring 'Minimum Severity' options; choosing events for notification lower than 'High' can have an impact on the performance of the tool.
