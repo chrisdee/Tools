@@ -6,6 +6,6 @@ https://spcb.codeplex.com/releases
 
 Versions:
 
-SharePoint 2013: Client Browser v1.1
+SharePoint 2013: Client Browser v1.3.1
 
 SharePoint 2010: Client Browser (Preview) v0.6
