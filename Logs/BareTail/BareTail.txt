@@ -1,0 +1,3 @@
+URL: http://www.baremetalsoft.com/baretail
+
+Version: Release 3.50a 2006-11-02
