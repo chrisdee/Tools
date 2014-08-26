@@ -1,0 +1,11 @@
+URL: http://www.codeproject.com/Articles/261608/AD-FS-Tools
+
+Usage Examples:
+
+.\GetRelyingParty.exe "YourRelyingPartyTrustName"
+
+.\AddRelyingParty.exe "YourRelyingPartyTrustName.xml"
+
+.\UpdateRelyingParty.exe "YourRelyingPartyTrustName.xml"
+
+.\GetEventLog.exe "0724A8D0-D873-4CB3-8762-C9A70084DD98" "server1.company.com,server2.company.com"
