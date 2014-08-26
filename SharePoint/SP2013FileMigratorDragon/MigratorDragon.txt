@@ -1,0 +1,5 @@
+URL: http://gallery.technet.microsoft.com/scriptcenter/The-Migration-Dragon-for-c0880e59
+
+Version: Last Updated 3/1/2013
+
+Note: When run from the client side, the guest OS must be x64 and the user requires sufficient access permissions
