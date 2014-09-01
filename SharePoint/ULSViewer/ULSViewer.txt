@@ -1,5 +1,8 @@
-URL: http://archive.msdn.microsoft.com/ULSViewer
+URLs: 
 
-Build: 2.0.3530.27850
+http://archive.msdn.microsoft.com/ULSViewer
+http://www.microsoft.com/en-us/download/confirmation.aspx?id=44020
+
+Builds: 2.0.3530.27850 | 16.0.3129.1000
 
 Environments: MOSS 2007 and SharePoint Server 2010 / 2013
