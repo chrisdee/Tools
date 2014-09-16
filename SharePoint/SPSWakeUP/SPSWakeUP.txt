@@ -1,0 +1,10 @@
+== SPSWakeUP ==
+
+URLs: 
+
+https://spswakeup.codeplex.com
+
+https://spswakeup.codeplex.com/documentation
+
+Version: 
+
