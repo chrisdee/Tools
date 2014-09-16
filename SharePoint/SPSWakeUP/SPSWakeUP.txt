@@ -6,5 +6,4 @@ https://spswakeup.codeplex.com
 
 https://spswakeup.codeplex.com/documentation
 
-Version: 
-
+Version: SPSWakeUP 1.6 | Released: Aug 19, 2014
