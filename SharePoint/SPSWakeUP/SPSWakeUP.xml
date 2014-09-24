@@ -2,47 +2,52 @@
 <!-- SPSWakeUP Sample Configuration File 
 # ====================================================================================
 # Description:	WarmUP Configuration file for SharePoint 2007, 2010 & 2013
-# FileName:		  SPSWarmUP.xml
-# Author:		    Jean-Cyril DROUHIN
-# Date:			    July 09, 2014
-# Version:		  1.6
-# URL:			    http://spswarmup.codeplex.com
-# Licence:		  MS-PL
+# FileName:		SPSWarmUP.xml
+# Author:		Jean-Cyril DROUHIN
+# Date:			September 19, 2014
+# Version:		1.7
+# URL:			http://spswarmup.codeplex.com
+# Licence:		MS-PL
 # ====================================================================================
 Use a validator like http://www.w3schools.com/xml/xml_validator.asp to check the syntax of your file.
 -->
-<Configuration Version="1.6">
-  <!-- This settings section helps to configure Windows OS and Internet Explorer to permit access web URL in a local context -->
-  <Settings>
-    <!-- Disables network loopback checks. This prevents the OS blocking access to your server under names other than its actual host name -->
-    <DisableLoopbackCheck>true</DisableLoopbackCheck>
-    <!-- Add URL of Web Application in HOSTS system file -->
-    <AddURLsToHOSTS>true</AddURLsToHOSTS>
-    <!-- Add URL of Web Application in Intranet security zone -->
-    <AddURLsIntranetZone>true</AddURLsIntranetZone>
-    <!-- Disable Internet Explorer Enhanced Security Configuration for administrators -->
-    <DisableIEESC>true</DisableIEESC>
-    <!-- Include Central Administration Url in WarmUp -->
-    <IncludeCentralAdmin>true</IncludeCentralAdmin>
-    <!-- Use internet explorer for WarmUp -->
-    <UseIEforWarmUp>true</UseIEforWarmUp>
-  </Settings>
+<Configuration Version="1.7">
+	<!-- This settings section helps to configure Windows OS and Internet Explorer to permit access web URL in a local context -->
+	<Settings>
+		<!-- Disables network loopback checks. This prevents the OS blocking access to your server under names other than its actual host name -->
+		<DisableLoopbackCheck>true</DisableLoopbackCheck>
+		<!-- Add URL of Web Application in HOSTS system file -->
+		<AddURLsToHOSTS>true</AddURLsToHOSTS>
+		<!-- Add URL of Web Application in Intranet security zone -->
+		<AddURLsIntranetZone>true</AddURLsIntranetZone>
+		<!-- Disable Internet Explorer Enhanced Security Configuration for administrators -->
+		<DisableIEESC>true</DisableIEESC>
+		<!-- Include Central Administration Url in WarmUp -->
+		<IncludeCentralAdmin>true</IncludeCentralAdmin>
+		<!-- Use internet explorer for WarmUp -->
+		<UseIEforWarmUp>true</UseIEforWarmUp>
+	<!-- This section helps to configure the retention of log files -->
+	<CleanLogs Enable="true">
+			<!-- Number of Days for keeping Logs Files -->
+			<Days>30</Days>
+		</CleanLogs>
+	</Settings>
 
-  <!-- This EmailNotification section configure settings for mail notifications -->
-  <EmailNotification Enable="true">
-    <SMTPServer>smtp.contoso.com</SMTPServer>
-    <EmailAddress>ADM-SharePoint@contoso.com</EmailAddress>
-  </EmailNotification>
-  
-  <!--- This CustomUrls section add urls to be warming up.-->
-  <CustomUrls>
-    <CustomUrl>http://intranet/sites/spswakeup1/home.aspx</CustomUrl>
-    <CustomUrl>http://intranet/sites/spswakeup2/home.aspx</CustomUrl>
-  </CustomUrls>
+	<!-- This EmailNotification section configure settings for mail notifications -->
+	<EmailNotification Enable="false">
+		<SMTPServer>smtp.contoso.com</SMTPServer>
+		<EmailAddress>ADM-SharePoint@contoso.com</EmailAddress>
+	</EmailNotification>
+	
+	<!--- This CustomUrls section add urls to be warming up.-->
+	<CustomUrls>
+		<!-- <CustomUrl>http://intranet/sites/spswakeup1/home.aspx</CustomUrl> -->
+		<CustomUrl></CustomUrl>
+	</CustomUrls>
 
-  <!--- This ExcludeUrls section remove site collection urls to be warming up.-->
-  <ExcludeUrls>
-    <ExcludeUrl>http://intranet/search</ExcludeUrl>
-    <ExcludeUrl>http://intranet/sites/Admin</ExcludeUrl>
-  </ExcludeUrls>
+	<!--- This ExcludeUrls section remove site collection urls to be warming up.-->
+	<ExcludeUrls>
+		<!-- <ExcludeUrl>http://intranet/search</ExcludeUrl>-->
+		<ExcludeUrl></ExcludeUrl>
+	</ExcludeUrls>
 </Configuration>
