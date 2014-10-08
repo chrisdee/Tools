@@ -1,3 +1,14 @@
 == Exclaimer Outlook Photos ==
 
 URL: http://www.exclaimer.eu/outlook-photos
+
+Usage: 
+
+Run the installer 'Setup.exe' file, or copy over the extracted application in the 'ExclaimerOutlookPhotos' folder over to your environment.
+
+Launch the tool via the 'Exclaimer.Products.OutlookPhotos.exe' application launcher
+
+The account using the tool needs appropriate permissions to the Active Directory attributes it needs to update - at least the following:
+
+'Read thumbnailPhoto'
+'Write thumbnailPhoto'
