@@ -6,6 +6,6 @@ Usage Examples:
 
 .\AddRelyingParty.exe "YourRelyingPartyTrustName.xml"
 
-.\UpdateRelyingParty.exe "YourRelyingPartyTrustName.xml"
+.\UpdateRelyingParty.exe "YourRelyingPartyTrustName" "YourRelyingPartyTrustName.xml"
 
 .\GetEventLog.exe "0724A8D0-D873-4CB3-8762-C9A70084DD98" "server1.company.com,server2.company.com"
