@@ -1,0 +1,7 @@
+== Sharepoint Database Exporter ==
+
+URLs:
+
+http://blog.dreamdevil.com/index.php/2007/03/13/sharepoint_2003_database_exporter
+
+Versions: v1.1.0.3

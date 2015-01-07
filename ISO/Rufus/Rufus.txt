@@ -1,0 +1,14 @@
+== Rufus ==
+
+URL: http://rufus.akeo.ie
+
+Version: Rufus 1.4.12 | Last updated 2014.11.09
+
+Rufus is a utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.
+
+It can be especially useful for cases where:
+
+you need to create USB installation media from bootable ISOs (Windows, Linux, UEFI, etc.)
+you need to work on a system that doesn't have an OS installed
+you need to flash a BIOS or other firmware from DOS
+you want to run a low-level utility
