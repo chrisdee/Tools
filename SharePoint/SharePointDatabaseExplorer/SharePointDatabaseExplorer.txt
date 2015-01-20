@@ -1,0 +1,5 @@
+== SharePoint Database Explorer ==
+
+URLs: https://sharepointdatabaseexplorer.codeplex.com
+
+Version: V1.0 Released: May 13, 2014
