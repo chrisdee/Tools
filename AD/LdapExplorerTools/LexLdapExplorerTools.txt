@@ -1,0 +1,15 @@
+== LEX LDAP Explorer Tools ==
+
+URLs:
+
+http://www.ldapexplorer.com
+
+http://www.ldapexplorer.com/en/freetools.htm
+
+Versions:
+
+LAZARUS Version 1.8.11
+
+Liza Version 1.8.11
+
+Lumax Version 1.9.2
