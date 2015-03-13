@@ -1,0 +1,5 @@
+== mTail ==
+
+URL: http://ophilipp.free.fr/op_tail.htm
+
+Version: v1.9.3 (12-31-2014)
