@@ -1,0 +1,9 @@
+== AD Photo Edit ==
+
+URLs:
+
+http://www.cjwdev.com/Software/ADPhotoEdit/Info.html
+
+http://www.cjwdev.com/Software/ADPhotoEdit/Download.html
+
+Versions: Version: 2.6.1
