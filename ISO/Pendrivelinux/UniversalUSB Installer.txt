@@ -1,0 +1,9 @@
+== Pendrivelinux.com - USB Installer ==
+
+URLs: 
+
+http://www.pendrivelinux.com
+
+http://www.pendrivelinux.com/run-ubuntu-server-edition-installer-from-usb
+
+Version: Universal-USB-Installer-1.9.5.9 | January 14, 2015 
