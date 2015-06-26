@@ -6,4 +6,6 @@ http://ps2exe.codeplex.com
 
 http://blog.karstein-consulting.com/2013/03/08/update-of-ps2exe-version-0-3-0-0-now-supports-powershell-3-0-and-2-0
 
+https://gallery.technet.microsoft.com/PS2EXE-Convert-PowerShell-9e4e07f1
+
 Versions: PS2EXE v0.4 | Sat Mar 9, 2013 at 8:00 AM
