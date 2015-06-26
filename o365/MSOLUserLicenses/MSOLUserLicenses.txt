@@ -1,0 +1,5 @@
+== MSOLUserLicenses PowerShell Solution ==
+
+Use PowerShell to Automatically Assign Licenses to Your Office 365 Users
+
+Resource: http://social.technet.microsoft.com/wiki/contents/articles/15905.how-to-use-powershell-to-automatically-assign-licenses-to-your-office-365-users.aspx?PageIndex=1

@@ -1,0 +1,137 @@
+﻿# Script to retrieve a licensing report from Office 365 and output it to CSV
+# Copyright Microsoft @ 2012
+
+# DISCLAIMER
+
+# The sample scripts are not supported under any Microsoft standard support program or service.
+
+# The sample scripts are provided AS IS without warranty of any kind.
+
+# Microsoft further disclaims all implied warranties including, without limitation,
+
+# any implied warranties of merchantability or of fitness for a particular purpose.
+
+# The entire risk arising out of the use or performance of the sample scripts and documentation remains with you.
+
+# In no event shall Microsoft, its authors, or anyone else involved in the creation, production,
+
+# or delivery of the scripts be liable for any damages whatsoever (including, without limitation,
+
+# damages for loss of business profits, business interruption, loss of business information,
+
+# or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation,
+
+# even if Microsoft has been advised of the possibility of such damages.
+
+# change the username to a admin account in your tenant i.e. admin@contos.onmicrosoft.com
+
+$Username="usernotset"
+
+# to set a new password delete this script and run SetupScript.ps1 again.
+
+$pass="passnotset"
+
+# check if the password and user are set to something
+
+if(($pass -contains "notset")-or($Username -contains "notset"))
+
+{
+
+"You need to set your username and/or create an encrypted password for the admin account specified in this script before continuing."
+
+Exit 2
+
+}
+
+# load the MSOnline PowerShell Module
+
+# verify that the MSOnline module is installed and import into current powershell session
+
+If (!([System.IO.File]::Exists(("{0}\modules\msonline\Microsoft.Online.Administration.Automation.PSModule.dll" -f $pshome))))
+
+{
+
+Write-EventLog -LogName Application -EntryType Error -EventId 99 -Source O365LicenseUpdate -Message "The Microsoft Online Services Module for PowerShell is not installed. The Script cannot continue."
+
+write-log "Please download and install the Microsoft Online Services Module."
+
+Exit 99
+
+}
+
+$getModuleResults = Get-Module
+
+If (!$getModuleResults) {Import-Module MSOnline -ErrorAction SilentlyContinue}
+
+Else {$getModuleResults | ForEach-Object {If (!($_.Name -eq "MSOnline")){Import-Module MSOnline -ErrorAction SilentlyContinue}}}
+
+write-Eventlog -logname Application -Entrytype information -EventId 0 -source O365LicenseUpdate -message 'MSOnline module imported'
+
+# create the password from the encrypted string and setup the credential object
+
+$password = ConvertTo-SecureString $pass
+
+$cred = New-Object -typename System.Management.Automation.PSCredential -argumentlist $Username,$password                
+
+$er = "" 
+
+# Connect to Microsoft Online Service
+
+Connect-MsolService -Credential $cred -errorAction silentlyContinue -errorvariable $er
+
+if ($er -ne ""){
+
+# handle any logon errors
+
+        $message6 = 'Could not log on O365 with ' + $($Username) + ' to create your licensing report ' + $er
+
+        write-Eventlog -logname Application -Entrytype error -EventId 6 -source O365LicenseUpdate -message $message6
+
+        exit
+
+}
+
+else {
+
+write-Eventlog -logname Application -Entrytype information -EventId 0 -source O365LicenseUpdate -message 'Logged In'
+
+}
+
+$outFile="licenses_{0:yyyyMMdd-HHmm}.csv" -f (Get-Date)
+
+$users = Get-MsolUser -all 
+
+$header = "userPrincipaName,usageLocation,isLicensed,accountSKUid,servicePlan1,provisioningStatus1,servicePlan2,provisioningStatus2,servicePlan3,provisioningStatus3,servicePlan4,provisioningStatus4,servicePlan5,provisioningStatus5"
+
+Out-File -FilePath $outfile -InputObject $header
+
+foreach($usr in $users)
+
+{
+
+$lineOut=$usr.UserPrincipalName + "," + $usr.usageLocation + "," + $usr.isLicensed + ","
+
+foreach($lic in $usr.Licenses)
+
+{
+
+    $lineOut = $lineOut + $lic.AccountSkuID
+
+foreach($s in $lic.ServiceStatus)
+
+{
+
+$lineout = $lineout + $s.ServicePlan.ServiceName + "," + $s.ProvisioningStatus +","
+
+}
+
+}
+
+Out-File -FilePath $outfile -Append -NoClobber -InputObject $lineOut
+
+$lineOut = $null
+
+}
+
+Write-Host -ForeGroundColor yellow "Please review your output file at " $outFile
+

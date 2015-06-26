@@ -1,0 +1,547 @@
+﻿#script to assign or swap the licenses of a user
+#Copyright Microsoft @ 2012
+
+#DISCLAIMER
+
+#The sample scripts are not supported under any Microsoft standard support program or service.
+
+#The sample scripts are provided AS IS without warranty of any kind.
+
+#Microsoft further disclaims all implied warranties including, without limitation,
+
+#any implied warranties of merchantability or of fitness for a particular purpose.
+
+#The entire risk arising out of the use or performance of the sample scripts and documentation remains with you.
+
+#In no event shall Microsoft, its authors, or anyone else involved in the creation, production,
+
+#or delivery of the scripts be liable for any damages whatsoever (including, without limitation,
+
+#damages for loss of business profits, business interruption, loss of business information,
+
+#or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation,
+
+#even if Microsoft has been advised of the possibility of such damages.
+
+# Setup the UI Colors
+
+$host.ui.RawUI.ForegroundColor = "White"
+
+$host.ui.RawUI.BackgroundColor = "Black"
+
+# change the username to a admin account in your tenant i.e. admin@contos.onmicrosoft.com
+
+$Username="usernotset"
+
+# to set a new password delete this script and run SetupScript.ps1 again.
+
+$pass="passnotset"
+
+### added 20140515-timbos
+
+#In order to assign a license a user needs to have a UsageLocation defined in Office 365
+
+# By default this script will set the UsageLocation to the country attribute ("c" in AD) defined for the user
+
+# if this attribute is not configured the following default UsageLocation will be assumed
+
+# to set a new default Usagelocation change the folling
+
+$DefaultUsageLocation ="usagelocationnotset"
+
+###
+
+# check if the password and user are set to something
+
+if(($pass -contains "notset")-or($Username -contains "notset"))
+
+{
+
+"You need to set your username and/or create an encrypted password for the admin account specified in this script before continuing."
+
+Exit 2
+
+}
+
+# Global Variables
+
+<#---------Logfile Info----------#>
+
+# setup the logfile
+
+$script:logfile = ".\Logs\AssignLicense-$(get-date -format MMddyyHHmmss).log"
+
+$script:Seperator = $("-" * 25)
+
+$script:loginitialized = $false
+
+$script:FileHeader = "***Application Information***"
+
+# Global Functions
+
+function write-log([string]$info)
+
+{
+
+# verify the Log is setup and if not create the file
+
+if($script:loginitialized -eq $false)
+
+{
+
+$FileHeader > $logfile
+
+$script:loginitialized = $True
+
+}
+
+$info = $(get-date).ToString()+": "+$info
+
+$info >> $script:logfile
+
+}
+
+# setup the eventlog source if it does not exist
+
+New-EventLog -LogName Application -Source O365LicenseUpdate -ErrorAction SilentlyContinue > Out-Null
+
+# write the start event to the eventlog
+
+write-Eventlog -logname Application -Entrytype information -EventId 0 -source O365LicenseUpdate -message 'The O365 License Update AssignLicense has been started'
+
+# load the MSOnline PowerShell Module
+
+# verify that the MSOnline module is installed and import into current powershell session
+
+If (!([System.IO.File]::Exists(("{0}\modules\msonline\Microsoft.Online.Administration.Automation.PSModule.dll" -f $pshome))))
+
+{
+
+Write-EventLog -LogName Application -EntryType Error -EventId 99 -Source O365LicenseUpdate -Message "The Microsoft Online Services Module for PowerShell is not installed. The Script cannot continue."
+
+write-log "Please download and install the Microsoft Online Services Module."
+
+Exit 99
+
+}
+
+$getModuleResults = Get-Module
+
+If (!$getModuleResults) {Import-Module MSOnline -ErrorAction SilentlyContinue}
+
+Else {$getModuleResults | ForEach-Object {If (!($_.Name -eq "MSOnline")){Import-Module MSOnline -ErrorAction SilentlyContinue}}}
+
+write-Eventlog -logname Application -Entrytype information -EventId 0 -source O365LicenseUpdate -message 'MSOnline module imported'
+
+# create the password from the encrypted string and setup the credential object
+
+$password = ConvertTo-SecureString $pass
+
+$cred = New-Object -typename System.Management.Automation.PSCredential -argumentlist $Username,$password
+
+$ErrHandle = ""
+
+# Connect to Microsoft Online Service
+
+Connect-MsolService -Credential $cred # -errorAction silentlyContinue -errorvariable $Errhandle
+
+if ($ErrHandle -ne ""){
+
+# handle any logon errors
+
+$message6 = 'Could not log on O365 with ' + $($Username) + ' to update licenses. ' + $ErrHandle
+
+write-Eventlog -logname Application -Entrytype error -EventId 6 -source O365LicenseUpdate -message $message6
+
+exit
+
+}
+
+else {
+
+write-Eventlog -logname Application -Entrytype information -EventId 0 -source O365LicenseUpdate -message 'Logged In'
+
+}
+
+# setup the user info
+
+$script:UseInfo = $($(get-date -format HH:mm:ss) + "`t" + $env:username + "`t")
+
+# get the company prefix for the license packages
+
+$licenseList=Get-MsolAccountSku
+
+if(($licenseList.GetType().Name) -eq "AccountSkuDetails") {
+
+$licensePrefix =$licenseList.AccountSkuId.Split(":")[0]
+
+}
+
+else{
+
+$licensePrefix =$licenseList[0].AccountSkuId.Split(":")[0]
+
+}
+
+Trap [Exception] {
+
+# Something bad happened let's dump it into the log file
+
+write-log $("$UseInfo`t$_. - Line:(" + $($_.InvocationInfo.ScriptLineNUmber)+":"+$($_.InvocationInfo.OffsetInLine)+ ") " + $($_.InvocationInfo.Line))
+
+continue
+
+}
+
+# Main Loop starts here
+
+$csvfile = ''
+
+# Get the list of all CSV Files
+
+###changed 20140515
+
+$filecol = Get-childitem -path .\queuedLicense | Where-Object {$_.Extension -eq '.csv'}
+
+if($filecol -ne $null){
+
+# iterate through the list of files and execute on every user in each file
+
+foreach ($file in $filecol) {
+
+$csvfile = $file.FullName
+
+Write-host "Processing "$csvfile
+
+$Users = import-csv $csvfile -Delimiter ";"
+
+$Message7 = 'Start processing license file ' + $csvfile
+
+write-Eventlog -logname Application -Entrytype information -EventId 0 -source O365LicenseUpdate -message $Message7
+
+write-log $Message7
+
+$UPN = ''
+
+# iterate through the users in the file
+
+foreach ($user in $users) {
+
+# make sure the user has a license and a UPN in the row. If not skip the user
+
+if (( $user.O365LicenseType -ne "") -and ($user.userPrincipalName -ne "")){
+
+$ErrHandle = ""
+
+$NewLicenseExc = ""
+
+$OldLicenseExc = ""
+
+$O365LicenseType = $licensePrefix + ":" + $user.O365LicenseType.trim()
+
+$UPN = $user.userPrincipalName.Trim()
+
+#added 20140515-timbos
+
+if ($user.UsageLocation -ne "") {
+
+$UsageLocation = $user.UsageLocation
+
+}
+
+else {
+
+$UsageLocation = $DefaultUsageLocation
+
+}
+
+###
+
+$message1 = 'Update user license for user: ' + $UPN + ', this can take 15 minutes to become effective'
+
+$message2 = 'license for user ' + $UPN + ' is added in O365'
+
+$message3 = 'Wrong Licence type for user: ' + $UPN + ' in AD'
+
+$message4 = 'License stays the same for user: ' + $UPN
+
+$message5 = 'Error file ' + $csvfile +' empty or user not found in O365: ' + $UPN
+
+$message6 = 'User or License Record were empty. Skipped.'
+
+$setLicenseOptions = $false
+
+$skipUser =$false
+
+write-host $UPN , $O365LicenseType
+
+# Apply Licenses as needed
+
+# Check if we need to create LicenseOptions
+
+# Using the pipe (|) symbol as a delimter because some service plans do contain an underscore (_) character
+
+if($O365LicenseType.Contains("|")) {
+
+# Split the Options into an Array
+
+$licenseOptions = $O365LicenseType.Split("|")
+
+# Pick the first Option as the AccountSkuID
+
+$O365LicenseType = $licenseOptions[0]
+
+# Create an empty Array for the disabledPlans Object
+
+$lo=@()
+
+for($i=1;$i -le $licenseOptions.Count;$i+=1) {
+
+# Make sure we only add non-null disabledPlans to the new Array
+
+if($licenseOptions[$i] -ne $null) {
+
+$lo+=$licenseOptions[$i]
+
+}
+
+}
+
+# Create the LicenseOptions Object
+
+$licenseOptionObject = New-MsolLicenseOptions -AccountSkuId $O365LicenseType -DisabledPlans $lo
+
+$setLicenseOptions = $true
+
+}
+
+# Check if user exists in Office 365
+
+Try {
+
+$userObject = Get-MsolUser -UserPrincipalName $UPN -erroraction stop
+
+###added 20140515-timbos
+
+if (!$userObject.UsageLocation) {
+
+Set-MsolUser -UserPrincipalName $UPN -UsageLocation $UsageLocation
+
+}
+
+###
+
+if ($userObject.islicensed) {
+
+$OldLicenseExc=$userObject.Licenses[0].AccountSkuID
+
+foreach($license in $userObject.Licenses) {
+
+# check if the user has already the same license package set
+
+if($license.AccountSkuID -eq $O365LicenseType) {
+
+# The user has the same License Package. To avoid Dataloss we will Skip this user
+
+$skipUser=$true
+
+}
+
+}
+
+}
+
+}
+
+Catch {
+
+# Something went wrong log it
+
+write-Eventlog -logname Application -Entrytype warning -EventId 5 -source O365LicenseUpdate -message $message5
+
+write-host -foregroundcolor red $message5 ' ' $UPN
+
+write-log $message5 $UPN
+
+}
+
+# if the user has a license that is not equal to the new license switch it out
+
+if (!$skipUser) {
+
+$NewLicenseExc = $O365LicenseType
+
+$ErrHandle = ""
+
+Try {
+
+$userObject=Get-MsolUser -UserPrincipalName $UPN -erroraction stop
+
+if (!$userObject.isLicensed) {
+
+if($setLicenseOptions -eq $true) {
+
+Set-MsolUserLicense -UserPrincipalName $UPN -AddLicenses $NewLicenseExc -LicenseOptions $licenseOptionObject -ErrorVariable $ErrHandle
+
+}
+
+else {
+
+Set-MsolUserLicense -UserPrincipalName $UPN -AddLicenses $NewLicenseExc #-ErrorVariable $ErrHandle
+
+}
+
+# we added a new license for the user
+
+write-Eventlog -logname Application -Entrytype information -EventId 2 -source O365LicenseUpdate -message $message2
+
+write-log $message2
+
+write-host 'A new license is set for user ' $UPN
+
+}
+
+elseIf (!$skipUser) {
+
+if(!($NewLicenseExc -eq $OldLicenseExc)) {
+
+if($setLicenseOptions -eq $true) {
+
+Set-MsolUserLicense -UserPrincipalName $UPN -RemoveLicenses $OldLicenseExc -AddLicenses $NewLicenseExc -LicenseOptions $licenseOptionObject -ErrorVariable $ErrHandle
+
+$setLicenseOptions=$false
+
+}
+
+else {
+
+Set-MsolUserLicense -UserPrincipalName $UPN -RemoveLicenses $OldLicenseExc -AddLicenses $NewLicenseExc -ErrorVariable $ErrHandle
+
+}
+
+}
+
+# We have updated the license of the user
+
+write-Eventlog -logname Application -Entrytype warning -EventId 1 -source O365LicenseUpdate -message $message1
+
+Write-Host $message1
+
+write-log $message1
+
+}
+
+else
+
+{
+
+# the license was the same before and after, nothing has changed
+
+write-Eventlog -logname Application -Entrytype information -EventId 4 -source O365LicenseUpdate -message $message4
+
+Write-Host $message4
+
+write-log $message4
+
+}
+
+$setLicenseOptions=$false
+
+$skipUser=$false
+
+}
+
+catch{
+
+# Something went wrong log it
+
+write-Eventlog -logname Application -Entrytype warning -EventId 5 -source O365LicenseUpdate -message $message5" "$ErrHandle
+
+write-host -foregroundcolor red 'File is empty or could not find user ' $ErrHandle
+
+write-log $message5 ' ' $ErrHandle
+
+$setLicenseOptions=$false
+
+$skipUser=$false
+
+}
+
+}
+
+else {
+
+# the license was the same before and after, nothing has changed
+
+write-Eventlog -logname Application -Entrytype warning -EventId 4 -source O365LicenseUpdate -message $message4
+
+write-host -foregroundcolor red $message4 + " " + $UPN
+
+write-log $message4 ' ' $UPN
+
+$setLicenseOptions=$false
+
+}
+
+}
+
+else {
+
+# One of the fields in the CSV file was not valid for setting up a license for the user
+
+write-Eventlog -logname Application -Entrytype warning -EventId 6 -source O365LicenseUpdate -message $message6
+
+write-host -foregroundcolor red $message6 ' ' $UPN
+
+write-log $message6 ' ' $UPN
+
+$setLicenseOptions=$false
+
+}
+
+}
+
+# Belongs to foreach *.csv
+
+Try {
+
+# move the file to the completedImportFiles Folder
+
+move-item -path $csvfile -destination .\completedImportFiles -ErrorVariable $ErrMsg
+
+}
+
+Catch {
+
+# Something went wrong log it
+
+write-Eventlog -logname Application -Entrytype warning -EventId 5 -source O365LicenseUpdate -message 'Could not move the file '$ErrMSG
+
+write-log "Could not move the file" $ErrMsg
+
+}
+
+}
+
+}
+
+else {
+
+# We have no file to process
+
+write-Eventlog -logname Application -Entrytype information -EventId 0 -source O365LicenseUpdate -message 'No queued license import file found.'
+
+write-log "No queued license import file found."
+
+}
+
+# Log All Done Message
+
+write-Eventlog -logname Application -Entrytype information -EventId 0 -source O365LicenseUpdate -message 'The O365 License Update AssignLicense has been ended'
+
+write-log "License Update completed."
+
+write-log "==========================================================================="
+
+Write-Host "License Update completed."
+

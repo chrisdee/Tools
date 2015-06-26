@@ -1,0 +1,208 @@
+﻿# Script to read the Licensing Information from Active Directory
+# Copyright Microsoft @ 2012
+
+# DISCLAIMER
+
+# The sample scripts are not supported under any Microsoft standard support program or service.
+
+# The sample scripts are provided AS IS without warranty of any kind.
+
+# Microsoft further disclaims all implied warranties including, without limitation,
+
+# any implied warranties of merchantability or of fitness for a particular purpose.
+
+# The entire risk arising out of the use or performance of the sample scripts and documentation remains with you.
+
+# In no event shall Microsoft, its authors, or anyone else involved in the creation, production,
+
+# or delivery of the scripts be liable for any damages whatsoever (including, without limitation,
+
+# damages for loss of business profits, business interruption, loss of business information,
+
+# or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation,
+
+# even if Microsoft has been advised of the possibility of such damages.
+
+#-----------------------------------------------------------------------------------------------------------------
+
+# define the attribute containing the license information
+
+# use the ldapDisplayname of the attribute, default is EmployeeType
+
+$licenseProperty="AttribNotSet"
+
+$userLicenseProperty = "userLicenseAttribute"
+
+$filterValue="FilterNotSet"
+
+$groupLicenseInfoAttribute="GroupInfoNotSet"
+
+$useGroupLicense = $false
+
+$groupLicenseInformation=""
+
+# Get the RootDSE
+
+$rootDSE=[ADSI]"LDAP://RootDSE"
+
+# Get the defaultNamingContext
+
+$Ldap="LDAP://"+$rootDSE.defaultNamingContext
+
+# Create a LicensesInput File
+
+$outFile=".\queuedLicense\LicenseInput_{0:yyyyMMdd-HHmm}.csv" -f (Get-Date)
+
+# Get all users with the EmployeeType Set. If you use another attribute to store the license information change the filter below.
+
+$filter="(&(ObjectClass=user)(ObjectCategory=person)($licenseProperty=$filterValue))"
+
+# create the Header for the Output File
+
+###modified 20140515-timbos
+
+$header="userPrincipalName;UsageLocation;O365LicenseType"
+
+###
+
+$timeStamp=
+
+# Check if the file exists and if it does with the same timestamp remove it
+
+if(Test-Path $outFile)
+
+{
+
+Remove-Item $outFile
+
+}
+
+# Check if we are using Group Membership and pick up the license Info from the group
+
+if($licenseProperty.ToLower() -eq "memberof")
+
+{
+
+if($groupLicenseInfoAttribute -ne "GroupNotSet")
+
+{
+
+Write-Host "Retrieving groupLicenseSetting"
+
+$useGroupLicense=$true
+
+$grp=New-Object System.DirectoryServices.DirectoryEntry("LDAP://$filterValue")
+
+$groupLicenseInformation =([string]$grp.Properties.Item($groupLicenseInfoAttribute))
+
+}
+
+}
+
+# create the output file and write the header
+
+Out-File -InputObject $header -FilePath $outFile
+
+# main routine
+
+function GetLicenseInformation()
+
+{
+
+# create a adsisearcher with the filter
+
+$searcher=[adsisearcher]$Filter
+
+# setup the searcher properties
+
+$Ldap = $Ldap.replace("LDAP://","")
+
+$searcher.SearchRoot="LDAP://$Ldap"
+
+$searcher.propertiesToLoad.Add($userLicenseProperty)
+
+$searcher.propertiesToLoad.Add("userPrincipalName")
+
+###added 20140515-timbos
+
+$searcher.propertiesToLoad.Add("c")
+
+###
+
+$searcher.pageSize=1000
+
+# find all objects matching the filter
+
+$results=$searcher.FindAll()
+
+# create an empty array
+
+$ADObjects = @()
+
+foreach($result in $results)
+
+{
+
+# work through the array and build a custom PS Object
+
+[Array]$propertiesList = $result.Properties.PropertyNames
+
+$obj = New-Object PSObject
+
+if($useGroupLicense -eq $false)
+
+{
+
+$obj | add-member -membertype noteproperty -name "userPrincipalName" -value ([string]$result.Properties.Item("userPrincipalName"))
+
+###added 20140515-timbos
+
+$obj | add-member -membertype noteproperty -name "UsageLocation" -value ([string]$result.Properties.Item("c"))
+
+###
+
+$obj | add-member -membertype noteproperty -name "licenseInfo" -value ([string]$result.Properties.Item($userLicenseProperty))
+
+}
+
+else
+
+{
+
+$obj | add-member -membertype noteproperty -name "userPrincipalName" -value ([string]$result.Properties.Item("userPrincipalName"))
+
+###added 20140515-timbos
+
+$obj | add-member -membertype noteproperty -name "UsageLocation" -value ([string]$result.Properties.Item("c"))
+
+###
+
+$obj | add-member -membertype noteproperty -name "licenseInfo" -value $groupLicenseInformation
+
+}
+
+# add the object to the array
+
+$ADObjects += $obj
+
+# build the output line
+
+###modified 20140515-timbos
+
+$lineOut=$obj.UserPrincipalName + ";" + $obj.UsageLocation + ";" + $obj.licenseInfo
+
+###
+
+# Write the line to the output file
+
+Out-File -Append -InputObject $lineOut -FilePath $outFile
+
+}
+
+Return $ADObjects
+
+}
+
+# main routine
+
+GetLicenseInformation
