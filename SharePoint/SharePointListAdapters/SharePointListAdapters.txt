@@ -1,0 +1,9 @@
+== SharePoint List Source and Destination (SharePoint List Adapters) ==
+
+URLs: 
+
+http://sqlsrvintegrationsrv.codeplex.com
+
+http://sqlsrvintegrationsrv.codeplex.com/releases/view/17652
+
+Version: Beta | Released: Sep 16, 2015
