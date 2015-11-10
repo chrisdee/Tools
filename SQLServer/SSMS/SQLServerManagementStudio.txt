@@ -1,0 +1,5 @@
+== SQL Server Management Studio ==
+
+Resource: https://msdn.microsoft.com/library/mt238290.aspx
+
+Version: October 2015 Preview | Updated: October 29, 2015
