@@ -1,0 +1,9 @@
+== Azure Storage Explorer ==
+
+URLs: 
+
+https://azurestorageexplorer.codeplex.com
+
+http://davidpallmann.blogspot.ch/2014/08/azure-storage-explorer-preview-3-now.html
+
+Version: Azure Storage Explorer 6 Preview 3 (August 2014) | 6.0.3.1
