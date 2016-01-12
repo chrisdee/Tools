@@ -1,0 +1,11 @@
+== Active Directory Audit Report With Powershell ==
+
+Resources:
+
+https://gallery.technet.microsoft.com/office/Active-Directory-Audit-7754a877
+
+https://code.google.com/p/graph-viz-portable/downloads/list
+
+http://www.amandhally.net/2012/08/21/powershell-active-directory-active-directory-reports-in-excel
+
+Version: 1.8 | 02/28/2014

@@ -1,0 +1,10 @@
+prefix=/c/graphviz-mingw/local.2.20.3
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/graphviz
+
+Name: libcgraph
+Description: Graph library (file i/o, dot language parsing, graph, subgraph, node, edge, attribute, data structure manipulation)
+Version: 2.20.3
+Libs: -L${libdir} -lcgraph -lcdt
+Cflags: -I${includedir}

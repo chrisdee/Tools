@@ -1,0 +1,18 @@
+== GraphViz Portable ==
+
+Using GraphVizPortable with 'Active Directory Audit Report With Powershell':
+
+1. Locate the following 3 text files generated when running the 'Active Directory Audit Report With Powershell' GUI, and selecting the 'Export Graphviz Definition Files' option:
+
+DomainTrustDiagram.txt
+ReplicationDiagram.txt
+SiteAdjDiagram.txt
+
+2. Launch the Graphviz Portable application (GVEditPortable.exe)
+
+3. Select 'File - New' and copy and paste the content of each text file into their own Graphviz Layout windows
+
+4. Click on 'Run' to generate the Graph file for saving
+
+
+

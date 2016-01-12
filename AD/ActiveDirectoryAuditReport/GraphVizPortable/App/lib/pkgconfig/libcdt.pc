@@ -1,0 +1,10 @@
+prefix=/c/graphviz-mingw/local.2.20.3
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/graphviz
+
+Name: libcdt
+Description: Container DataType library
+Version: 2.20.3
+Libs: -L${libdir} -lcdt
+Cflags: -I${includedir}

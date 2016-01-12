@@ -1,0 +1,12 @@
+prefix=/c/graphviz-mingw/local.2.20.3
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/graphviz
+plugins=5
+
+Name: libgvc
+Description: The GraphVizContext library 
+Version: 2.20.3
+Libs: -L${libdir} -lgvc -lgraph -lcdt
+Cflags: -I${includedir}
+
