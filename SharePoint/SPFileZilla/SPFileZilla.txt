@@ -1,0 +1,13 @@
+== SPFileZilla (FileZilla for SharePoint) ==
+
+URLs:
+
+https://spfilezilla.codeplex.com
+
+https://spfilezilla.codeplex.com/releases/view/115141
+
+https://github.com/bandrben/SPFileZilla2013
+
+Version: 2.0.0.0
+
+Inspired by FileZilla, the fantastic free FTP client, SPFileZilla allows you to navigate and manage SharePoint as if it were an FTP Server. Browse site lists, document libraries, folders, and files. Download and upload files and folders, including support for nested folders hierarchies. Create new folders, rename existing files and folders, and delete files and folders. Also, you can copy paths to files and folders to your clipboard. Drag and drop folders/files into the application to upload to SharePoint / SharePoint Online.
