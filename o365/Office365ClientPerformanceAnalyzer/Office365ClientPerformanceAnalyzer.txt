@@ -1,0 +1,11 @@
+== Office 365 Client Performance Analyzer ==
+
+URLs:
+
+https://support.office.com/en-us/article/Office-365-Client-Performance-Analyzer-e16b0928-bd38-423b-bd4e-b8402bc106aa
+
+https://support.office.com/en-us/article/Office-365-Client-Performance-Analyzer-e16b0928-bd38-423b-bd4e-b8402bc106aa?ui=en-US&rs=en-US&ad=US
+
+http://sharepointjack.com/2016/office-365-client-performance-analyzer
+
+Version: 16.0.1015.0
