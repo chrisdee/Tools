@@ -1,0 +1,5 @@
+== Account Lockout Status (LockoutStatus.exe) ==
+
+URL: https://www.microsoft.com/en-us/download/details.aspx?id=15201
+
+Account Lockout Status (LockoutStatus.exe) is a combination command-line and graphical tool that displays lockout information about a particular user account.

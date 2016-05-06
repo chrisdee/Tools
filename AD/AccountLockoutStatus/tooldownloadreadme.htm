@@ -1,0 +1,234 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<TITLE>Microsoft Windows&nbsp;2000 Resource Kit Tool Download Release Notes</TITLE>
+<style>
+
+body    		{ color: #000000;
+		background: #FFFFFF;  	
+		font-size: 75%;    		
+		font-family: Verdana, Arial, Sans Serif; }
+
+
+a:link, a:visited 	{ color: "#0000FF"; text-decoration:"underline";}
+
+a:active, a:hover 	{ color: "#FF0000";  cursor:hand; text-decoration:"underline";}
+
+h1
+		{ font-size: 125%; 
+		margin-bottom:".5em"; clear:both }
+
+h2
+		{ font-size: 110%;  
+		margin-top: "1.5em";
+		margin-bottom:".5em"; clear:both }
+
+h3
+		{ font-size: 100%; 
+		margin-top: "1.2em";  
+		margin-bottom: ".5em"; clear:both; }
+
+
+p
+		{ margin-top:".6em"; 
+		margin-bottom: ".6em" }
+			
+ol
+		{ margin-top: ".5em"; 
+		margin-bottom: 0; 
+		margin-left: "2.1em"; 
+		padding-left: "0em";
+		margin-right:"2.1em" }
+	
+ul
+		{ margin-top: ".6em"; 	
+		margin-bottom: 0;
+		list-style-type: disc;
+		margin-left: "1.5em";
+		padding-left: "0em";
+		margin-right: "1.5em"; }
+		
+li
+		{ margin-bottom: ".7em"; clear:both; }
+		
+p.indent		{ margin-left: "2em"; }    
+
+		
+p.proclabel	{ font-size: 100%; 	
+		font-weight: bold; clear: both; }
+		
+		
+table
+		{ font-size: 100%;
+		margin-top: "1em"; 
+		margin-bottom: "1em"; }
+		
+th
+		{ text-align: left;
+		background: #DDDDDD;
+		vertical-align: bottom;
+		padding: .2em;
+		padding-left: .45em;
+		padding-right: .5em;}
+		
+tr
+		{ vertical-align: top; }
+
+td
+		{ background: #EEEEEE;
+		vertical-align: top;
+		padding: .2em;
+		padding-left: .45em;
+		padding-right: .5em;}
+		pre
+		{ margin-top: ".5em";
+		margin-bottom: ".5em"; }
+
+code
+		{ font-family: Courier New; 
+		font-size: "1.1em"; }
+</style>
+</HEAD>
+
+<BODY>
+
+<h1>Microsoft Windows&nbsp;Server 2003 Resource Kit and Support Tools<BR>
+Tool Download Release Notes</h1>
+
+<P>This document is included with the software tool you have downloaded and installed. It contains important general information not found in the specific documentation file for this tool.</P>
+
+<P>The Microsoft<sup>&#174;</sup> Windows<sup>&#174;</sup>&nbsp;Server 2003 Resource Kit 
+and Support Tools can help you streamline administrative tasks such as 
+troubleshooting operating system issues, managing Active Directory®, configuring 
+networking and security features, or automating application deployment. Over 200 
+such tools are included in the Windows Server 2003 Resource Kit Tools package.</P>
+
+<P>For more information about the <I>Windows&nbsp;Server 2003 Resource Kit</I>, including new tools, hotfixes, and updated documentation, visit the <a href="http://reskit.com" target="out">Windows&nbsp;Deployment 
+and Resource Kits</a> Web site.</P>
+
+<P>This tool is designed to be installed and run only on Microsoft<sup>&#174;</sup>&nbsp;Windows&nbsp;Server 2003.</P>
+
+<P class="indent"><b>Important</b>&nbsp;&nbsp;&nbsp;The Resource Kit tools are not localized; they are written and tested in English only. Using these tools with a different language version of Windows&nbsp;Server 2003 might produce unpredictable results.</P>
+
+<h2>Contents</h2>
+
+<p><a href="#setup">Setup for the Resource Kit and Support Tools Downloads</a></P>
+	<p class="indent"><a href="#general">Installing and Uninstalling This Tool</a></P>
+	<p class="indent"><a href="#cmd">Installing from the Command Prompt</a></P>
+	<p class="indent"><a href="#unattend">Unattended Installation</a></p>
+<P><a href="#support">Support Policy</a></P>
+
+<HR>
+
+<h2><a name="setup">Setup for the Resource Kit and Support Tools Downloads</a></h2>
+
+<h3><a name="general">Installing and Uninstalling This Tool</a></h3>
+
+<P>The download from which this readme is extracted also contains a documentation file and the file or files necessary to run the tool.</P>
+
+<P>The download file is a self-extracting executable, either an .msi (Microsoft Software Installer) file or an .exe (executable) file. When you run this file, it installs the tool and documentation onto your computer.</P>
+
+<P>When you install a downloaded tool, you are prompted to choose an install directory.  It is recommended that you install all future tool downloads and versions of the Windows&nbsp;Server 2003 Resource Kit into the 
+Resource Kit directory and Windows Server 2003 Support Tools into the Support 
+Tools directory to avoid an overly large system path and to ensure more reliable upgrades. The recommended directory 
+for the Resource Kit is <b>C:\Program Files\Windows Resource Kits\Tools</b> (the default directory for the Resource Kit companion CD) 
+and <b>C:\Program Files\Support Tools</b> for Support Tools (the default 
+directory for the Support Tools installation package).</P>
+
+<P>You can uninstall any downloaded tool by using <B>Add/Remove Programs</B> in <B>Control Panel</B>. Or, you can run the download file, and then select <B>Remove </B>in the Setup Wizard.</P>
+
+<h3><a name="cmd">Installing from the Command Prompt</a></h3>
+
+<P>You can install tool downloads from the command prompt. If necessary, you can also use the <B>/q</B> option of <B>msiexec</B> to install or uninstall in silent mode, which requires no further action from the user.</P>
+
+<P>For example, to install the contents of <I>toolname</I>.msi in the default 
+directory, type the following at the command prompt:</P>
+
+<B><CODE>msiexec /i <I>toolname</I>.msi</CODE></B><P>The following table lists the <B>msiexec</B> command-line options for installing .msi files from the command prompt.</P>
+
+<TABLE>
+<TR>
+<!--Column 1--><TH>Option</TH>
+<!--Column 2--><TH>Parameters</TH>
+<!--Column 3--><TH>Meaning</TH>
+</TR>
+<TR>
+<!--Column 1--><TD><B>/i</B></TD>
+<!--Column 2--><TD><I>toolname</I>.msi</TD>
+<!--Column 3--><TD>Installs or configures the product</TD>
+</TR>
+<TR>
+<TD><B>/q</B></TD>
+<TD>[<b>n</b>|<b>b</b>|<b>r</b>|<b>f</b>|<b>n+</b>|<b>b+</b>|<b>b-</b>]</TD>
+<TD>Sets the user interface level</TD>
+</TR>
+<TR>
+<!--Column 1--><TD><B>/x</B></TD>
+<!--Column 2--><TD><I>toolname</I>.msi</TD>
+<!--Column 3--><TD>Uninstalls the product</TD>
+</TR>
+<TR>
+<!--Column 1--><TD><B>/l</B></TD>
+<!--Column 2--><TD>[<B>i</B>|<B>w</B>|<B>e</B>|<B>f</B>|<B>a</B>|<B>r</B>|<B>u</B>|<B>c</B>|<B>m</B>|<B>p</B>|<B>+</B>]<I>logfile</I></TD>
+<!--Column 3--><TD>Specifies path to log file. The flags indicate the information to log.
+<P><B>i</B> – Status messages</P>
+<P><B>w</B> – Non-fatal warnings</P>
+<P><B>e</B> – All error messages</P>
+<P><B>f</B> – List of replaced files</P>
+<P><B>a</B> – Start up of actions</P>
+<P><B>r</B> – Action-specific records</P>
+<P><B>u</B> – User requests</P>
+<P><B>c</B> – Initial UI parameters</P>
+<P><B>m</B> – Out-of-memory</P>
+<P><B>p</B> – Terminal properties</P>
+<P><B>+</B> – Append to existing file</TD>
+</TR>
+<TR>
+<!--Column 1--><TD><B>/?</B></TD>
+<!--Column 2--><TD>&nbsp;</TD>
+<!--Column 3--><TD>Displays online Help.</TD>
+</TR>
+</TABLE>
+
+<h3>Unattended installation</h3>
+
+<P>To perform an unattended installation of <I>toolname</I>.msi, run the following command line:<BR>
+<B><CODE>msiexec /i <I>toolname</I>.msi /qb</CODE></B></P>
+
+<HR>
+
+<h2><a name="support">Support Policy</a></h2>
+
+<P>The software supplied on the Resource Kit and Support Tools download web site 
+(&quot;Software&quot;) is not supported under any Microsoft standard support program or 
+service. You can, however, report issues and bugs by sending e-mail to
+<a href="mailto:rkinput@microsoft.com">rkinput@microsoft.com</a>. Microsoft 
+will, at its sole discretion, address issues and bugs reported in this manner, 
+and responses are not guaranteed.<br>
+<br>
+Any Software that is made available to download from this web site is the 
+copyrighted work of Microsoft and/or its suppliers. Use of the Software is 
+governed by the terms of the end user license agreement, if any, which 
+accompanies or is included with the Software (&quot;License Agreement&quot;). An end user 
+will be unable to install any Software that is accompanied by or includes a 
+License Agreement, unless he or she first agrees to the License Agreement terms.<br>
+<br>
+THE SOFTWARE IS WARRANTED, IF AT ALL, ONLY ACCORDING TO THE TERMS OF THE LICENSE 
+AGREEMENT. EXCEPT AS WARRANTED IN THE LICENSE AGREEMENT, MICROSOFT CORPORATION 
+HEREBY DISCLAIMS ALL WARRANTIES AND CONDITIONS WITH REGARD TO THE SOFTWARE, 
+INCLUDING ALL WARRANTIES AND CONDITIONS OF MERCHANTABILITY, WHETHER EXPRESS, 
+IMPLIED OR STATUTORY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND 
+NON-INFRINGEMENT.<br>
+<br>
+IN NO EVENT SHALL MICROSOFT AND/OR ITS RESPECTIVE SUPPLIERS BE LIABLE FOR ANY 
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING 
+FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE 
+OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
+PERFORMANCE OF SOFTWARE, DOCUMENTS, PROVISION OF OR FAILURE TO PROVIDE SERVICES, 
+OR INFORMATION AVAILABLE FROM THE SERVICES.<br>
+&nbsp;</P>
+
+<P>&copy; Copyright 1985–2003 Microsoft Corporation. All rights reserved.</P>
+
+</BODY>
+</HTML>

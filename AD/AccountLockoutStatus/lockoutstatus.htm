@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Lockoutstatus</title>
+<style>
+<!--
+BODY {
+	FONT-SIZE: 75%; BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Sans Serif
+}
+P {
+	MARGIN-TOP: 0.6em; MARGIN-BOTTOM: 0.6em
+}
+H2 {
+	CLEAR: both; MARGIN-TOP: 1.5em; FONT-SIZE: 110%; MARGIN-BOTTOM: 0.5em
+}
+H3 {
+	CLEAR: both; MARGIN-TOP: 1.2em; FONT-SIZE: 100%; MARGIN-BOTTOM: 0.5em
+}
+UL {
+	PADDING-LEFT: 0em; MARGIN: 0.6em 1.5em 0px; LIST-STYLE-TYPE: disc
+}
+LI {
+	CLEAR: both; MARGIN-BOTTOM: 0.7em
+}
+-->
+</style>
+</head>
+
+<body>
+
+<h2>Lockoutstatus.exe: Account Lockout Status</h2>
+<h3>Overview</h3>
+<p>Account Lockout Status (LockoutStatus) is a combination command-line and GUI 
+tool that displays lockout information about a particular user account. 
+LockoutStatus collects information from every contactable domain controller in 
+the target user account's domain.</p>
+<p><b>File Required</b></p>
+<ul style="list-style-type: disc; margin-left: 1.5em; margin-right: 1.5em; margin-top: 0.6em; margin-bottom: 0px; padding-left: 0em">
+	<li style="clear: both; margin-bottom: 0.7em">Lockoutstatus.exe </li>
+</ul>
+<h3>LockoutStatus Syntax</h3>
+<p><b>lockoutstatus</b> {<b>/u:</b><i>DomainName</i><b>\</b><i>UserName</i> | <b>
+/u:</b><i>UserName</i><b>@</b><i>DomainName</i>} [<b>/?</b>]</p>
+<dl>
+	<dt><i>DomainName</i> </dt>
+	<dd>Target NetBIOS or DNS domain name 
+  	</dd>
+	<dt><i>UserName</i> </dt>
+	<dd>Target user name </dd>
+</dl>
+<h3>LockoutStatus GUI</h3>
+<p><b>File Menu</b></p>
+<p>The <b>File</b> menu allows the target user and domain to be changed. This 
+menu also allows the output of LockoutStatus to be saved in text format.</p>
+<p><b>View Menu</b></p>
+<p>The <b>View</b> menu allows the user to view the status of the target users 
+password. This menu also alows the user to refresh the main window of 
+LockoutStatus.</p>
+
+</body>
+
+</html>
