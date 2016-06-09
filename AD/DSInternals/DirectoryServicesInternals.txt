@@ -1,0 +1,18 @@
+== Directory Services Internals ==
+
+URLs: 
+
+https://www.dsinternals.com
+
+https://www.dsinternals.com/en/list-of-cmdlets-in-the-dsinternals-module
+
+https://www.dsinternals.com/en/downloads
+
+https://github.com/MichaelGrafnetter/DSInternals
+
+Versions: v2.14 | Apr 30 2016
+
+Requires:
+
+.NET Framework 4.5.1 is required for this module to be fully functional. Unfortunately, PowerShell versions prior to 5 ignore this prerequisite
+
