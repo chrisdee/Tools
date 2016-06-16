@@ -16,14 +16,14 @@ cd $spsFarmReport
 $hostName = hostname
 $file = "D:\Scripts\SPSFarmReport\o12\SPSFarmReport.html" #Change your SPSFarm report file location details here
 $scheduledTask = "SPSFarmReport" #Change your scheduled task name details here
-$smtpServer = "email.theglobalfund.org" #Put your SMTP Server details here
+$smtpServer = "email.yourcompanyname.com" #Put your SMTP Server details here
 
 $msg = new-object Net.Mail.MailMessage
 $att = new-object Net.Mail.Attachment($file)
 $smtp = new-object Net.Mail.SmtpClient($smtpServer)
 
-$msg.From = "SharePointFarmReports@theglobalfund.org" #Change the from address here
-$msg.To.Add("christopher.dee@theglobalfund.org") #Change the to address here. Add additional recipients with a ',' after each other
+$msg.From = "SharePointFarmReports@yourcompanyname.com" #Change the from address here
+$msg.To.Add("your.name@yourcompanyname.com") #Change the to address here. Add additional recipients with a ',' after each other
 $msg.Subject = "$hostName: $scheduledTask Results" #Change the subject here
 $msg.Body = "The $scheduledTask scheduled task has run on $hostName, please view the attached report file for the results of this." #Change the body here
 $msg.Attachments.Add($att)
