@@ -1,0 +1,27 @@
+== JAM Software Ultra Search ==
+
+URLs:
+
+http://www.jam-software.de
+
+http://www.jam-software.com/ultrasearch/?language=EN
+
+Version: V2.1
+
+Overview:
+
+UltraSearch does not maintain an index which is stored on your harddisk, but achieves its speed by working directly on the Master File Table (MFT) of the NTFS partitions. UltraSearch even identifies NTFS hardlinks.
+
+Simply enter a file name or a pattern like *.exe and see the first results while you are still typing. In addition, UltraSearch supports regular expressions and will search file content.
+
+Additional information like file size and file dates (last changes, last access and file creation) will be shown for all listed files. Naturally, the Explorer context menu is available inside UltraSearch.
+
+UltraSearch enables you to exclude folders, files or file types from searches via an exclude filter. The search results can be sorted according to different criteria, printed or exported as text, RTF, HTML, CSV, and Excel file.
+
+Define file groups (such as movie files, text files etc.) and search for all file types the group contains.
+
+The 100 recently used search patterns can be saved and selected from a dropdown list. UltraSearch can suggest patterns or autocomplete manually entered patterns automatically.
+
+UltraSearch can be started from the context menu of your Windows Explorer - starting a search within the selected directory could not be easier.
+
+Use UltraSearch wherever you like thanks to the portable ZIP version.

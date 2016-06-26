@@ -1,0 +1,13 @@
+== NirSoft Shadow Copy View ==
+
+URLs:
+
+http://www.nirsoft.net
+
+http://www.nirsoft.net/utils/shadow_copy_view.html
+
+http://www.nirsoft.net/utils/shadowcopyview.zip
+
+http://www.nirsoft.net/utils/shadowcopyview-x64.zip
+
+Version: v1.01
