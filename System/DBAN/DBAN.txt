@@ -1,0 +1,20 @@
+== Darik's Boot and Nuke (DBAN) ==
+
+URLs: 
+
+http://www.dban.org
+
+https://sourceforge.net/projects/dban
+
+Version: 2.3.0_i586
+
+Data Wiping Software
+
+DBAN is free erasure software designed for the personal user. It automatically deletes the contents of any hard disk that it can detect. This method prevents identity theft before recycling a computer. DBAN is also a commonly used solution to remove viruses and spyware from Microsoft Windows installations.
+
+DBAN users should be aware of some product limitations, including:
+
+No guarantee of data removal (e.g. DBAN does not detect or securely erase SSDs)
+No audit-ready reporting for regulatory compliance
+Limited hardware support (e.g. no RAID dismantling)
+No customer support or regular software updates

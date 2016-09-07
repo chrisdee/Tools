@@ -1,0 +1,24 @@
+1f17
+ Darik's Boot and Nuke: Quick Commands
+ อออออออออออออออออออออออออออออออออออออ
+
+  You may enter these commands at the boot prompt. In each case, all disks in
+  the computer will be wiped automatically without confirmation.
+
+    dod       Wipe all disks with the DoD 5220.22-M method.
+    dodshort  Wipe all disks with the short DoD 5220.22-M method. (Default.)
+    ops2      Wipe all disks with the RCMP TSSIT OPS-II method.
+    gutmann   Wipe all disks with the Gutmann method.
+    prng      Wipe all disks with the PRNG Stream method.
+    quick     Wipe all disks with the Quick Erase method.
+
+  Edit the 1fsyslinux.cfg17 file on the floppy disk to change the default
+  behavior of DBAN. Changing the syslinux.cfg file in the CD-R/CD-RW version of
+  DBAN requires remastering the ISO file.
+
+  Most people should use autonuke because the defaults for autonuke will always
+  be safe and sensible. 
+
+  Press the 1fF417 key for troubleshooting commands.
+  Press the 1fF117 key to continue.
+

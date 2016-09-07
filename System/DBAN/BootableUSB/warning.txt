@@ -1,0 +1,19 @@
+1f17
+ Darik's Boot and Nuke
+ อออออออออออออออออออออ
+
+  1cWarning: 17This software irrecoverably destroys data.
+
+  This software is provided without any warranty; without even the implied
+  warranty of merchantability or fitness for a particular purpose. In no event
+  shall the software authors or contributors be liable for any damages arising
+  from the use of this software.  This software is provided "as is".
+
+  http://www.dban.org/
+
+  * Press the 1fF217 key to learn about DBAN.
+  * Press the 1fF317 key for a list of quick commands.
+  * Press the 1fF417 key to read the RAID disclaimer.
+  * Press the 1fENTER17 key to start DBAN in interactive mode.
+  * Enter 1fautonuke17 at this prompt to start DBAN in automatic mode.
+

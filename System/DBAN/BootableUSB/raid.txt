@@ -1,0 +1,12 @@
+1f17
+ Darik's Boot and Nuke: RAID Devices
+ อออออออออออออออออออออออออออออออออออ
+
+  DBAN is unsupported and often incompatible with RAID hardware.
+
+  Disassemble all volumes and export all disks in JBOD mode prior to running
+  DBAN on a computer with a RAID HBA. Spare disks and failed disks are not
+  wiped if they are part of a volume.
+
+  Push the 1fF117 key to continue.
+

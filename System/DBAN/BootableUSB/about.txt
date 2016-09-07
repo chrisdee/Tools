@@ -1,0 +1,20 @@
+1f17
+ Darik's Boot and Nuke: About
+ ออออออออออออออออออออออออออออ
+
+ Darik's Boot and Nuke ("DBAN") is a self-contained boot floppy that securely
+ wipes the hard disks of most computers. DBAN will automatically and completely
+ delete the contents of any hard disk that it can detect, which makes it an
+ appropriate utility for bulk or emergency data destruction.
+
+ This program clears directly attached IDE, PATA, SATA, SCSI, and SAS disks. 
+ Some USB and IEEE 1394 (Firewire) devices may be recognized.  DBAN requires a
+ computer with a PCI bus and 32 megabytes of memory.
+
+ All DBAN components are subject to copyright and are licensed; many by the
+ GPL and similar FLOSS licenses. Review the source code for more information.
+
+ Additional documentation is available at http://www.dban.org/
+
+ Press the 1fF117 key to continue.
+
