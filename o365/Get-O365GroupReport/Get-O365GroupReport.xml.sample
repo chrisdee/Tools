@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Settings>
+    <EmailSettings>
+        <From>reports@exchangeserverpro.net</From>
+        <To>admin@exchangeserverpro.net</To>
+        <Subject>Office 365 Groups Report</Subject>
+        <!-- If SmtpServer is empty, the script will autodetect -->
+        <SmtpServer></SmtpServer>
+    </EmailSettings>
+</Settings>
