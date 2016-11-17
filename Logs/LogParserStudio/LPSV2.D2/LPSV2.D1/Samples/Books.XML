@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<ArrayOfBooks>
+		<Book>
+			<Title>The book of books</Title>
+			<Author>Sally</Author>
+			<Released>1/2/2008</Released>
+		</Book>
+		<Book>
+			<Title>The page of pages</Title>
+			<Author>Amanda</Author>
+			<Released>6/3/1998</Released>
+		</Book>
+		<Book>
+			<Title>The book of pages</Title>
+			<Author>John</Author>
+			<Released>6/22/1963</Released>
+		</Book>
+		<Book>
+			<Title>The rock of ages</Title>
+			<Author>Frank</Author>
+			<Released>5/21/2004</Released>
+		</Book>
+		<Book>
+			<Title>The age of rocks</Title>
+			<Author>Mary</Author>
+			<Released>8/16/1944</Released>
+		</Book>
+	</ArrayOfBooks>
+	

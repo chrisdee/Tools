@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLPBatchQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LPBatchQuery>
+    <QueryName>TextLine: Sample Batch Query 2</QueryName>
+    <QueryDescription>Sample batch query 2</QueryDescription>
+    <QueryData>/*  Sample Batch Query: Top Ten Text Lines  */
+
+SELECT TOP 5 * FROM '[LOGFILEPATH]'</QueryData>
+    <QueryID>b1a9229b-882c-45a5-a110-745d2728e727</QueryID>
+    <LogType>TEXTLINELOG</LogType>
+    <QueryCategory>ALL</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>0001-01-01T00:00:00</DateModified>
+    <BatchItemGuid>5936eaab-e3ad-42d5-99b1-c43b3e5533af</BatchItemGuid>
+  </LPBatchQuery>
+  <LPBatchQuery>
+    <QueryName>TextLine: Sample Batch Query 1</QueryName>
+    <QueryDescription>Sample batch query 1</QueryDescription>
+    <QueryData>/*  Sample Batch Query: Top Ten Text Lines  */
+
+SELECT TOP 10 * FROM '[LOGFILEPATH]'</QueryData>
+    <QueryID>3f755221-91bb-40a8-bb87-eea499efee87</QueryID>
+    <LogType>TEXTLINELOG</LogType>
+    <QueryCategory>ALL</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>0001-01-01T00:00:00</DateModified>
+    <BatchItemGuid>31000b4a-1c72-4c8d-b681-a420642962ba</BatchItemGuid>
+  </LPBatchQuery>
+</ArrayOfLPBatchQuery>

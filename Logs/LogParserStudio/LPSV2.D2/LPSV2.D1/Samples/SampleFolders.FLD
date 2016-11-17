@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLPLogFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LPLogFile>
+    <Filename>C:\Users\Kary\Desktop\Deploy\Samples\Books.XML</Filename>
+    <isChecked>true</isChecked>
+  </LPLogFile>
+  <LPLogFile>
+    <Filename>C:\Users\Kary\Desktop\Deploy\Samples\SampleLog.csv</Filename>
+    <isChecked>true</isChecked>
+  </LPLogFile>
+</ArrayOfLPLogFile>

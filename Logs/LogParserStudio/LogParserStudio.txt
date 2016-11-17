@@ -1,0 +1,17 @@
+== Log Parser Studio ==
+
+Overview:
+
+Log Parser Studio is a utility that allows you to search through and create reports from your IIS, Event, EXADB and others types of logs. It builds on top of Log Parser 2.2 and has a full user interface for easy creation and management of related SQL queries. Also includes Export Query to PowerShell functionality.
+
+Version: 2.0.0.100
+
+Requires: LogParser 2.2
+
+Resources:
+
+https://gallery.technet.microsoft.com/Log-Parser-Studio-cd458765
+https://gallery.technet.microsoft.com/office/Log-Parser-Studio-Report-f17f6b8b
+https://blogs.technet.microsoft.com/exchange/2012/03/07/introducing-log-parser-studio
+https://technet.microsoft.com/en-us/scriptcenter/dd919274.aspx (Log Parser 2.2)
+
