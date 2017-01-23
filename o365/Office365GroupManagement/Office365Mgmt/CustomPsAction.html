@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Macro Configure</title>
+    <style type="text/css">
+        .glass_effect {
+            display: block;
+            height: auto;
+            border-radius: 10px;
+            background-color: white;
+            padding-left: 30px;
+            padding-right: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            box-shadow: inset 0 10px rgba(255,255,255,0.2), inset 0 1px 10px rgba(0,0,0,0.4), inset 0 1px 10px rgba(0,0,0,0.5);
+        }
+
+        body {
+            height: auto;
+            font-family: Verdana;
+            /*background-color: #E2E9F1;*/
+            font-size: 14px;
+        }
+
+        .command {
+            BORDER-RIGHT: #aab4be 1px dotted;
+            padding: 10px;
+            BORDER-TOP: #aab4be 1px dotted;
+            BACKGROUND: #f4f5f6;
+            BORDER-LEFT: #b4b4b4 4px solid;
+            BORDER-BOTTOM: #aab4be 1px dotted;
+            height: auto;
+            /*max-height: 600px;*/
+            /*margin-left: 15px;*/
+            margin-bottom: 10px;
+            width: 90%;
+            overflow-x: auto;
+            word-wrap: normal;
+            white-space: pre;
+        }
+
+        .Container1 {
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .Container2 {
+            padding-left: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        h3 {
+            background-color: aliceblue;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div id="ActionQuery">
+            <h3><img height="18" src="data:image/png;base64,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" />&nbsp;&nbsp;&nbsp; How to write Action query?</h3>
+            <div class="Container1">
+                <ul>
+                    <li>
+                        Every Action two kind of inputs, 1. Action Objects (selected rows from report grid), 2. Action Target Values (any values using above macros).
+                    </li>
+                    <li>
+                        You need to put the following line at the top of action query which is used to provide required column to select from the selected rows in the final part of the macro.
+                        <pre class="command">$objectArray = [Macro_ActionObjects_UserPrincipalName] -> Used to Read column value of the selected Rows</pre>
+                    </li>
+                    <li>You need to iterate $objectArray using ForEach. Inside ForEach, You need to write the required action query.</li>
+                    <li>
+                        Finally, You need to write following query to get action results
+                        <pre class="command">New-Object -TypeName PSObject -Property @{
+Name=$_
+Status=if($error.count -eq 0) {'Success'} Else {'Failed'}
+Message=if($error.count -eq 0){ 'Success' }else{ $error[0].ToString(); }}</pre>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="InputMacros">
+            <h3><img height="18" src="data:image/png;base64,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" />&nbsp;&nbsp;&nbsp; How to Get Run Time User Input in Custom Action?</h3>
+            <div class="Container1">
+                <ul>
+                    <li>
+                        You Can Given a Input For the Action on Run Time By Using The Macros, You can add the Bellow listed macros for Run time User input.
+                    </li>
+                    <li>
+                        <b>General Macro format</b>: The Macro's are Start with <b>'[Macro_'</b> and Ends with <b>']'</b>. the Text which is in front of control is followed by macro start text,then Control type like Int,TextBox,Browse,...etc. and then <b>ENDTEXT or ET</b> for the end text which is followed by the control.
+                    </li>
+                    <li>
+                        <b>TextBox</b>: TextBox is an Default Control.when You Are Add Macro for Unknown Control TextBox Control load.
+                        <pre class="command">[Macro_UserName_Text]                          -> Load TextBox followed by UserName.<br />[Macro_UserName]                               -> Also Load TextBox Control followed by UserName.</pre>
+                    </li>
+                    <li>
+                        <b>Integer Control</b>: Integer Control can add Using the Key <b>'Int'</b> followed by macro's Start text. Example for the Integer Control macros is Given Bellow
+                        <pre class="command">[Macro_Age_Int]                      -> Include Integer Control followed by text 'Age'<br />[Macro_Inactive in last_Int_et:days] -> Include the Integer Control with End text 'days'</pre>
+                    </li>
+                    <li>
+                        <b>DropDown</b>: This Control Load dropdown. You need provide dropdown items as semi-colon separated values with the parameter <b>'Options:'</b>.
+                        <pre class="command">[Macro_IsLicensed_DropDown_Options:True;False] -> Dropdown Items Load 'True' and 'False' from this Macro.</pre>
+                    </li>
+                    <li>
+                        <b>DateTime Control</b>: You can Add Date,Time,Datetime and DateRange Controls by Useing the following Macros.
+                        <pre class="command">[Macro_DOB_DateTime]                 -> DateTime Control Followed by 'DOB' and return Datetime.<br />[Macro_To_DateRange]                 -> the query should contains Datetime macro then Get DateRange Control. this will return End datetime. <br />[Macro_DOB_Date]                     -> this is also like above controls But return date only.<br />[Macro_DOB_Time]                     -> the Control Return Time only.</pre>
+                    </li>
+                    <li>
+                        <b>Target</b>: This Control Get values from the given target and populate values in dropdown. You can select value in dropdown.You Can Update Dropdown Values by using Refresh button.
+                        <pre class="command">[Macro_User Name_Target_ADUserInfo_DisplayName]-> Dropdown Items Load DisplayName from ADUserInfo Objetcs in Database.</pre>
+                    </li>
+                    <li>
+                        <b>Browse</b>: This Control Provide Browse option to select any target from database.if You Need to Provide Browse option to select multiple Opjects. The last part of the macro Should Add <b>'True'</b>
+                        <pre class="command">[Macro_Name_Browse_ADUserInfo_DisplayName]    -> Which is Browse Object from ADUserInfo in Database.<br />[Macro_Name_Browse_MailBoxInfo_DisplayName]   -> Which is Browse Object from ADUserInfo in Database.</pre>
+                    </li>
+                    <li>
+                        <b>User Picker</b>: this Control Provide Browse option to select user from the target ADUserInfo in database. You Need to provide required column to select in the final part of the macro. if You Need to Provide Browse option to select multiple users. The last part of the macro <b>'True'</b> decides whether this is single or multi valued. default is single.
+                        <pre class="command">[Macro_User_UserPicker_UserPrincipalName]     -> Which is browse User from AdUsers And Return single 'UserPrincipalName'<br />[Macro_User_UserPicker_UserPrincipalName_True]-> Which is browse User from AdUsers And Return 'UserPrincipalName' collection as Powershell Array.</pre>
+                    </li>
+                    <li>
+                        <b>External Resourse</b>: The Sharepoint Action Needed Assembly's and Admin url Can include Your Action by the following macros. Admin Url can access by the veriable $SPOAdminUrl
+                        <pre class="command">[Macro_Include_CSMOAssembly]        -> Include Csom Assembly's<br />[Macro_Include_SPOAdminUrl]         -> Include Sharepoint Tanent Admin Url</pre>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="PowershellConfig">
+            <h3><img height="18" src="data:image/png;base64,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" />&nbsp;&nbsp;&nbsp; How to Configure Advance Macro in Actions?</h3>
+            <div class="Container1">
+                <ul>
+                    <li>
+                        <b>Powershell Modules</b>: In your Action Needed modules Can Select from Initialize Stage or Include via powershell query by using the below Macro.
+                        <pre class="command">[Macro_LoadPSModule_ExchangeOnline] -> Office 365 Exchange Module<br />[Macro_LoadPSModule_MSOnline]       -> Azure AD Module<br />[Macro_LoadPSModule_SPOnline]       -> Sharepoint Online Module</pre>
+                    </li>
+                    <li>
+                        <b>Credential</b>: You can load Your User Credential,Powershell Credentioal and Sharepoint Online Credential by using the Below Macros , Which can access throw the variables $Username, $Password, $SecurePwd, $PSCred and $SPOCred.
+                        <pre class="command">[Macro_Include_SecureCredential]    -> Include UserName,Password,Password SecureString<br />[Macro_Include_PSCredential]        -> Include Powershell Credential<br /></pre>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> PSRemoting- Frequently Asked Questions</title>
+    <style type="text/css">
+        body {
+            height: auto;
+            font-family: Verdana;
+            /*background-color: #E2E9F1;*/
+            font-size: 14px;
+        }
+
+        .command {
+            BORDER-RIGHT: #aab4be 1px dotted;
+            padding: 10px;
+            BORDER-TOP: #aab4be 1px dotted;
+            BACKGROUND: #f4f5f6;
+            BORDER-LEFT: #b4b4b4 4px solid;
+            BORDER-BOTTOM: #aab4be 1px dotted;
+            height: auto;
+            /*max-height: 600px;*/
+            /*margin-left: 15px;*/
+            margin-bottom: 10px;
+            width: 90%;
+            overflow-x: auto;
+            word-wrap: normal;
+            white-space: pre;
+        }
+
+        .Container1 {
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .Container2 {
+            padding-left: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        h3 {
+            background-color: aliceblue;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div id="GingerexFaq">
+            <h3><img height="18" src="data:image/png;base64,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" />&nbsp;&nbsp;&nbsp; How to Configure Remote PowerShell ?</h3>
+            <div class="Container1">
+                <p> Before adding SharePoint server, follow the below steps for enabling Remote PowerShell on both local machine (where GingerEx tool installed) and remote server machine (<b>SharePoint Server</b>).</p>
+                <b> CASE 1</b>:
+                <br />
+                <p> If your computers (local machine and SharePoint server) are in the same domain network, then run the following powershell command in SharePoint server to enable PS Remoting in the remote system.</p>
+                <pre class="command">
+1. Enable-PSRemoting -Force
+2. Restart-Service WinRm
+</pre>
+                <br />
+                <b> CASE 2</b>:
+                <br />
+                <p>If your computers (local machine and SharePoint server) are in different domain or workgroup, then you need to configure the Trusted hosts settings in both the systems.</p>
+                <p>Run the following command in PowerShell (both local machine and SharePoint server).</p>
+                <pre class="command">
+1. Enable-PSRemoting -Force
+2. Set-Item wsman:\localhost\client\trustedhosts -Value <b>&lt;name_of_the_other_system&gt;</b>
+3. Restart-Service WinRm
+</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

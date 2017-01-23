@@ -1,0 +1,78 @@
+﻿[
+    {
+        "ColumnName": "TotalItemSize",
+        "Query": "Switch (TotalItemSize < 1024, IIf(Int(TotalItemSize)=(TotalItemSize),TotalItemSize & ' KB',Format (TotalItemSize, 'Standard') & ' KB') ,(TotalItemSize/1024 < 1024)  ,IIf(Int(TotalItemSize/1024)=(TotalItemSize/1024), TotalItemSize & ' MB' , Format (TotalItemSize/1024, 'Standard') & ' MB'),True,IIf(Int(TotalItemSize/1048576)=(TotalItemSize/1048576), TotalItemSize/1048576 & ' GB' , Format (TotalItemSize/1048576, 'Standard') & ' GB')) AS [Total Size]",
+        "Target": "MailboxInfo"
+    },
+    {
+        "ColumnName": "TotalDeletedItemSize",
+        "Query": "Switch (TotalDeletedItemSize < 1024, IIf(Int(TotalDeletedItemSize)=(TotalDeletedItemSize),TotalDeletedItemSize & ' KB',Format (TotalDeletedItemSize/1024, 'Standard') & ' MB') , (TotalDeletedItemSize/1024 < 1024)  ,IIf(Int(TotalDeletedItemSize/1024)=(TotalDeletedItemSize/1024), TotalDeletedItemSize & ' MB' , Format (TotalDeletedItemSize/1024, 'Standard') & ' MB'),True,IIf(Int(TotalDeletedItemSize/1048576)=(TotalDeletedItemSize/1048576), TotalDeletedItemSize/1048576 & ' GB' , Format (TotalDeletedItemSize/1048576, 'Standard') & ' GB')) AS [Total Deleted Item Size]",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "MaxSendSize",
+        "Query": "IIf(InStr([MaxSendSize],'(')<>0,Left(MaxSendSize, InStr(MaxSendSize, ' (') - 1),MaxSendSize) As [MaxSendSize]",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "MaxReceiveSize",
+        "Query": "IIf(InStr([MaxReceiveSize],'(')<>0,Left(MaxReceiveSize, InStr(MaxReceiveSize, ' (') - 1),MaxReceiveSize) As [MaxReceiveSize]",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "IssueWarningQuota",
+        "Query": "IIf(InStr([IssueWarningQuota],'(')<>0,Left(IssueWarningQuota, InStr(IssueWarningQuota, ' (') - 1),IssueWarningQuota) As [Issue Warning Quota]",
+        "Target": "MailboxInfo"
+    },  
+    {
+
+        "ColumnName": "ProhibitSendQuota",
+        "Query": "IIf(InStr([ProhibitSendQuota],'(')<>0,Left(ProhibitSendQuota, InStr(ProhibitSendQuota, ' (') - 1),ProhibitSendQuota) As [Prohibit Send Quota]",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "ProhibitSendReceiveQuota",
+        "Query": "IIf(InStr([ProhibitSendReceiveQuota],'(')<>0,Left(ProhibitSendReceiveQuota, InStr(ProhibitSendReceiveQuota, ' (') - 1),ProhibitSendReceiveQuota) As [Prohibit Send Receive Quota]",
+        "Target": "MailboxInfo"
+    },  
+    {
+
+        "ColumnName": "DatabaseIssueWarningQuota",
+        "Query": "IIf(InStr([DatabaseIssueWarningQuota],'(')<>0,Left(DatabaseIssueWarningQuota, InStr(DatabaseIssueWarningQuota, ' (') - 1),DatabaseIssueWarningQuota) As [Database Issue Warning Quota]",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "DatabaseProhibitSendQuota",
+        "Query": "IIf(InStr([DatabaseProhibitSendQuota],'(')<>0,Left(DatabaseProhibitSendQuota, InStr(DatabaseProhibitSendQuota, ' (') - 1),DatabaseProhibitSendQuota) As [Database Prohibit Send Quota]",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "DatabaseProhibitSendReceiveQuota",
+        "Query": "IIf(InStr([DatabaseProhibitSendReceiveQuota],'(')<>0,Left(DatabaseProhibitSendReceiveQuota, InStr(DatabaseProhibitSendReceiveQuota, ' (') - 1),DatabaseProhibitSendReceiveQuota) As [Database Prohibit Send Receive Quota]",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "ArchiveQuota",
+        "Query": "IIf(InStr([ArchiveQuota],'(')<>0,Left(ArchiveQuota, InStr(ArchiveQuota, ' (') - 1),ArchiveQuota) AS ArchiveQuota",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "ArchiveWarningQuota",
+        "Query": "IIf(InStr([ArchiveWarningQuota],'(')<>0,Left(ArchiveWarningQuota, InStr(ArchiveWarningQuota, ' (') - 1),ArchiveWarningQuota) AS ArchiveWarningQuota",
+        "Target": "MailboxInfo"
+    },
+    {
+
+        "ColumnName": "ArchiveWarningQuota",
+        "Query": "IIf(InStr([ArchiveWarningQuota],'(')<>0,Left(ArchiveWarningQuota, InStr(ArchiveWarningQuota, ' (') - 1),ArchiveWarningQuota) AS ArchiveWarningQuota",
+        "Target": "MailboxInfo"
+    }
+]

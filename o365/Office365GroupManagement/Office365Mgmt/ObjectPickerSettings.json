@@ -1,0 +1,23 @@
+﻿[
+    {
+        "Name": "Mailbox User",
+        "Target": "MailboxInfo",
+        "ReturnColumn": "UserPrincipalName",
+        "isMultiSelect": false,
+        "SearchColumn": [ "DisplayName" ]
+    },
+     {
+        "Name": "Distribution GroupName",
+        "Target": "DistributionGroup",
+        "ReturnColumn": "GroupName",
+        "isMultiSelect": false,
+        "SearchColumn": [ "GroupName","GroupType","ManagedBy" ]
+    },
+     {
+        "Name": "Office365 GroupName",
+        "Target": "Office365Group",
+        "ReturnColumn": "GroupName",
+        "isMultiSelect": false,
+        "SearchColumn": [ "GroupName","Alias","ManagedBy" ]
+    }
+]

@@ -1,0 +1,18 @@
+== Office 365 Distribution list and Office 365 Groups Management Tool (o365) ==
+
+GingerEx for Office 365 is a simple tool to generate Exchange, SharePoint and Office 365 reports.
+
+Resources:
+
+https://gallery.technet.microsoft.com/Office-365-Distribution-84283723
+
+Version: Updated 4/23/2016
+
+Running in PowerShell Usage Example:
+
+cd "C:\BoxBuild\o365\office365_group_mgmt"
+
+.\group_mgmt.ps1
+
+
+

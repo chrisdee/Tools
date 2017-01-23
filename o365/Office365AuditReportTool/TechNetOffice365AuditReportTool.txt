@@ -1,0 +1,29 @@
+== TechNet Office 365 (o365) Audit Report Tool ==
+
+Using this Office 365 auditing tool, you can audit the following components of Office 365. - Azure ActiveDirectory - Exchange Online - SharePoint Online - OneDrive for Business - Office 365 Video
+
+Resources:
+
+http://www.jijitechnologies.com/office365-auditor.aspx
+
+https://gallery.technet.microsoft.com/Office-365-Audit-Report-22eff6f3
+
+Version: Update - 22 Apr 2016
+
+Default Installation Location:
+
+C:\Program Files\JiJiTechnologies\GingerEx\GingerEx Office 365 Auditor\Database
+
+Default Access Database Location:
+
+C:\Program Files\JiJiTechnologies\GingerEx\GingerEx Office 365 Auditor\Database
+
+Default Local Client Web URL:
+
+http://localhost:9006/Web/#O365Auditor
+
+Default Windows Service Details:
+
+Name - GingerEx_O365Auditor
+
+Path - C:\Program Files\JiJiTechnologies\GingerEx\GingerEx Office 365 Auditor\O365Auditor.exe

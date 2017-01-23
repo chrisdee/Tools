@@ -1,0 +1,3018 @@
+{
+    "TargetDetails": [
+        {
+            "TargetName": "ADUserInfo",
+            "ReportDataType": "RealTime",
+            "PSModule": "Local",
+            "CloudPSModule": "MSOnline",
+            "IdentityColumn": "UserPrincipalName",
+            "IsMergeData": true,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "UserPrincipalName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "CloudUPN",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "FirstName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "LastName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ScopeType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "RecipientType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ObjectId",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "JobTitle",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Department",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Office",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "OfficePhone",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "MobilePhone",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Fax",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Street",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "City",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "State",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Zip",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Country",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Location",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "AllowSignIn",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "PasswordNeverExpires",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "msExchRemoteRecipientType",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "msExchRecipientTypeDetails",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "msExchRemoteRecipientTypeDetails",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "CloudExchangeRecipientDisplayType",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AlternateEmailAddresses",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "WhenCreated",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IsLicensed",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LicenseIDs",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LicenseNames",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Licenses",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LicenseDetails",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AdminRoles",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "UserRoleInfo",
+            "ReportDataType": "PatchData",
+            "CloudPSModule": "MSOnline",
+            "IdentityColumn": "UserPrincipalName",
+            "IsMergeData": true,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "UserPrincipalName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "CloudUPN",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ObjectId",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "AdminRoles",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "MailboxInfo",
+            "ReportDataType": "RealTime",
+            "IdentityColumn": "UserPrincipalName",
+            "IsMergeData": true,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "UserPrincipalName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "CloudUPN",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SamAccountName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "EmailAddresses",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "PrimarySmtpAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Guid",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ActiveSyncEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "OWAEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "PopEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ImapEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "MapiEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LitigationHoldEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "UseDatabaseQuotaDefaults",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "InPlaceHoldsCount",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Database",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastLogonTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastLogoffTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ItemCount",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Totalitemsize",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "TotalDeletedItemSize",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeletedItemCount",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ForwardingAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeliverToMailboxAndForward",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "MaxSendSize",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "MaxReceiveSize",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RulesQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RecipientLimits",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AcceptMessagesOnlyFrom",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RejectMessagesFrom",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "GrantSendOnBehalfTo",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IssueWarningQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ProhibitSendQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ProhibitSendReceiveQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ArchiveDatabase",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ArchiveName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ArchiveQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ArchiveWarningQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "FolderCount",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DatabaseIssueWarningQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DatabaseProhibitSendQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DatabaseProhibitSendReceiveQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RecipientTypeDetails",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "AddressBookPolicy",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "WhenChanged",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LitigationHoldDate",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LitigationHoldOwner",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LitigationHoldDuration",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "DeletedUserInfo",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "PSModule": "MSOnline",
+            "IdentityColumn": "UserPrincipalName",
+            "IsMergeData": true,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "UserPrincipalName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ValidationStatus",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "SoftDeletionTimestamp",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "MailboxStat",
+            "ReportDataType": "PatchData",
+            "IdentityColumn": "UserPrincipalName",
+            "IsMergeData": false,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "UserPrincipalName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "CloudUPN",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastLogonTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastLogoffTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ItemCount",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Totalitemsize",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "TotalDeletedItemSize",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeletedItemCount",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DatabaseIssueWarningQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DatabaseProhibitSendQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DatabaseProhibitSendReceiveQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IssueWarningQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ProhibitSendQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ProhibitSendReceiveQuota",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RecipientTypeDetails",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                }
+            ]
+        },
+        {
+            "TargetName": "UserLogonInfo",
+            "ScopeType": "Office365",
+            "ReportDataType": "PatchSync",
+            "CloudPSModule": "MSOnline",
+            "IdentityColumn": "UserPrincipalName",
+            "ReferenceColumn": "LogonTime",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "UserPrincipalName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "CloudUPN",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "LogonTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "MailboxSearchInfo",
+            "IdentityColumn": "UserPrincipalName",
+            "IsMergeData": false,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "SourceMailboxes",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ItemHoldPeriod",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Status",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "NumberMailboxesToSearch",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "PercentComplete",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ResultSize",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastModifiedTime",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "InactiveMailboxInfo",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "UserPrincipalName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "IsSoftDeletedByRemove",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "WhenSoftDeleted",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LitigationHoldDate",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LitigationHoldOwner",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LitigationHoldDuration",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "ClientAccessInfo",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "OwaMailboxPolicy",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "OWAEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "OWAforDevicesEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "AddressBookPolicyInfo",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "AddressLists",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "GlobalAddressList",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RoomList",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "OfflineAddressBook",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "WhenChanged",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "OWAMailboxPolicyInfo",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "InstantMessagingEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "GroupCreationEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SetPhotoEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "TextMessagingEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "UMIntegrationEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ActiveSyncIntegrationEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ContactsEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AllowCopyContactsToDeviceAddressBook",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LinkedInEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AllAddressListsEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "JournalEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "NotesEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RulesEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RecoverDeletedItemsEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ThemeSelectionEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "PremiumClientEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SignaturesEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "CalendarEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "TasksEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RemindersAndNotificationsEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DirectFileAccessOnPrivateComputersEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AllowOfflineOn",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "WhenChanged",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "MailboxAudit",
+            "DatabaseName": "MailboxAudit",
+            "ReportDataType": "Audit",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "MailboxOwnerName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LogonUserName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "LogonType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Operation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "OperationResult",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ItemSubject",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastAccessed",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SourceItemSubject",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DestFolderPathName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "FolderPathName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ClientInfoString",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ClientIPAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "MailboxPermissions",
+            "ReportDataType": "RealTime",
+            "IdentityColumn": "UserPrincipalName",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "UserPrincipalName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "UserName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Access",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                }
+            ]
+        },
+        {
+            "TargetName": "DistributionGroup",
+            "ReportDataType": "RealTime",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "GroupName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "GroupType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ManagedBy",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ReportToOriginatorEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ReportToManagerEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SendOofMessageToOriginatorEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "PrimarySmtpAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "EmailAddresses",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "MaxSendSize",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "MaxReceiveSize",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AcceptMessagesOnlyFrom",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AcceptMessagesOnlyFromDLMembers",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AcceptMessagesOnlyFromSendersOrMembers",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "GrantSendOnBehalfTo",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RejectMessagesFrom",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RejectMessagesFromDLMembers",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RejectMessagesFromSendersOrMembers",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RequireSenderAuthenticationEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "DistributionGroupMember",
+            "ReportDataType": "RealTime",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "GroupName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ObjectName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectId",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "PrimarySMTPAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RecipientType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                }
+            ]
+        },
+        {
+            "TargetName": "Office365Group",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "GroupName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Alias",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ManagedBy",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "PrimarySmtpAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "EmailAddresses",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "Office365GroupMember",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "GroupName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ObjectName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectId",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "PrimarySMTPAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RecipientType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                }
+            ]
+        },
+        {
+            "TargetName": "MobileDeviceInfo",
+            "ReportDataType": "RealTime",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "FriendlyName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceId",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceIMEI",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceMobileOperator",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceOS",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceOSLanguage",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceTelephoneNumber",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceType",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceUserAgent",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceModel",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "FirstSyncTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "UserDisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceAccessState",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceAccessStateReason",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceAccessControlRule",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ClientVersion",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AdminDisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ClientType",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IsManaged",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IsCompliant",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IsDisabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ExchangeVersion",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastPolicyUpdateTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastSyncAttemptTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastSuccessSync",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DevicePhoneNumber",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceEnableOutboundSMS",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Status",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "DevicePolicyApplied",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DevicePolicyApplicationStatus",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastDeviceWipeRequestor",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "NumberOfFoldersSynced",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SyncStateUpgradeTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "MobileDeviceStat",
+            "ReportDataType": "PatchData",
+            "IdentityColumn": "Identity",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "DeviceName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "UserDisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastPolicyUpdateTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastSyncAttemptTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastSuccessSync",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DevicePhoneNumber",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeviceEnableOutboundSMS",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Status",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "DevicePolicyApplied",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DevicePolicyApplicationStatus",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastDeviceWipeRequestor",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "NumberOfFoldersSynced",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SyncStateUpgradeTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "ClientTypeInfo",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Date",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ClientType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Count",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "SpamMalwareTraffic",
+            "DatabaseName": "SpamMalwareTraffic",
+            "ReportDataType": "Audit",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Date",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Direction",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "EventType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "SenderAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "RecipientAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "LicenseInfo",
+            "ReportDataType": "RealTime",
+            "PSModule": "MSOnline",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "LicenseName",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "AccountSkuId",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SkuPartNumber",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ActiveUnits",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ConsumedUnits",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LockedOutUnits",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "WarningUnits",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Features",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "FeatureDetails",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "LicenseUsageInfo",
+            "ReportDataType": "RealTime",
+            "ScopeType": "Office365",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Date",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "TenantGuid",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Workload",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "NonTrialEntitlements",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "TrialEntitlements",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ActiveUsers",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "DistributionGroupUsageInfo",
+            "ReportDataType": "Sync",
+            IdentityColumn: "Identity",
+            ReferenceColumn: "LastUsedTime",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Groupname",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "GroupType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "EmailAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastUsedTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "Office365GroupUsageInfo",
+            "ReportDataType": "Sync",
+            "ScopeType": "Office365",
+            IdentityColumn: "Identity",
+            ReferenceColumn: "LastUsedTime",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Groupname",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "GroupType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "EmailAddress",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastUsedTime",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "SiteCollectionInfo",
+            "PSModule": "CSOM",
+            "IdentityColumn": "Title",            
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Title",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Address",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Size",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "StorageQuota",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "StorageWarningLevel",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "LastModifiedDate",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Administrators",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "NoOfSites",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Owner",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DesignerEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SharingCapability",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AuditFlags",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Description",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "WebApplication",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Database",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "SiteInfo",
+            "PSModule": "CSOM",
+            "IdentityColumn": "Title",            
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Title",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Address",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Parent",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "SiteCollection",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "WebApplication",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Created",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "LastModifiedDate",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Administrators",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Owner",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DesignerEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Description",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SubSitesCount",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "HasUniqueRoleAssignments",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "TopNavBarLocal",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "TopNavBarGlobal",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "ListInfo",
+            "PSModule": "CSOM",
+            "DatabaseName": "ListInfo",    
+            "IdentityColumn": "Title",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Title",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Site",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "SiteCollection",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "MajorVersionLimit",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastModifiedDate",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastDeletedDate",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ItemCount",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "EnableAttachments",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "EnableFolderCreation",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "EnableModeration",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "EnableVersioning",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "SubscribedWorkflows",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "AssociatedWorkflows",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Created",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "BaseType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "HasUniqueRoleAssignments",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "PermissionInfo",
+            "PSModule": "CSOM",
+            "IdentityColumn": "Title",
+            "DatabaseName": "PermissionInfo",            
+            "ColumnDetails": [
+                {
+                    "ColumnName": "ObjectName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectUrl",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Parent",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "SiteCollection",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "UserTitle",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "UserType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "LoginName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "IsHiddenInUI",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "IsDirectPermission",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IsSiteAdmin",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Roles",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "UserGroupInfo",
+            "PSModule": "CSOM",
+            "DatabaseName": "UserGroupInfo",    
+            "IdentityColumn": "ObjectName",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "ObjectName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectUrl",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "UserTitle",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "UserType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "IsSiteAdmin",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "CanCurrentUserEditMembership",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "CanCurrentUserManageGroup",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "CanCurrentUserViewMembership",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "NestedObjects",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IsShareByEmailGuestUser",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Owner",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Members",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "OwnerType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Email",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "OrphanedUserInfo",
+            "PSModule": "CSOM",
+            "IdentityColumn": "LoginName",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "LoginName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Title",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Email",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "IsHiddenInUI",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false
+                }
+            ]
+        },
+        {
+            "TargetName": "SPServerInfo",
+            "PSModule": "SPLocal",
+            "IdentityColumn": "Name",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Status",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Role",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "FarmName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Address",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                }
+            ]
+        },
+        {
+            "TargetName": "SPFarmInfo",
+            "PSModule": "SPLocal",
+            "IdentityColumn": "Name",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Status",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Parent",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                }
+            ]
+        },
+        {
+            "TargetName": "SPDatabaseInfo",
+            "PSModule": "SPLocal",
+            "IdentityColumn": "Name",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "WebApplication",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Server",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                }
+            ]
+        },
+        {
+            "TargetName": "SPWebAppInfo",
+            "PSModule": "SPLocal",
+            "IdentityColumn": "Name",
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "DisplayName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Status",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "Farm",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ContentDatabases",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Url",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                }
+            ]
+        },
+        {
+            "TargetName": "DocumentInfo",
+            "PSModule": "CSOM",
+            "DatabaseName": "DocumentInfo",    
+            "IdentityColumn": "Name",
+            "IsMergeData": true,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "DocumentName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "CreatedOn",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastModifiedOn",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Site",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "SiteUrl",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "SiteCollection",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "WorkflowName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "WorkflowEnabled",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Version",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IsCheckedoutToLocal",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "IsCurrentVersion",
+                    "ColumnType": "Bool",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "LastCheckInComment",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "FileRef",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "SharedWithUsers",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "SharedWithDetails",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "FileType",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "CheckoutUser",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "CreatedBy",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "ModifiedBy",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "FileSize",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Folder",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Type",
+                    "ColumnType": "NVarChar",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "DeletedInfo",
+            "PSModule": "CSOM",
+            "IdentityColumn": "Name",
+            "IsMergeData": true,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "Name",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "DeletedDate",
+                    "ColumnType": "DateTime",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Identity",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "Parent",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "SiteCollection",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "AuthorName",
+                   "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "AuthorEmail",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ItemState",
+                     "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "ItemType",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                },
+                {
+                    "ColumnName": "LeafName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DirName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeletedByName",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Size",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "DeletedByEmail",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                }
+            ]
+        },
+        {
+            "TargetName": "SizeStatisticsInfo",
+            "PSModule": "CSOM",
+            "IdentityColumn": "Name",
+            "IsMergeData": true,
+            "ColumnDetails": [
+                {
+                    "ColumnName": "SiteCollection",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "SiteCollectionSize",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": false,
+                    "LinkTableName": ""
+                },
+                {
+                    "ColumnName": "Site",
+                    "ColumnType": "NVarCharMax",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "TotalSize",
+                   "ColumnType": "Int64",
+                    "IsLinkColumn": false
+                },
+                {
+                    "ColumnName": "ObjectLocation",
+                    "ColumnType": "Int64",
+                    "IsLinkColumn": true,
+                    "LinkTableName": "ReferenceLinkTable"
+                }
+            ]
+        }
+    ],
+    "LinkTableDetails": [
+        {
+            "TableName": "ReferenceLinkTable",
+            "ColumnName": "ReferenceValue"
+        }
+    ]
+}
