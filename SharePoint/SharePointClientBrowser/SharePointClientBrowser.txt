@@ -6,6 +6,11 @@ https://spcb.codeplex.com/releases
 
 Versions:
 
+SharePoint Online: SharePoint Online Client Browser v3.0
+
+SharePoint 2016: SharePoint 2016 Client Browser v2.3
+
 SharePoint 2013: Client Browser v1.3.1 | SharePoint 2013 Client Browser v1.6
 
 SharePoint 2010: Client Browser (Preview) v0.6
+

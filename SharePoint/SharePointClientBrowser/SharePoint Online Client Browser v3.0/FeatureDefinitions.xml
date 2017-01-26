@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFeature xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Feature>
+    <!-- Team Foundation Server 2010 feature-->
+    <Id>310284e3-35d9-4b5d-99b5-c42147379877</Id>
+    <DisplayName>Team Foundation Web</DisplayName>
+    <InternalName>TeamFoundationWeb</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Web</Scope>
+  </Feature>
+  <Feature>
+    <!-- Office 365 feature-->
+    <Id>232b3f94-9d6e-4ed6-8d55-04d5a44ac449</Id>
+    <DisplayName>Office 365 only feature</DisplayName>
+    <InternalName>HelpCollectionRemoveDefault</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Office 365 feature-->
+    <Id>d28bf940-11d3-496c-a9b9-22f60076a879</Id>
+    <DisplayName>Office 365 only feature</DisplayName>
+    <InternalName>HelpCollectionLiteFeature</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Office 365 feature-->
+    <Id>69cadbef-ac7d-494d-9d0a-39a26e008377</Id>
+    <DisplayName>Office 365 only feature</DisplayName>
+    <InternalName>BPOSExtranetFlag</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Office 365 feature-->
+    <Id>5d86fce4-1d23-11df-85a4-a17a56d89593</Id>
+    <DisplayName>Office 365 only feature</DisplayName>
+    <InternalName>ShellControl</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Office 365 feature-->
+    <Id>1f69e37c-7f07-4928-aa91-3a03e019d0e8</Id>
+    <DisplayName>Office 365 only feature</DisplayName>
+    <InternalName>SPOUIRemovalPublic</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Office 365 feature-->
+    <Id>b6f344b4-1563-416b-96e0-a1c5d7002e5c</Id>
+    <DisplayName>Office 365 only feature</DisplayName>
+    <InternalName>ECMSPOLiteMarker</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Office 365 feature-->
+    <Id>9836d446-3785-4579-8480-a27d5c965b19</Id>
+    <DisplayName>Office 365 only feature</DisplayName>
+    <InternalName>SpoGuestIntegration</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>0561D315-D5DB-4736-929E-26DA142812C5</Id>
+    <DisplayName>Nintex Workflow 2010</DisplayName>
+    <InternalName>NintexWorkflow</InternalName>
+    <Hidden>false</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>2fb9d5df-2fb5-403d-b155-535c256be1dc</Id>
+    <DisplayName>Nintex Workflow 2010 Enterprise Reporting</DisplayName>
+    <InternalName>NintexWorkflowEnterpriseWeb</InternalName>
+    <Hidden>false</Hidden>
+    <Scope>Web</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>53164b55-e60f-4bed-b582-a87da32b92f1</Id>
+    <DisplayName>Nintex Workflow 2010 Reporting Web Parts</DisplayName>
+    <InternalName>NintexWorkflowEnterpriseWebParts</InternalName>
+    <Hidden>false</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>80bf3218-7353-11df-af9f-058bdfd72085</Id>
+    <DisplayName>Nintex Workflow 2010 InfoPath Forms</DisplayName>
+    <InternalName>NintexWorkflowInfoPath</InternalName>
+    <Hidden>false</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>86c83d16-605d-41b4-bfdd-c75947899ac7</Id>
+    <DisplayName>Nintex Workflow Content Type Upgrade</DisplayName>
+    <InternalName>NintexWorkflowContentTypeUpgrade</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>9bf7bf98-5660-498a-9399-bc656a61ed5d</Id>
+    <DisplayName>Nintex Workflow 2010</DisplayName>
+    <InternalName>NintexWorkflowWeb</InternalName>
+    <Hidden>false</Hidden>
+    <Scope>Web</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>aa61ef91-ee2b-42d5-9911-7c6557ad90c2</Id>
+    <DisplayName>Nintex Workflow Admin</DisplayName>
+    <InternalName>NintexWorkflowEnterpriseAdmin</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Web</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>eb657559-be37-4b91-a369-1c201183c779</Id>
+    <DisplayName>Nintex Workflow 2010 Web Parts</DisplayName>
+    <InternalName>NintexWorkflowWebParts</InternalName>
+    <Hidden>false</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- Nintex Workflow 2010 feature-->
+    <Id>f7937973-0cf9-4f2d-a549-be2d3c25b772</Id>
+    <DisplayName>Nintex Workflow Admin</DisplayName>
+    <InternalName>NintexWorkflowAdmin</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Web</Scope>
+  </Feature>
+  <Feature>
+    <!-- Yammer App for SharePoint-->
+    <Id>565288aa-a9b0-4f19-8ce3-7fa13fccda5d</Id>
+    <DisplayName>Yammer App for SharePoint</DisplayName>
+    <InternalName>-</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Web</Scope>
+  </Feature>
+  <Feature>
+    <!-- AccSvcCustomizeForm -->
+    <Id>b820625a-a987-4d71-bce9-4ce197cb001c</Id>
+    <DisplayName>Access Services Customize Form</DisplayName>
+    <InternalName>AccSvcCustomizeForm</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+  <Feature>
+    <!-- AccSrvFormDesignerRibbon -->
+    <Id>f1845cc0-3d69-4b16-a4db-a2a9137aea6e</Id>
+    <DisplayName>Access Services Form Designer Ribbon</DisplayName>
+    <InternalName>AccSrvFormDesignerRibbon</InternalName>
+    <Hidden>true</Hidden>
+    <Scope>Site</Scope>
+  </Feature>
+</ArrayOfFeature>
