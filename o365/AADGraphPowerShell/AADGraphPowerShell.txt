@@ -1,0 +1,19 @@
+== AAD Graph PowerShell Module ==
+
+Resources:
+
+http://www.dushyantgill.com/blog/2013/12/27/aadgraphpowershell-a-powershell-client-for-windows-azure-ad-graph-api
+
+https://github.com/dushyantgill/AADGraphPowerShell
+
+https://msdn.microsoft.com/library/azure/hh974476.aspx
+
+https://graph.microsoft.io/en-us
+
+Version:
+
+Installation Example:
+
+cd "C:\BoxBuild\Scripts\AADGraphPowerShell-master\AADGraphPowerShell-master"
+
+.\Install-AADGraphModule.ps1
