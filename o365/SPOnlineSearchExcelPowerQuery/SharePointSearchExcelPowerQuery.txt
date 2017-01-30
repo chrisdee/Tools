@@ -1,0 +1,15 @@
+== SharePoint Search Excel PowerQuery ==
+
+Query SharePoint Online Search using Power Query / Power BI directly from Excel
+
+Resources:
+
+http://makingthings.work/excel-workbook-with-sharepoint-search-power-query
+
+https://github.com/MakingThingsWorkToronto/SharePointSearchPowerQuery
+
+Requires:
+
+Microsoft Power Query for Excel | https://www.microsoft.com/en-ca/download/details.aspx?id=39379
+
+Power Query for Excel Version: 2.40.4554.161
