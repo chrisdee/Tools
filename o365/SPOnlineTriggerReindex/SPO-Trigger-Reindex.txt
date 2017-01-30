@@ -1,0 +1,25 @@
+== SPO-Trigger-Reindex ==
+
+Resources:
+
+http://makingthings.work/trigger-a-full-crawl-on-sharepoint-online
+
+https://github.com/wobba/SPO-Trigger-Reindex
+
+Requires:
+
+SharePoint Online Client Components SDK | https://www.microsoft.com/en-us/download/details.aspx?id=42038
+
+Usage Examples:
+
+Verify the CSOM path variable in the scripts '$csomPath', and modify this to match your environment if required
+
+Run the scripts and provide your tenant specific properties for the variables, or run the scripts like the examples below.
+
+cd "C:\BoxBuild\o365\SPO-Trigger-Reindex"
+
+.\reindex-site.ps1 -url "https://tenant.sharepoint.com/sites/sitename" -username "FirstName.LastName@tenant.onmicrosoft.com" -password "UserPassword"
+
+.\reindex-tenant.ps1 -url "https://tenant-admin.sharepoint.com" -username "FirstName.LastName@tenant.onmicrosoft.com" -password "UserPassword"
+
+.\reindex-users.ps1 -url "https://tenant-admin.sharepoint.com" -username "FirstName.LastName@tenant.onmicrosoft.com" -password "UserPassword"
