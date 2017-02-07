@@ -3,7 +3,7 @@ set cmd=
 :Loop
 IF "%~1"=="" GOTO Continue
 
-set cmd=%cmd% %1 
+set cmd=%cmd% '%1' 
 
 SHIFT
 GOTO Loop

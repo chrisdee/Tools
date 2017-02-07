@@ -2,10 +2,21 @@
 
 URLs: 
 
-http://ps2exe.codeplex.com
-
-http://blog.karstein-consulting.com/2013/03/08/update-of-ps2exe-version-0-3-0-0-now-supports-powershell-3-0-and-2-0
-
 https://gallery.technet.microsoft.com/PS2EXE-Convert-PowerShell-9e4e07f1
 
-Versions: PS2EXE v0.4 | Sat Mar 9, 2013 at 8:00 AM
+http://ps2exe.codeplex.com
+
+Versions: PS2EXE - v0.5 | 3/5/2015
+
+Usage Example:
+
+./PS2EXE.ps1 -InputFile "C:\ztemp\Scripts\PS2EXE-v0.5.0.0\YourFileName.ps1" -OutputFile "C:\ztemp\Scripts\PS2EXE-v0.5.0.0\YourFileName.exe"
+
+Usage Note:
+
+Even though the latest update doesn't specify support for PowerShell 5.0 upwards; this worked on a machine running PowerShell Version '5.0.10514.6' when the following was added to the file under the '$psversion = 0' variable:
+
+if($PSVersionTable.PSVersion.Major -eq 5) {
+    $psversion = 4
+    write-host "You are using PowerShell 5.0."
+}
