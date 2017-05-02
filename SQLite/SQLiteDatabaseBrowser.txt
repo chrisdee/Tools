@@ -1,0 +1,6 @@
+== DB Browser for SQLite ==
+
+URL: http://sqlitebrowser.org
+
+Version: 3.9.1 (Portable)
+
