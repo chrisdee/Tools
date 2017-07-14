@@ -1,0 +1,9 @@
+== SPDocGen - SharePoint 2013 Documentation Generator (SP15DocGen) ==
+
+URLs:
+
+https://github.com/siaf/SP15DocGen
+
+https://github.com/siaf/SP15DocGen/tree/master/Binary
+
+Latest Build: e6d5978  on Aug 26, 2014
