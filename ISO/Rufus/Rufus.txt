@@ -2,7 +2,7 @@
 
 URL: http://rufus.akeo.ie
 
-Version: Rufus 2.10p | Last updated 2016.07.20
+Version: Rufus 2.16p | Last updated 2017.07.31
 
 Rufus is a utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.
 
