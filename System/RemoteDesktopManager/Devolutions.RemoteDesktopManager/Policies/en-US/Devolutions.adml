@@ -1,0 +1,83 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="CAT_DEVOLUTIONS">Devolutions</string>
+      <string id="CAT_RDM">Remote Desktop Manager</string>
+      <string id="CAT_RDM_GENERAL">General</string>
+      <string id="CAT_RDM_SECURITY">Security</string>
+      <string id="CAT_RDM_SESSIONS">Sessions</string>      
+	  <string id="CAT_RDM_UI">User Interface</string>
+      <string id="CAT_PVM">Password Vault Manager</string>
+      <string id="CAT_PVM_GENERAL">General</string>
+      <string id="CAT_PVM_SECURITY">Security</string>
+      <string id="CAT_PVM_SESSIONS">Sessions</string>      
+	  <string id="CAT_PVM_UI">User Interface</string>
+      <string id="POL_RDM_ALWAYSPROMPTFORPASSPHRASE">Force the user to always be prompted for the passphrase while connecting to data source that is protected by a Shared Passphrase Security Provider</string>
+      <string id="POL_PVM_ALWAYSPROMPTFORPASSPHRASE">Force the user to always be prompted for the passphrase while connecting to data source that is protected by a Shared Passphrase Security Provider</string>
+      <string id="POL_RDM_DISABLEABOUT">Disable the About menu</string>
+      <string id="POL_PVM_DISABLEABOUT">Disable the About menu</string>
+      <string id="POL_RDM_DISABLEADDON">Disable the add-on creation and the Add-on Manager</string>
+      <string id="POL_RDM_DISABLEAPPLICATIONTOOLS">Disable all the local application tools like the Event Viewer or IIS</string>
+      <string id="POL_RDM_DISABLEAUTOUPDATE">Disable the application automatic update check</string>
+      <string id="POL_PVM_DISABLEAUTOUPDATE">Disable the application automatic update check</string>
+      <string id="POL_RDM_DISABLECACHING">Disable caching</string>
+      <string id="POL_PVM_DISABLECACHING">Disable caching</string>
+      <string id="POL_RDM_DISABLECUSTOMIMAGE">Disable the custom image edition in the session configuration</string>
+      <string id="POL_PVM_DISABLECUSTOMIMAGE">Disable the custom image edition in the session configuration</string>
+      <string id="POL_RDM_DISABLEDRAGANDDROP">Disable drag and drop in the connection list</string>
+      <string id="POL_RDM_DISABLEFILEDATASOURCES">Disable the menu File->Data Sources</string>
+      <string id="POL_PVM_DISABLEFILEDATASOURCES">Disable the menu File->Data Sources</string>
+      <string id="POL_RDM_DISABLEFILEOPTIONS">Disable the menu File->Options</string>
+      <string id="POL_PVM_DISABLEFILEOPTIONS">Disable the menu File->Options</string>
+      <string id="POL_RDM_DISABLEIMPORTEXPORTOPTIONS">Disable import and export options</string>
+      <string id="POL_PVM_DISABLEIMPORTEXPORTOPTIONS">Disable import and export options</string>
+      <string id="POL_RDM_DISABLEMYPERSONALCREDENTIALS">Disable My Personal Credentials</string>
+      <string id="POL_PVM_DISABLEMYPERSONALCREDENTIALS">Disable My Personal Credentials</string>
+      <string id="POL_RDM_DISABLEOFFLINE">Disable offline</string>
+      <string id="POL_PVM_DISABLEOFFLINE">Disable offline</string>
+      <string id="POL_RDM_DISABLEONLINEACCOUNT">Disable the Devolutions Cloud usage</string>
+      <string id="POL_PVM_DISABLEONLINEACCOUNT">Disable the Devolutions Cloud usage</string>
+      <string id="POL_RDM_DISABLERDPHARDDRIVESSPECIFICSETTINGS">Disable the override hard drive specific settings for RDP entries</string>
+      <string id="POL_RDM_DISABLEREVEALPASSWORD">Disable the reveal password</string>
+      <string id="POL_PVM_DISABLEREVEALPASSWORD">Disable the reveal password</string>
+      <string id="POL_RDM_DISABLETOOLSADDONMANAGER">Disable the the Add-On Manager in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSADDONMANAGER">Disable the the Add-On Manager in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSCHOCOLATEYCONSOLE">Disable the the Chocolatey Console in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSCHOCOLATEYCONSOLE">Disable the the Chocolatey Console in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSDEVOLUTIONSPROXYCONSOLE">Disable the the Devolutions Proxy Console in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSDEVOLUTIONSPROXYCONSOLE">Disable the the Devolutions Proxy Console in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSDEVOLUTIONSSERVERCONSOLE">Disable the the Devolutions Server Console in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSDEVOLUTIONSSERVERCONSOLE">Disable the the Devolutions Server Console in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSEXTENSIONMANAGER">Disable the the Extension Manager in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSEXTENSIONMANAGER">Disable the the Extension Manager in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER">Disable the the Local RDP/RemoteApp Manager in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER">Disable the the Local RDP/RemoteApp Manager in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSMACROSCRIPTTOOLMANAGER">Disable the the Macro/Script/Tool Manager in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSMACROSCRIPTTOOLMANAGER">Disable the the Macro/Script/Tool Manager in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSMENU">Disable the Tools ribbon tab and menu</string>
+      <string id="POL_PVM_DISABLETOOLSMENU">Disable the Tools ribbon tab and menu</string>
+      <string id="POL_RDM_DISABLETOOLSOPENNEWREMOTEDESKTOP">Disable the the Open New Remote Desktop option in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSOPENNEWREMOTEDESKTOP">Disable the the Open New Remote Desktop option in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSPOWERSHELLRDMCMDLET">Disable the the Powershell RDM Cmdlet in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSPOWERSHELLRDMCMDLET">Disable the the Powershell RDM Cmdlet in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSRDMAGENT">Disable the the RDM Agent in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSRDMAGENT">Disable the the RDM Agent in the Tools menu</string>
+      <string id="POL_RDM_DISABLETOOLSTRANSLATIONMANAGER">Disable the the Translation Manager in the Tools menu</string>
+      <string id="POL_PVM_DISABLETOOLSTRANSLATIONMANAGER">Disable the the Translation Manager in the Tools menu</string>
+      <string id="POL_RDM_DISABLEUPDATE">Disable the application's update menus</string>
+      <string id="POL_PVM_DISABLEUPDATE">Disable the application's update menus</string>
+      <string id="POL_RDM_DISABLEX64">Disable the x64 edition of the application</string>
+      <string id="POL_RDM_DISABLEX86">Disable the x86 edition of the application</string>
+      <string id="POL_RDM_ENABLECONNECTIONAFTEREXPIRATION">Allow the user to connect even after the entry has expired</string>
+      <string id="POL_RDM_ENABLEMERGECREDENTIALLISTWITHSESSIONS">Force merging of the credential list with sessions</string>
+      <string id="POL_RDM_ENABLEMERGESESSIONTOOLLISTWITHSESSIONS">Force merging of the session tool list with sessions</string>
+      <string id="POL_RDM_FORCELOGIN">Force the user to always be prompted for his credentials when launching the application</string>
+      <string id="POL_PVM_FORCELOGIN">Force the user to always be prompted for his credentials when launching the application</string>
+      <string id="SUPPORTED_WindowsVista">At least Microsoft Windows Vista</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

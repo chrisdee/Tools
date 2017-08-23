@@ -1,0 +1,9 @@
+== Devolutions Remote Desktop Manager ==
+
+URLs:
+
+https://remotedesktopmanager.com
+
+https://remotedesktopmanager.com/Home/Download
+
+Version: VERSION 3.6.3.0 (August 10th 2017)

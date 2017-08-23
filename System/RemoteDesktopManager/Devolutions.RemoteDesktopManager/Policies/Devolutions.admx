@@ -1,0 +1,653 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="FullArmor.Policies.4A4D1B96_D670_46EB_A114_BF27836821EC" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="CAT_DEVOLUTIONS" displayName="$(string.CAT_DEVOLUTIONS)" />
+    <category name="CAT_RDM" displayName="$(string.CAT_RDM)">
+      <parentCategory ref="CAT_DEVOLUTIONS" />
+    </category>
+    <category name="CAT_RDM_GENERAL" displayName="$(string.CAT_RDM_GENERAL)">
+      <parentCategory ref="CAT_RDM" />
+    </category>
+    <category name="CAT_RDM_SECURITY" displayName="$(string.CAT_RDM_SECURITY)">
+      <parentCategory ref="CAT_RDM" />
+    </category>
+    <category name="CAT_RDM_SESSIONS" displayName="$(string.CAT_RDM_SESSIONS)">
+      <parentCategory ref="CAT_RDM" />
+    </category>
+    <category name="CAT_RDM_UI" displayName="$(string.CAT_RDM_UI)">
+      <parentCategory ref="CAT_RDM" />
+    </category>
+    <category name="CAT_PVM" displayName="$(string.CAT_PVM)">
+      <parentCategory ref="CAT_DEVOLUTIONS" />
+    </category>
+    <category name="CAT_PVM_GENERAL" displayName="$(string.CAT_PVM_GENERAL)">
+      <parentCategory ref="CAT_PVM" />
+    </category>
+    <category name="CAT_PVM_SECURITY" displayName="$(string.CAT_PVM_SECURITY)">
+      <parentCategory ref="CAT_PVM" />
+    </category>
+    <category name="CAT_PVM_SESSIONS" displayName="$(string.CAT_PVM_SESSIONS)">
+      <parentCategory ref="CAT_PVM" />
+    </category>
+    <category name="CAT_PVM_UI" displayName="$(string.CAT_PVM_UI)">
+      <parentCategory ref="CAT_PVM" />
+    </category>
+  </categories>
+  <policies>
+      <policy name="POL_RDM_ALWAYSPROMPTFORPASSPHRASE" class="Both" displayName="$(string.POL_RDM_ALWAYSPROMPTFORPASSPHRASE)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="AlwaysPromptForPassphrase">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_ALWAYSPROMPTFORPASSPHRASE" class="Both" displayName="$(string.POL_PVM_ALWAYSPROMPTFORPASSPHRASE)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="AlwaysPromptForPassphrase">
+      <parentCategory ref="CAT_PVM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEABOUT" class="Both" displayName="$(string.POL_RDM_DISABLEABOUT)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableAbout">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEABOUT" class="Both" displayName="$(string.POL_PVM_DISABLEABOUT)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableAbout">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEADDON" class="Both" displayName="$(string.POL_RDM_DISABLEADDON)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableAddOn">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEAPPLICATIONTOOLS" class="Both" displayName="$(string.POL_RDM_DISABLEAPPLICATIONTOOLS)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableApplicationTools">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEAUTOUPDATE" class="Both" displayName="$(string.POL_RDM_DISABLEAUTOUPDATE)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableAutoUpdate">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEAUTOUPDATE" class="Both" displayName="$(string.POL_PVM_DISABLEAUTOUPDATE)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableAutoUpdate">
+      <parentCategory ref="CAT_PVM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLECACHING" class="Both" displayName="$(string.POL_RDM_DISABLECACHING)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableCaching">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLECACHING" class="Both" displayName="$(string.POL_PVM_DISABLECACHING)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableCaching">
+      <parentCategory ref="CAT_PVM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLECUSTOMIMAGE" class="Both" displayName="$(string.POL_RDM_DISABLECUSTOMIMAGE)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableCustomImage">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLECUSTOMIMAGE" class="Both" displayName="$(string.POL_PVM_DISABLECUSTOMIMAGE)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableCustomImage">
+      <parentCategory ref="CAT_PVM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEDRAGANDDROP" class="Both" displayName="$(string.POL_RDM_DISABLEDRAGANDDROP)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableDragAndDrop">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEFILEDATASOURCES" class="Both" displayName="$(string.POL_RDM_DISABLEFILEDATASOURCES)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableFileDataSources">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEFILEDATASOURCES" class="Both" displayName="$(string.POL_PVM_DISABLEFILEDATASOURCES)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableFileDataSources">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEFILEOPTIONS" class="Both" displayName="$(string.POL_RDM_DISABLEFILEOPTIONS)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableFileOptions">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEFILEOPTIONS" class="Both" displayName="$(string.POL_PVM_DISABLEFILEOPTIONS)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableFileOptions">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEIMPORTEXPORTOPTIONS" class="Both" displayName="$(string.POL_RDM_DISABLEIMPORTEXPORTOPTIONS)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableImportExportOptions">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEIMPORTEXPORTOPTIONS" class="Both" displayName="$(string.POL_PVM_DISABLEIMPORTEXPORTOPTIONS)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableImportExportOptions">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEMYPERSONALCREDENTIALS" class="Both" displayName="$(string.POL_RDM_DISABLEMYPERSONALCREDENTIALS)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableMyPersonalCredentials">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEMYPERSONALCREDENTIALS" class="Both" displayName="$(string.POL_PVM_DISABLEMYPERSONALCREDENTIALS)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableMyPersonalCredentials">
+      <parentCategory ref="CAT_PVM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEOFFLINE" class="Both" displayName="$(string.POL_RDM_DISABLEOFFLINE)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableOffline">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEOFFLINE" class="Both" displayName="$(string.POL_PVM_DISABLEOFFLINE)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableOffline">
+      <parentCategory ref="CAT_PVM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEONLINEACCOUNT" class="Both" displayName="$(string.POL_RDM_DISABLEONLINEACCOUNT)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableOnlineAccount">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEONLINEACCOUNT" class="Both" displayName="$(string.POL_PVM_DISABLEONLINEACCOUNT)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableOnlineAccount">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLERDPHARDDRIVESSPECIFICSETTINGS" class="Both" displayName="$(string.POL_RDM_DISABLERDPHARDDRIVESSPECIFICSETTINGS)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableRDPHardDrivesSpecificSettings">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEREVEALPASSWORD" class="Both" displayName="$(string.POL_RDM_DISABLEREVEALPASSWORD)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableRevealPassword">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEREVEALPASSWORD" class="Both" displayName="$(string.POL_PVM_DISABLEREVEALPASSWORD)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableRevealPassword">
+      <parentCategory ref="CAT_PVM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSADDONMANAGER" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSADDONMANAGER)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsAddOnManager">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSADDONMANAGER" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSADDONMANAGER)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsAddOnManager">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSCHOCOLATEYCONSOLE" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSCHOCOLATEYCONSOLE)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsChocolateyConsole">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSCHOCOLATEYCONSOLE" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSCHOCOLATEYCONSOLE)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsChocolateyConsole">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSDEVOLUTIONSPROXYCONSOLE" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSDEVOLUTIONSPROXYCONSOLE)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsDevolutionsProxyConsole">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSDEVOLUTIONSPROXYCONSOLE" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSDEVOLUTIONSPROXYCONSOLE)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsDevolutionsProxyConsole">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSDEVOLUTIONSSERVERCONSOLE" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSDEVOLUTIONSSERVERCONSOLE)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsDevolutionsServerConsole">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSDEVOLUTIONSSERVERCONSOLE" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSDEVOLUTIONSSERVERCONSOLE)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsDevolutionsServerConsole">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSEXTENSIONMANAGER" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSEXTENSIONMANAGER)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsExtensionManager">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSEXTENSIONMANAGER" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSEXTENSIONMANAGER)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsExtensionManager">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsLocalRDPRemoteAppManager">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSLOCALRDPREMOTEAPPMANAGER)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsLocalRDPRemoteAppManager">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSMACROSCRIPTTOOLMANAGER" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSMACROSCRIPTTOOLMANAGER)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsMacroScriptToolManager">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSMACROSCRIPTTOOLMANAGER" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSMACROSCRIPTTOOLMANAGER)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsMacroScriptToolManager">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSMENU" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSMENU)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsMenu">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSMENU" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSMENU)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsMenu">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSOPENNEWREMOTEDESKTOP" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSOPENNEWREMOTEDESKTOP)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsOpenNewRemoteDesktop">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSOPENNEWREMOTEDESKTOP" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSOPENNEWREMOTEDESKTOP)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsOpenNewRemoteDesktop">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSPOWERSHELLRDMCMDLET" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSPOWERSHELLRDMCMDLET)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsPowershellRDMCmdlet">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSPOWERSHELLRDMCMDLET" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSPOWERSHELLRDMCMDLET)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsPowershellRDMCmdlet">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSRDMAGENT" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSRDMAGENT)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsRDMAgent">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSRDMAGENT" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSRDMAGENT)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsRDMAgent">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLETOOLSTRANSLATIONMANAGER" class="Both" displayName="$(string.POL_RDM_DISABLETOOLSTRANSLATIONMANAGER)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableToolsTranslationManager">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLETOOLSTRANSLATIONMANAGER" class="Both" displayName="$(string.POL_PVM_DISABLETOOLSTRANSLATIONMANAGER)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableToolsTranslationManager">
+      <parentCategory ref="CAT_PVM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEUPDATE" class="Both" displayName="$(string.POL_RDM_DISABLEUPDATE)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableUpdate">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_DISABLEUPDATE" class="Both" displayName="$(string.POL_PVM_DISABLEUPDATE)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="DisableUpdate">
+      <parentCategory ref="CAT_PVM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEX64" class="Both" displayName="$(string.POL_RDM_DISABLEX64)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableX64">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_DISABLEX86" class="Both" displayName="$(string.POL_RDM_DISABLEX86)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="DisableX86">
+      <parentCategory ref="CAT_RDM_GENERAL" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_ENABLECONNECTIONAFTEREXPIRATION" class="Both" displayName="$(string.POL_RDM_ENABLECONNECTIONAFTEREXPIRATION)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="EnableConnectionAfterExpiration">
+      <parentCategory ref="CAT_RDM_SESSIONS" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_ENABLEMERGECREDENTIALLISTWITHSESSIONS" class="Both" displayName="$(string.POL_RDM_ENABLEMERGECREDENTIALLISTWITHSESSIONS)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="EnableMergeCredentialListWithSessions">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_ENABLEMERGESESSIONTOOLLISTWITHSESSIONS" class="Both" displayName="$(string.POL_RDM_ENABLEMERGESESSIONTOOLLISTWITHSESSIONS)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="EnableMergeSessionToolListWithSessions">
+      <parentCategory ref="CAT_RDM_UI" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_RDM_FORCELOGIN" class="Both" displayName="$(string.POL_RDM_FORCELOGIN)" key="SOFTWARE\Policies\Devolutions\RemoteDesktopManager" valueName="ForceLogin">
+      <parentCategory ref="CAT_RDM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="POL_PVM_FORCELOGIN" class="Both" displayName="$(string.POL_PVM_FORCELOGIN)" key="SOFTWARE\Policies\Devolutions\PasswordVaultManager" valueName="ForceLogin">
+      <parentCategory ref="CAT_PVM_SECURITY" />
+      <supportedOn ref="SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

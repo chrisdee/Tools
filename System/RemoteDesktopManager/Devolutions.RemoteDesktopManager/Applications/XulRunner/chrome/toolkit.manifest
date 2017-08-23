@@ -1,0 +1,7 @@
+resource gre-resources resource://gre/res/
+content global-region jar:toolkit.jar!/content/global-region/ xpcnativewrappers=yes
+content global jar:toolkit.jar!/content/global/ xpcnativewrappers=yes contentaccessible=yes
+content mozapps jar:toolkit.jar!/content/mozapps/ xpcnativewrappers=yes
+content passwordmgr jar:toolkit.jar!/content/passwordmgr/ xpcnativewrappers=yes
+override chrome://global/content/nsTransferable.js chrome://global/content/nsDragAndDrop.js
+content global-platform jar:toolkit.jar!/content/global-platform/ platform xpcnativewrappers=yes

@@ -1,0 +1,6 @@
+skin global classic/1.0 jar:classic.jar!/skin/classic/global/ os!=WINNT
+skin global classic/1.0 jar:classic.jar!/skin/classic/global/ os=WINNT osversion<6
+skin mozapps classic/1.0 jar:classic.jar!/skin/classic/aero/mozapps/ os=WINNT osversion>=6
+skin mozapps classic/1.0 jar:classic.jar!/skin/classic/mozapps/ os!=WINNT
+skin mozapps classic/1.0 jar:classic.jar!/skin/classic/mozapps/ os=WINNT osversion<6
+skin global classic/1.0 jar:classic.jar!/skin/classic/aero/global/ os=WINNT osversion>=6

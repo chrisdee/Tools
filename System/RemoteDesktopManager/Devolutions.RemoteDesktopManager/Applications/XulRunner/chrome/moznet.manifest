@@ -1,0 +1,20 @@
+locale branding en-US jar:moznet.jar!/locale/branding/
+content branding jar:moznet.jar!/branding/
+
+# locale branding en-US locale/branding/
+# content branding branding/
+
+content  inspector                       jar:inspector.jar!/content/inspector/ xpcnativewrappers=no
+locale   inspector           en-US       jar:inspector.jar!/locale/en-US/inspector/
+skin     inspector           modern/1.0  jar:inspector.jar!/skin/modern/inspector/
+skin     inspector           classic/1.0 jar:inspector.jar!/skin/classic/inspector/
+
+overlay  chrome://inspector/content/popupOverlay.xul   chrome://inspector/content/viewers/dom/popupOverlay.xul
+overlay  chrome://inspector/content/commandOverlay.xul chrome://inspector/content/viewers/styleRules/commandOverlay.xul
+overlay  chrome://inspector/content/keysetOverlay.xul  chrome://inspector/content/viewers/dom/keysetOverlay.xul
+overlay  chrome://inspector/content/popupOverlay.xul   chrome://inspector/content/viewers/styleRules/popupOverlay.xul
+overlay  chrome://inspector/content/commandOverlay.xul chrome://inspector/content/viewers/dom/commandOverlay.xul
+
+content   custom                 jar:moznet.jar!/content/ contentaccessible=yes
+skin      custom   classic/1.0   jar:moznet.jar!/skin/
+locale    custom   en-US         jar:moznet.jar!/locale/en-US/

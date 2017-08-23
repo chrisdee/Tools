@@ -1,0 +1,31 @@
+ Volume in drive C is OS
+ Volume Serial Number is C43F-51D2
+
+ Directory of C:\ProgramData\Devolutions\XULRunner
+
+08/08/2013  07:52 PM            12,288 AccessibleMarshal.dll
+08/08/2013  07:52 PM           262,144 freebl3.dll
+08/08/2013  07:52 PM            26,624 IA2Marshal.dll
+08/08/2013  07:52 PM           842,240 js3250.dll
+08/08/2013  07:52 PM           712,704 mozcpp19.dll
+08/08/2013  07:52 PM           712,704 mozcrt19.dll
+08/08/2013  07:52 PM           217,088 mozctl.dll
+08/08/2013  07:52 PM            11,264 mozctlx.dll
+08/08/2013  07:52 PM           479,232 msvcm80.dll
+08/08/2013  07:52 PM           548,864 msvcp80.dll
+08/08/2013  07:52 PM           626,688 msvcr80.dll
+08/08/2013  07:52 PM           167,936 nspr4.dll
+08/08/2013  07:52 PM           638,976 nss3.dll
+08/08/2013  07:52 PM           364,544 nssckbi.dll
+08/08/2013  07:52 PM            98,304 nssdbm3.dll
+08/08/2013  07:52 PM            81,920 nssutil3.dll
+08/08/2013  07:52 PM            14,848 plc4.dll
+08/08/2013  07:52 PM            11,776 plds4.dll
+08/08/2013  07:52 PM            98,304 smime3.dll
+08/08/2013  07:52 PM           159,744 softokn3.dll
+08/08/2013  07:52 PM           498,688 sqlite3.dll
+08/08/2013  07:52 PM           135,168 ssl3.dll
+08/08/2013  07:52 PM            12,288 xpcom.dll
+08/08/2013  07:52 PM        10,430,976 xul.dll
+              24 File(s)     17,165,312 bytes
+               0 Dir(s)  309,269,192,704 bytes free
