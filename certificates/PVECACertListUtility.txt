@@ -1,0 +1,59 @@
+== PVE CA Cert List Utility ==
+
+URLs:
+
+https://www.corelan.be
+
+https://www.corelan.be/index.php/category/my-free-tools
+
+https://www.corelan.be/index.php/2009/04/10/free-tool-windows-2008-certificate-authority-certificate-list-utility-for-pending-requests-and-about-to-expire-certificates
+
+Version: 1.1.0.90
+
+Requires: .Net Framework 3.5, and permissions to connect to the CA admin interface
+
+pvecacertlist.exe parameters
+
+ Parameters :
+   -h    Show this help text. All other options will be ignored
+   -s <CAServer\CAName> optional, only used when CA is not running
+                          on the local machine)
+   -e <Nr of days> Show list of certificates that will expire in less
+                    than <Nr of days> days
+   -r    Do not show 'about to expire' certificates that have been renewed
+         already
+   -si   Only show issued certificates (use in conjunction with -e)
+         (This will hide all revoked (and other) certificates )
+   -p    Show list of pending certificate requests
+     Note : you must specify at least option -e or option -p.
+            Otherwise, there won't be any output
+   -i <templateName>
+         Only show certificates from the specified certificate template
+         defined here (max. 1 template)
+   -v    Verbose - show verbose output
+   -n    notify - send email with report.
+         This option requires a valid config file. By default, the
+         utility will search for a file called smtp.cfg.
+         This file must contain the following entries :
+             mailserver=<hostname or IP of mailserver>
+             mailserverport=<port to connect to on mailserver
+             mailfrom=<email address>
+             mailto=<email address>
+         You can specify multiple To: addresses by separating the
+         addresses with a comma
+   -c <path to custom smtp config file>   This parameter allows you
+         to specify the path/filename to a custom smtp config file
+   -o    Only send email when action is required. Used only with -n
+   -f <path to report file>   Use this parameter to specify a path/filename
+         where the utility output report needs to be written to
+         If this parameter is not used, the report will be written into
+         a file called report.txt in the working directory
+   -b    Don't write anything to log/report files
+   -win2k3   Run application in older xp/win2k3 mode (no spaces in column names)
+   -u    Check for updates)
+
+Usage Example:
+
+.\pveCACertList.exe -e 30 -v -n -o #Find all certs expiring within the next 30 days (-e), with Verbose output display (-v), Email notification with the report (-n), and only send email if action is required (-o)
+
+Note: A 'report' text file is written to the same location where the utility is run from unless otherwise specified with the -f <path to report file> parameter
