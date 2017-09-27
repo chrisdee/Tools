@@ -1,0 +1,12 @@
+== AAD Connect Sync Errors ==
+
+URLs:
+
+https://mikecrowley.us/2013/10/17/dirsync-busted-users-report
+
+https://gallery.technet.microsoft.com/DirSync-Busted-Users-Report-97096247
+
+https://fimpowershellmodule.codeplex.com
+
+
+
