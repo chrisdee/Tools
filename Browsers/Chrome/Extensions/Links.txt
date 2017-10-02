@@ -1,0 +1,19 @@
+== Google Chrome Extensions ==
+
+## SharePoint / SPOnline
+
+FlyView for SharePoint and Office 365
+
+https://chrome.google.com/webstore/detail/flyview-for-sharepoint-an/blmfdjjomajmejdkdbcabhgfonkhfaam
+http://aurorabits.com/flyview-for-sharepoint
+
+SP Insider
+
+https://chrome.google.com/webstore/detail/sp-insider/gjckpigahcbffmeofjfedlffddhfidhj
+http://aurorabits.com/sharepointinsider
+
+Chrome SP Dev Tools
+
+https://chrome.google.com/webstore/detail/chrome-sp-dev-tools/efhiadiopfkjpdihdmlccoffnpdblkho?hl=en-US
+https://github.com/DariuS231/ChromeSPDevTools
+

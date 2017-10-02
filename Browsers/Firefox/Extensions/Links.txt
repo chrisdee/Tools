@@ -1,0 +1,24 @@
+== Firefox Extensions ==
+
+## SAML / SSO
+
+SAML tracer
+
+https://github.com/UNINETT/SAML-tracer
+
+## Browser Automation
+
+Selenium IDE
+
+http://www.seleniumhq.org/projects/ide
+
+## Development
+
+Web Developer
+
+http://chrispederick.com/work/web-developer
+
+SQLite Manager
+
+https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager
+
