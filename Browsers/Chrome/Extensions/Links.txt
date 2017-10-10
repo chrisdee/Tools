@@ -17,3 +17,12 @@ Chrome SP Dev Tools
 https://chrome.google.com/webstore/detail/chrome-sp-dev-tools/efhiadiopfkjpdihdmlccoffnpdblkho?hl=en-US
 https://github.com/DariuS231/ChromeSPDevTools
 
+
+## Web Design
+
+CopyTables
+
+https://chrome.google.com/webstore/detail/copytables/ekdpkppgmlalfkphpibadldikjimijon?hl=en-US
+https://merribithouse.net/copytables
+https://github.com/gebrkn/copytables
+
