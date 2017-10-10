@@ -1,0 +1,17 @@
+== Xml To Csv Conversion Tool ==
+
+URLs:
+
+https://xmltocsv.codeplex.com
+
+https://xmltocsv.codeplex.com/releases/view/118938
+
+Usage Examples:
+
+#GUI Application
+
+.\Moor.XmlToCsvConverter.exe
+
+#Console Application
+
+ .\XmlToCsv.Console.exe -xml "C:\temp\Errors-Export.xml" -dir "C:\temp\"

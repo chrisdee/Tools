@@ -1,0 +1,17 @@
+== Connector Space csReporter Tool for AAD Connect ==
+
+URLs:
+
+https://github.com/FIMTooler/csReporter
+
+Recompiled to work with AAD Connect FIM Client
+
+Modification:
+
+File: frmGetData.cs
+
+From: csExportFilePath = InstallPath + @"\Synchronization Service\Bin\csexport.exe";
+
+To: csExportFilePath = InstallPath + @"\Bin\csexport.exe";
+
+
