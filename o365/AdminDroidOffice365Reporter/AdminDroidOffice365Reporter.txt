@@ -1,0 +1,19 @@
+== AdminDroid Office 365 Reporter ==
+
+URLs:
+
+https://admindroid.com
+
+https://admindroid.com/download
+
+http://demo.admindroid.com
+
+https://gallery.technet.microsoft.com/office/Office-365-Reporting-Tool-7987b4c2
+
+Version: Version 3.3.0.1 | Released on 1st Oct 2017
+
+== Application Details ==
+
+Default Page: http://localhost:8000/welcome.html
+
+Install Path: C:\Program Files\AdminDroid\Office 365 Reporter
