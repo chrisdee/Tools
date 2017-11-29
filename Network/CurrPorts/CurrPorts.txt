@@ -1,0 +1,8 @@
+== NirSoft - CurrPorts ==
+
+Monitoring Opened TCP/IP network ports / connections
+
+URL: http://www.nirsoft.net/utils/cports.html
+
+Version: v2.36
+
