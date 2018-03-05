@@ -1,0 +1,26 @@
+== Azure Account ==
+
+URL: https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account
+
+Publisher: Microsoft
+
+Requires: Node.js for Azure Cloud Shell Bash or PowerShell -  https://nodejs.org
+
+Command Palette (Ctrl+Shift+P):
+
+Azure: Sign In
+
+Azure: Sign Out
+
+Azure: Select Subscription
+
+Azure: Create an Account
+
+Azure: Open Bash in Cloud Shell
+
+Azure: Open PowerShell in Cloud Shell
+
+To check whether Node.js / NPM is installed on your machine:
+
+node -v
+npm -v
