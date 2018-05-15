@@ -1,0 +1,15 @@
+== Apowersoft Online Screen Recorder ==
+
+URLs:
+
+https://www.apowersoft.com/free-online-screen-recorder
+
+https://www.apowersoft.com/api/screen-recorder.html
+
+Version: 1.7.0
+
+Default Recording Save Location: "Documents\Apowersoft\Apowersoft Free Online Screen Recorder"
+
+Launcher Embed Code:
+
+<div class="start-screen-recording-mid recording-style-black"><div><div class="rec-dot"></div><span>Start</span></div></div><script src="https://api.apowersoft.com/screen-recorder?lang=en" defer></script>
