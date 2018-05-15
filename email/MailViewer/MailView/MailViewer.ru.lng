@@ -1,0 +1,153 @@
+﻿[precision language file]
+languagename=Russian
+rtl=0
+description=
+fileversion=1.0
+author=Alexandr Kuzmichenko
+
+[Tdlg_mv_Files]
+bLoad.Caption=Отмена
+bOK.Caption=OK
+Self.Caption=Текущая сессия сообщений
+
+[Tdlg_mv_Save]
+Button1.Caption=Отмена
+Button2.Caption=OK
+efn.Hint=Двойной щелчок для открытия диалога сохранения
+Label1.Caption=Новое имя файла
+sd.Filter=E-mails|*.eml|All files|*.*
+Self.Caption=Записать e-mail как
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Вложение
+Copy1.Caption=Копия
+eSource.Text=Исходник
+Label1.Caption=CC:
+Label2.Caption=BCC:
+Label8.Caption=От:
+Label9.Caption=Время:
+Label10.Caption=Размер:
+Label11.Caption=Кому:
+Label12.Caption=Trace:
+Label13.Caption=Тема:
+lvHops.Columns[0].Caption=Дата
+lvHops.Columns[1].Caption=От
+lvHops.Columns[2].Caption=Кому
+lvHops.Columns[3].Caption=Адрес
+mmPrint.Caption=Печать...
+Open1.Caption=Открыть...
+pmFind.Caption=Найти...
+pmFindnext.Caption=Найти следующий
+Save1.Caption=Записать...
+Saveall1.Caption=Записать все...
+sd.Title=Записать вложение...
+SelectAll1.Caption=Выбрать все
+Self.Caption=Просмотр почты
+tsBody.Caption=Тело
+tsHTML.Caption=HTML
+tsPlain.Caption=Простой текст
+tsSource.Caption=Исходник
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Показать адрес файла сообщения...
+acAddr.Hint=Show message file addresses...
+acCollect.Caption=Собрать e-mail адреса...
+acCollect.Hint=Собрать e-mail адреса...
+acFilter.Caption=Фильтр
+acFilter.Hint=Фильтр включить/выключить
+acView.Caption=Просмотр сообщения...
+acView.Hint=Просмотр информации о сообщении
+Attachmentsonly1.Caption=Только вложение...
+cbFilter.Items.Text=From+Subject+To+Body\nFrom+Subject+To\nFrom\nSubject\nTo\nBody\nSource\n
+Email1.Caption=E-mail...
+extonly1.Caption=Тело только...
+HeaderPanel.Caption=Информация
+CheckAll1.Caption=Проверить все
+InvertSelection1.Caption=Инвертировать выбор
+Label1.Caption=Фильт:
+mmMsg.Caption=Сообщения
+mmSaveAll.Caption=Записать
+mmSaveAll.Hint=Записать отобранные сообщения
+Self.Caption=Просмотр почты
+UncheckAll1.Caption=Снять выделение
+
+[Twiz_mv_Open]
+bOE.Caption=Открыть хранилище OE
+bTB.Caption=Открыть хранилище TB
+Button1.Caption=Отмена
+feEML.Hint=Двойной щелчок - открыть
+feOE.Hint=Двойной щелчок - открыть
+feTB.Hint=Двойной щелчок - открыть
+GroupBox1.Caption=[ Что открываем? ]
+odEML.Filter=Email files|*.eml|All files|*.*
+odOE.Filter=Outlook Express почтовая база данных|*.dbx;*.mbx|All files|*.*
+odTB.Filter=Mozilla Thunderbird почтовая база данных|*.*|All files|*.*
+sbEML.Hint=Открыть
+sbOE.Hint=Открыть
+sbTB.Hint=Открыть
+Self.Caption=Помощник открытия почтовой базы
+
+[Twnd_mv_Main]
+acAbout.Caption=О программе
+acAbout.Hint=О программе
+acCloseChild.Caption=Закрыть
+acCloseChild.Hint=Закрыть
+acExit.Caption=Выход
+acExit.Hint=Выход
+acCheckUpdate.Caption=Проверка обновления
+acOpen.Caption=Открыть...
+acOpen.Hint=Открыть|Открыть существующий файл
+acWinCascade.Caption=Каскадом
+acWinCascade.Hint=Каскад
+acWinTileHorizontal.Caption=Разделить по горизонтали
+acWinTileHorizontal.Hint=Разделить по горизонтали
+acWinTileVertical.Caption=Разделить по вертикали
+acWinTileVertical.Hint=Разделить по вертикали
+File1.Caption=Файл
+Help1.Caption=Справка
+Self.Caption=MiTeC Mail Viewer
+wacAutoSize.Caption=Авто размер
+wacClose.Caption=Закрыть
+wacCloseAll.Caption=Закрыть все
+wacMaximize.Caption=Развернуть
+wacMinAll.Caption=Свернуть все
+wacMinimize.Caption=Свернуть
+wacRestore.Caption=Восстановить
+wacTitle.Caption=<none>
+Windows1.Caption=Окна
+
+[constants]
+lc_Atts=Вложение
+lc_AttSaved=%d вложение от %d сообщений сохранено в %s
+lc_Confirmation=Подтверждение
+lc_DownloadQuery=Вы желаете загрузить это?
+lc_EA=Собранные е-Mail адреса
+lc_ElapsedTime=Ожидаемое время: %1.2f s
+lc_Error=Ошибка
+lc_FileNotExists=Файлe %s не существует.
+lc_FileNotSupported=Файл в не поддерживаемом формате.
+lc_FileProps=Свойства файла
+lc_Filtering=Фильтр...
+lc_FolderNotExists=Папка %s не существует.
+lc_Format=Формат
+lc_Information=Информация
+lc_Lines=строк
+lc_LoadFailed=Ошибка загрузки
+lc_Loading=Загрузка...
+lc_Message=Сообщение
+lc_MsgSaved=%d сообщений сохранено в %s
+lc_NewVersionAvail=Новая версия %s обнаружена.
+lc_NoNewVersion=Новой версии пока еще нет.
+lc_OpenAtt=Вы желаете открыть это вложение?
+lc_Overwrite=Перезаписать существующий файл %s?
+lc_Reading=Чтение...
+lc_SaveProblem=Случилась проблема с записью этого e-mail с темой "%s" от "%s". Введите, пожалуйста, новое имя файла.
+lc_Saving=Запись сообщения...
+lc_Selected=Выбрано
+lc_SelectFolder=Выбраны папки
+lc_TextNotFound=Текст не обнаружен.
+lc_To=Для
+lc_Total=Всего
+lc_Visible=Видимый
+lc_Warning=Предупреждение
+

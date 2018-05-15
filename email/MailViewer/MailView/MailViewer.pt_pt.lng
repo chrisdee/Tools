@@ -1,0 +1,153 @@
+﻿[precision language file]
+languagename=Portugues - Portugal
+rtl=0
+description=MiTec MailView
+fileversion=1.8.8.0
+author=Jose A. F. V. Matos (AÇORES)
+
+[Tdlg_mv_Files]
+bLoad.Caption=Cancel
+bOK.Caption=Aceitar
+Self.Caption=Base de Dados das mensagens da sessão atual
+
+[Tdlg_mv_Save]
+Button1.Caption=Cancelar
+Button2.Caption=Aceitar
+efn.Hint=Double-clique para Guardar
+Label1.Caption=Novo Arquivo
+sd.Filter=E-mails|*.eml|Todos os Ficheiros|*.*
+Self.Caption=Guardar e-mail como
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Anexos
+Copy1.Caption=Copiar
+eSource.Text=Origem:
+Label1.Caption=CC:
+Label2.Caption=BCC:
+Label8.Caption=De:
+Label9.Caption=Data/Hora:
+Label10.Caption=Tamanho:
+Label11.Caption=Para:
+Label12.Caption=Rastro:
+Label13.Caption=Assunto:
+lvHops.Columns[0].Caption=Data
+lvHops.Columns[1].Caption=De
+lvHops.Columns[2].Caption=Para
+lvHops.Columns[3].Caption=Endereço
+mmPrint.Caption=Imprimir...
+Open1.Caption=Abrir...
+pmFind.Caption=Localizar...
+pmFindnext.Caption=Localizar Seguinte
+Save1.Caption=Guardar...
+Saveall1.Caption=Guardar Todos...
+sd.Title=Guardar Anexos...
+SelectAll1.Caption=Selecionar Todos
+Self.Caption=Ver E-Mail
+tsBody.Caption=Corpo
+tsHTML.Caption=HTML
+tsPlain.Caption=Texto Completo
+tsSource.Caption=Origem
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Mostrar Endereços do Arquivo de Mensagem...
+acAddr.Hint=Mostrar Endereços do Arquivo de Mensagem...
+acCollect.Caption=Guarde Endereços de E-Mail...
+acCollect.Hint=Guarde Endereços de E-Mail...
+acFilter.Caption=Filtro
+acFilter.Hint=Mudar Filtro Sim/Não
+acView.Caption=Ver Mensagem...
+acView.Hint=Ver Detalhes da Mensagem
+Attachmentsonly1.Caption=Só Anexos...
+cbFilter.Items.Text=De+Assunto+Para+Corpo\nDe+Assunto+Para\nDe\nAssunto\nPara\nCorpo\nOrigem\n
+Email1.Caption=E-mail...
+extonly1.Caption=Só Corpo...
+HeaderPanel.Caption=Informação
+CheckAll1.Caption=Marcar Tudo
+InvertSelection1.Caption=Inverter Selecção
+Label1.Caption=Filtro:
+mmMsg.Caption=Mensagens
+mmSaveAll.Caption=Guardar
+mmSaveAll.Hint=Guardar Mensagens Selecionadas
+Self.Caption=Ver E-Mail
+UncheckAll1.Caption=Desmarcar Tudo
+
+[Twiz_mv_Open]
+bOE.Caption=Browse current OE store
+bTB.Caption=Browse current TB store
+Button1.Caption=Cancelar
+feEML.Hint=Duplo-clic para Navegar
+feOE.Hint=Duplo-clic para Navegar
+feTB.Hint=Duplo-clic para Navegar
+GroupBox1.Caption=[ Abrir o Quê? ]
+odEML.Filter=Ficheiros E-mail files|*.eml|Todos os Ficheiros|*.*
+odOE.Filter=Base de Dados do Outlook Express|*.dbx;*.mbx|Todos os Ficheiros|*.*
+odTB.Filter=Base de Dados do Mozilla/Thunderbird|*.*|Todos os Ficheiros|*.*
+sbEML.Hint=Navegar
+sbOE.Hint=Navegar
+sbTB.Hint=Navegar
+Self.Caption=Abrir Assistente
+
+[Twnd_mv_Main]
+acAbout.Caption=Acerca de...
+acAbout.Hint=Acerca de...
+acCloseChild.Caption=Encerrar
+acCloseChild.Hint=Encerrar
+acExit.Caption=Sair
+acExit.Hint=Sair
+acCheckUpdate.Caption=Verificar Actualizações
+acOpen.Caption=&Abrir...
+acOpen.Hint=Abrir|Abre um Arquivo Existente
+acWinCascade.Caption=& Em Cascata
+acWinCascade.Hint=Em Cascata
+acWinTileHorizontal.Caption=Na Horizontal
+acWinTileHorizontal.Hint=Na Horizontal
+acWinTileVertical.Caption=&Na Vertical
+acWinTileVertical.Hint=Na Vertical
+File1.Caption=Arquivo
+Help1.Caption=Ajuda
+Self.Caption=MiTeC Mail Viewer 1.8.5
+wacAutoSize.Caption=Tamanho Automático
+wacClose.Caption=Encerrar
+wacCloseAll.Caption=Encerrar Tudo
+wacMaximize.Caption=Maximizar
+wacMinAll.Caption=Minimizar Tudo
+wacMinimize.Caption=Minimizar
+wacRestore.Caption=Restaurar
+wacTitle.Caption=<Nenhum>
+Windows1.Caption=&Janelas
+
+[constants]
+lc_Atts=Anexos
+lc_AttSaved=%d Anexos de %d Mensagens Guardadas em %s
+lc_Confirmation=Confirmação
+lc_DownloadQuery=Deseja Fazer o download?
+lc_EA=Endereços E-Mail
+lc_ElapsedTime=Tempo Decorrido: %1.2f s
+lc_Error=Erro
+lc_FileNotExists=O Ficheiro %s não Existe.
+lc_FileNotSupported=O Ficheiro não está em formato suportado.
+lc_FileProps=Propriedades do Arquivo
+lc_Filtering=Filtrando...
+lc_FolderNotExists=O Arquivo %s não Existe.
+lc_Format=Formatar
+lc_Information=Informação
+lc_Lines=Linhas
+lc_LoadFailed=Carregamento Falhou
+lc_Loading=Carregando...
+lc_Message=Mensagem
+lc_MsgSaved=%d Mensagens Guardadas Em %s
+lc_NewVersionAvail=Nova Versão %s Disponível.
+lc_NoNewVersion=Não Existe nova Versão.
+lc_OpenAtt=Você quer abrir este anexo?
+lc_Overwrite=Substituir o Ficheiro Existente? %s?
+lc_Reading=Lendo...
+lc_SaveProblem=Há Um Problema ao Guardar o Ficheiro no E-Mail "%s" De "%s". Por Favor dê um Novo Nome ao Ficheiro.
+lc_Saving=Guardando Mensagens...
+lc_Selected=Seleccionado
+lc_SelectFolder=Seleccionar Pasta
+lc_TextNotFound=Texto não Encontrado.
+lc_To=Para
+lc_Total=Total
+lc_Visible=Visível
+lc_Warning=Aviso
+

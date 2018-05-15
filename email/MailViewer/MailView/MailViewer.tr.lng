@@ -1,0 +1,153 @@
+﻿[precision language file]
+languagename=Turkish
+rtl=0
+description=
+fileversion=1.0
+author=Kenan Savas
+
+[Tdlg_mv_Files]
+bLoad.Caption=İptal
+bOK.Caption=Tamam
+Self.Caption=Aktif oturumdaki mesaj veritabanları
+
+[Tdlg_mv_Save]
+Button1.Caption=İptal
+Button2.Caption=Tamam
+efn.Hint=Farklı kaydet penceresi için çift tıklayınız
+Label1.Caption=Yeni dosya
+sd.Filter=E-postalar|*.eml|Tüm dosyalar|*.*
+Self.Caption=E-postayı farklı kaydet
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Ekler
+Copy1.Caption=Kopyala
+eSource.Text=kaynak
+Label1.Caption=CC:
+Label2.Caption=BCC:
+Label8.Caption=Kimden:
+Label9.Caption=Zaman damgası:
+Label10.Caption=Boyut:
+Label11.Caption=Kime:
+Label12.Caption=İz:
+Label13.Caption=Konu:
+lvHops.Columns[0].Caption=Tarih
+lvHops.Columns[1].Caption=Kimden
+lvHops.Columns[2].Caption=Kime
+lvHops.Columns[3].Caption=Adres
+mmPrint.Caption=Yazdır...
+Open1.Caption=Aç...
+pmFind.Caption=Bul...
+pmFindnext.Caption=Sonrakini bul
+Save1.Caption=Kaydet...
+Saveall1.Caption=Tümünü kaydet...
+sd.Title=Eki kaydet...
+SelectAll1.Caption=Tümünü seç
+Self.Caption=Posta Görüntüleyici
+tsBody.Caption=Gövde
+tsHTML.Caption=HTML
+tsPlain.Caption=Düz metin
+tsSource.Caption=Kaynak
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Mesaj  dosya adreslerini göster...
+acAddr.Hint=Mesaj dosya adreslerini göster...
+acCollect.Caption=E-posta adreslerini topla...
+acCollect.Hint=E-posta adreslerini topla...
+acFilter.Caption=Filtrele
+acFilter.Hint=Filtreyi aç/kapa
+acView.Caption=Mesaj görünümü...
+acView.Hint=Mesaj detaylarını göster
+Attachmentsonly1.Caption=Sadece ekler...
+cbFilter.Items.Text=From+Subject+To+Body\nFrom+Subject+To\nFrom\nSubject\nTo\nBody\nSource\n
+Email1.Caption=E-posta...
+extonly1.Caption=Sadece gövde...
+HeaderPanel.Caption=Bilgi
+CheckAll1.Caption=Tümünü işaretle
+InvertSelection1.Caption=Diğerlerini seç
+Label1.Caption=Filtre:
+mmMsg.Caption=Mesajlar
+mmSaveAll.Caption=Kaydet
+mmSaveAll.Hint=Seçili mesajları kaydet
+Self.Caption=Posta Görüntüleyicisi
+UncheckAll1.Caption=Tümünü Kaldır
+
+[Twiz_mv_Open]
+bOE.Caption=OE depolama konumunu değiştir
+bTB.Caption=TB depolama konumunu değiştir
+Button1.Caption=İptal
+feEML.Hint=Konumu değiştirmek için çift tıklayın
+feOE.Hint=Konumu değiştirmek için çift tıklayın
+feTB.Hint=Konumu değiştirmek için çift tıklayın
+GroupBox1.Caption=[ Ne açılsın? ]
+odEML.Filter=E-posta dosyaları|*.eml|Tüm dosyalar|*.*
+odOE.Filter=Outlook Express mesaj veritabanları|*.dbx;*.mbx|Tüm dosyalar|*.*
+odTB.Filter=Mozilla Thunderbird mesaj veritabanları|*.*|Tüm dosyalar|*.*
+sbEML.Hint=Konumu değiştir
+sbOE.Hint=Konumu değiştir
+sbTB.Hint=Konumu değiştir
+Self.Caption=Açma Sihirbazı
+
+[Twnd_mv_Main]
+acAbout.Caption=Hakkında
+acAbout.Hint=Hakkında
+acCloseChild.Caption=Kapat
+acCloseChild.Hint=Kapat
+acExit.Caption=Çıkış
+acExit.Hint=Çıkış
+acCheckUpdate.Caption=Güncellemeleri kontrol et
+acOpen.Caption=&Aç...
+acOpen.Hint=Aç|Varolan bir dosyayı açar
+acWinCascade.Caption=&Basamakla
+acWinCascade.Hint=Basamakla
+acWinTileHorizontal.Caption=&Yatay Döşe
+acWinTileHorizontal.Hint=Yatay Döşe
+acWinTileVertical.Caption=&Dikey Döşe
+acWinTileVertical.Hint=Dikey Döşe
+File1.Caption=Dosya
+Help1.Caption=Yardım
+Self.Caption=MiTeC Posta Görüntüleyici
+wacAutoSize.Caption=Otomatik boyut
+wacClose.Caption=Kapat
+wacCloseAll.Caption=Tümünü kapat
+wacMaximize.Caption=Ekranı kapla
+wacMinAll.Caption=Simge durumuna küçült
+wacMinimize.Caption=Simge durumuna küçült
+wacRestore.Caption=Pencereyi geri yükle
+wacTitle.Caption=<none>
+Windows1.Caption=&Pencere
+
+[constants]
+lc_Atts=Ekler
+lc_AttSaved=%d adet ek içeren %d adet mesaj %s e kaydedildi
+lc_Confirmation=Doğrulama
+lc_DownloadQuery=Yüklemek ister misiniz?
+lc_EA=E-Posta Adresleri
+lc_ElapsedTime=Geçen süre: %1.2f
+lc_Error=Hata
+lc_FileNotExists=%s dosyası mevcut değil.
+lc_FileNotSupported=Dosya desteklenen biçimde değil.
+lc_FileProps=Dosya Özellikleri
+lc_Filtering=Filtreleme...
+lc_FolderNotExists=%s klasörü mevcut değil
+lc_Format=Biçim
+lc_Information=Bilgi
+lc_Lines=satırlar
+lc_LoadFailed=Yükleme başarısız
+lc_Loading=Yükleniyor...
+lc_Message=Mesaj
+lc_MsgSaved=%d adet mesaj %s ye kaydedildi.
+lc_NewVersionAvail=%s yeni sürümü kullanıma hazır.
+lc_NoNewVersion=Kullanılabilir yeni versiyon yok.
+lc_OpenAtt=Bu eki açmak ister misiniz?
+lc_Overwrite=%s isimli varolan dosyanın üzerine yazılsın mı?
+lc_Reading=Oku...
+lc_SaveProblem="%s" konulu "%s" den gelen epostayı dosyaya kaydedeken bir problem oluştu. Lütfen yeni dosya adı giriniz.
+lc_Saving=Mesajları kaydetme...
+lc_Selected=Seçili
+lc_SelectFolder=Seçili klasör
+lc_TextNotFound=Metin bulunamadı.
+lc_To=Kime
+lc_Total=Toplam
+lc_Visible=Görünür
+lc_Warning=Uyarı
+

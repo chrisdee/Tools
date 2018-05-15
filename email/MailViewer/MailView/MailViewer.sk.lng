@@ -1,0 +1,162 @@
+﻿[precision language file]
+languagename=Slovenčina
+rtl=0
+description=
+fileversion=1.0
+author=Jozef Vysoký
+
+[Tdlg_mv_Files]
+bLoad.Caption=Zrušiť
+bOK.Caption=OK
+Self.Caption=Aktuálna databáza správ
+Tree.Header.Columns[0].Text=Identita/Zložka
+Tree.Header.Columns[1].Text=Veľkost [B]
+Tree.Header.Columns[2].Text=Dátum a čas
+
+[Tdlg_mv_Save]
+Button1.Caption=Zrušiť
+Button2.Caption=OK
+efn.Hint=Dvakrát kliknite a otvorí sa okno pre výber súborov
+Label1.Caption=Nový súbor
+sd.Filter=E-maily|*.eml|Všetky súbory|*.*
+Self.Caption=Uložiť e-mail ako
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Prílohy
+Copy1.Caption=Kopírovať
+eSource.Text=zdroj
+Label1.Caption=Kópia:
+Label2.Caption=Skrytá kópia:
+Label8.Caption=Od:
+Label9.Caption=Dátum a čas:
+Label10.Caption=Veľkosť:
+Label11.Caption=Komu:
+Label12.Caption=Cesta:
+Label13.Caption=Predmet:
+lvHops.Columns[0].Caption=Dátum
+lvHops.Columns[1].Caption=Od
+lvHops.Columns[2].Caption=Komu
+lvHops.Columns[3].Caption=Adresa
+mmPrint.Caption=Tlač...
+Open1.Caption=Otvoriť...
+pmActiveLinks.Caption=Aktívne linky
+pmFind.Caption=Nájsť...
+pmFindnext.Caption=Nájsť ďalšie
+Save1.Caption=Uložiť...
+Saveall1.Caption=Uložiť všetko...
+sd.Title=Uložiť prílohu...
+SelectAll1.Caption=Vybrať všetko
+Self.Caption=Mail Viewer
+tsBody.Caption=Správa
+tsHTML.Caption=HTML
+tsPlain.Caption=Text
+tsSource.Caption=Zdroj
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Zobraziť adresy zo správy...
+acAddr.Hint=Zobraziť adresy zo správy...
+acCollect.Caption=Zhromaždiť emailové adresy...
+acCollect.Hint=Zhromaždiť emailové adresy...
+acFilter.Caption=Filter
+acFilter.Hint=Zapnúť/Vypnúť filter
+acView.Caption=Zobrazenie správy...
+acView.Hint=Zobrazenie správy
+Attachmentsonly1.Caption=len prílohy...
+cbFilter.Items.Text=Od+Predmet+Komu+Správa\nOd+Predmet+Komu\nOd\nPredmet\nKomu\nSpráva\nZdroj\n
+Email1.Caption=E-mail...
+extonly1.Caption=len telo správy...
+HeaderPanel.Caption=Informácie
+CheckAll1.Caption=Označiť všetko
+InvertSelection1.Caption=Invertovať označenie
+Label1.Caption=Filter:
+mmMsg.Caption=Správy
+mmSaveAll.Caption=Uložiť
+mmSaveAll.Hint=Uložiť označené zprávy
+Self.Caption=Mail Viewer
+Tree.Header.Columns[4].Text=Od
+Tree.Header.Columns[5].Text=Predmet
+Tree.Header.Columns[6].Text=Komu
+Tree.Header.Columns[7].Text=Prijaté
+Tree.Header.Columns[8].Text=Veľkosť [B]
+UncheckAll1.Caption=Odznačiť všetko
+
+[Twiz_mv_Open]
+bOE.Caption=Prezerať aktuálny OE sklad
+bTB.Caption=Prezerať aktuálny TB sklad
+Button1.Caption=Zrušiť
+feEML.Hint=Otvorte dvojklikom
+feOE.Hint=Otvorte dvojklikom
+feTB.Hint=Dvojklikom otvorte
+GroupBox1.Caption=[ Otvoriť čo? ]
+odEML.Filter=Emailové súbory|*.eml|All files|*.*
+odOE.Filter=Databáza správ Outlook Express|*.dbx;*.mbx|All files|*.*
+odTB.Filter=Databáza správ Mozilla Thunderbird|*.*|All files|*.*
+sbEML.Hint=Prezerať
+sbOE.Hint=Prezerať
+sbTB.Hint=Prezerať
+Self.Caption=Prezerať
+
+[Twnd_mv_Main]
+acAbout.Caption=O programe
+acAbout.Hint=O programe
+acCloseChild.Caption=Zavrieť
+acCloseChild.Hint=Zavrieť
+acExit.Caption=Koniec
+acExit.Hint=Koniec
+acCheckUpdate.Caption=Skontrolovať nové verzie
+acOpen.Caption=Otvoriť...
+acOpen.Hint=Otvorí existujúci súbor
+acWinCascade.Caption=&Dlaždice
+acWinCascade.Hint=Pod seba
+acWinTileHorizontal.Caption=Dlaždice vodorovne
+acWinTileHorizontal.Hint=Dlaždice vodorovne
+acWinTileVertical.Caption=Dlaždice zvisle
+acWinTileVertical.Hint=Dlaždice zvisle
+File1.Caption=Súbor
+Help1.Caption=Pomoc
+Self.Caption=MiTeC Mail Viewer
+wacAutoSize.Caption=Automatická veľkosť
+wacClose.Caption=Zavrieť
+wacCloseAll.Caption=Zavrieť všetko
+wacMaximize.Caption=Maximalizovať
+wacMinAll.Caption=Minimalizovat Zavrieť
+wacMinimize.Caption=Minimalizovať
+wacRestore.Caption=Obnoviť
+wacTitle.Caption=<žiadny>
+Windows1.Caption=&Okná
+
+[constants]
+lc_Atts=Prílohy
+lc_AttSaved=%d príloh zo %d správ uložené do %s
+lc_Confirmation=Potvrdenie
+lc_DownloadQuery=Chcete stiahnuť novú verziu?
+lc_EA=E-Mailové adresy
+lc_ElapsedTime=Čas trvania: %1.2f s
+lc_Error=Chyba
+lc_FileNotExists=Súbor %s neexistuje.
+lc_FileNotSupported=Súbor nie je v podporovanom formáte.
+lc_FileProps=Vlastnosti súboru
+lc_Filtering=Filtrujem...
+lc_FolderNotExists=Zložka %s neexistuje.
+lc_Format=Formát
+lc_Information=Informácia
+lc_Lines=riadkov
+lc_LoadFailed=Nahranie zlyhalo
+lc_Loading=Nahrávam...
+lc_Message=Správa
+lc_MsgSaved=%d správ uložených do %s
+lc_NewVersionAvail=Nová verzia %s je k dispozícii.
+lc_NoNewVersion=Nie je žiadna nová verzia.
+lc_OpenAtt=Naozaj chcete otvoriť túto prílohu?
+lc_Overwrite=Prepísať súbor %s?
+lc_Reading=Načítavam...
+lc_SaveProblem=Nastal problém s uložením správy s predmetom "%s" z "%s". Zadajte prosím nový názov súboru.
+lc_Saving=Ukladám správy...
+lc_Selected=Označené
+lc_SelectFolder=Vyberte zložku
+lc_TextNotFound=Text nenájdený.
+lc_To=Komu
+lc_Total=Celkom
+lc_Visible=Zobrazené
+lc_Warning=Varovanie
+

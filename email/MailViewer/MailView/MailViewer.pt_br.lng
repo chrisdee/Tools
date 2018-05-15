@@ -1,0 +1,136 @@
+﻿[precision language file]
+languagename=Portuguese - Brazil
+rtl=0
+description=
+fileversion=1.8.4.0
+author=Paulo Guzmán
+
+[Tdlg_mv_Files]
+bLoad.Caption=Cancelar
+bOK.Caption=Concluir
+Self.Caption=Base de Dados das mensagens da sessão atual
+
+[Tdlg_mv_Save]
+Button1.Caption=Cancelar
+Button2.Caption=Concluir
+efn.Hint=Duplo-clique para abrir a janela de salvar
+Label1.Caption=Novo Arquivo
+sd.Filter=E-mails|*.eml|Todos os arquivos|*.*
+Self.Caption=Salvar e-mail como
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Anexos
+bImages.Caption=Baixar imagens
+Copy1.Caption=Copiar
+eSource.Text=origem
+Label1.Caption=CC:
+Label2.Caption=CCO:
+Label8.Caption=De:
+Label9.Caption=Data/Hora:
+Label10.Caption=Tamanho:
+Label11.Caption=Para:
+Label12.Caption=Rastro:
+Label13.Caption=Assunto:
+lvHops.Columns[0].Caption=Data
+lvHops.Columns[1].Caption=De
+lvHops.Columns[2].Caption=Para
+lvHops.Columns[3].Caption=Endereço
+mmPrint.Caption=Imprimir...
+Open1.Caption=Abrir...
+pmActiveLinks.Caption=Links Ativos
+pmFind.Caption=Localizar...
+pmFindnext.Caption=Localizar Próxima
+Save1.Caption=Salvar...
+Saveall1.Caption=Salvar todos...
+sd.Title=Salvar anexo...
+SelectAll1.Caption=Selecionar Todos
+tsBody.Caption=Corpo
+tsHTML.Caption=HTML
+tsPlain.Caption=Texto Plano
+tsSource.Caption=Origem
+
+[Twiz_mv_Open]
+bOE.Caption=Procurar na pasta do Outlook Express
+bTB.Caption=Procurar na pasta do Thunderbird
+Button1.Caption=Cancelar
+bWLM.Caption=Procurar na pasta do Win/Live Mail
+feEML.Hint=Duplo-clique para procurar
+feOE.Hint=Duplo-clique para procurar
+feTB.Hint=Duplo-clique para procurar
+feWLM.Hint=Duplo-clique para procurar
+GroupBox1.Caption=[ Abrir o Que? ]
+odEML.Filter=Arquivos de E-mail|*.eml|Todos os arquivos|*.*
+odOE.Filter=Banco de dados de mensagens do Outlook Express|*.dbx;*.mbx|Todos os arquivos|*.*
+odTB.Filter=Banco de dados de mensagens do Mozilla Thunderbird|*.*|Todos os arquivos|*.*
+rbEML.Caption=Arquivo .EML
+rbOE.Caption=Banco de Dados de Mensagens do Outlook Express
+rbTB.Caption=Banco de Dados de Mensagens do Mozilla Thunderbird
+rbWLM.Caption=Pasta contendo arquivos de e-mail (.EML)
+sbEML.Hint=Procurar
+sbOE.Hint=Procurar
+sbTB.Hint=Procurar
+sbWLM.Hint=Procurar
+
+[Twnd_mv_Main]
+acAbout.Caption=Sobre
+acAbout.Hint=Sobre
+acCloseChild.Caption=Fechar
+acCloseChild.Hint=Fechar
+acExit.Caption=Sair
+acExit.Hint=Sair
+acCheckUpdate.Caption=Verificar por atualizações
+acOpen.Caption=&Abrir...
+acOpen.Hint=Abrir|Abrir um arquivo
+acWinCascade.Caption=&Cascata
+acWinCascade.Hint=Cascata
+acWinTileHorizontal.Caption=Lado a Lado &Horizontalmente
+acWinTileHorizontal.Hint=Lado a Lado Horizontalmente
+acWinTileVertical.Caption=&Lado a Lado Verticalmente
+acWinTileVertical.Hint=Lado a Lado Verticalmente
+File1.Caption=Arquivo
+Help1.Caption=Ajuda
+wacAutoSize.Caption=Tamanho Automático
+wacClose.Caption=Fechar
+wacCloseAll.Caption=Fechar Todos
+wacMaximize.Caption=Maximizar
+wacMinAll.Caption=Minimizar Todos
+wacMinimize.Caption=Minimizar
+wacRestore.Caption=Restaurar
+wacTitle.Caption=<nenhum>
+Windows1.Caption=&Janelas
+
+[constants]
+lc_Atts=Anexos
+lc_AttSaved=%d anexos de %d mensagens salvas para %s
+lc_Confirmation=Confirmação
+lc_DownloadQuery=Você quer baixá-lo?
+lc_EA=Endereço de E-Mail
+lc_ElapsedTime=Tempo decorrido: %1.2f s
+lc_Error=Erro
+lc_FileNotExists=O arquivo %s não existe.
+lc_FileNotSupported=Arquivo não está em um formato compatível.
+lc_FileProps=Propriedades do Arquivo
+lc_Filtering=Filtrando...
+lc_FolderNotExists=A pasta %s não existe.
+lc_Format=Formatar
+lc_Information=Informação
+lc_Lines=linhas
+lc_LoadFailed=Falha na Leitura
+lc_Loading=Lendo...
+lc_Message=mensagem
+lc_MsgSaved=%d mensagens salvas para %s
+lc_NewVersionAvail=Nova versão %s disponível.
+lc_NoNewVersion=Nenhuma versão nova disponível.
+lc_OpenAtt=Você quer abrir este anexo?
+lc_Overwrite=Sobrescrever o arquivo %s?
+lc_Reading=Lendo...
+lc_SaveProblem=Existe um problema com o arquivo salvo do e-mail com o assunto "%s" de "%s". Digite outro nome para o arquivo.
+lc_Saving=Salvando as mensagens...
+lc_Selected=Selecionado
+lc_SelectFolder=Selecione a pasta
+lc_TextNotFound=Texto não encontrado.
+lc_To=Para
+lc_Total=Total
+lc_Visible=Visível
+lc_Warning=Aviso
+

@@ -1,0 +1,161 @@
+﻿[precision language file]
+languagename=Swedish
+rtl=0
+description=
+fileversion=1.0
+author=Åke Engelbrektson | http://svenskasprakfiler.se
+
+[Tdlg_mv_Files]
+bLoad.Caption=Avbryt
+bOK.Caption=OK
+Self.Caption=Aktuella databaser
+
+[Tdlg_mv_Save]
+Button1.Caption=Avbryt
+Button2.Caption=OK
+efn.Hint=Dubbelklicka för att spara
+Label1.Caption=Nytt filnamn
+sd.Filter=E-post|*.eml|Alla filer|*.*
+Self.Caption=Spara som...
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Bilagor
+bImages.Caption=Ladda ner bilder
+Copy1.Caption=Kopia
+eSource.Text=Källa
+Label1.Caption=CC:
+Label2.Caption=BCC:
+Label8.Caption=Från:
+Label9.Caption=Tidsstämpel:
+Label10.Caption=Storlek:
+Label11.Caption=Till:
+Label12.Caption=Spårning:
+Label13.Caption=Ämne:
+lvHops.Columns[0].Caption=Datum
+lvHops.Columns[1].Caption=Från
+lvHops.Columns[2].Caption=Till
+lvHops.Columns[3].Caption=Adress
+mmPrint.Caption=Skriv ut...
+Open1.Caption=Öppna...
+pmFind.Caption=Sök...
+pmFindnext.Caption=Sök nästa
+Save1.Caption=Spara...
+Saveall1.Caption=Spara alla...
+sd.Title=Spara bilaga...
+SelectAll1.Caption=Markera alla
+Self.Caption=Mail Viewer
+tsBody.Caption=Brödtext
+tsHTML.Caption=HTML
+tsPlain.Caption=Text
+tsSource.Caption=Källa
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Visa filadresser...
+acAddr.Hint=Visa filadresser...
+acCollect.Caption=Samla in e-postadresser...
+acCollect.Hint=Samla in e-postadresser...
+acFilter.Caption=Filter
+acFilter.Hint=Aktivera/Inaktivera filter
+acView.Caption=Meddelandevy...
+acView.Hint=Visa meddelandedetaljer
+Attachmentsonly1.Caption=Endast bilagor...
+cbFilter.Items.Text=Från+Ämne+Till+Brödtext\nFrån+Ämne+Till\nFrån\nÄmne\nTill\nBrödtext\nKälla\n
+Email1.Caption=E-post...
+extonly1.Caption=Endast brödtext...
+HeaderPanel.Caption=Information
+CheckAll1.Caption=Markera alla
+InvertSelection1.Caption=Invertera markering
+Label1.Caption=Filter:
+mmMsg.Caption=Meddelanden
+mmSaveAll.Caption=Spara
+mmSaveAll.Hint=Spara markerade meddelanden
+Self.Caption=Mail Viewer
+UncheckAll1.Caption=Avmarkera alla
+
+[Twiz_mv_Open]
+bOE.Caption=Utforska aktiv OE-lagring
+bTB.Caption=Utforska aktiv TB-lagring
+Button1.Caption=Avbryt
+bWLM.Caption=Utforska aktiv Win/Live Mail-lagring
+feEML.Hint=Dubbelklick för att bläddra
+feOE.Hint=Dubbelklick för att bläddra
+feTB.Hint=Dubbelklick för att bläddra
+feWLM.Hint=Dubbelklick för att bläddra
+GroupBox1.Caption=[ Öppna vad? ]
+odEML.Filter=E-postfiler|*.eml|Alla filer|*.*
+odOE.Filter=Outlook Express databasfil|*.dbx;*.mbx|Alla filer|*.*
+odTB.Filter=Mozilla Thunderbird databasfil|*.*|Alla filer|*.*
+rbEML.Caption=Enskild EML-fil
+rbOE.Caption=Outlook Express databasfil
+rbTB.Caption=Mozilla Thunderbird databasfil
+rbWLM.Caption=Mapp med e-postfiler (EML)
+sbEML.Hint=Bläddra
+sbOE.Hint=Bläddra
+sbTB.Hint=Bläddra
+sbWLM.Hint=Bläddra
+Self.Caption=Öppna-guide
+
+[Twnd_mv_Main]
+acAbout.Caption=Om
+acAbout.Hint=Om
+acCloseChild.Caption=Stäng
+acCloseChild.Hint=Stäng
+acExit.Caption=Avsluta
+acExit.Hint=Avsluta
+acCheckUpdate.Caption=Sök efter uppdateringar
+acOpen.Caption=&Öppna...
+acOpen.Hint=Open|Öppna befintlig fil
+acWinCascade.Caption=&Överlappande
+acWinCascade.Hint=Visa fönster överlappande
+acWinTileHorizontal.Caption=S&taplade
+acWinTileHorizontal.Hint=Visa fönster staplade
+acWinTileVertical.Caption=&Sida vid sida
+acWinTileVertical.Hint=Visa fönster sida vid sida
+File1.Caption=Arkiv
+Help1.Caption=Hjälp
+Self.Caption=MiTeC Mail Viewer
+wacAutoSize.Caption=Automatisk storlek
+wacClose.Caption=Stäng
+wacCloseAll.Caption=Stäng alla
+wacMaximize.Caption=Maximera
+wacMinAll.Caption=Minimera alla
+wacMinimize.Caption=Minimera
+wacRestore.Caption=Återställ
+wacTitle.Caption=<ingen>
+Windows1.Caption=&Fönster
+
+[constants]
+lc_Atts=Bilagor
+lc_AttSaved=%d bilagor från %d meddelanden, sparade till %s
+lc_Confirmation=Bekräfta
+lc_DownloadQuery=Vill du ladda ner den?
+lc_EA=E-postadresser
+lc_ElapsedTime=Förfluten tid: %1.2f s
+lc_Error=Fel
+lc_FileNotExists=Filen "%s" finns inte.
+lc_FileNotSupported=Filformatet stöds ej.
+lc_FileProps=Filegenskaper
+lc_Filtering=Filtrerar...
+lc_FolderNotExists=Mappen "%s" finns inte.
+lc_Format=Format
+lc_Information=Information
+lc_Lines=rader
+lc_LoadFailed=Inläsning misslyckades
+lc_Loading=Läser in...
+lc_Message=Meddelande
+lc_MsgSaved=%d meddelanden sparade till %s
+lc_NewVersionAvail=Version %s finns tillgänglig.
+lc_NoNewVersion=Det finns ingen uppdatering.
+lc_OpenAtt=Vill du öppna den här bilagan?
+lc_Overwrite=Vill du skriva över den befintliga filen %s?
+lc_Reading=Läser...
+lc_SaveProblem=Det har uppstått problem med att spara ett e-postmeddelande med ämnet "%s" från "%s". Ange nytt filnamn.
+lc_Saving=Sparar meddelanden...
+lc_Selected=Markerad
+lc_SelectFolder=Välj mapp
+lc_TextNotFound=Ingen text funnen.
+lc_To=Till
+lc_Total=Totalt
+lc_Visible=Synlig
+lc_Warning=Varning
+

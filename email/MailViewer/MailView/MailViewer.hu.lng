@@ -1,0 +1,169 @@
+﻿[precision language file]
+languagename=Magyar
+rtl=0
+description=
+fileversion=1.0
+author=Vincze László
+
+[Tdlg_mv_Files]
+bLoad.Caption=Mégsem
+bOK.Caption=OK
+Self.Caption=Üzenet adatbázisok
+Tree.Header.Columns[0].Text=Identitás/mappa
+Tree.Header.Columns[1].Text=Méret [B]
+Tree.Header.Columns[2].Text=Időpont
+
+[Tdlg_mv_Save]
+Button1.Caption=Mégsem
+Button2.Caption=OK
+efn.Hint=Dupla klikk a fájlmentéshez
+Label1.Caption=Fájl neve
+sd.Filter=E-mailek|*.eml|Minden fájl|*.*
+Self.Caption=E-mail mentése mint:
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Csatolmányok
+bImages.Caption=Képek letöltése
+Copy1.Caption=Másolás
+eSource.Text=Forrás
+Label1.Caption=Másolat:
+Label2.Caption=Rejtett másolat:
+Label8.Caption=Feladó:
+Label9.Caption=Időbélyeg:
+Label10.Caption=Méret:
+Label11.Caption=Címzett:
+Label12.Caption=Követés:
+Label13.Caption=Tárgy:
+lvHops.Columns[0].Caption=Dátum
+lvHops.Columns[1].Caption=Feladó
+lvHops.Columns[2].Caption=Címzett
+lvHops.Columns[3].Caption=Cím
+mmPrint.Caption=Nyomtatás...
+Open1.Caption=Megnyitás...
+pmFind.Caption=Keresés...
+pmFindnext.Caption=Következő
+Save1.Caption=Mentés...
+Saveall1.Caption=Összes mentése...
+sd.Title=Csatolmány mentése...
+SelectAll1.Caption=Összes kijelölése
+Self.Caption=Mail megjelenítő
+tsBody.Caption=Szöveg
+tsHTML.Caption=HTML
+tsPlain.Caption=Normál
+tsSource.Caption=Forrás
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Üzenet fájlcímei...
+acAddr.Hint=Üzenet fájlcímei...
+acCollect.Caption=E-mail címek összegyűjtése...
+acCollect.Hint=E-mail címek összegyűjtése...
+acFilter.Caption=Szűrő
+acFilter.Hint=Szűrő ki/be
+acView.Caption=Üzenet megtekintése...
+acView.Hint=Üzenet adatai
+Attachmentsonly1.Caption=Csak csatolmányok...
+cbFilter.Items.Text=Feladó+Tárgy+Címzett+Szöveg\nFeladó+Tárgy+Címzett\nFeladó\nTárgy\nCímzett\nSzöveg\nForrás\n
+Email1.Caption=E-mail...
+extonly1.Caption=Csak az üzenet...
+HeaderPanel.Caption=Információk
+CheckAll1.Caption=Összes kijelölése
+InvertSelection1.Caption=Fordított kijelölés
+Label1.Caption=Szűrő:
+mmMsg.Caption=Üzenetek
+mmSaveAll.Caption=Mentés
+mmSaveAll.Hint=Kijelöltek mentése
+Self.Caption=Mail megjelenítő
+Tree.Header.Columns[4].Text=Feladó
+Tree.Header.Columns[5].Text=Tárgy
+Tree.Header.Columns[6].Text=Címzett
+Tree.Header.Columns[7].Text=Érkezett
+Tree.Header.Columns[8].Text=Méret [B]
+UncheckAll1.Caption=Összes törlése
+
+[Twiz_mv_Open]
+bOE.Caption=Aktuális OE tároló
+bTB.Caption=Aktuális TB tároló
+Button1.Caption=Mégsem
+bWLM.Caption=Aktuális Win/Live Mail tároló
+feEML.Hint=Dupla-klikk : tallózás
+feOE.Hint=Dupla-klikk : tallózás
+feTB.Hint=Dupla-klikk : tallózás
+feWLM.Hint=Dupla-klikk : tallózás
+GroupBox1.Caption=[ E-mail tároló ]
+odEML.Filter=Email fájlok|*.eml|Minden fájl|*.*
+odOE.Filter=Outlook Express adatbázisok|*.dbx;*.mbx|Minden fájl|*.*
+odTB.Filter=Mozilla Thunderbird adatbázisok|*.*|Minden fájl|*.*
+rbEML.Caption=Önnálló EML fájl
+rbOE.Caption=Outlook Express adatbázis
+rbTB.Caption=Mozilla Thunderbird adatbázisok
+rbWLM.Caption=E-mail tároló mappa (EML)
+sbEML.Hint=Tallózás
+sbOE.Hint=Tallózás
+sbTB.Hint=Tallózás
+sbWLM.Hint=Tallózás
+Self.Caption=Varázsló
+
+[Twnd_mv_Main]
+acAbout.Caption=Névjegy
+acAbout.Hint=Névjegy
+acCloseChild.Caption=Bezárás
+acCloseChild.Hint=Bezárás
+acExit.Caption=Kilépés
+acExit.Hint=Kilépés
+acCheckUpdate.Caption=Frisítések keresése
+acOpen.Caption=&Megnyitás...
+acOpen.Hint=Fájl megnyitása
+acWinCascade.Caption=&Lépcsőzetes
+acWinCascade.Hint=Lépcsőzetes
+acWinTileHorizontal.Caption=&Vízszintes
+acWinTileHorizontal.Hint=Vízszintes elrendezés
+acWinTileVertical.Caption=&Függőleges
+acWinTileVertical.Hint=Függőleges elrendezés
+File1.Caption=Fájl
+Help1.Caption=Segítség
+Self.Caption=MiTeC Mail megjelenítő
+wacAutoSize.Caption=Auto méret
+wacClose.Caption=Bezárás
+wacCloseAll.Caption=Összes bezárása
+wacMaximize.Caption=Maximizálás
+wacMinAll.Caption=Összes minimalizálása
+wacMinimize.Caption=Minimalizálás
+wacRestore.Caption=Visszaállítás
+wacTitle.Caption=<nincs>
+Windows1.Caption=&Ablak elrendezés
+
+[constants]
+lc_Atts=Csatolmányok
+lc_AttSaved=%d Csatolmányok %d mentése ide %s
+lc_Confirmation=Megerősítés
+lc_DownloadQuery=Le akarod tölteni?
+lc_EA=E-Mail Címek
+lc_ElapsedTime=Eltelt idő: %1.2f s
+lc_Error=Hiba
+lc_FileNotExists=A fájl: %s nem található.
+lc_FileNotSupported=A formátum nem támogatott.
+lc_FileProps=Tulajdonságok
+lc_Filtering=Szűrés...
+lc_FolderNotExists=A mappa: %s nem található.
+lc_Format=Formátum
+lc_Information=Információk
+lc_Lines=sorok
+lc_LoadFailed=Betöltési hiba
+lc_Loading=Betöltés...
+lc_Message=Üzenet
+lc_MsgSaved=%d Üzenetek mentve ide: %s
+lc_NewVersionAvail=Új verzió: %s elérhető.
+lc_NoNewVersion=Nincs új verzió.
+lc_OpenAtt=Megnyitod a csatolmányt?
+lc_Overwrite=Felülírod ezt: %s?
+lc_Reading=Olvasás...
+lc_SaveProblem=Fájlmentés hiba! e-mail tárgya: "%s" Feladó: "%s". Írj be másik fájl nevet.
+lc_Saving=Üzenetek mentése...
+lc_Selected=Kiválasztva
+lc_SelectFolder=Mappa választása
+lc_TextNotFound=Szöveg nem található.
+lc_To=Címzett
+lc_Total=Összes
+lc_Visible=Látható
+lc_Warning=Figyelmeztetés
+

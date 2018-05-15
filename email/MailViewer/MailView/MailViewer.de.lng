@@ -1,0 +1,162 @@
+﻿[precision language file]
+languagename=German
+rtl=0
+description=
+fileversion=1.0
+author=F. Speckmann
+
+[Tdlg_mv_Files]
+bLoad.Caption=Abbrechen
+Self.Caption=Current session message databases
+Tree.Header.Columns[0].Text=Identität/Ordner
+Tree.Header.Columns[1].Text=Größe [B]
+Tree.Header.Columns[2].Text=Zeitpunkt
+
+[Tdlg_mv_Save]
+Button1.Caption=Abbrechen
+efn.Hint=Doppelklick um zu speichern
+Label1.Caption=Neuer Dateiname
+sd.Filter=E-Mails|*.eml|Alle Dateien|*.*
+Self.Caption=E-Mail speichern unter...
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=&w&bSeite &p von &P
+Copy1.Caption=Kopieren
+eSource.Text=Quelltext
+Label1.Caption=Kopie:
+Label2.Caption=Blindkopie:
+Label8.Caption=Von:
+Label9.Caption=Zeitpunkt:
+Label10.Caption=Größe:
+Label11.Caption=An:
+Label12.Caption=Verlauf:
+Label13.Caption=Betreff:
+lvHops.Columns[0].Caption=Datum
+lvHops.Columns[1].Caption=Von
+lvHops.Columns[2].Caption=An
+lvHops.Columns[3].Caption=Adresse
+mmPrint.Caption=Drucken...
+Open1.Caption=Öffnen...
+pmFind.Caption=Suchen...
+pmFindnext.Caption=Weitersuchen
+Save1.Caption=Speichern...
+Saveall1.Caption=Alles speichern...
+sd.Title=Anlage speichern...
+SelectAll1.Caption=Alles markieren
+tsBody.Caption=Text
+tsPlain.Caption=Nur-Text
+tsSource.Caption=Quelltext
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Zeige Nachrichten-Datei Adressen...
+acAddr.Hint=Zeige Nachrichten-Datei Adressen...
+acCollect.Caption=Sammle E-Mail Adressen...
+acCollect.Hint=Sammle E-Mail Adressen...
+acFilter.Caption=Filter
+acFilter.Hint=Filter ein/aus
+acView.Caption=Nachrichtenanzeige...
+acView.Hint=Zeige Details
+Attachmentsonly1.Caption=Nur Anlagen...
+cbFilter.Items.Text=Von+Betreff+An+Text\nVon+Betreff+An\nVon\nBetreff\nAn\nText\nQuelltext\n
+Email1.Caption=E-Mail...
+extonly1.Caption=Nur Text...
+HeaderPanel.Caption=Information
+CheckAll1.Caption=Alles markieren
+InvertSelection1.Caption=Markierung umkehren
+Label1.Caption=Filter:
+mmMsg.Caption=Nachrichten
+mmSaveAll.Caption=Speichern
+mmSaveAll.Hint=Markierte Nachrichten speichern
+Tree.Header.Columns[4].Text=Von
+Tree.Header.Columns[5].Text=Betreff
+Tree.Header.Columns[6].Text=An
+Tree.Header.Columns[7].Text=Empfangen
+Tree.Header.Columns[8].Text=Größe [B]
+UncheckAll1.Caption=Markierung aufheben
+
+[Twiz_mv_Open]
+bOE.Caption=Aktuelle OE-Datei durchsuchen
+bTB.Caption=Aktuelle TB-Datei durchsuchen
+Button1.Caption=Abbrechen
+bWLM.Caption=Win/Live-Mail Speicher durchsuchen
+feEML.Hint=Doppelklick zum Durchsuchen
+feOE.Hint=Doppelklick zum Durchsuchen
+feTB.Hint=Doppelklick zum Durchsuchen
+feWLM.Hint=Doppelklick zum Durchsuchen
+GroupBox1.Caption=[ E-Mail Speicher ]
+odEML.Filter=E-Mail Dateien|*.eml|Alle Dateien|*.*
+odOE.Filter=Outlook Express Nachrichten-Datei|*.dbx;*.mbx|Alle Dateien|*.*
+odTB.Filter=Mozilla Thunderbird Nachrichten Dateien|*.*|Alle Dateien|*.*
+rbEML.Caption=Einzelne EML-Datei
+rbOE.Caption=Outlook Express Nachrichten Datenbank
+rbTB.Caption=Mozilla Thunderbird Nachrichten-Datei
+rbWLM.Caption=Ordner mit EML-Dateien
+sbEML.Hint=Durchsuchen
+sbOE.Hint=Durchsuchen
+sbTB.Hint=Durchsuchen
+sbWLM.Hint=Durchsuchen
+Self.Caption=Assistent
+
+[Twnd_mv_Main]
+acAbout.Caption=Über
+acAbout.Hint=Über
+acCloseChild.Caption=Schließen
+acCloseChild.Hint=Schließen
+acExit.Caption=Beenden
+acExit.Hint=Beenden
+acCheckUpdate.Caption=Updates suchen
+acOpen.Caption=&Öffnen...
+acOpen.Hint=Öffnen|Öffnet eine bestehende Datei
+acWinCascade.Caption=&Überlappen
+acWinCascade.Hint=Überlappen
+acWinTileHorizontal.Caption=Horizontal Anordnen
+acWinTileHorizontal.Hint=Horizontal Anordnen
+acWinTileVertical.Caption=Vertikal Anordnen
+acWinTileVertical.Hint=Vertikal Anordnen
+File1.Caption=Datei
+Help1.Caption=Hilfe
+wacAutoSize.Caption=Anpassen
+wacClose.Caption=Schließen
+wacCloseAll.Caption=Alle schließen
+wacMaximize.Caption=Maximieren
+wacMinAll.Caption=Alles Minimieren
+wacMinimize.Caption=Minimieren
+wacRestore.Caption=Wiederherstellen
+wacTitle.Caption=<kein>
+Windows1.Caption=&Fenster
+
+[constants]
+lc_Atts=Attachments
+lc_AttSaved=%d Anhänge von %d Nachrichten nach %s gespeichert.
+lc_Confirmation=Bestätigung
+lc_DownloadQuery=Wollen Sie es herunterladen?
+lc_EA=E-Mail Addressen
+lc_ElapsedTime=Abgelaufene Zeit: %1.2f s
+lc_Error=Fehler
+lc_FileNotExists=Datei %s nicht vorhanden.
+lc_FileNotSupported=Datei hat ein nicht unterstütztes Format.
+lc_FileProps=Eigenschaften
+lc_Filtering=Filter...
+lc_FolderNotExists=Ordner %s existiert nicht.
+lc_Format=Format
+lc_Information=Information
+lc_Lines=Zeilen
+lc_LoadFailed=Laden fehlgeschlagen
+lc_Loading=Laden...
+lc_Message=Nachrichten
+lc_MsgSaved=%d Nachrichten nach %s gesichert.
+lc_NewVersionAvail=Neue Version %s ist verfügbar.
+lc_NoNewVersion=Keine neue Version verfügbar.
+lc_OpenAtt=Wollen Sie diesen Anhang öffnen?
+lc_Overwrite=Bestehende Datei %s überschreiben?
+lc_Reading=Lese...
+lc_SaveProblem=Es gab ein Problem beim Speichern der E-Mail mit Betreff "%s" von "%s". Bitte geben Sie einen neuen Dateinamen an.
+lc_Saving=Nachrichten werden gespeichert...
+lc_Selected=Markiert
+lc_SelectFolder=Ordner auswählen
+lc_TextNotFound=Text nicht gefunden.
+lc_To=An
+lc_Total=Gesamt
+lc_Visible=Sichtbar
+lc_Warning=Warnung
+

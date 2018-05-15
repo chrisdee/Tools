@@ -1,0 +1,9 @@
+== Mail Viewer ==
+
+URL: http://www.mitec.cz/mailview.html
+
+Version: 2.3.0.625
+
+Description:
+
+Viewer for standalone files containing Microsoft Outlook Express 4,5 and 6 message database (*.idx/*.mbx/*.dbx), Windows Vista Mail/Windows Live Mail and Mozilla Thunderbird message databases as well as standalone EML files. This application is based on MiTeC Outlook Express Reader and MiTeC Thunderbird Reader. It displays list of contained messages with all needed properties as ordinary e-mail client. Message can be viewed in detailed view including attachments (save ability) and HTML preview. It has powerful searching and filtering capability and also allows to extract all email address from all emails in opened folder to list by one click. Selected messages can be saved to *.eml files with or without their attachments. Attachments can be extracted from selected messages by one command. Of course, opened messages can be printed including images.

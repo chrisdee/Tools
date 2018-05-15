@@ -1,0 +1,152 @@
+﻿[precision language file]
+languagename=Latvian
+rtl=0
+description=
+fileversion=1.0
+author=Juris Hasjanovs
+
+[Tdlg_mv_Files]
+bLoad.Caption=Atcelt
+Self.Caption=Šīs sesijas vēstuļu datubāze
+
+[Tdlg_mv_Save]
+Button1.Caption=Atcelt
+Button2.Caption=Labi
+efn.Hint=Dubultklikšķis lai atvērtu saglabāšanas dialogu
+Label1.Caption=Jaunais nosaukums
+sd.Filter=E-mails|*.eml|All files|*.*
+Self.Caption=Saglabāt kā
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Pielikumi
+Copy1.Caption=Kopēt
+eSource.Text=pirmskods
+Label1.Caption=CC:
+Label2.Caption=BCC:
+Label8.Caption=No kā:
+Label9.Caption=Kad sūtīts:
+Label10.Caption=Izmērs:
+Label11.Caption=Kam:
+Label12.Caption=Trace:
+Label13.Caption=Temats:
+lvHops.Columns[0].Caption=Datums
+lvHops.Columns[1].Caption=No
+lvHops.Columns[2].Caption=Kam
+lvHops.Columns[3].Caption=Adrese
+mmPrint.Caption=Drukāt...
+Open1.Caption=Atvērt...
+pmFind.Caption=Meklēt...
+pmFindnext.Caption=Meklēt nākamo
+Save1.Caption=Saglabāt...
+Saveall1.Caption=Sglabāt kā...
+sd.Title=Saglabāt pielikumu...
+SelectAll1.Caption=Iezīmēt visu
+Self.Caption=Pasta skatītājs
+tsBody.Caption=Teksts
+tsHTML.Caption=HTML
+tsPlain.Caption=Vienkāršs teksts
+tsSource.Caption=Pirmskods
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Rāda vēstules faila adresi...
+acAddr.Hint=Rāda vēstules faila adresi...
+acCollect.Caption=Rādīt visas epasta adreses...
+acCollect.Hint=Rādīt visas epasta adreses...
+acFilter.Caption=Filtrs
+acFilter.Hint=Ieslēgt/izslēgt filtru
+acView.Caption=Apskatīt vēstuli...
+acView.Hint=Skatīt vēstules detaļas
+Attachmentsonly1.Caption=Tikai pielikumus...
+cbFilter.Items.Text=From+Subject+To+Body\nFrom+Subject+To\nFrom\nSubject\nTo\nBody\nSource\n
+Email1.Caption=Vēstuli...
+extonly1.Caption=Tikai tekstu..
+HeaderPanel.Caption=Informācija
+CheckAll1.Caption=Iezīmēt visu
+InvertSelection1.Caption=Apvērst iezīmēšanu
+Label1.Caption=Filtrs:
+mmMsg.Caption=Vēstules
+mmSaveAll.Caption=Saglabāt
+mmSaveAll.Hint=Saglabāt atzīmētās vēstules
+Self.Caption=Vēstuļu skatītājs
+UncheckAll1.Caption=Atcelt iezīmēšanu
+
+[Twiz_mv_Open]
+bOE.Caption=Meklēt esošo OutlookExpress glabātuvi
+bTB.Caption=Meklēt esošo Thunderbird glabātuvi
+Button1.Caption=Atcelt
+feEML.Hint=Dubultklikšķis lai meklētu
+feOE.Hint=Dubultklikšķis lai meklētu
+feTB.Hint=Dubultklikšķis lai meklētu
+GroupBox1.Caption=[ Atvērt ko? ]
+odEML.Filter=Email faili|*.eml|Visi faili|*.*
+odOE.Filter=Outlook Express datubāze|*.dbx;*.mbx|Visi faili|*.*
+odTB.Filter=Mozilla Thunderbird datubāze|*.*|Visi faili|*.*
+sbEML.Hint=Meklēt
+sbOE.Hint=Meklēt
+sbTB.Hint=Meklēt
+Self.Caption=Atvēršanas palīgs
+
+[Twnd_mv_Main]
+acAbout.Caption=Par
+acAbout.Hint=Par
+acCloseChild.Caption=Aizvērt
+acCloseChild.Hint=Aizvērt
+acExit.Caption=Iziet
+acExit.Hint=Iziet
+acCheckUpdate.Caption=Pārbaudīt jauninājumu
+acOpen.Caption=&Atvērt...
+acOpen.Hint=Atvērt|Atver esošu failu
+acWinCascade.Caption=&Kaskāde
+acWinCascade.Hint=Kaskāde
+acWinTileHorizontal.Caption=Kārtot &Horizontāli
+acWinTileHorizontal.Hint=Kārtot Horizontāli
+acWinTileVertical.Caption=Kārtot &Vertikāli
+acWinTileVertical.Hint=Kārtot Vertikāli
+File1.Caption=Fails
+Help1.Caption=Palīgs
+Self.Caption=MiTeC epasta skatītājs
+wacAutoSize.Caption=Auto izmērs
+wacClose.Caption=Aizvērt
+wacCloseAll.Caption=Aizvērt visus
+wacMaximize.Caption=Maksimizēt
+wacMinAll.Caption=Minimizēt visus
+wacMinimize.Caption=Minimizēt
+wacRestore.Caption=Atgriezt
+wacTitle.Caption=<nav>
+Windows1.Caption=&Logi
+
+[constants]
+lc_Atts=Pielikumi
+lc_AttSaved=%d pielikumi no %d vēstulēm saglabāti %s
+lc_Confirmation=Apstiprināšana
+lc_DownloadQuery=Vai vēlaties lejuplādēt?
+lc_EA=E-pasta adreses
+lc_ElapsedTime=Pagājušais laiks: %1.2f s
+lc_Error=Kļūda
+lc_FileNotExists=Fails %s neeksistē.
+lc_FileNotSupported=Faila formāts netiek atbalstīts.
+lc_FileProps=Faila īpašības
+lc_Filtering=Filtrēšana...
+lc_FolderNotExists=Mape %s neeksistē.
+lc_Format=Formāts
+lc_Information=Informācija
+lc_Lines=līnijas
+lc_LoadFailed=Kļūda ielādē
+lc_Loading=Ielāde...
+lc_Message=Vēstule
+lc_MsgSaved=%d vēstules saglabātas %s
+lc_NewVersionAvail=Jauna versija %s ir pieejama.
+lc_NoNewVersion=Nav atrasta jaunāka versija.
+lc_OpenAtt=Vai vēlaties atvērt šo pielikumu?
+lc_Overwrite=Pārrakstīt esošo failu %s?
+lc_Reading=Ielasa...
+lc_SaveProblem=Radās problēmas saglabājot vēstuli ar tematu "%s" no "%s". Ievadiet jaunu faila nosaukumu.
+lc_Saving=Saglabā vēstules...
+lc_Selected=Iezīmētas
+lc_SelectFolder=Izvēlēties mapi
+lc_TextNotFound=Teksts nav atrasts.
+lc_To=Kam
+lc_Total=Kopā
+lc_Visible=Redzams
+lc_Warning=Brīdinājums
+

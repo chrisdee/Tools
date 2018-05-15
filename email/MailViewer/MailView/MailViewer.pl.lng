@@ -1,0 +1,168 @@
+﻿[precision language file]
+languagename=Polish
+rtl=0
+description=
+fileversion=1.0
+author=Skrzat
+
+[Tdlg_mv_Files]
+bLoad.Caption=Anuluj
+bOK.Caption=OK
+Self.Caption=Bazy danych wiadomości dla bieżącej sesji
+Tree.Header.Columns[0].Text=Tożsamość/Folder
+Tree.Header.Columns[1].Text=Rozmiar [B]
+Tree.Header.Columns[2].Text=Znacznik czasu
+
+[Tdlg_mv_Save]
+Button1.Caption=Anuluj
+Button2.Caption=OK
+efn.Hint=Kliknij dwukrotnie aby otworzyć dialog zapisywania pliku
+Label1.Caption=Nowa nazwa pliku
+sd.Filter=E-maile|*.eml|Wszystkie pliki|*.*
+Self.Caption=Zapisz e-mail jako
+
+[Tmdi_mv_Msg]
+bImages.Caption=Pobierz obrazki
+Copy1.Caption=Kopiuj
+eSource.Text=źródło
+Label1.Caption=Kopia:
+Label2.Caption=Ukryta kopia:
+Label8.Caption=Od:
+Label9.Caption=Znacznik czasu:
+Label10.Caption=Rozmiar:
+Label11.Caption=Do:
+Label12.Caption=Trasa:
+Label13.Caption=Temat:
+lvHops.Columns[0].Caption=Data
+lvHops.Columns[1].Caption=Od
+lvHops.Columns[2].Caption=Do
+lvHops.Columns[3].Caption=Adres
+mmPrint.Caption=Drukuj...
+Open1.Caption=Otwórz...
+pmFind.Caption=Znajdź...
+pmFindnext.Caption=Znajdź następny
+Save1.Caption=Zapisz...
+Saveall1.Caption=Zapisz wszystko...
+sd.Title=Zapisz załącznik...
+SelectAll1.Caption=Zaznacz wszystko
+Self.Caption=Mail Viewer
+tsBody.Caption=Treść
+tsHTML.Caption=HTML
+tsPlain.Caption=Tekst
+tsSource.Caption=Źródło
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Pokaż adresy pliku wiadomości...
+acAddr.Hint=Pokaż adresy pliku wiadomości...
+acCollect.Caption=Zbierz adresy e-mail...
+acCollect.Hint=Zbierz adresy e-mail...
+acFilter.Caption=Filtruj
+acFilter.Hint=Zmień filtr włączony/wyłączony
+acView.Caption=Podgląd wiadomości...
+acView.Hint=Pokaż szczegóły wiadomości
+Attachmentsonly1.Caption=Tylko załączniki...
+cbFilter.Items.Text=Od+Temat+Do+Treść\nOd+Temat+Do\nOd\nTemat\nDo\nTreść\nŹródło\n
+Email1.Caption=E-mail...
+extonly1.Caption=Tylko treść...
+HeaderPanel.Caption=Informacja
+CheckAll1.Caption=Zaznacz wszystko
+InvertSelection1.Caption=Odwróć zaznaczenie
+Label1.Caption=Filtr:
+mmMsg.Caption=Wiadomości
+mmSaveAll.Caption=Zapisz
+mmSaveAll.Hint=Zapisz zaznaczone wiadomości
+Self.Caption=Mail Viewer
+Tree.Header.Columns[4].Text=Od
+Tree.Header.Columns[5].Text=Temat
+Tree.Header.Columns[6].Text=Do
+Tree.Header.Columns[7].Text=Otrzymano
+Tree.Header.Columns[8].Text=Rozmiar [B]
+UncheckAll1.Caption=Odznacz wszystko
+
+[Twiz_mv_Open]
+bOE.Caption=Przeglądaj bieżący katalog OE
+bTB.Caption=Przeglądaj bieżący katalog TB
+Button1.Caption=Anuluj
+bWLM.Caption=Przeglądaj bieżący katalog Win/Live Mail
+feEML.Hint=Kliknij dwukrotnie aby przeglądać
+feOE.Hint=Kliknij dwukrotnie aby przeglądać
+feTB.Hint=Kliknij dwukrotnie aby przeglądać
+feWLM.Hint=Kliknij dwukrotnie aby przeglądać
+GroupBox1.Caption=[ Co otworzyć? ]
+odEML.Filter=Pliki e-mail|*.eml|Wszystkie pliki|*.*
+odOE.Filter=Bazy danych wiadomości Outlook Express|*.dbx;*.mbx|Wszystkie pliki|*.*
+odTB.Filter=Bazy danych wiadomości Mozilla Thunderbird|*.*|Wszystkie pliki|*.*
+rbEML.Caption=Pojedynczy plik EML
+rbOE.Caption=Baza danych wiadomości Outlook Express
+rbTB.Caption=Baza danych wiadomości Mozilla Thunderbird
+rbWLM.Caption=Folder zawierające pliki e-mail (EML)
+sbEML.Hint=Przeglądaj
+sbOE.Hint=Przeglądaj
+sbTB.Hint=Przeglądaj
+sbWLM.Hint=Przeglądaj
+Self.Caption=Otwórz kreator
+
+[Twnd_mv_Main]
+acAbout.Caption=O programie
+acAbout.Hint=O programie
+acCloseChild.Caption=Zamknij
+acCloseChild.Hint=Zamknij
+acExit.Caption=Wyjdź
+acExit.Hint=Wyjdź
+acCheckUpdate.Caption=Sprawdź aktualizacje
+acOpen.Caption=&Otwórz...
+acOpen.Hint=Otwórz|Otwiera istniejący plik
+acWinCascade.Caption=&Kaskadowo
+acWinCascade.Hint=Kaskadowo
+acWinTileHorizontal.Caption=Ułóż &poziomo
+acWinTileHorizontal.Hint=Ułóż poziomo
+acWinTileVertical.Caption=&Ułóż pionowo
+acWinTileVertical.Hint=Ułóż pionowo
+File1.Caption=Plik
+Help1.Caption=Pomoc
+Self.Caption=MiTeC Mail Viewer
+wacAutoSize.Caption=Rozmiar automatyczny
+wacClose.Caption=Zamknij
+wacCloseAll.Caption=Zamknij wszystko
+wacMaximize.Caption=Maksymalizuj
+wacMinAll.Caption=Minimalizuj wszystko
+wacMinimize.Caption=Minimalizuj
+wacRestore.Caption=Przywróć
+wacTitle.Caption=<brak>
+Windows1.Caption=&Okna
+
+[constants]
+lc_Atts=Attachments
+lc_AttSaved=Zapisano %d załączników z %d wiadomości do %s.
+lc_Confirmation=Potwierdzenie
+lc_DownloadQuery=Czy chcesz to pobrać?
+lc_EA=Adresy e-mail
+lc_ElapsedTime=Upłynęło: %1.2f s
+lc_Error=Błąd
+lc_FileNotExists=Plik %s nie istnieje.
+lc_FileNotSupported=Plik nie jest w obsługiwanym formacie.
+lc_FileProps=Właściwości pliku
+lc_Filtering=Filtrowanie...
+lc_FolderNotExists=Folder %s nie istnieje.
+lc_Format=Format
+lc_Information=Informacja
+lc_Lines=wierszy
+lc_LoadFailed=Błąd ładowania
+lc_Loading=Ładowanie...
+lc_Message=Wiadomość
+lc_MsgSaved=Zapisano %d wiadomości do %s.
+lc_NewVersionAvail=Dostępna jest nowa wersja %s.
+lc_NoNewVersion=Brak nowej wersji.
+lc_OpenAtt=Czy chcesz otworzyć ten załącznik?
+lc_Overwrite=Czy nadpisać istniejący plik %s?
+lc_Reading=Odczyt...
+lc_SaveProblem=Wystąpił problem z zapisem pliku dla e-maila o temacie "%s" od "%s". Proszę podać nową nazwę pliku.
+lc_Saving=Zapisywanie wiadomości...
+lc_Selected=Zaznaczone
+lc_SelectFolder=Wybierz folder
+lc_TextNotFound=Tekst nie znaleziony.
+lc_To=Do
+lc_Total=Razem
+lc_Visible=Widoczny
+lc_Warning=Ostrzeżenie
+

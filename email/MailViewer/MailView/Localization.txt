@@ -1,0 +1,16 @@
+if you want to localize Mail Viewer to your native language use file MailViewer.en.lng as a source.
+But do not overwrite it! Make your own copy with new filename for translation.
+
+After translation finishing change following values in file according to your settings
+
+[precision language file]
+languagename=
+author=
+
+and post new translated language file (*.lng) to my email mitec@atlas.cz. 
+
+I will check and include it into distribution package.
+
+Thanx.
+
+

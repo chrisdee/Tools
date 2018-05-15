@@ -1,0 +1,166 @@
+﻿[precision language file]
+languagename=English
+rtl=0
+description=
+fileversion=1.0
+author=Michal Mutl
+
+[Tdlg_mv_Files]
+bLoad.Caption=Cancel
+bOK.Caption=OK
+Self.Caption=Current session message databases
+
+[Tdlg_mv_Save]
+Button1.Caption=Cancel
+Button2.Caption=OK
+efn.Hint=Double-click to open file sav dialog
+Label1.Caption=New filename
+sd.Filter=E-mails|*.eml|All files|*.*
+Self.Caption=Save e-mail as
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Attachments
+bImages.Caption=Show images
+Copy1.Caption=Copy
+eSource.Text=source
+Label1.Caption=CC:
+Label2.Caption=BCC:
+Label8.Caption=From:
+Label9.Caption=Timestamp:
+Label10.Caption=Size:
+Label11.Caption=To:
+Label12.Caption=Trace:
+Label13.Caption=Subject:
+lvHops.Columns[0].Caption=Date
+lvHops.Columns[1].Caption=From
+lvHops.Columns[2].Caption=To
+lvHops.Columns[3].Caption=Address
+mmPrint.Caption=Print...
+Open1.Caption=Open...
+pmFind.Caption=Find...
+pmFindnext.Caption=Find next
+Save1.Caption=Save...
+Saveall1.Caption=Save all...
+sd.Title=Save attachment...
+SelectAll1.Caption=Select All
+Self.Caption=Mail Viewer
+tsBody.Caption=Body
+tsHTML.Caption=HTML
+tsPlain.Caption=Plain
+tsSource.Caption=Source
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Show message file addresses...
+acAddr.Hint=Show message file addresses...
+acCollect.Caption=Collect e-mail addresses...
+acCollect.Hint=Collect e-mail addresses...
+acFilter.Caption=Filter
+acFilter.Hint=Switch filter on/off
+acView.Caption=Message view...
+acView.Hint=View message details
+Attachmentsonly1.Caption=Attachments only...
+cbFilter.Items.Text=From+Subject+To+Body\nFrom+Subject+To\nFrom\nSubject\nTo\nBody\nSource\n
+Email1.Caption=E-mail...
+extonly1.Caption=Body only...
+HeaderPanel.Caption=Information
+CheckAll1.Caption=Check All
+InvertSelection1.Caption=Invert Selection
+Label1.Caption=Filter:
+mmMsg.Caption=Messages
+mmSaveAll.Caption=Save
+mmSaveAll.Hint=Save selected messages
+Self.Caption=Mail Viewer
+UncheckAll1.Caption=Uncheck All
+
+[Twiz_mv_Open]
+bOE.Caption=Browse current OE store
+bOK.Caption=OK
+bTB.Caption=Browse current TB store
+Button1.Caption=Cancel
+bWLM.Caption=Browse current Win/Live Mail store
+cbxEAP.Caption=Evaluate attachment presence
+feEML.Hint=Double-click to browse
+feOE.Hint=Double-click to browse
+feTB.Hint=Double-click to browse
+feWLM.Hint=Double-click to browse
+GroupBox1.Caption=[ Open what? ]
+odEML.Filter=Email files|*.eml|All files|*.*
+odOE.Filter=Outlook Express message databases|*.dbx;*.mbx|All files|*.*
+odTB.Filter=Mozilla Thunderbird message databases|*.*|All files|*.*
+rbEML.Caption=Single EML file
+rbOE.Caption=Outlook Express message database
+rbTB.Caption=Mozilla Thunderbird message database
+rbWLM.Caption=Folder containing e-mail files (EML)
+sbEML.Hint=Browse
+sbOE.Hint=Browse
+sbTB.Hint=Browse
+sbWLM.Hint=Browse
+Self.Caption=Open Wizard
+
+[Twnd_mv_Main]
+acAbout.Caption=About
+acAbout.Hint=About
+acCloseChild.Caption=Close
+acCloseChild.Hint=Close
+acExit.Caption=Exit
+acExit.Hint=Exit
+acCheckUpdate.Caption=Check for updates
+acOpen.Caption=&Open...
+acOpen.Hint=Open|Opens an existing file
+acPersistent.Caption=Persistent settings
+acWinCascade.Caption=&Cascade
+acWinCascade.Hint=Cascade
+acWinTileHorizontal.Caption=Tile &Horizontally
+acWinTileHorizontal.Hint=Tile Horizontal
+acWinTileVertical.Caption=&Tile Vertically
+acWinTileVertical.Hint=Tile Vertical
+File1.Caption=File
+Help1.Caption=Help
+mmEAP.Caption=Evaluate attachment presence
+mmOpt.Caption=Options
+Self.Caption=MiTeC Mail Viewer
+wacAutoSize.Caption=Auto Size
+wacClose.Caption=Close
+wacCloseAll.Caption=Close All
+wacMaximize.Caption=Maximize
+wacMinAll.Caption=Minimize All
+wacMinimize.Caption=Minimize
+wacRestore.Caption=Restore
+wacTitle.Caption=<none>
+Windows1.Caption=&Windows
+
+[constants]
+lc_Atts=Attachments
+lc_AttSaved=%d attachments from %d messages saved to %s
+lc_Confirmation=Confirmation
+lc_DownloadQuery=Do you want to download it?
+lc_EA=E-Mail Addresses
+lc_ElapsedTime=Elapsed time: %1.2f s
+lc_Error=Error
+lc_FileNotExists=File %s does not exist.
+lc_FileNotSupported=File is not in supported format.
+lc_FileProps=File Properties
+lc_Filtering=Filtering...
+lc_FolderNotExists=Folder %s does not exist.
+lc_Format=Format
+lc_Information=Information
+lc_Lines=lines
+lc_LoadFailed=Load failed
+lc_Loading=Loading...
+lc_Message=Message
+lc_MsgSaved=%d messages saved to %s
+lc_NewVersionAvail=New version %s is available.
+lc_NoNewVersion=No new version available.
+lc_OpenAtt=Do you want to open this attachment?
+lc_Overwrite=Overwrite existing file %s?
+lc_Reading=Reading...
+lc_SaveProblem=There is problem with file saving for e-mail with subject "%s" from "%s". Enter please new filename.
+lc_Saving=Saving messages...
+lc_Selected=Selected
+lc_SelectFolder=Select folder
+lc_TextNotFound=Text not found.
+lc_To=To
+lc_Total=Total
+lc_Visible=Visible
+lc_Warning=Warning
+

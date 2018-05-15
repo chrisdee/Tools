@@ -1,0 +1,174 @@
+﻿[precision language file]
+languagename=Čeština
+rtl=0
+description=
+fileversion=1.0
+author=Michal Mutl
+
+[Tdlg_mv_Files]
+bLoad.Caption=Zrušit
+bOK.Caption=OK
+Self.Caption=Aktuální databáze zpráv
+Tree.Header.Columns[0].Text=Identita/Složka
+Tree.Header.Columns[1].Text=Velikost [B]
+Tree.Header.Columns[2].Text=Datum a čas
+
+[Tdlg_mv_Save]
+Button1.Caption=Zrušit
+Button2.Caption=OK
+efn.Hint=Dvakrát klikněte a otevře se okno pro výběr souborů
+Label1.Caption=Nový soubor
+sd.Filter=E-maily|*.eml|Všechny soubory|*.*
+Self.Caption=Uložit e-mail jako
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Přílohy
+bImages.Caption=Zobrazit obrázky
+Copy1.Caption=Kopírovat
+eSource.Text=zdroj
+Label1.Caption=Kopie:
+Label2.Caption=Skrytá kopie:
+Label8.Caption=Od:
+Label9.Caption=Datum a čas:
+Label10.Caption=Velikost:
+Label11.Caption=Komu:
+Label12.Caption=Cesta:
+Label13.Caption=Předmět:
+lvHops.Columns[0].Caption=Datum
+lvHops.Columns[1].Caption=Od
+lvHops.Columns[2].Caption=Komu
+lvHops.Columns[3].Caption=Adresa
+mmPrint.Caption=Tisk...
+Open1.Caption=Otevřít...
+pmActiveLinks.Caption=Aktivní linky
+pmFind.Caption=Najít...
+pmFindnext.Caption=Najít další
+Save1.Caption=Uložit...
+Saveall1.Caption=Uložit vše...
+sd.Title=Uložit přílohu...
+SelectAll1.Caption=Vybrat vše
+Self.Caption=Mail Viewer
+tsBody.Caption=Zpráva
+tsHTML.Caption=HTML
+tsPlain.Caption=Text
+tsSource.Caption=Zdroj
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Zobrazit adresy ze zprávy...
+acAddr.Hint=Zobrazit adresy ze zprávy...
+acCollect.Caption=Shromáždit emailové adresy...
+acCollect.Hint=Shromáždit emailové adresy...
+acFilter.Caption=Filtr
+acFilter.Hint=Zapnout/Vypnout filtr
+acView.Caption=Zobrazení zprávy...
+acView.Hint=Zobrazení zprávy
+Attachmentsonly1.Caption=jen přílohy...
+cbFilter.Items.Text=Od+Předmět+Komu+Zpráva\nOd+Předmět+Komu\nOd\nPředmět\nKomu\nZpráva\nZdroj\n
+Email1.Caption=E-mail...
+extonly1.Caption=jen tělo zprávy...
+HeaderPanel.Caption=Informace
+CheckAll1.Caption=Označit vše
+InvertSelection1.Caption=Invertovat označení
+Label1.Caption=Filtr:
+mmMsg.Caption=Zprávy
+mmSaveAll.Caption=Uložit
+mmSaveAll.Hint=Uložit označené zprávy
+Self.Caption=Mail Viewer
+Tree.Header.Columns[4].Text=Od
+Tree.Header.Columns[5].Text=Předmět
+Tree.Header.Columns[6].Text=Komu
+Tree.Header.Columns[7].Text=Přijato
+Tree.Header.Columns[8].Text=Velikost [B]
+UncheckAll1.Caption=Odoznačit vše
+
+[Twiz_mv_Open]
+bOE.Caption=Prohlížet aktuální OE sklad
+bTB.Caption=Prohlížet aktuální TB sklad
+Button1.Caption=Zrušit
+bWLM.Caption=Prohlížet aktuální Win/Live Mail sklad
+cbxEAP.Caption=Zjišťovat přítomnost příloh
+feEML.Hint=Otevři dvojklikem
+feOE.Hint=Otevři dvojklikem
+feTB.Hint=Dvojklikem otevřít
+feWLM.Hint=Otevři dvojklikem
+GroupBox1.Caption=[ Otevřít co? ]
+odEML.Filter=Emailové soubory|*.eml|All files|*.*
+odOE.Filter=Databáze zpráv Outlook Express|*.dbx;*.mbx|All files|*.*
+odTB.Filter=Databáze zpráv Mozilla Thunderbird|*.*|All files|*.*
+rbEML.Caption=Samostatný soubor EML
+rbOE.Caption=Databáze zpráv Outlook Express
+rbTB.Caption=Databáze zpráv Mozilla Thunderbird
+rbWLM.Caption=Složka obsahující soubory emailů (EML)
+sbEML.Hint=Prohlížet
+sbOE.Hint=Prohlížet
+sbTB.Hint=Prohlížet
+sbWLM.Hint=Prohlížet
+Self.Caption=Průvodce
+
+[Twnd_mv_Main]
+acAbout.Caption=O programu
+acAbout.Hint=O programu
+acCloseChild.Caption=Zavřít
+acCloseChild.Hint=Zavřít
+acExit.Caption=Konec
+acExit.Hint=Konec
+acCheckUpdate.Caption=Zkontrolovat nové verze
+acOpen.Caption=Otevřít...
+acOpen.Hint=Otevře existující soubor
+acPersistent.Caption=Ukládat nastavení
+acWinCascade.Caption=&Dlaždice
+acWinCascade.Hint=Pod sebe
+acWinTileHorizontal.Caption=Dlaždice vodorovně
+acWinTileHorizontal.Hint=Dlaždice vodorovně
+acWinTileVertical.Caption=Dlaždice svisle
+acWinTileVertical.Hint=Dlaždice svisle
+File1.Caption=Soubor
+Help1.Caption=Pomoc
+mmEAP.Caption=Zjišťovat přítomnost příloh
+mmOpt.Caption=Nastavení
+Self.Caption=MiTeC Mail Viewer
+wacAutoSize.Caption=Automatická velikost
+wacClose.Caption=Zavřít
+wacCloseAll.Caption=Zavřít vše
+wacMaximize.Caption=Maximalizovat
+wacMinAll.Caption=Minimalizovat vše
+wacMinimize.Caption=Minimalizovat
+wacRestore.Caption=Obnovit
+wacTitle.Caption=<žádný>
+Windows1.Caption=&Okna
+
+[constants]
+lc_Atts=Přílohy
+lc_AttSaved=%d příloh ze %d zpráv uloženy do %s
+lc_Confirmation=Potvrzení
+lc_DownloadQuery=Chcete stáhnout novou verzi?
+lc_EA=E-Mailové adresy
+lc_ElapsedTime=Doba trvání: %1.2f s
+lc_Error=Chyba
+lc_FileNotExists=Soubor %s neexistuje.
+lc_FileNotSupported=Soubor není v podporovaném formátu.
+lc_FileProps=Vlastnosti souboru
+lc_Filtering=Filtruji...
+lc_FolderNotExists=Složka %s neexistuje.
+lc_Format=Formát
+lc_Information=Informace
+lc_Lines=řádků
+lc_LoadFailed=Nahrání selhalo
+lc_Loading=Nahrávám...
+lc_Message=Zpráva
+lc_MsgSaved=%d zpráv uloženo do %s
+lc_NewVersionAvail=Nová verze %s je k dispozici.
+lc_NoNewVersion=Není žádná nová verze.
+lc_OpenAtt=Opravdu chcete otevřít tuto přílohu?
+lc_Overwrite=Přepsat soubor %s?
+lc_Reading=Načítám...
+lc_SaveProblem=Nastal problém s uložením zprávy s předmětem "%s" z "%s". Zadejte prosím nový název souboru.
+lc_Saving=Ukládám zprávy...
+lc_Selected=Označeno
+lc_SelectFolder=Vyber složku
+lc_TextNotFound=Text nenalezen.
+lc_To=Komu
+lc_Total=Celkem
+lc_Visible=Zobrazeno
+lc_Warning=Varování
+

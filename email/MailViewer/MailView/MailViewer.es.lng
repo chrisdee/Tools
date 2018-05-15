@@ -1,0 +1,161 @@
+﻿[precision language file]
+languagename=Spanish
+rtl=0
+description=MailView
+fileversion=1.8.5
+author=Angel De Giorgi
+
+[Tdlg_mv_Files]
+bLoad.Caption=Cancelar
+bOK.Caption=Aceptar
+Self.Caption=Bases de datos de sesión actual de mensajería
+
+[Tdlg_mv_Save]
+Button1.Caption=Cancelar
+Button2.Caption=Aceptar
+efn.Hint=Doble-clic para abrir diálogo de guardar archivo
+Label1.Caption=Nuevo nombre de archivo
+sd.Filter=E-mails|*.eml|Todos los archivos|*.*
+Self.Caption=Guardar e-mail como
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Adjuntos
+bImages.Caption=Descargar imagenes
+Copy1.Caption=Copiar
+eSource.Text=origen
+Label1.Caption=CC:
+Label2.Caption=CCO:
+Label8.Caption=De:
+Label9.Caption=Fecha/Hora:
+Label10.Caption=Tamaño:
+Label11.Caption=A:
+Label12.Caption=Rastreo:
+Label13.Caption=Asunto:
+lvHops.Columns[0].Caption=Fecha
+lvHops.Columns[1].Caption=De
+lvHops.Columns[2].Caption=A
+lvHops.Columns[3].Caption=Dirección
+mmPrint.Caption=Imprimir...
+Open1.Caption=Abrir...
+pmFind.Caption=Buscar...
+pmFindnext.Caption=Buscar siguiente
+Save1.Caption=Guardar...
+Saveall1.Caption=Guardar todo...
+sd.Title=Guardar adjunto...
+SelectAll1.Caption=Seleccionar todo
+Self.Caption=Mail Viewer
+tsBody.Caption=Cuerpo
+tsHTML.Caption=HTML
+tsPlain.Caption=Completo
+tsSource.Caption=Origen
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Mostrar direcciones de archivo de mensajes...
+acAddr.Hint=Mostrar direcciones de archivo de mensajes...
+acCollect.Caption=Recoger direcciones de e-mail...
+acCollect.Hint=Recoger direcciones de e-mail...
+acFilter.Caption=Filtro
+acFilter.Hint=Cambiar filtro si/no
+acView.Caption=Vista de Mensaje...
+acView.Hint=Ver detalles de  mensaje
+Attachmentsonly1.Caption=Sólo adjuntos...
+cbFilter.Items.Text=De+Asunto+A+Cuerpo\nDe+Asunto+A\nDe\nAsunto\nA\nCuerpo\nOrigen\n
+Email1.Caption=E-mail...
+extonly1.Caption=Sólo cuerpo...
+HeaderPanel.Caption=Información
+CheckAll1.Caption=Marcar todo
+InvertSelection1.Caption=Invertir Selección
+Label1.Caption=Filtro:
+mmMsg.Caption=Mensajes
+mmSaveAll.Caption=Guardar
+mmSaveAll.Hint=Guardar selected messages
+Self.Caption=Mail Viewer
+UncheckAll1.Caption=Desmarcar todo
+
+[Twiz_mv_Open]
+bOE.Caption=Navegar Almacen actual OE
+bTB.Caption=Navegar Almacen actual TB
+Button1.Caption=Cancelar
+bWLM.Caption=Navegar Almacen actual Win/Live Mail
+feEML.Hint=Doble-clic para navegar
+feOE.Hint=Doble-clic para navegar
+feTB.Hint=Doble-clic para navegar
+feWLM.Hint=Doble-clic para navegar
+GroupBox1.Caption=[ ¿Abrir qué? ]
+odEML.Filter=Archivos E-mail|*.eml|Todos los archivos|*.*
+odOE.Filter=Base de datos de Mensajes Outlook Express|*.dbx;*.mbx|Todos los archivos|*.*
+odTB.Filter=Base de datos de Mensajes Mozilla Thunderbird|*.*|Todos los archivos|*.*
+rbEML.Caption=Archivo único EML
+rbOE.Caption=Base de datos de Mensajes Outlook Express
+rbTB.Caption=Base de datos de Mensajes Mozilla Thunderbird
+rbWLM.Caption=Carpeta conteniendo archivos e-mail (EML)
+sbEML.Hint=Navegar
+sbOE.Hint=Navegar
+sbTB.Hint=Navegar
+sbWLM.Hint=Navegar
+Self.Caption=Abrir Asistente
+
+[Twnd_mv_Main]
+acAbout.Caption=Acerca de...
+acAbout.Hint=Acerca de...
+acCloseChild.Caption=Cerrar
+acCloseChild.Hint=Cerrar
+acExit.Caption=Salir
+acExit.Hint=Salir
+acCheckUpdate.Caption=Verificar actualizaciones
+acOpen.Caption=Abrir...
+acOpen.Hint=Abrir|Se abre un archivo existente
+acWinCascade.Caption=Cascada
+acWinCascade.Hint=Cascada
+acWinTileHorizontal.Caption=Cubrir Horizontalmente
+acWinTileHorizontal.Hint=Cubrir Horizontal
+acWinTileVertical.Caption=Cubrir Verticalmente
+acWinTileVertical.Hint=Cubrir Vertical
+File1.Caption=Archivo
+Help1.Caption=Ayuda
+Self.Caption=MiTeC Mail Viewer 1.8.5
+wacAutoSize.Caption=Auto ajuste de tamaño
+wacClose.Caption=Cerrar
+wacCloseAll.Caption=Cerrar Todo
+wacMaximize.Caption=Maximizar
+wacMinAll.Caption=Minimizar Todo
+wacMinimize.Caption=Minimizar
+wacRestore.Caption=Restaurar
+wacTitle.Caption=<ninguno>
+Windows1.Caption=Ventana
+
+[constants]
+lc_Atts=Adjuntos
+lc_AttSaved=%d adjuntos de %d mensajes guardados en %s
+lc_Confirmation=Confirmación
+lc_DownloadQuery=¿Desea descargarlo?
+lc_EA=Direcciones E-Mail
+lc_ElapsedTime=Tiempo transcurrido: %1.2f s
+lc_Error=Error
+lc_FileNotExists=Archivo %s no existe.
+lc_FileNotSupported=Archivo en formato no soportado.
+lc_FileProps=Propiedades de archivo
+lc_Filtering=Filtrando...
+lc_FolderNotExists=Carpeta %s no existe.
+lc_Format=Formato
+lc_Information=Informacion
+lc_Lines=lineas
+lc_LoadFailed=Carga fallida
+lc_Loading=Cargando...
+lc_Message=Mensaje
+lc_MsgSaved=%d mensajes guardados en %s
+lc_NewVersionAvail=Nueva versión %s disponible.
+lc_NoNewVersion=Nueva versión no disponible.
+lc_OpenAtt=¿Desea abrir este adjunto?
+lc_Overwrite=¿Sobrescribir archivo %s existente ?
+lc_Reading=Leyendo...
+lc_SaveProblem=Problema al guardar archivo para e-mail con asunto "%s" de "%s". Ingrese un nuevo nombre de archivo.
+lc_Saving=Guardando mensajes...
+lc_Selected=Seleccionado
+lc_SelectFolder=Seleccionar carpeta
+lc_TextNotFound=Texto no encontrado.
+lc_To=A
+lc_Total=Total
+lc_Visible=Visible
+lc_Warning=Advertencia
+

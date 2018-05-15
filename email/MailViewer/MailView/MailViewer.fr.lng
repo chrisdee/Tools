@@ -1,0 +1,169 @@
+﻿[precision language file]
+languagename=French
+rtl=0
+description=
+fileversion=1.0
+author=Jeanjean
+
+[Tdlg_mv_Files]
+bLoad.Caption=Annuler
+bOK.Caption=OK
+Self.Caption=Session actuelle des bases de données message
+Tree.Header.Columns[0].Text=Identité/Dossier
+Tree.Header.Columns[1].Text=Taille [B]
+Tree.Header.Columns[2].Text=Horodatage
+
+[Tdlg_mv_Save]
+Button1.Caption=Annuler
+Button2.Caption=OK
+efn.Hint=Double-click pour ouvrir fichier dialogue sauvé
+Label1.Caption=Nouveau nom de fichier
+sd.Filter=E-mails|*.eml|Tous les fichiers|*.*
+Self.Caption=Sauver e-mail comme
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Attachments
+bImages.Caption=Télécharger images
+Copy1.Caption=Copier
+eSource.Text=source
+Label1.Caption=CC:
+Label2.Caption=BCC:
+Label8.Caption=De:
+Label9.Caption=Horodatage:
+Label10.Caption=Taille:
+Label11.Caption=A:
+Label12.Caption=Trace:
+Label13.Caption=Sujet:
+lvHops.Columns[0].Caption=Date
+lvHops.Columns[1].Caption=De
+lvHops.Columns[2].Caption=A
+lvHops.Columns[3].Caption=Adresse
+mmPrint.Caption=Imprimer...
+Open1.Caption=Ouvrir...
+pmFind.Caption=Trouver...
+pmFindnext.Caption=Trouver suivant
+Save1.Caption=Sauver...
+Saveall1.Caption=Sauver tout...
+sd.Title=Sauver annexe...
+SelectAll1.Caption=Selectionner tout
+Self.Caption=Mail Viewer
+tsBody.Caption=Corps
+tsHTML.Caption=HTML
+tsPlain.Caption=Text
+tsSource.Caption=Source
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Montrer addresses fichier message...
+acAddr.Hint=Montrer addresses fichier message...
+acCollect.Caption=Collecter adresses e-mail...
+acCollect.Hint=Collecter adresses e-mail...
+acFilter.Caption=Filtre
+acFilter.Hint=Interrupteur filtre on/off
+acView.Caption=Voir message...
+acView.Hint=Voir détails message
+Attachmentsonly1.Caption=Seulement l'annexe ...
+cbFilter.Items.Text=De+Sujet+A+Corps\nDe+Sujet+A\nDe\nSujet\nA\nCorps\nSource\n
+Email1.Caption=E-mail...
+extonly1.Caption=Seulement le corps ...
+HeaderPanel.Caption=Information
+CheckAll1.Caption=Sélectionner Tout
+InvertSelection1.Caption=Inverser Sélection
+Label1.Caption=Filtre:
+mmMsg.Caption=Messages
+mmSaveAll.Caption=Sauver
+mmSaveAll.Hint=Sauver messages sélectionnés
+Self.Caption=Mail Viewer
+Tree.Header.Columns[4].Text=De
+Tree.Header.Columns[5].Text=Sujet
+Tree.Header.Columns[6].Text=A
+Tree.Header.Columns[7].Text=Reçu
+Tree.Header.Columns[8].Text=Taille [B]
+UncheckAll1.Caption=Déselectionner Tout
+
+[Twiz_mv_Open]
+bOE.Caption=Parcourir la sauvegarde OE actuelle
+bTB.Caption=Parcourir la sauvegarde TB actuelle
+Button1.Caption=Annuler
+bWLM.Caption=Parcourir la sauvegarde Win/Live Mail actuelle
+feEML.Hint=Double-click pour parcourir
+feOE.Hint=Double-click pour parcourir
+feTB.Hint=Double-click pour parcourir
+feWLM.Hint=Double-click pour parcourir
+GroupBox1.Caption=[ Ouvrir quoi? ]
+odEML.Filter=Email files|*.eml|Tout les fichiers|*.*
+odOE.Filter=Banques de données message Outlook Express|*.dbx;*.mbx|Tout les fichiers|*.*
+odTB.Filter=Banque de données message Mozilla Thunderbird|*.*|Tout les fichiers|*.*
+rbEML.Caption=Simple fichier EML
+rbOE.Caption=Banque de données message Outlook Express
+rbTB.Caption=Banque de données message Mozilla Thunderbird
+rbWLM.Caption=Dossier contenant fichiers message (EML)
+sbEML.Hint=Parcourir
+sbOE.Hint=Parcourir
+sbTB.Hint=Parcourir
+sbWLM.Hint=Parcourir
+Self.Caption=Ouvrir l'Assistant
+
+[Twnd_mv_Main]
+acAbout.Caption=A propos
+acAbout.Hint=A propos
+acCloseChild.Caption=Fermer
+acCloseChild.Hint=Fermer
+acExit.Caption=Sortie
+acExit.Hint=Sortie
+acCheckUpdate.Caption=Verifier les mises à jour
+acOpen.Caption=&Ouvrir...
+acOpen.Hint=Ouvrir|Ouvrir un fichier existant
+acWinCascade.Caption=&Cascade
+acWinCascade.Hint=Cascade
+acWinTileHorizontal.Caption=Arranger &Horizontalement
+acWinTileHorizontal.Hint=Arranger Horizontalement
+acWinTileVertical.Caption=&Arranger Verticalement
+acWinTileVertical.Hint=Arranger Verticalement
+File1.Caption=Fichier
+Help1.Caption=Aide
+Self.Caption=MiTeC Mail Viewer
+wacAutoSize.Caption=Taille Auto
+wacClose.Caption=Fermer
+wacCloseAll.Caption=Fermer tout
+wacMaximize.Caption=Agrandir
+wacMinAll.Caption=Réduire tout
+wacMinimize.Caption=Réduire
+wacRestore.Caption=Restaurer
+wacTitle.Caption=<néant>
+Windows1.Caption=&Fenêtres
+
+[constants]
+lc_Atts=Attachments
+lc_AttSaved=%d annexes de %d messages sauvés à %s.
+lc_Confirmation=Confirmation
+lc_DownloadQuery=Désirez vous le télécharger?
+lc_EA=E-Mail Adresses
+lc_ElapsedTime=Temps écoulé: %1.2f s
+lc_Error=Erreur
+lc_FileNotExists=Fichier %s n'existe pas.
+lc_FileNotSupported=Fichier n'est pas dans un format supporté.
+lc_FileProps=Propriétés Fichier
+lc_Filtering=Filtrage ...
+lc_FolderNotExists=Dossier %s n'existe pas.
+lc_Format=Format
+lc_Information=Information
+lc_Lines=lignes
+lc_LoadFailed=Échec du chargement
+lc_Loading=Chargement en cours...
+lc_Message=Message
+lc_MsgSaved=%d messages sauvés à %s.
+lc_NewVersionAvail=Nouvelle version %s est disponible.
+lc_NoNewVersion=Pas de nouvelle version disponible.
+lc_OpenAtt=Désirez-vous ouvrir cette annexe?
+lc_Overwrite=Écraser fichier %s existant ?
+lc_Reading=Lecture en cours...
+lc_SaveProblem=Il y a un problème avec la sauvegarde du fichier pour le message ayant pour objet "%s" de "%s". Entrer svp un nouveau nom de fichier.
+lc_Saving=Sauvegarde des messages...
+lc_Selected=Sélectionné
+lc_SelectFolder=Sélectionner dossier
+lc_TextNotFound=Texte non trouvé.
+lc_To=A
+lc_Total=Total
+lc_Visible=Visible
+lc_Warning=Avertissement
+

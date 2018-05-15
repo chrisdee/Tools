@@ -1,0 +1,169 @@
+﻿[precision language file]
+languagename=Nederlands
+rtl=0
+description=
+fileversion=1.0
+author=J.Clauwaert
+
+[Tdlg_mv_Files]
+bLoad.Caption=Annuleren
+bOK.Caption=OK
+Self.Caption=Current session message databases
+Tree.Header.Columns[0].Text=Identiteit/Map
+Tree.Header.Columns[1].Text=Grootte [B]
+Tree.Header.Columns[2].Text=Tijdstip
+
+[Tdlg_mv_Save]
+Button1.Caption=Annuleren
+Button2.Caption=OK
+efn.Hint=Dubbelklik om op te slaan
+Label1.Caption=Nieuwe bestandsnaam
+sd.Filter=E-Mails|*.eml|Alle bestanden|*.*
+Self.Caption=E-Mail opslaan als...
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Bijlagen
+bImages.Caption=Download afbeeldingen
+Copy1.Caption=Kopieer
+eSource.Text=Bron
+Label1.Caption=CC:
+Label2.Caption=BCC:
+Label8.Caption=Van:
+Label9.Caption=Tijdstip:
+Label10.Caption=Grootte:
+Label11.Caption=Aan:
+Label12.Caption=Trace:
+Label13.Caption=Onderwerp:
+lvHops.Columns[0].Caption=Datum
+lvHops.Columns[1].Caption=Van
+lvHops.Columns[2].Caption=Aan
+lvHops.Columns[3].Caption=Adres
+mmPrint.Caption=Afdrukken...
+Open1.Caption=Openen...
+pmFind.Caption=Zoeken...
+pmFindnext.Caption=Volgende zoeken
+Save1.Caption=Opslaan...
+Saveall1.Caption=Alles opslaan...
+sd.Title=Bijlage opslaan...
+SelectAll1.Caption=Alles selecteren
+Self.Caption=Mail Viewer
+tsBody.Caption=Tekst
+tsHTML.Caption=HTML
+tsPlain.Caption=Enkel tekst
+tsSource.Caption=Brontekst
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Toon berichten - bestand adressen...
+acAddr.Hint=Toon berichten - bestand adressen...
+acCollect.Caption=Verzamel e-mailadressen...
+acCollect.Hint=Verzamel e-mailadressen...
+acFilter.Caption=Filter
+acFilter.Hint=Filter Aan/Uit
+acView.Caption=Berichten vertoon...
+acView.Hint=Toon details
+Attachmentsonly1.Caption=Enkel bijlagen...
+cbFilter.Items.Text=Van + Onderwerp + Aan + Berichttekst\nVan + Onderwerp + Aan\nVan\nOnderwerp\nAan\nBerichttekst\nBrontekst
+Email1.Caption=E-Mail...
+extonly1.Caption=Enkel tekst...
+HeaderPanel.Caption=Informatie
+CheckAll1.Caption=Alles selecteren
+InvertSelection1.Caption=Selectie omkeren
+Label1.Caption=Filter:
+mmMsg.Caption=Berichten
+mmSaveAll.Caption=Opslaan
+mmSaveAll.Hint=Geselecteerde berichten opslaan
+Self.Caption=Mail Viewer
+Tree.Header.Columns[4].Text=Van
+Tree.Header.Columns[5].Text=Onderwerp
+Tree.Header.Columns[6].Text=Aan
+Tree.Header.Columns[7].Text=Ontvangen op
+Tree.Header.Columns[8].Text=Grootte [B]
+UncheckAll1.Caption=Selectie opheffen
+
+[Twiz_mv_Open]
+bOE.Caption=Aktuele OE-map doorzoeken
+bTB.Caption=Aktuele ThunderBird-map doorzoeken
+Button1.Caption=Annuleren
+bWLM.Caption=Win/Live-Mail opslag doorzoeken
+feEML.Hint=Dubbelklik om te doorzoeken
+feOE.Hint=Dubbelklik om te doorzoeken
+feTB.Hint=Dubbelklik om te doorzoeken
+feWLM.Hint=Dubbelklik om te doorzoeken
+GroupBox1.Caption=[ Wat openen ? ]
+odEML.Filter=E-Mail files|*.eml|Alle bestanden|*.*
+odOE.Filter=OE berichtendatabases|*.dbx;*.mbx|Alle mappen|*.*
+odTB.Filter=Mozilla Thunderbird-berichtenmappen|*.*|Alle mappen|*.*
+rbEML.Caption=Een enkel EML-bestand
+rbOE.Caption=Outlook Express-berichtendatabase
+rbTB.Caption=Mozilla Thunderbird-berichtendatabase
+rbWLM.Caption=Een map met meerdere eml-bestanden
+sbEML.Hint=Doorzoeken
+sbOE.Hint=Doorzoeken
+sbTB.Hint=Doorzoeken
+sbWLM.Hint=Doorzoeken
+Self.Caption=Open-assistent
+
+[Twnd_mv_Main]
+acAbout.Caption=Over
+acAbout.Hint=Over
+acCloseChild.Caption=Sluiten
+acCloseChild.Hint=Sluiten
+acExit.Caption=Afsluiten
+acExit.Hint=Afsluiten
+acCheckUpdate.Caption=Updates zoeken
+acOpen.Caption=&Openen...
+acOpen.Hint=Open|Opent een bestaand bestand
+acWinCascade.Caption=&Trapsgewijs
+acWinCascade.Hint=Trapsgewijs
+acWinTileHorizontal.Caption=Horizontaal schikken
+acWinTileHorizontal.Hint=Horizontaal schikken
+acWinTileVertical.Caption=Vertikaal schikken
+acWinTileVertical.Hint=Vertikaal schikken
+File1.Caption=Bestand
+Help1.Caption=Help
+Self.Caption=MiTeC Mail Viewer
+wacAutoSize.Caption=Auto-afmetingen
+wacClose.Caption=Sluiten
+wacCloseAll.Caption=Alles sluiten
+wacMaximize.Caption=Maximaliseren
+wacMinAll.Caption=Alles Minimaliseren
+wacMinimize.Caption=Minimaliseren
+wacRestore.Caption=Herstellen
+wacTitle.Caption=test<geen>
+Windows1.Caption=&Venster
+
+[constants]
+lc_Atts=Bijlagen
+lc_AttSaved=%d Bijlagen van %d berichten naar %s opgeslagen.
+lc_Confirmation=Bevestiging
+lc_DownloadQuery=Wil je het downloaden ?
+lc_EA=E-mail adressen
+lc_ElapsedTime=Verstreken tijd: %1.2f s
+lc_Error=Fout
+lc_FileNotExists=Bestand %s betaat niet.
+lc_FileNotSupported=Bestandsformatt niet ondersteund.
+lc_FileProps=Bestandseigenschappen
+lc_Filtering=Filteren...
+lc_FolderNotExists=Map %s bestaat niet.
+lc_Format=Formaat
+lc_Information=Informatie
+lc_Lines=Regels
+lc_LoadFailed=Laden gefaald
+lc_Loading=Laden...
+lc_Message=Bericht
+lc_MsgSaved=%d Berichten in  %s opgeslagen.
+lc_NewVersionAvail=Nieuwe versie  %s is beschikbaar !
+lc_NoNewVersion=Geen nieuwe versie beschikbaar !
+lc_OpenAtt=Wil je deze bijlage openen ?
+lc_Overwrite=Bestaand bestand  %s overschrijven ?
+lc_Reading=Lezen...
+lc_SaveProblem=Probleem bij het opslaan - E-Mail met Onderwerp "%s" van "%s". Geef AUB een nieuwe naam in.
+lc_Saving=Berichten worden opgeslagen...
+lc_Selected=Geselecteerd
+lc_SelectFolder=Kies een map om in op te slaan aub.
+lc_TextNotFound=Tekst niet gevonden.
+lc_To=Onderwerp
+lc_Total=Totaal
+lc_Visible=Zichtbaar
+lc_Warning=Waarschuwing
+

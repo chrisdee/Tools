@@ -1,0 +1,168 @@
+﻿[precision language file]
+languagename=Chinese (Simplified)
+rtl=0
+description=
+fileversion=1.0
+author=
+
+[Tdlg_mv_Files]
+bLoad.Caption=取消
+bOK.Caption=确定
+Self.Caption=当前会话邮件数据文件
+Tree.Header.Columns[0].Text=标识/文件夹
+Tree.Header.Columns[1].Text=大小 [B]
+Tree.Header.Columns[2].Text=时间戳
+
+[Tdlg_mv_Save]
+Button1.Caption=取消
+Button2.Caption=确定
+efn.Hint=双击打开文件保存对话框
+Label1.Caption=新文件名
+sd.Filter=电子邮件|*.eml|所有文件|*.*
+Self.Caption=保存电子邮件为
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Attachments
+bImages.Caption=下载图片
+Copy1.Caption=复制
+eSource.Text=源文件
+Label1.Caption=抄送(CC):
+Label2.Caption=密送(BCC):
+Label8.Caption=发件人
+Label9.Caption=时间戳:
+Label10.Caption=大小:
+Label11.Caption=接收人(To):
+Label12.Caption=邮件网络传输记录:
+Label13.Caption=主题:
+lvHops.Columns[0].Caption=日期
+lvHops.Columns[1].Caption=发送人
+lvHops.Columns[2].Caption=接收人
+lvHops.Columns[3].Caption=地址
+mmPrint.Caption=打印...
+Open1.Caption=打开...
+pmFind.Caption=查找...
+pmFindnext.Caption=查找下一个
+Save1.Caption=保存...
+Saveall1.Caption=全部保存...
+sd.Title=保存附件...
+SelectAll1.Caption=全选
+Self.Caption=Mail Viewer邮件查看器
+tsBody.Caption=正文
+tsPlain.Caption=文本
+tsSource.Caption=源文件
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=显示邮件文件地址...
+acAddr.Hint=显示邮件文件地址...
+acCollect.Caption=提取电子邮件地址...
+acCollect.Hint=提取电子邮件地址...
+acFilter.Caption=过滤
+acFilter.Hint=启用/关闭过滤
+acView.Caption=信息查看...
+acView.Hint=查看信息详情
+Attachmentsonly1.Caption=仅附件...
+cbFilter.Items.Text=发送人+主题+接收人+正文\n发送人+主题+接收人\n发送人\n主题\n接收人\n正文\n源文件\n
+Email1.Caption=电子邮件l...
+extonly1.Caption=仅正文...
+HeaderPanel.Caption=信息
+CheckAll1.Caption=全部选中
+InvertSelection1.Caption=反选
+Label1.Caption=过滤:
+mmMsg.Caption=信息
+mmSaveAll.Caption=保存
+mmSaveAll.Hint=保存选择的邮件
+Self.Caption=Mail Viewer邮件查看器
+Tree.Header.Columns[4].Text=发件人
+Tree.Header.Columns[5].Text=主题
+Tree.Header.Columns[6].Text=接收人
+Tree.Header.Columns[7].Text=已接收
+Tree.Header.Columns[8].Text=大小 [B]
+UncheckAll1.Caption=取消全部选中
+
+[Twiz_mv_Open]
+bOE.Caption=浏览当前OE存储数据
+bTB.Caption=浏览当前 TB邮件数据
+Button1.Caption=取消
+bWLM.Caption=浏览当前Windows/Live Mail邮件数据
+feEML.Hint=双击进行浏览
+feOE.Hint=双击进行浏览
+feTB.Hint=双击进行浏览
+feWLM.Hint=双击进行浏览
+GroupBox1.Caption=[ 打开什么? ]
+odEML.Filter=电子邮件文件|*.eml|所有文件|*.*
+odOE.Filter=Outlook Express 邮件数据文件|*.dbx;*.mbx|所有文件|*.*
+odTB.Filter=Mozilla Thunderbird邮件数据文件|*.*|所有文件|*.*
+rbEML.Caption=单个 EML文件
+rbOE.Caption=Outlook Express邮件数据文件
+rbTB.Caption=Mozilla Thunderbird邮件数据文件
+rbWLM.Caption=含EML电子邮件文件的文件夹
+sbEML.Hint=浏览
+sbOE.Hint=浏览
+sbTB.Hint=浏览
+sbWLM.Hint=浏览
+Self.Caption=打开向导
+
+[Twnd_mv_Main]
+acAbout.Caption=关于
+acAbout.Hint=关于
+acCloseChild.Caption=关闭
+acCloseChild.Hint=关闭
+acExit.Caption=退出
+acExit.Hint=退出
+acCheckUpdate.Caption=检查更新
+acOpen.Caption=打开(&O)...
+acOpen.Hint=打开|打开已有文件
+acWinCascade.Caption=层叠(&C)
+acWinCascade.Hint=层叠
+acWinTileHorizontal.Caption=水平平铺(&H)
+acWinTileHorizontal.Hint=水平平铺
+acWinTileVertical.Caption=垂直平铺(&T)
+acWinTileVertical.Hint=垂直平铺
+File1.Caption=文件
+Help1.Caption=帮助
+Self.Caption=MiTeC Mail Viewer邮件查看器
+wacAutoSize.Caption=自动调整大小
+wacClose.Caption=关闭
+wacCloseAll.Caption=全部关闭
+wacMaximize.Caption=最大化
+wacMinAll.Caption=全部最小化
+wacMinimize.Caption=最小化
+wacRestore.Caption=恢复
+wacTitle.Caption=<无>
+Windows1.Caption=Windows
+
+[constants]
+lc_Atts=Attachments
+lc_AttSaved=%d 个附件 (来自 %d 封邮件) 已保存至 %s.
+lc_Confirmation=确认
+lc_DownloadQuery=您要下载吗?
+lc_EA=电子邮件地址
+lc_ElapsedTime=耗时: %1.2f s
+lc_Error=错误
+lc_FileNotExists=文件 %s 不存在.
+lc_FileNotSupported=文件格式不支持.
+lc_FileProps=文件属性
+lc_Filtering=正在过滤...
+lc_FolderNotExists=文件夹 %s 不存在.
+lc_Format=格式
+lc_Information=信息
+lc_Lines=行
+lc_LoadFailed=加载失败
+lc_Loading=正在加载...
+lc_Message=邮件
+lc_MsgSaved=%d 邮件保存至 %s.
+lc_NewVersionAvail=新版本 %s 已发布.
+lc_NoNewVersion=版本已最新.
+lc_OpenAtt=您要打开该附件吗?
+lc_Overwrite=覆盖原有文件 %s 吗?
+lc_Reading=正在读取...
+lc_SaveProblem=保存主题为 "%s" 的电子邮件时 (来自 "%s" )出现问题，请输入新文件名.
+lc_Saving=正在保存邮件...
+lc_Selected=已选中
+lc_SelectFolder=选择文件夹
+lc_TextNotFound=无文本内容.
+lc_To=接收人
+lc_Total=总计
+lc_Visible=可见
+lc_Warning=警告
+

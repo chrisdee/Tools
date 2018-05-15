@@ -1,0 +1,163 @@
+﻿[precision language file]
+languagename=Italian
+rtl=0
+description=
+fileversion=1.0
+author=
+
+[Tdlg_mv_Files]
+bLoad.Caption=Annulla
+bOK.Caption=OK
+Self.Caption=Archivi dei messaggi
+Tree.Header.Columns[0].Text=Identità/Cartella
+Tree.Header.Columns[1].Text=Dimensioni [B]
+Tree.Header.Columns[2].Text=Data
+
+[Tdlg_mv_Save]
+Button1.Caption=Annulla
+efn.Hint=Fare doppio clic per salvare con un nome diverso
+Label1.Caption=Nuovo nome file
+sd.Filter=File di posta|*.eml|Tutti i file|*.*
+Self.Caption=Salva con nome
+
+[Tmdi_mv_Msg]
+AttPanel.Caption=Allegati
+bImages.Caption=Scarica immagini
+Copy1.Caption=Copia
+eSource.Text=origine
+Label1.Caption=Cc:
+Label2.Caption=Ccn:
+Label8.Caption=Da:
+Label9.Caption=Data:
+Label10.Caption=Dimensioni:
+Label11.Caption=A:
+Label12.Caption=Tracciatura:
+Label13.Caption=Oggetto:
+lvHops.Columns[0].Caption=Data
+lvHops.Columns[1].Caption=Da
+lvHops.Columns[2].Caption=A
+lvHops.Columns[3].Caption=Indirizzo
+mmPrint.Caption=Stampa...
+Open1.Caption=Apri...
+pmFind.Caption=Trova...
+pmFindnext.Caption=Trova successivo
+Save1.Caption=Salva...
+Saveall1.Caption=Salva tutto...
+sd.Title=Salva allegato
+SelectAll1.Caption=Seleziona tutto
+tsBody.Caption=Messaggio
+tsPlain.Caption=Semplice
+tsSource.Caption=Origine
+
+[Tmdi_mv_Viewer]
+acAddr.Caption=Mostra gli indirizzi
+acAddr.Hint=Mostra gli indirizzi
+acCollect.Caption=Mostra tutti gli indirizzi
+acCollect.Hint=Mostra tutti gli indirizzi
+acFilter.Caption=Filtro
+acFilter.Hint=Attiva/disattiva filtro
+acView.Caption=Apri messaggio
+acView.Hint=Apri il messaggio in evidenza
+Attachmentsonly1.Caption=Solo &allegati...
+cbFilter.Items.Text=Da+Oggetto+A+Testo\nDa+Oggetto+A\nDa\nOggetto\nA\nTesto\nOrigine\n
+Email1.Caption=Messaggio...
+extonly1.Caption=Solo &testo...
+HeaderPanel.Caption=Informazione
+CheckAll1.Caption=Seleziona tutti
+InvertSelection1.Caption=Inverti selezione
+Label1.Caption=Filtro:
+mmMsg.Caption=Messaggi
+mmSaveAll.Caption=Salva
+mmSaveAll.Hint=Salva i messaggi selezionati
+Tree.Header.Columns[4].Text=Da
+Tree.Header.Columns[5].Text=Oggetto
+Tree.Header.Columns[6].Text=A
+Tree.Header.Columns[7].Text=Ricevuto
+Tree.Header.Columns[8].Text=Dimensioni [B]
+UncheckAll1.Caption=Deseleziona tutti
+
+[Twiz_mv_Open]
+bOE.Caption=Cerca nella cartella di Outlook Express
+bTB.Caption=Cerca nella cartella di Mozilla Thunderbird
+Button1.Caption=Annulla
+bWLM.Caption=Cerca nella cartella di Win/Live Mail
+feEML.Hint=Fare doppio clic per sfogliare le cartelle
+feOE.Hint=Fare doppio clic per sfogliare le cartelle
+feTB.Hint=Fare doppio clic per sfogliare le cartelle
+feWLM.Hint=Fare doppio clic per sfogliare le cartelle
+GroupBox1.Caption=[ Dove si trovano i messaggi? ]
+odEML.Filter=File di posta|*.eml|Tutti i file|*.*
+odOE.Filter=Archivio messaggi Outlook Express|*.dbx;*.mbx|Tutti i file|*.*
+odTB.Filter=Archivio messaggi Mozilla Thunderbird|*.*|Tutti i file|*.*
+rbEML.Caption=Singolo file di posta (.eml)
+rbOE.Caption=Archivio dei messaggi di Outlook Express
+rbTB.Caption=Archivio dei messaggi di Mozilla Thunderbird
+rbWLM.Caption=Cartella contenente file di posta (.eml)
+sbEML.Hint=Sfoglia
+sbOE.Hint=Sfoglia
+sbTB.Hint=Sfoglia
+sbWLM.Hint=Sfoglia
+Self.Caption=Apri
+
+[Twnd_mv_Main]
+acAbout.Caption=Informazioni su Mail Viewer
+acAbout.Hint=Informazioni su Mail Viewer
+acCloseChild.Caption=Chiudi
+acCloseChild.Hint=Chiudi
+acExit.Caption=Esci
+acExit.Hint=Esci
+acCheckUpdate.Caption=Ricerca aggiornamenti
+acOpen.Caption=&Apri...
+acOpen.Hint=Apri|Apre un file esistente
+acWinCascade.Caption=&Sovrapponi
+acWinCascade.Hint=Sovrapponi le finestre
+acWinTileHorizontal.Caption=Affianca &orizzontalmente
+acWinTileHorizontal.Hint=Affianca le finestre orizzontalmente
+acWinTileVertical.Caption=Affianca &verticalmente
+acWinTileVertical.Hint=Affianca le finestre verticalmente
+File1.Caption=File
+Help1.Caption=?
+wacAutoSize.Caption=Dimensioni automatiche
+wacClose.Caption=Chiudi
+wacCloseAll.Caption=Chiudi tutte
+wacMaximize.Caption=Ingrandisci
+wacMinAll.Caption=Riduci tutte
+wacMinimize.Caption=Riduci a icona
+wacRestore.Caption=Ripristina
+Windows1.Caption=Fi&nestra
+
+[constants]
+lc_Atts=Allegati
+lc_AttSaved=%d allegati da %d messaggi salvati in %s
+lc_Confirmation=Conferma
+lc_DownloadQuery=Si desidera scaricarla?
+lc_EA=Indirizzi di posta elettronica
+lc_ElapsedTime=Tempo impiegato: %1.2f s
+lc_Error=Errore
+lc_FileNotExists=Il file %s non esiste.
+lc_FileNotSupported=Formato del file non supportato.
+lc_FileProps=Proprietà
+lc_Filtering=Filtraggio in corso...
+lc_FolderNotExists=La cartella %s non esiste.
+lc_Format=Formato
+lc_Information=Informazione
+lc_Lines=righe
+lc_LoadFailed=Caricamento fallito
+lc_Loading=Caricamento in corso...
+lc_Message=Messaggio
+lc_MsgSaved=%d messaggi salvati in %s
+lc_NewVersionAvail=È disponibile la nuova versione %s.
+lc_NoNewVersion=Nessun aggiornamento disponibile.
+lc_OpenAtt=Aprire questo allegato?
+lc_Overwrite=Il file %s esiste già. Sostituirlo?
+lc_Reading=Lettura in corso...
+lc_SaveProblem=Impossibile salvare il messaggio con oggetto "%s" inviato da "%s". Specificare un altro nome file.
+lc_Saving=Salvataggio dei messaggi in corso...
+lc_Selected=Selezionati
+lc_SelectFolder=Selezionare una cartella.
+lc_TextNotFound=Testo non trovato.
+lc_To=A
+lc_Total=Totale
+lc_Visible=Visibili
+lc_Warning=Avviso
+
