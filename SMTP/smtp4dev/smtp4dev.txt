@@ -1,0 +1,9 @@
+== smtp4dev ==
+
+URLs:
+
+https://github.com/rnwood/smtp4dev
+
+https://github.com/rnwood/smtp4dev/releases/tag/v2.0.10
+
+Version: 2.0.10
