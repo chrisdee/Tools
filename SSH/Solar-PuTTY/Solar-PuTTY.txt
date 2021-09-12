@@ -1,0 +1,13 @@
+== Solarwinds Solar-PuTTY ==
+
+URL: https://www.solarwinds.com/free-tools/solar-putty
+
+Connect to any server or device in your network with Solar-PuTTY for Windows
+
+Key Features:
+
+- Manage multiple sessions from one console with a tabbed interface
+- Save credentials or private keys to any session for easy login
+- Automate all scripts you’re using when connection is established
+- Find your saved session easily thanks to Windows Search integration
+- No installation is needed (portable)
