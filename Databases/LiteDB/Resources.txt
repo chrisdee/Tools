@@ -1,0 +1,10 @@
+https://github.com/mbdavid/LiteDB
+
+https://github.com/mbdavid/LiteDB/releases
+
+https://github.com/julianpaulozzi/LiteDbExplorer
+
+https://github.com/julianpaulozzi/LiteDbExplorer/releases
+
+https://github.com/v2kiran/PSLiteDB
+
