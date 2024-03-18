@@ -1,1 +1,11 @@
+## Microsoft Azure AD / Entra ID Configuration Exporter ##
+## Source: https://github.com/microsoft/EntraExporter
+## Resource: https://o365reports.com/2023/08/24/entra-exporter-tool-effortlessly-backup-microsoft-entra-id-configurations
+
+## Usage
+Install-Module EntraExporter
+
+Connect-EntraExporter
+
+Export-Entra -Path "D:\EntraExporter" -All
 
